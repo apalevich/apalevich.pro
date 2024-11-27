@@ -1,0 +1,15 @@
+<dialog id="construction-dialog" open>
+  <form method="dialog">
+    <p>This site is currently under construction. We appreciate your patience!</p>
+    <button id="close-dialog" value="close">Close</button>
+  </form>
+</dialog>
+
+<script>
+  const dialog = document.getElementById('construction-dialog') as HTMLDialogElement;
+  const closeButton = document.getElementById('close-dialog');
+
+  closeButton.addEventListener('click', () => {
+    dialog.close();
+  });
+</script>
