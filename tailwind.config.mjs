@@ -17,6 +17,7 @@ export default {
 			},
 			backgroundImage: {
 				'underline1': "url('/Underline1.svg')",
+				'underline1-flip': "url('/Underline1-flip.svg')",
 				'underline2': "url('/Underline2.svg')",
 				'underline3': "url('/Underline3.svg')",
 			},
