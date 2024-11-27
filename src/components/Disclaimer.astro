@@ -1,7 +1,7 @@
 <pre id="message">Loading...</pre>
 
 <script>
-fetch('https://api.github.com/repos/apalevich/apalevich.com/commits?per_page=3')
+fetch('https://api.github.com/repos/apalevich/apalevich%2Epro/commits?per_page=3')
   .then(res => res.json())
   .then(res => {
     console.log(res);
@@ -13,4 +13,5 @@ fetch('https://api.github.com/repos/apalevich/apalevich.com/commits?per_page=3')
     });
     document.getElementById('message').innerHTML = markup
   })
+  .catch(() => {document.getElementById('message').classList.add('hidden')})
 </script>
