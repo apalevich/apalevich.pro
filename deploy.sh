@@ -1,6 +1,6 @@
 #!/bin/bash
 PROJECT_DIR="/var/www/apalevich.pro"
-LOG_FILE="/var/www/apalevich.pro/logs"
+LOG_FILE="/var/www/apalevich.pro/logs/deploy.log"
 
 echo "---- Deployment started: $(date) ----" >> $LOG_FILE
 
