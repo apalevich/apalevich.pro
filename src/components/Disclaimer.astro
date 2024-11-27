@@ -1,15 +1,16 @@
-<dialog id="construction-dialog" open>
-  <form method="dialog">
-    <p>This site is currently under construction. We appreciate your patience!</p>
-    <button id="close-dialog" value="close">Close</button>
-  </form>
-</dialog>
+<pre id="message">Loading...</pre>
 
 <script>
-  const dialog = document.getElementById('construction-dialog') as HTMLDialogElement;
-  const closeButton = document.getElementById('close-dialog');
+fetch('https://api.github.com/repos/apalevich/apalevich.com/commits?per_page=3')
+  .then(res => res.json())
+  .then(res => {
+    console.log(res);
+    let markup = '';
+    res.forEach(el => {
+        const d = new Date(el.commit.author.date);
 
-  closeButton.addEventListener('click', () => {
-    dialog.close();
-  });
+        markup += `${d.getUTCHours()}:${d.getUTCMinutes()} | ${el.commit.message}\n`
+    });
+    document.getElementById('message').innerHTML = markup
+  })
 </script>
