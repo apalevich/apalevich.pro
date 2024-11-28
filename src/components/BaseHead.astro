@@ -46,3 +46,18 @@ const { title, description, image = '/blog-placeholder-about.jpg' } = Astro.prop
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
 <meta property="twitter:image" content={new URL(image, Astro.url)} />
+
+<!-- Google Tag Manager -->
+<script>
+	(function(w: Window, d: Document, s: string, l: string, i: string){
+		const dataLayer = (w[l] = (w[l] || []) as { [key: string]: any }[]);
+		dataLayer.push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
+		const f = d.getElementsByTagName(s)[0];
+		const j = d.createElement(s) as HTMLScriptElement;
+		const dl = l !== 'dataLayer' ? '&l=' + l : '';
+		j.async = true;
+		j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+		f.parentNode.insertBefore(j, f);
+	})(window, document, 'script', 'dataLayer', 'GTM-KGRW3QLF');
+</script>
+<!-- End Google Tag Manager -->
