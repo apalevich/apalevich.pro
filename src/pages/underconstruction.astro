@@ -1,6 +1,7 @@
 ---
 import GithubWidget from '../components/GithubWidget.astro';
 import BaseHead from '../components/BaseHead.astro';
+import BaseFooter from '../components/BaseFooter.astro';
 
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 ---
@@ -243,49 +244,11 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
         
         </section> -->
 
-        <!-- FOOTER -->
-        <section class="bg-black sectionSize">
-            <!-- <div class="mb-4">
-              <img src="dist/assets/Logo_white.svg" alt="Logo" class="h-4">
-            </div>
-            <div class="flex mb-8">
-              <a href="#">
-                <img src="dist/assets/logos/Facebook.svg" alt="Facebook logo" class="mx-4">
-              </a>
-              <a href="#">
-                <img src="dist/assets/logos/Youtube.svg" alt="Youtube logo" class="mx-4">
-              </a>
-              <a href="#">
-                <img src="dist/assets/logos/Instagram.svg" alt="Instagram logo" class="mx-4">
-              </a>
-              <a href="#">
-                <img src="dist/assets/logos/Twitter.svg" alt="Twitter logo" class="mx-4">
-              </a>
-            </div> -->
-            <div class="text-white font-montserrat text-sm">
-              © 2024 Artem Palevich. All rights reserved
-            </div>
-        </section>
-
-        <footer>
-            <!-- Google Tag Manager (noscript) -->
-            <noscript>
-                <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KGRW3QLF" height="0" width="0" style="display:none;visibility:hidden"></iframe>
-            </noscript>
-            <!-- End Google Tag Manager (noscript) -->
-        </footer>
+        <BaseFooter />
         
 	</body>
     <style>
-        .sectionSize {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            /* padding-left: 1rem;
-            padding-right: 1rem; */
-            padding-top: 3.5rem;
-            padding-bottom: 3.5rem;
-        }
+
         .secondaryTitle {
             background-position: left bottom;
             background-repeat: no-repeat;

@@ -1,5 +1,8 @@
 ---
 import BaseHead from '../components/BaseHead.astro';
+import GithubWidget from '../components/GithubWidget.astro';
+import BaseNoscript from '../components/BaseNoscript.astro';
+
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 ---
 
@@ -9,6 +12,9 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
 	<body>
+        <header>
+            <GithubWidget />
+        </header>
 		<main class="h-screen flex items-center justify-center bg-secondary">
             <div class="text-4xl text-center">
                 <p class="mb-4">🚧</p>
@@ -16,10 +22,6 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
                 <a href="/underconstruction" class="text-xl underline">Want to see the draft version?</a>
             </div>
 		</main>
-        <!-- Google Tag Manager (noscript) -->
-        <noscript>
-            <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KGRW3QLF" height="0" width="0" style="display:none;visibility:hidden"></iframe>
-        </noscript>
-        <!-- End Google Tag Manager (noscript) -->
+        <BaseNoscript />
 	</body>
 </html>
