@@ -4,7 +4,7 @@ export default {
 	theme: {
 		fontFamily: {
 			'pt-serif': ['PT Serif', 'serif'],
-			'montserrat': ['Montserrat', 'sans-serif']
+			// 'montserrat': ['Montserrat', 'sans-serif']
 		},
 		extend: {
 			colors: {
