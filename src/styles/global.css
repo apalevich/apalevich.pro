@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @font-face {
 	font-family: 'Montserrat Italic Variable';
 	font-style: italic;
@@ -18,3 +22,9 @@
 body {
 	font-family: 'Montserrat Variable', sans-serif;
 }
+
+@layer components {
+	.sectionSize {
+		@apply flex flex-col items-center px-4 pt-14 pb-14 md:px-12 lg:px-48;
+	}
+  }
