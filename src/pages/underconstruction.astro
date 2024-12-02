@@ -1,12 +1,10 @@
 ---
-import { Image } from 'astro:assets';
 import GithubWidget from '../components/GithubWidget.astro';
+import HeroSection from '../components/HeroSection.astro';
 import BaseHead from '../components/BaseHead.astro';
 import BaseFooter from '../components/BaseFooter.astro';
 
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
-
-import heroImage from '../images/hero_image.jpg';
 ---
 
 <!doctype html>
@@ -14,42 +12,11 @@ import heroImage from '../images/hero_image.jpg';
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
-	<body class="font-pt-serif">
+	<body>
 		<header>
       <GithubWidget />
     </header>
-        <!-- HERO -->
-        <section class="pt-24 md:mt-0 md:h-screen flex flex-col justify-center text-center md:text-left md:flex-row md:justify-between md:items-center lg:px-48 md:px-12 px-4 bg-secondary">
-            <div class="md:flex-1 md:mr-10">
-                <h1 class="font-pt-serif text-5xl font-bold mb-7 capitalize">Web development with <span class="bg-underline1 bg-left-bottom bg-no-repeat bg-100%">results</span> at the forefront</h1>
-                <h2 class="font-pt-serif font-normal mb-7">We deliver clear and measurable projects where quality is more important than hours.</h2>
-                <div class="font-montserrat">
-                    <button class="bg-black px-6 py-4 rounded-lg border-2 border-black border-solid text-white mr-2 mb-2">
-                        Let's talk
-                    </button>
-                    <button class="px-6 py-4 border-2 border-black text-black border-solid rounded-lg">
-                        View Study Cases
-                    </button>
-                  </div>
-            </div>
-            <div class="flex justify-around md:block mt-8 md:mt-0 md:flex-1">
-                <div class="relative">
-                  <img src="Highlight1.svg" alt="" class="absolute -top-16 -left-10">
-                </div>
-                <!-- <img class="rotate-6" src="/src/images/hero_image.jpg" alt="Macbook"> -->
-                <Image src={heroImage} alt="Artem Palevich works at computer" class="rotate-6"></Image>
-                <div class="relative">
-                  <img src="Highlight2.svg" alt="" class="absolute -bottom-10 -right-6">
-                </div>
-              </div>
-              <!-- 
-              <div class="lg:w-5/6 lg:max-w-lg xl:mt-0 w-full mt-12">
-                <div class="relative">
-                    <img src="https://html.creativegigstf.com/vCamp/vCamp/images/media/img_69.png" alt="themeptation" class="relative z-10 transform rotate-6 shadow-2xl">
-                    <div class="absolute -top-10 -left-24 w-full h-full bg-indigo-500 transform -rotate-6"></div>
-                </div>
-                </div> -->
-        </section>
+      <HeroSection />
 
         <!-- WHO WE ARE -->
         <section class="bg-white">
