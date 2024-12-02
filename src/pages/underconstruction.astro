@@ -1,9 +1,12 @@
 ---
+import { Image } from 'astro:assets';
 import GithubWidget from '../components/GithubWidget.astro';
 import BaseHead from '../components/BaseHead.astro';
 import BaseFooter from '../components/BaseFooter.astro';
 
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+
+import heroImage from '../images/hero_image.jpg';
 ---
 
 <!doctype html>
@@ -33,7 +36,8 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
                 <div class="relative">
                   <img src="Highlight1.svg" alt="" class="absolute -top-16 -left-10">
                 </div>
-                <img class="rotate-6" src="https://html.creativegigstf.com/vCamp/vCamp/images/media/img_69.png" alt="Macbook">
+                <!-- <img class="rotate-6" src="/src/images/hero_image.jpg" alt="Macbook"> -->
+                <Image src={heroImage} alt="Artem Palevich works at computer" class="rotate-6"></Image>
                 <div class="relative">
                   <img src="Highlight2.svg" alt="" class="absolute -bottom-10 -right-6">
                 </div>
