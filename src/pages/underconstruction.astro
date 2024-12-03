@@ -2,13 +2,15 @@
 import GithubWidget from '../components/GithubWidget.astro';
 import HeroSection from '../components/HeroSection.astro';
 import ServicesSection from '../components/ServicesSection.astro';
+import StepsSection from '../components/StepsSection.astro';
 import BaseHead from '../components/BaseHead.astro';
 import BaseFooter from '../components/BaseFooter.astro';
 
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
-import { Picture } from "astro:assets"
-import AstroLogo from '../images/logos/astro-logo-dark.svg'
+import { Picture, Image } from "astro:assets";
+import AstroLogo from '../images/logos/astro-logo-dark.svg';
+import CrossIcon from '../images/logos/Cross.svg'
 ---
 
 <!doctype html>
@@ -23,93 +25,64 @@ import AstroLogo from '../images/logos/astro-logo-dark.svg'
       <HeroSection />
       <ServicesSection />
 
-          <!-- HOW IT WORKS -->
-          <section class="sectionSize bg-secondary px-4">
-            <p class="mb-8 text-base leading-relaxed text-left text-gray-600 font-montserrat ">
-              Our team is made up exclusively of senior professionals, each with up to 8 years of proven track record of success in their respective fields.
-            </p>
-            <div>
-              <h2 class="secondaryTitle bg-underline3 bg-contain bg-100%">How it works</h2>
-            </div>
-            <div class="md:grid md:grid-cols-2 md:grid-rows-2">
-        
-              <div class="flex items-start font-montserrat my-6 mr-10">
-                <img src="favicon.svg" alt="" class="h-7 mr-4">
-                <div>
-                  <h3 class="font-semibold text-2xl">1. Brief</h3>
-                  <p>
-                    Every project starts with a clear brief and definition of tasks.
-                  </p>
-                </div>
-              </div>
-        
-              <div class="flex items-start font-montserrat my-6 mr-10">
-                <img src="favicon.svg" alt="" class="h-7 mr-4">
-                <div>
-                  <h3 class="font-semibold text-2xl">Estimate</h3>
-                  <p>
-                    We estimate the scope of work and enter into a contract with fixed deadlines and deliverables.
-                  </p>
-                </div>
-              </div>
-        
-              <div class="flex items-start font-montserrat my-6 mr-10">
-                <div class="font-semibold text-2xl mr-6">3.</div>
-                <div>
-                  <h3 class="font-semibold text-2xl">Realization</h3>
-                  <p>
-                    No vague deadlines or inflated hours - just the results you need.
-                  </p>
-                </div>
-              </div>
-        
-            </div>
-            <!-- <p class="mb-8 text-base leading-relaxed text-left text-gray-600 font-montserrat">
-              We follow an agile model, which means that tasks are estimated in advance, and the project has clearly defined milestones. This approach ensures transparency for our clients and allows our professionals to work efficiently.
-            </p> -->
-            <h3 class="text-xl font-bold my-6 opacity-30 capitalize">Our favorite technologies:</h3>
-        <div class="flex flex-wrap md:flex-nowrap">
-            <!-- TECHNOLOGIES LOGOS
-            https://astro.build/press/
-            https://en.m.wikipedia.org/wiki/File:Tailwind_CSS_logo.svg
-            vue
-            react
-            next
-            nuxt
-            -->
-            <Picture
-                src={AstroLogo}
-                alt="Logo of Astro framework"
-            />
-            <Picture
-                src={AstroLogo}
-                alt="Logo of Astro framework"
-            />
-            <Picture
-                src={AstroLogo}
-                alt="Logo of Astro framework"
-            />
-            <Picture
-                src={AstroLogo}
-                alt="Logo of Astro framework"
-            />
-            <Picture
-                src={AstroLogo}
-                alt="Logo of Astro framework"
-            />
-            <Picture
-                src={AstroLogo}
-                alt="Logo of Astro framework"
-            />
-        </div>
-          </section>
+      <div class="sectionSize">
+        <h2 class="text-gray-900 md:text-5xl lg:text-4xl mb-8 text-3xl font-thin leading-none tracking-tighter text-center w-full" style="line-height: 120%;">
+          Our team is made up exclusively of senior professionals, each with <span class="bg-underline1-flip bg-left-bottom bg-no-repeat bg-100% pb-1">up&nbsp;to 8 years</span> of proven track record of success in their respective fields.
+        </h2>
+      </div>
+      <div class="flex flex-row justify-center">
+        <Image src={CrossIcon} alt="Cross icon" />
+        <Image src={CrossIcon} alt="Cross icon" />
+        <Image src={CrossIcon} alt="Cross icon" />
+      </div>
 
-        <!-- STUDY CASES -->
-        <section class="px-0 mx-auto max-w-7xl sm:px-4 text-center sectionSize" style="padding-top: 0;padding-bottom: 0;">
-            <div class="py-12 hover:shadow-2xl border border-black bg-black grid items-center grid-cols-1 gap-10 px-4 overflow-hidden text-white rounded-none sm:rounded-lg md:px-10 md:grid-cols-5 lg:gap-0">
-                <div class="col-span-1 md:col-span-3">
-                    <h2 class="secondaryTitle bg-underline2 bg-contain bg-100%">Study Cases</h2>
-                    <p class="mb-6 text-sm font-montserrat lg:text-base">Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero incidunt consequatur hic! Est deserunt ipsum laboriosam omnis aliquam assumenda vero autem quam libero debitis eius molestiae natus dolores, voluptatum voluptas!</p>
+      <StepsSection />
+
+      <div class="sectionSize">
+        <h3 class="text-xl font-bold my-6 opacity-30 capitalize">Our favorite technologies:</h3>
+        <div class="flex flex-wrap md:flex-nowrap">
+          <!-- TECHNOLOGIES LOGOS
+          https://astro.build/press/
+          https://en.m.wikipedia.org/wiki/File:Tailwind_CSS_logo.svg
+          vue
+          react
+          next
+          nuxt
+          -->
+          <Picture
+          src={AstroLogo}
+          alt="Logo of Astro framework"
+          />
+          <Picture
+          src={AstroLogo}
+          alt="Logo of Astro framework"
+          />
+          <Picture
+          src={AstroLogo}
+          alt="Logo of Astro framework"
+          />
+          <Picture
+          src={AstroLogo}
+          alt="Logo of Astro framework"
+          />
+          <Picture
+          src={AstroLogo}
+          alt="Logo of Astro framework"
+          />
+          <Picture
+          src={AstroLogo}
+          alt="Logo of Astro framework"
+          />
+        </div>
+      </section>
+    </div>
+      
+      <!-- STUDY CASES -->
+      <section class="px-0 mx-auto max-w-7xl sm:px-4 text-center sectionSize" style="padding-top: 0;padding-bottom: 0;">
+        <div class="py-12 hover:shadow-2xl border border-black bg-black grid items-center grid-cols-1 gap-10 px-4 overflow-hidden text-white rounded-none sm:rounded-lg md:px-10 md:grid-cols-5 lg:gap-0">
+          <div class="col-span-1 md:col-span-3">
+            <h2 class="secondaryTitle bg-underline2 bg-contain bg-100%">Study Cases</h2>
+            <p class="mb-6 text-sm font-montserrat lg:text-base">Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero incidunt consequatur hic! Est deserunt ipsum laboriosam omnis aliquam assumenda vero autem quam libero debitis eius molestiae natus dolores, voluptatum voluptas!</p>
                     <a href="#" class="inline-block mt-2 mx-auto border-2 px-6 py-2 rounded-lg border-white bg-white text-black font-bold">Read blog</a>
                 </div>
                 <!-- <div class="col-span-1 md:col-span-2">
