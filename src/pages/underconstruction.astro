@@ -1,7 +1,7 @@
 ---
 import GithubWidget from '../components/GithubWidget.astro';
 import HeroSection from '../components/HeroSection.astro';
-import AboutSection from '../components/AboutSection.astro';
+import ServicesSection from '../components/ServicesSection.astro';
 import BaseHead from '../components/BaseHead.astro';
 import BaseFooter from '../components/BaseFooter.astro';
 
@@ -21,52 +21,7 @@ import AstroLogo from '../images/logos/astro-logo-dark.svg'
       <GithubWidget />
     </header>
       <HeroSection />
-        
-
-          <!-- SERVICES -->
-          <section class="bg-black sectionSize w-screen text-white">
-            <div>
-              <h2 class="secondaryTitle bg-underline2 bg-contain bg-100%">What we do</h2>
-            </div>
-            <div class="flex flex-col md:flex-row">
-              <div class="flex-1 mx-8 flex flex-col items-center my-4">
-                <div class="border-2 rounded-full bg-secondary text-[#fff] h-12 w-12 flex justify-center items-center mb-3">
-                    🌏
-                </div>
-                <h3 class="font-montserrat font-medium text-center text-xl mb-2">Web Application Development</h3>
-                <p class="text-center font-montserrat">
-                  We build highly efficient, scalable and secure web applications for businesses of all sizes. From prototypes to finished products.
-                </p>
-              </div>
-              <div class="flex-1 mx-8 flex flex-col items-center my-4">
-                <div class="border-2 rounded-full bg-secondary text-[#fff] h-12 w-12 flex justify-center items-center mb-3">
-                  🛟
-                </div>
-                <h3 class="font-montserrat font-medium text-center text-xl mb-2">Optimization and enhancement of existing solutions</h3>
-                <p class="text-center font-montserrat">
-                  If you already have a web application but it requires performance, security or new functionality improvements, our team will audit and suggest specific steps.
-                </p>
-              </div>
-              <div class="flex-1 mx-8 flex flex-col items-center my-4">
-                <div class="border-2 rounded-full bg-secondary text-[#fff] h-12 w-12 flex justify-center items-center mb-3">
-                  🚀
-                </div>
-                <h3 class="font-montserrat font-medium text-center text-xl mb-2">AI implementation</h3>
-                <p class="text-center font-montserrat">
-                  We help you integrate the latest technologies and approaches into your existing products, whether you're migrating to a new platform, modernizing your architecture, or automating processes.
-                </p>
-              </div>
-              <div class="flex-1 mx-8 flex flex-col items-center my-4">
-                <div class="border-2 rounded-full bg-secondary text-[#fff] h-12 w-12 flex justify-center items-center mb-3">
-                  🔎
-                </div>
-                <h3 class="font-montserrat font-medium text-center text-xl mb-2">Auditing and consulting</h3>
-                <p class="text-center font-montserrat">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur earum facilis, iste obcaecati mollitia itaque cupiditate! Earum vel quibusdam error perferendis, molestiae cupiditate. At ex aspernatur nulla praesentium similique! Tempore?
-                </p>
-              </div>
-            </div>
-          </section>
+      <ServicesSection />
 
           <!-- HOW IT WORKS -->
           <section class="sectionSize bg-secondary px-4">
