@@ -43,13 +43,13 @@ const content: ContentItem[] = [
       <h2 class="secondaryTitle bg-underline3 bg-100%">How It Works</h2>
     </div>
     <div class="md:grid md:grid-cols-2 md:grid-rows-2">
-
+        
         {
             content.map((item, i) => (
             <div class="flex items-start font-montserrat my-6 mr-10">
-                <Image src={HeartIcon} alt="Heart Icon" class="h-7 mr-4" />
+                <div class="font-semibold text-2xl mr-4 text-black">{i+1}.</div>
                 <div>
-                    <h3 class="font-semibold text-2xl">{i+1}. {item.title}</h3>
+                    <h3 class="font-semibold text-2xl">{item.title}</h3>
                     <p>
                         {item.description}
                     </p>
@@ -59,7 +59,13 @@ const content: ContentItem[] = [
         }
 
     </div>
-    <p class="mb-8 text-base leading-relaxed text-left text-gray-600 font-montserrat">
-        We follow an agile model, which means that tasks are estimated in advance, and the project has clearly defined milestones. This approach ensures transparency for our clients and allows our professionals to work efficiently.
-    </p>
+    <div class="bg-beige shadow-2xl rotate-2 p-8 mt-12 mb-4 md:max-w-96">
+        <p class="mb-8 text-justify text-base leading-relaxed text-left text-gray-600 font-montserrat italic">
+            We follow an agile model, which means that tasks are estimated in advance, and the project has 
+            <!-- <span class="bg-underline1-flip bg-left-bottom bg-no-repeat bg-100% pb-1"> -->
+                defined milestones.
+            <!-- </span> -->
+            This approach ensures transparency for our clients and allows our professionals to work efficiently.
+        </p>
+    </div>
 </section>

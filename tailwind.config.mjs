@@ -4,9 +4,11 @@ export default {
 	darkMode: false, // or 'media' or 'class',
 	theme: {
 		colors: {
-			secondary: "#white",
+			secondary: "white",
 			black: "rgb(99, 102, 241)",
 			white: "white",
+			beige: "#F4F2ED"
+			// beige: "#FED800"
 		},
 		fontFamily: {
 			"pt-serif": ["PT Serif", "serif"],
