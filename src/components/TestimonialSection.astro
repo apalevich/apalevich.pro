@@ -1,0 +1,49 @@
+---
+interface contentItem {
+    text: string;
+    name: string;
+    position: string;
+    company: string;
+    url?: URL;
+};
+
+const content: contentItem[] = [
+    {
+        text: 'Artem is an experienced developer - I was really happy to work with him!',
+        name: 'Kirill Zhirnov',
+        position: 'CEO',
+        company: 'Boundless Commerce',
+        url: new URL('https://boundless-commerce.com')
+    }
+];
+---
+<section class="py-10 md:py-16 sectionSize text-center">
+    <div class="container max-w-screen-xl mx-auto px-4">
+        <h2 class="secondaryTitle bg-underline2 bg-100%">Testimonial</h2>
+
+        <!-- <p class="font-normal text-gray-500 text-xs md:text-base mb-10 md:mb-20">
+            We are proud to work with our clients
+        </p> -->
+
+        <div class="md:max-w-96 mx-auto">
+            {
+                content.map(item => (
+                    // <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <div class="bg-gray-50 px-8 py-10 rounded-md">
+                            <p class="font-normal text-gray-500 text-md mb-4 italic">
+                                {item.text}
+                            </p>
+
+                            <h6 class="font-semibold text-[#000] text-md">
+                                {item.name}
+                                <br>
+                                <span class="font-medium text-gray-300 text-sm">- {item.position} at {item.company}</span>
+                            </h6>
+                        </div>
+                    // </div>
+                ))
+            }
+        </div>
+            
+    </div>
+</section>
