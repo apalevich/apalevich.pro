@@ -26,6 +26,13 @@ export default {
 				'underline1-flip': "url('/src/images/Underline1-flip.svg')",
 				'underline2': "url('/src/images/Underline2.svg')",
 				'underline3': "url('/src/images/Underline3.svg')",
+				'underline4': "url('/src/images/Underline4.svg')",
+				'underline5': "url('/src/images/Underline5.svg')",
+				'underline6': "url('/src/images/Underline6.svg')",
+				'underline7': "url('/src/images/Underline7.svg')",
+				'underline8': "url('/src/images/Underline8.svg')",
+				'underline9': "url('/src/images/Underline9.svg')",
+				'underline10': "url('/src/images/Underline10.svg')",
 			},
 			keyframes: {
 				"fade-in-down": {
