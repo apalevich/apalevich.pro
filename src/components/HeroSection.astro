@@ -1,23 +1,24 @@
 ---
 import { Picture } from "astro:assets";
-import heroImage from "../images/hero_image.jpg";
+import heroImage from "../images/photos/hero_image.jpg";
 import Highlight1 from "../images/Highlight1.svg";
 import Highlight2 from "../images/Highlight2.svg";
+
+const { heading, subheading, image } = Astro.props;
 ---
 
 <section
 	class="sectionSize flex flex-col justify-center bg-secondary px-4 pt-24 text-center md:mt-0 md:h-screen md:flex-row md:items-center md:justify-between md:gap-4 md:px-12 md:text-left lg:px-48"
 >
 	<div class="md:mr-10 md:flex-1">
-		<h1 class="mb-7 font-pt-serif text-5xl font-bold capitalize md:text-5xl">
-			Web development with
+		<h1 class="mb-7 font-pt-serif text-5xl font-bold capitalize md:text-5xl" set:html={ heading || (`Web development with
 			<span class="bg-underline1 bg-100% bg-left-bottom bg-no-repeat">
 				results
 			</span>
-			at the&nbsp;forefront
+			at the&nbsp;forefront`)} />
 		</h1>
-		<p class="md:text-md mb-7 font-pt-serif text-lg font-normal md:pr-6">
-			<!-- We deliver clear and measurable projects where quality is more important than hours. -->
+		<p class="md:text-md mb-7 font-pt-serif text-lg font-normal md:pr-6" set:html={subheading || 
+			(`<!-- We deliver clear and measurable projects where quality is more important than hours. -->
 			We are a web development agency that delivers clear
 			<!-- <br class="hidden md:block"> -->
 			and measurable projects where quality is more important
@@ -25,8 +26,8 @@ import Highlight2 from "../images/Highlight2.svg";
 			than hours through our
 			<span class="bg-underline8 bg-100% bg-left-bottom bg-no-repeat pb-2"
 				>Front&#8209;End&nbsp;expertise</span
-			>
-		</p>
+			>`)}
+		/>
 		<div class="mb-4 font-montserrat">
 			<button
 				class="mb-2 mr-4 rounded-lg border-2 border-solid border-black bg-black px-6 py-4 text-white"
@@ -51,7 +52,7 @@ import Highlight2 from "../images/Highlight2.svg";
 		</div>
 		<Picture
 			formats={["webp", "jpg"]}
-			src={heroImage}
+			src={image || heroImage}
 			alt="Artem Palevich works at computer"
 			class="mx-auto -mb-16 rotate-3 shadow-xl md:mb-0 md:rotate-6"
 			width={heroImage.width * 0.75}
