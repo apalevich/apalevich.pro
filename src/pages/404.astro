@@ -1,0 +1,29 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import GithubWidget from "../components/GithubWidget.astro";
+import BaseNoscript from "../components/BaseNoscript.astro";
+
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={"Page not found!"} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<header>
+			<GithubWidget />
+		</header>
+		<main class="flex h-screen items-center justify-center bg-secondary">
+			<div class="text-center text-4xl">
+				<p class="mb-4">🚧</p>
+				<h1 class="font-bold">Page not found!</h1>
+				<a href="/underconstruction" class="text-xl underline"
+					>Would you like to open the home page?</a
+				>
+			</div>
+		</main>
+		<BaseNoscript />
+	</body>
+</html>
