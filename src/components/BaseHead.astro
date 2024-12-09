@@ -1,7 +1,7 @@
 ---
 // Import the global.css file here so that it is included on
 // all pages through the use of the <BaseHead /> component.
-import '../styles/global.css';
+import "../styles/global.css";
 
 interface Props {
 	title: string;
@@ -11,7 +11,11 @@ interface Props {
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
-const { title, description, image = '/blog-placeholder-about.jpg' } = Astro.props;
+const {
+	title,
+	description,
+	image = "/blog-placeholder-about.jpg",
+} = Astro.props;
 ---
 
 <!-- Global Metadata -->
@@ -45,18 +49,30 @@ const { title, description, image = '/blog-placeholder-about.jpg' } = Astro.prop
 
 <!-- Google Tag Manager -->
 <script>
-	{import.meta.env.PROD && (() => {
-		const initializeGTM = (w: Window, d: Document, s: string, l: string, i: string) => {
-			const dataLayer = (w[l] = (w[l] || []) as { [key: string]: any }[]);
-			dataLayer.push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
-			const firstScript = d.getElementsByTagName(s)[0];
-			const scriptElement = d.createElement(s) as HTMLScriptElement;
-			const dataLayerParam = l !== 'dataLayer' ? `&l=${l}` : '';
-			scriptElement.async = true;
-			scriptElement.src = `https://www.googletagmanager.com/gtm.js?id=${i}${dataLayerParam}`;
-			firstScript.parentNode?.insertBefore(scriptElement, firstScript);
-		};
-		initializeGTM(window, document, 'script', 'dataLayer', 'GTM-KGRW3QLF');
-	})()}
+	{
+		import.meta.env.PROD &&
+			(() => {
+				const initializeGTM = (
+					w: Window,
+					d: Document,
+					s: string,
+					l: string,
+					i: string,
+				) => {
+					const dataLayer = (w[l] = (w[l] || []) as { [key: string]: any }[]);
+					dataLayer.push({
+						"gtm.start": new Date().getTime(),
+						event: "gtm.js",
+					});
+					const firstScript = d.getElementsByTagName(s)[0];
+					const scriptElement = d.createElement(s) as HTMLScriptElement;
+					const dataLayerParam = l !== "dataLayer" ? `&l=${l}` : "";
+					scriptElement.async = true;
+					scriptElement.src = `https://www.googletagmanager.com/gtm.js?id=${i}${dataLayerParam}`;
+					firstScript.parentNode?.insertBefore(scriptElement, firstScript);
+				};
+				initializeGTM(window, document, "script", "dataLayer", "GTM-KGRW3QLF");
+			})();
+	}
 </script>
 <!-- End Google Tag Manager -->

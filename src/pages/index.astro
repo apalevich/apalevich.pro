@@ -1,9 +1,9 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import GithubWidget from '../components/GithubWidget.astro';
-import BaseNoscript from '../components/BaseNoscript.astro';
+import BaseHead from "../components/BaseHead.astro";
+import GithubWidget from "../components/GithubWidget.astro";
+import BaseNoscript from "../components/BaseNoscript.astro";
 
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 ---
 
 <!doctype html>
@@ -12,16 +12,18 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
 	<body>
-        <header>
-            <GithubWidget />
-        </header>
-		<main class="h-screen flex items-center justify-center bg-secondary">
-            <div class="text-4xl text-center">
-                <p class="mb-4">🚧</p>
-                <h1 class="font-bold ">Under Construction!</h1>
-                <a href="/underconstruction" class="text-xl underline">Want to see the draft version?</a>
-            </div>
+		<header>
+			<GithubWidget />
+		</header>
+		<main class="flex h-screen items-center justify-center bg-secondary">
+			<div class="text-center text-4xl">
+				<p class="mb-4">🚧</p>
+				<h1 class="font-bold">Under Construction!</h1>
+				<a href="/underconstruction" class="text-xl underline"
+					>Want to see the draft version?</a
+				>
+			</div>
 		</main>
-        <BaseNoscript />
+		<BaseNoscript />
 	</body>
 </html>

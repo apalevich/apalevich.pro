@@ -1,19 +1,35 @@
 ---
 import { Image } from "astro:assets";
 
-import CoverImage from '../images/blog-placeholder-about.jpg'
+import CoverImage from "../images/blog-placeholder-about.jpg";
 ---
-<section class="p-0 mx-auto max-w-7xl sm:px-4 text-center md:text-left sectionSize">
-    <div class="mt-8 mb-12 mx-4 py-12 rounded-lg hover:shadow-2xl border border-black bg-black grid items-center grid-cols-1 gap-10 px-4 overflow-hidden text-white sm:rounded-lg md:px-10 md:grid-cols-5 lg:gap-0">
-        <div class="col-span-1 md:col-span-3">
-            <h2 class="secondaryTitle px-0">Study Cases</h2>
-            <p class="mb-6 text-sm font-montserrat lg:text-base">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero incidunt consequatur hic! Est deserunt ipsum laboriosam omnis aliquam assumenda vero autem quam libero debitis eius molestiae natus dolores, voluptatum voluptas!
-            </p>
-            <a href="#" class="inline-block mt-2 mx-auto border-2 px-6 py-2 rounded-lg border-white bg-white text-black font-bold">Read blog</a>
-        </div>
-        <div class="col-span-1 md:col-span-2 hidden md:block">
-            <Image src={CoverImage} class="w-full ml-0 select-none lg:ml-32" alt="Blog">
-        </div>
-    </div>
+
+<section
+	class="sectionSize mx-auto max-w-7xl p-0 text-center sm:px-4 md:text-left"
+>
+	<div
+		class="mx-4 mb-12 mt-8 grid grid-cols-1 items-center gap-10 overflow-hidden rounded-lg border border-black bg-black px-4 py-12 text-white hover:shadow-2xl sm:rounded-lg md:grid-cols-5 md:px-10 lg:gap-0"
+	>
+		<div class="col-span-1 md:col-span-3">
+			<h2 class="secondaryTitle px-0">Study Cases</h2>
+			<p class="mb-6 font-montserrat text-sm lg:text-base">
+				Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero incidunt
+				consequatur hic! Est deserunt ipsum laboriosam omnis aliquam assumenda
+				vero autem quam libero debitis eius molestiae natus dolores, voluptatum
+				voluptas!
+			</p>
+			<a
+				href="#"
+				class="mx-auto mt-2 inline-block rounded-lg border-2 border-white bg-white px-6 py-2 font-bold text-black"
+				>Read blog</a
+			>
+		</div>
+		<div class="col-span-1 hidden md:col-span-2 md:block">
+			<Image
+				src={CoverImage}
+				class="ml-0 w-full select-none lg:ml-32"
+				alt="Blog"
+			/>
+		</div>
+	</div>
 </section>

@@ -1,61 +1,71 @@
 ---
-import { Image } from 'astro:assets';
-import QuotationLeft from '../images/Quotation_left.svg';
-import QuotationRight from '../images/Quotemark_right.svg';
-
+import { Image } from "astro:assets";
+import QuotationLeft from "../images/Quotation_left.svg";
+import QuotationRight from "../images/Quotemark_right.svg";
 
 interface contentItem {
-    text: string;
-    name: string;
-    position: string;
-    company: string;
-    url?: URL;
-};
+	text: string;
+	name: string;
+	position: string;
+	company: string;
+	url?: URL;
+}
 
 const content: contentItem[] = [
-    {
-        text: '',
-        name: 'Kirill Zhirnov',
-        position: 'CEO',
-        company: 'Boundless Commerce',
-        url: new URL('https://boundless-commerce.com')
-    }
+	{
+		text: "",
+		name: "Kirill Zhirnov",
+		position: "CEO",
+		company: "Boundless Commerce",
+		url: new URL("https://boundless-commerce.com"),
+	},
 ];
 ---
-<section class="pt-4 pb-10 md:pb-16 sectionSize text-center">
-    <div class="max-w-screen-xl mx-auto">
-        <!-- <div class="">
+
+<section class="sectionSize pb-10 pt-4 text-center md:pb-16">
+	<div class="mx-auto max-w-screen-xl">
+		<!-- <div class="">
             <h2 class="secondaryTitle bg-underline2 bg-100%">Testimonial</h2>
         </div> -->
 
-        <!-- <p class="font-normal text-gray-500 text-xs md:text-base mb-10 md:mb-20">
+		<!-- <p class="font-normal text-gray-500 text-xs md:text-base mb-10 md:mb-20">
             We are proud to work with our clients
         </p> -->
 
-        <div class="md:max-w-96 mx-auto">
-            {
-                content.map(item => (
-                    // <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        <div class="bg-gray-50 py-10 rounded-md">
-                            <div class="relative">
-                                <Image src={QuotationLeft} alt='Quotation mark' class='h-12 absolute top-3 -left-24 md:h-16 md:top-0 md:-left-36' />
-                                <p class="font-normal text-gray-500 text-md mx-10 mb-4 italic">
-                                    {/* {item.text} */}
-                                    Artem is an experienced developer. I&nbsp;was really happy to&nbsp;work with him!
-                                </p>
-                                <Image src={QuotationRight} alt='Quotation mark' class='h-12 absolute top-3 -right-24 rotate-2 md:h-16 md:top-0 md:-right-36' />
-                            </div>
+		<div class="mx-auto md:max-w-96">
+			{
+				content.map((item) => (
+					// <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+					<div class="bg-gray-50 rounded-md py-10">
+						<div class="relative">
+							<Image
+								src={QuotationLeft}
+								alt="Quotation mark"
+								class="absolute -left-24 top-3 h-12 md:-left-36 md:top-0 md:h-16"
+							/>
+							<p class="text-gray-500 text-md mx-10 mb-4 font-normal italic">
+								{/* {item.text} */}
+								Artem is an experienced developer. I&nbsp;was really happy
+								to&nbsp;work with him!
+							</p>
+							<Image
+								src={QuotationRight}
+								alt="Quotation mark"
+								class="absolute -right-24 top-3 h-12 rotate-2 md:-right-36 md:top-0 md:h-16"
+							/>
+						</div>
 
-                            <h6 class="font-semibold text-[#000] text-md">
-                                {item.name}
-                                <br>
-                                <span class="font-medium text-gray-300 text-sm">— {item.position} at {item.company}</span>
-                            </h6>
-                        </div>
-                    // </div>
-                ))
-            }
-        </div>
-            
-    </div>
+						<h6 class="text-md font-semibold text-[#000]">
+							{item.name}
+							<br />
+							<span class="text-gray-300 text-sm font-medium">
+								— {item.position} at {item.company}
+							</span>
+						</h6>
+					</div>
+					// </div>
+				))
+			}
+		</div>
+	</div>
 </section>

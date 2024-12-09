@@ -1,29 +1,30 @@
 ---
 import { Image } from "astro:assets";
-import TwitterLogo from '../images/logos/Twitter.svg';
-import InstagramLogo from '../images/logos/Instagram.svg';
-import FacebookLogo from '../images/logos/Facebook.svg';
+import TwitterLogo from "../images/logos/Twitter.svg";
+import InstagramLogo from "../images/logos/Instagram.svg";
+import FacebookLogo from "../images/logos/Facebook.svg";
 
 import BaseNoscript from "./BaseNoscript.astro";
 ---
+
 <!-- Footer -->
-<section class="bg-black sectionSize">
-    <!-- <div class="mb-4">
+<section class="sectionSize bg-black">
+	<!-- <div class="mb-4">
         <img src='favicon.svg' alt="Logo" class="h-4 grayscale" />
     </div> -->
-    <div class="flex mb-8">
-        <a href="https://www.facebook.com/artyompalevich/" target="_blank">
-            <Image src={FacebookLogo} alt="Facebook logo" class="mx-4" />
-        </a>
-        <a href="https://instagram.com/apalevich" target="_blank">
-            <Image src={InstagramLogo} alt="Instagram logo" class="mx-4" />
-        </a>
-        <a href="https://x.com/apalevich" target="_blank">
-            <Image src={TwitterLogo} alt="Twitter logo" class="mx-4" />
-        </a>
-    </div>
-    <div class="text-white opacity-40 font-montserrat text-sm">
-        © 2024 Artem Palevich. All rights reserved
-    </div>
+	<div class="mb-8 flex">
+		<a href="https://www.facebook.com/artyompalevich/" target="_blank">
+			<Image src={FacebookLogo} alt="Facebook logo" class="mx-4" />
+		</a>
+		<a href="https://instagram.com/apalevich" target="_blank">
+			<Image src={InstagramLogo} alt="Instagram logo" class="mx-4" />
+		</a>
+		<a href="https://x.com/apalevich" target="_blank">
+			<Image src={TwitterLogo} alt="Twitter logo" class="mx-4" />
+		</a>
+	</div>
+	<div class="font-montserrat text-sm text-white opacity-40">
+		© 2024 Artem Palevich. All rights reserved
+	</div>
 </section>
 <BaseNoscript />

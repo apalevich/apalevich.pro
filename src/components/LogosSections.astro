@@ -1,12 +1,15 @@
 ---
 import { Picture } from "astro:assets";
 
-import AstroLogo from '../images/logos/astro-logo-dark.svg'
+import AstroLogo from "../images/logos/astro-logo-dark.svg";
 ---
+
 <div class="sectionSize">
-    <h3 class="text-xl font-bold my-6 opacity-30 capitalize">Our favorite technologies:</h3>
-    <div class="flex flex-wrap md:flex-nowrap">
-      <!-- TECHNOLOGIES LOGOS
+	<h3 class="my-6 text-xl font-bold capitalize opacity-30">
+		Our favorite technologies:
+	</h3>
+	<div class="flex flex-wrap md:flex-nowrap">
+		<!-- TECHNOLOGIES LOGOS
       https://astro.build/press/
       https://en.m.wikipedia.org/wiki/File:Tailwind_CSS_logo.svg
       vue
@@ -14,30 +17,11 @@ import AstroLogo from '../images/logos/astro-logo-dark.svg'
       next
       nuxt
       -->
-      <Picture
-      src={AstroLogo}
-      alt="Logo of Astro framework"
-      />
-      <Picture
-      src={AstroLogo}
-      alt="Logo of Astro framework"
-      />
-      <Picture
-      src={AstroLogo}
-      alt="Logo of Astro framework"
-      />
-      <Picture
-      src={AstroLogo}
-      alt="Logo of Astro framework"
-      />
-      <Picture
-      src={AstroLogo}
-      alt="Logo of Astro framework"
-      />
-      <Picture
-      src={AstroLogo}
-      alt="Logo of Astro framework"
-      />
-    </div>
-  </section>
+		<Picture src={AstroLogo} alt="Logo of Astro framework" />
+		<Picture src={AstroLogo} alt="Logo of Astro framework" />
+		<Picture src={AstroLogo} alt="Logo of Astro framework" />
+		<Picture src={AstroLogo} alt="Logo of Astro framework" />
+		<Picture src={AstroLogo} alt="Logo of Astro framework" />
+		<Picture src={AstroLogo} alt="Logo of Astro framework" />
+	</div>
 </div>
