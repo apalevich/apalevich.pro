@@ -1,13 +1,13 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
+	content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
 	darkMode: false, // or 'media' or 'class',
 	theme: {
 		colors: {
 			secondary: "white",
 			black: "rgb(99, 102, 241)",
 			white: "white",
-			beige: "#F4F2ED"
+			beige: "#F4F2ED",
 			// beige: "#FED800"
 		},
 		fontFamily: {
@@ -22,34 +22,34 @@ export default {
 		},
 		extend: {
 			backgroundImage: {
-				'underline1': "url('/src/images/Underline1.svg')",
-				'underline1-flip': "url('/src/images/Underline1-flip.svg')",
-				'underline2': "url('/src/images/Underline2.svg')",
-				'underline3': "url('/src/images/Underline3.svg')",
-				'underline4': "url('/src/images/Underline4.svg')",
-				'underline5': "url('/src/images/Underline5.svg')",
-				'underline6': "url('/src/images/Underline6.svg')",
-				'underline7': "url('/src/images/Underline7.svg')",
-				'underline8': "url('/src/images/Underline8.svg')",
-				'underline9': "url('/src/images/Underline9.svg')",
-				'underline10': "url('/src/images/Underline10.svg')",
+				underline1: "url('/src/images/Underline1.svg')",
+				"underline1-flip": "url('/src/images/Underline1-flip.svg')",
+				underline2: "url('/src/images/Underline2.svg')",
+				underline3: "url('/src/images/Underline3.svg')",
+				underline4: "url('/src/images/Underline4.svg')",
+				underline5: "url('/src/images/Underline5.svg')",
+				underline6: "url('/src/images/Underline6.svg')",
+				underline7: "url('/src/images/Underline7.svg')",
+				underline8: "url('/src/images/Underline8.svg')",
+				underline9: "url('/src/images/Underline9.svg')",
+				underline10: "url('/src/images/Underline10.svg')",
 			},
 			keyframes: {
 				"fade-in-down": {
-				  	"0%": {
+					"0%": {
 						opacity: "0",
 						transform: "translateY(-10px)",
-				  	},
-				  	"100%": {
+					},
+					"100%": {
 						opacity: "1",
 						transform: "translateY(0)",
 					},
 				},
 			},
-			  animation: {
+			animation: {
 				"fade-in-down": "fade-in-down 0.5s ease-out",
 			},
 		},
 	},
 	plugins: [],
-}
+};
