@@ -15,55 +15,87 @@ import AstroLogo from "../images/logos/astro-logo-dark.svg";
 import CrossIcon from "../images/logos/Cross.svg";
 
 const content = {
-    services: [
-        { 
-            icon: "🎯",
-            title: "Website Maintenance Services",
-            description: "Seamless website support that keeps your core IT team focused on product development. We handle all technical updates, ensuring your online presence remains smooth and efficient."
-        },
-        {
-            icon: "📩",
-            title: "Email Marketing",
-            description: "Comprehensive email marketing solutions backed by expert strategic insights. We design, implement, and optimize campaigns that drive engagement and conversion."
-        },
-        {
-            icon: "👩🏻‍🔬",
-            title: "Hypothesis Validation",
-            description: "Rapid MVP development to test and validate your business ideas quickly. We back up you by setting up robust analytics systems to gather reliable, actionable data that guide your strategic decisions."
-        },
-    ]
-}
+	services: [
+		{
+			icon: "🎯",
+			title: "Website Maintenance Services",
+			description:
+				"Seamless website support that keeps your core IT team focused on product development. We handle all technical updates, ensuring your online presence remains smooth and efficient.",
+		},
+		{
+			icon: "📩",
+			title: "Email Marketing",
+			description:
+				"Comprehensive email marketing solutions backed by expert strategic insights. We design, implement, and optimize campaigns that drive engagement and conversion.",
+		},
+		{
+			icon: "👩🏻‍🔬",
+			title: "Hypothesis Validation",
+			description:
+				"Rapid MVP development to test and validate your business ideas quickly. We back up you by setting up robust analytics systems to gather reliable, actionable data that guide your strategic decisions.",
+		},
+	],
+	specialists: {
+		title: "Top-tier specialists ready to collaborate",
+		cards: [
+			{
+				title: "ZAREMA KHALILOVA",
+				description:
+					"Front-end Lead Engineer with extensive expertise in Search Engine Optimization (SEO)",
+				photo: "",
+			},
+			{
+				title: "OLGA KOBCHENKO",
+				description:
+					"Agile Coach and Counsellor with expertise in optimizing teams workflow and productivity",
+			},
+			{
+				title: "DARIA PONOMAREVA",
+				description:
+					"Experienced UX Research Lead with a focus on product culture integration",
+			},
+			{
+				title: "EUGENE KHOMUTENKO",
+				description:
+					"Design manager with four years of experience leading cross-platform design teams at international fintech companies.",
+			},
+		],
+	},
+};
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
 		<BaseHead
-            title="Web Development for marketing needs"
-            description="Web Development for your creative and marketing goals"
-        />
+			title="Web Development for marketing needs"
+			description="Web Development for your creative and marketing goals"
+		/>
 	</head>
 	<body>
-        <HeroSection
-            heading=`Web Development services for your <span class="bg-underline1 bg-100% bg-left-bottom bg-no-repeat pb-1">marketing</span> success`
-            subheading="We manage the tech. You master the message."
-        />
-        <ServicesSection content={content.services} />
-        <div class="sectionSize">
+		<HeroSection
+			heading=`Web Development services for your <span class="bg-underline1 bg-100% bg-left-bottom bg-no-repeat pb-1">marketing</span> success`
+			subheading="We manage the tech. You master the message."
+		/>
+		<ServicesSection content={content.services} />
+		<div class="sectionSize">
 			<h2
 				class="text-gray-900 mb-8 w-full text-center text-3xl font-thin leading-none tracking-tighter md:text-5xl lg:text-4xl"
 				style="line-height: 120%;"
 			>
-                <!-- I have 
+				<!-- I have 
                 <span class="bg-underline8 bg-100% bg-left-bottom bg-no-repeat pb-2">8&nbsp;years of experience</span>
                 supporting the technical needs of design and marketing departments. This background gives me a solid understanding of market demands, allowing me to turn ideas into market-ready products. I also collaborate with experts as needed. -->
-                With 8&nbsp;years of experience
-                <!-- in supporting the technical needs of design and marketing departments, I have a solid understanding of turning ideas into market-ready products. I also collaborate with specialists as needed. -->
-                supporting design and marketing departments, I have developed strong skills and built a solid network of 
-                <br>
-                <span class="bg-underline7 bg-100% bg-left-bottom bg-no-repeat pb-2">top-tier specialists ready to collaborate:</span> 
+				With 8&nbsp;years of experience
+				<!-- in supporting the technical needs of design and marketing departments, I have a solid understanding of turning ideas into market-ready products. I also collaborate with specialists as needed. -->
+				supporting design and marketing departments, I have developed strong skills
+				and built a solid network of
+				<br />
+				<span class="bg-underline7 bg-100% bg-left-bottom bg-no-repeat pb-2"
+					>top-tier specialists ready to collaborate:</span
+				>
 			</h2>
 		</div>
-		<SliderSection />
-    </body>
+		<SliderSection content={content.specialists} />
+	</body>
 </html>

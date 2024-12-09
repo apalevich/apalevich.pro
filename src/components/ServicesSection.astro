@@ -8,23 +8,27 @@ interface ContentItem {
 const common: ContentItem[] = [
 	{
 		title: "Early-Stage Web&nbsp;Development",
-		description: "Every decision made in the early stages impacts the future of your product — trust our experts to get it right from the start."
+		description:
+			"Every decision made in the early stages impacts the future of your product — trust our experts to get it right from the start.",
 		// description: "We specialize in building MVPs and crafting scalable, reliable software architectures. Every decision we make ensures your foundation is future-proof, saving you time and money as you grow."
 	},
 	{
 		title: "Supporting Creative Teams",
-		description: "With extensive experience working alongside designers and marketers, we ensure smooth integration of technical solutions into your campaigns and strategies."
+		description:
+			"With extensive experience working alongside designers and marketers, we ensure smooth integration of technical solutions into your campaigns and strategies.",
 		// description: "Our expertise in collaborating with design and marketing teams guarantees smooth communication and fast results. We understand the language of business and creatives alike, delivering exactly what your vision demands."
 	},
 	{
 		title: "Auditing and Consulting",
-		description: "With experience in renowned international companies, we provide top-tier audits and actionable insights."
+		description:
+			"With experience in renowned international companies, we provide top-tier audits and actionable insights.",
 		// description: "Our senior specialists, with experience from international and renowned companies, offer tailored audits and actionable insights. Get the clarity and strategy you need to drive success."
-	}
-]
+	},
+];
 
 const { content = common } = Astro.props;
 ---
+
 <section class="sectionSize bg-black text-white">
 	<div>
 		<h2
@@ -38,10 +42,13 @@ const { content = common } = Astro.props;
 			content.map((item, i) => (
 				<div class="mx-8 my-4 flex flex-1 flex-col items-center">
 					<div
-						class="mb-3 flex h-12 w-12 items-center justify-center rounded-full border-2 bg-white text-black text-xl"
-						set:html={item.icon || i+1}
+						class="mb-3 flex h-12 w-12 items-center justify-center rounded-full border-2 bg-white text-xl text-black"
+						set:html={item.icon || i + 1}
 					/>
-					<h3 class="mb-2 text-center font-montserrat text-xl font-medium min-h-14" set:html={item.title}/>
+					<h3
+						class="mb-2 min-h-14 text-center font-montserrat text-xl font-medium"
+						set:html={item.title}
+					/>
 					<p class="text-center font-montserrat" set:html={item.description} />
 				</div>
 			))

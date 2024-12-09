@@ -11,14 +11,20 @@ const { heading, subheading, image } = Astro.props;
 	class="sectionSize flex flex-col justify-center bg-secondary px-4 pt-24 text-center md:mt-0 md:h-screen md:flex-row md:items-center md:justify-between md:gap-4 md:px-12 md:text-left lg:px-48"
 >
 	<div class="md:mr-10 md:flex-1">
-		<h1 class="mb-7 font-pt-serif text-5xl font-bold capitalize md:text-5xl" set:html={ heading || (`Web development with
+		<h1
+			class="mb-7 font-pt-serif text-5xl font-bold capitalize md:text-5xl"
+			set:html={heading ||
+				`Web development with
 			<span class="bg-underline1 bg-100% bg-left-bottom bg-no-repeat">
 				results
 			</span>
-			at the&nbsp;forefront`)} />
-		</h1>
-		<p class="md:text-md mb-7 font-pt-serif text-lg font-normal md:pr-6" set:html={subheading || 
-			(`<!-- We deliver clear and measurable projects where quality is more important than hours. -->
+			at the&nbsp;forefront`}
+		/>
+	</div>
+	<p
+		class="md:text-md mb-7 font-pt-serif text-lg font-normal md:pr-6"
+		set:html={subheading ||
+			`<!-- We deliver clear and measurable projects where quality is more important than hours. -->
 			We are a web development agency that delivers clear
 			<!-- <br class="hidden md:block"> -->
 			and measurable projects where quality is more important
@@ -26,45 +32,44 @@ const { heading, subheading, image } = Astro.props;
 			than hours through our
 			<span class="bg-underline8 bg-100% bg-left-bottom bg-no-repeat pb-2"
 				>Front&#8209;End&nbsp;expertise</span
-			>`)}
-		/>
-		<div class="mb-4 font-montserrat">
-			<button
-				class="mb-2 mr-4 rounded-lg border-2 border-solid border-black bg-black px-6 py-4 text-white"
-			>
-				Let's talk
-			</button>
-			<button
-				class="rounded-lg border-2 border-solid border-black px-6 py-4 text-black"
-			>
-				View Study Cases
-			</button>
-		</div>
-	</div>
-	<div class="mt-8 flex justify-around md:mt-0 md:block md:flex-1">
-		<div class="relative">
-			<Picture
-				src={Highlight1}
-				format="svg"
-				alt="Hightlight decoration"
-				class="absolute -top-24 left-12"
-			/>
-		</div>
-		<Picture
-			formats={["webp", "jpg"]}
-			src={image || heroImage}
-			alt="Artem Palevich works at computer"
-			class="mx-auto -mb-16 rotate-3 shadow-xl md:mb-0 md:rotate-6"
-			width={heroImage.width * 0.75}
-			height={heroImage.height * 0.75}
-		/>
-		<div class="relative">
-			<Picture
-				src={Highlight2}
-				format="svg"
-				alt="Hightlight decoration"
-				class="absolute -bottom-16 right-16"
-			/>
-		</div>
+			>`}
+	/>
+	<div class="mb-4 font-montserrat">
+		<button
+			class="mb-2 mr-4 rounded-lg border-2 border-solid border-black bg-black px-6 py-4 text-white"
+		>
+			Let's talk
+		</button>
+		<button
+			class="rounded-lg border-2 border-solid border-black px-6 py-4 text-black"
+		>
+			View Study Cases
+		</button>
 	</div>
 </section>
+<div class="mt-8 flex justify-around md:mt-0 md:block md:flex-1">
+	<div class="relative">
+		<Picture
+			src={Highlight1}
+			format="svg"
+			alt="Hightlight decoration"
+			class="absolute -top-24 left-12"
+		/>
+	</div>
+	<Picture
+		formats={["webp", "jpg"]}
+		src={image || heroImage}
+		alt="Artem Palevich works at computer"
+		class="mx-auto -mb-16 rotate-3 shadow-xl md:mb-0 md:rotate-6"
+		width={heroImage.width * 0.75}
+		height={heroImage.height * 0.75}
+	/>
+	<div class="relative">
+		<Picture
+			src={Highlight2}
+			format="svg"
+			alt="Hightlight decoration"
+			class="absolute -bottom-16 right-16"
+		/>
+	</div>
+</div>

@@ -1,44 +1,27 @@
 ---
-import { Image } from 'astro:assets';
+import { Image } from "astro:assets";
 
-const content = {
-    title: "Top-tier specialists ready to collaborate",
-    cards: [
-        {
-            title:"ZAREMA KHALILOVA",
-            description:"Front-end Lead Engineer with extensive expertise in Search Engine Optimization (SEO)",
-            photo: 'https://css-tricks.com/wp-content/cache/breeze-extra/gravatars/8081b26e05bb4354f7d65ffc34cbbd67'
-        },
-        {
-            title:"OLGA KOBCHENKO",
-            description:"Agile Coach and Counsellor with expertise in optimizing teams workflow and productivity",
-            photo: 'https://css-tricks.com/wp-content/cache/breeze-extra/gravatars/8081b26e05bb4354f7d65ffc34cbbd67'
-        },
-        {
-            title: "DARIA PONOMAREVA",
-            description: "Experienced UX Research Lead with a focus on product culture integration",
-            photo: 'https://css-tricks.com/wp-content/cache/breeze-extra/gravatars/8081b26e05bb4354f7d65ffc34cbbd67'
-        },
-        {
-            title: "EUGENE KHOMUTENKO",
-            description: "Design manager with four years of experience leading cross-platform design teams at international fintech companies.",
-            photo: 'https://css-tricks.com/wp-content/cache/breeze-extra/gravatars/8081b26e05bb4354f7d65ffc34cbbd67'
-        },
-    ]
-}
+const { content } = Astro.props;
 ---
-<div class="grid grid-cols-2 auto-rows-fr gap-8 sectionSize">
-    {
-        content.cards.map(({title, description, photo}) => (
-            <div class="border-2 rounded-lg p-8 flex flex-row gap-4 h-full">
-                <div class="flex-shrink">
-                    <div class="font-pt-serif text-sm uppercase pb-3" set:html={title} />
-                    <div class="italic text-gray-600 text-md" set:html={description} />
-                </div>
-                <div class="min-w-28 flex-grow">
-                    <Image src={photo} alt={`Portrait of ${title}`} height={160} width={160} class="border-8 border-black" />
-                </div>
-            </div>
-        ))
-    }
+
+<div class="sectionSize grid auto-rows-fr gap-8 md:grid-cols-2">
+	{
+		content.cards.map(({ title, description, photo }) => (
+			<div class="flex h-full flex-row gap-4 rounded-lg border-2 p-8">
+				<div class="flex-shrink">
+					<div class="pb-3 font-pt-serif text-sm uppercase" set:html={title} />
+					<div class="text-gray-600 text-md italic" set:html={description} />
+				</div>
+				<div class="min-w-28 flex-grow">
+					<Image
+						src="https://css-tricks.com/wp-content/cache/breeze-extra/gravatars/8081b26e05bb4354f7d65ffc34cbbd67"
+						alt={`Portrait of ${title}`}
+						height={160}
+						width={160}
+						class="border-8 border-black"
+					/>
+				</div>
+			</div>
+		))
+	}
 </div>
