@@ -72,15 +72,61 @@ const content = {
 			description="Web Development for your creative and marketing goals"
 		/>
 	</head>
-	<body>
+	<body class="overflow-x-hidden">
 		<HeroSection
-			heading=`Web Development services for your <span class="bg-underline1 bg-100% bg-left-bottom bg-no-repeat pb-1">marketing</span> success`
-			subheading="We manage the tech. You master the message."
+			heading=`Web Development for your <span class="bg-underline1 bg-100% bg-left-bottom bg-no-repeat pb-1">marketing</span> goals`
+			subheading="We manage the tech.<br>You master the&nbsp;message."
 		/>
 		<ServicesSection content={content.services} />
 		<SliderSection content={content.specialists} />
+		
+		<div>
+			<h2
+				class="text-gray-900 mb-8 w-full text-center text-3xl font-thin leading-none tracking-tighter md:text-5xl lg:text-4xl"
+				style="line-height: 120%;"
+			>
+				<!-- I have 
+				<span class="bg-underline8 bg-100% bg-left-bottom bg-no-repeat pb-2">8&nbsp;years of experience</span>
+				supporting the technical needs of design and marketing departments. This background gives me a solid understanding of market demands, allowing me to turn ideas into market-ready products. I also collaborate with experts as needed. -->
+				<!-- With 8&nbsp;years of experience -->
+				<!-- in supporting the technical needs of design and marketing departments, I have a solid understanding of turning ideas into market-ready products. I also collaborate with specialists as needed. -->
+				<!-- supporting design and marketing departments, I have developed strong skills
+				and built a solid network of -->
+				
+
+				
+				I enjoy collaborating with intelligent, ambitious, and kind people. My network of
+				<!-- I have also built a strong network of -->
+				<span class="bg-underline7 bg-100% bg-left-bottom bg-no-repeat pb-2"
+					>top-tier specialists ready to collaborate:</span
+				>
+			</h2>
+			<div class="overflow-x-auto snap-x scroll-ml-6 whitespace-nowrap snap-start">
+				{
+					content.specialists.cards.map(({ title, description, photo }) => (
+						<div class="snap-start inline-block h-full flex-row gap-4 rounded-lg border-2 p-8 w-[90vw] md:min-w-0">
+							<div class="flex-shrink">
+								<div class="pb-3 font-pt-serif text-sm uppercase" set:html={title} />
+								<div class="text-gray-600 text-md italic text-wrap" set:html={description} />
+							</div>
+							<div class="min-w-28 flex-grow">
+								<Image
+									src="https://css-tricks.com/wp-content/cache/breeze-extra/gravatars/8081b26e05bb4354f7d65ffc34cbbd67"
+									alt={`Portrait of ${title}`}
+									height={160/2}
+									width={160/2}
+									class="border-8 border-black rounded-full"
+									/>
+							</div>
+						</div>
+					))
+				}
+			</div>
+		</div>
+
+
         <StepsSection />
-		<TestimonialSection />
+		
 		<BaseFooter />
 	</body>
 </html>

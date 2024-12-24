@@ -1,4 +1,7 @@
 /** @type {import('tailwindcss').Config} */
+
+import colors from 'tailwindcss/colors';
+
 export default {
 	content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
 	darkMode: false, // or 'media' or 'class',
@@ -9,6 +12,7 @@ export default {
 			white: "white",
 			beige: "#F4F2ED",
 			// beige: "#FED800"
+			gray: colors.gray
 		},
 		fontFamily: {
 			"pt-serif": ["PT Serif", "serif"],

@@ -10,9 +10,9 @@ const { heading, subheading, image } = Astro.props;
 <section
 	class="sectionSize flex flex-col justify-center bg-secondary px-4 pt-24 text-center md:mt-0 md:h-screen md:flex-row md:items-center md:justify-between md:gap-4 md:px-12 md:text-left lg:px-48"
 >
-	<div class="md:mr-10 md:flex-1">
+	<div class="md:mr-10 md:flex-1 text-left">
 		<h1
-			class="mb-7 font-pt-serif text-5xl font-bold capitalize md:text-5xl"
+			class="mb-7 font-pt-serif text-[3.5rem] leading-none font-bold capitalize md:text-5xl"
 			set:html={heading ||
 				`Web development with
 			<span class="bg-underline1 bg-100% bg-left-bottom bg-no-repeat">
@@ -33,9 +33,9 @@ const { heading, subheading, image } = Astro.props;
 				>Front&#8209;End&nbsp;expertise</span
 				>`}
 		/>
-		<div class="mb-4 font-montserrat">
+		<div class="mb-4 font-montserrat flex flex-row gap-1 justify-stretch">
 			<button
-				class="mb-2 mr-4 rounded-lg border-2 border-solid border-black bg-black px-6 py-4 text-white"
+				class="md:mb-2 rounded-lg border-2 border-solid border-black bg-black px-6 md:py-4 text-white flex-grow"
 			>
 				Let's talk
 			</button>
