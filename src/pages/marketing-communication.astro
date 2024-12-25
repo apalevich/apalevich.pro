@@ -15,13 +15,7 @@ import AstroLogo from "../images/logos/astro-logo-dark.svg";
 import CrossIcon from "../images/logos/Cross.svg";
 
 import { marcomPageCopy } from "../content/textcopy";
-const {
-	hero,
-	services,
-	staff,
-	flow,
-	proof
-} = marcomPageCopy;
+const { hero, services, staff, flow, proof } = marcomPageCopy;
 ---
 
 <!doctype html>
@@ -38,10 +32,10 @@ const {
 
 		<div class="sectionSize">
 			<h2
-				class="text-gray-900 mb-8 w-full text-center text-3xl font-thin leading-none tracking-tighter md:text-5xl lg:text-4xl"
+				class="mb-8 w-full text-center text-3xl font-thin leading-none tracking-tighter text-gray-900 md:text-5xl lg:text-4xl"
 				style="line-height: 120%;"
 			>
-				{ staff.title }
+				{staff.title}
 				<!-- Our team is made up exclusively of senior professionals, each with <span
 					class="bg-underline1-flip bg-100% bg-left-bottom bg-no-repeat pb-1"
 					>up&nbsp;to 8 years</span
@@ -51,6 +45,6 @@ const {
 
 		<StepsSection {...flow} />
 		<TestimonialSection {...proof} />
-		<BaseFooter  />
+		<BaseFooter />
 	</body>
 </html>

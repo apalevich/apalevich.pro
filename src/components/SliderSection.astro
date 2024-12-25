@@ -3,44 +3,48 @@ import { Image } from "astro:assets";
 
 const { content } = Astro.props;
 ---
+
 <div class="sectionSize">
-    <div>
-        <h2
-            class="text-gray-900 mb-8 w-full text-center text-3xl font-thin leading-none tracking-tighter md:text-5xl lg:text-4xl"
-            style="line-height: 120%;"
-        >
-            <!-- I have 
+	<div>
+		<h2
+			class="mb-8 w-full text-center text-3xl font-thin leading-none tracking-tighter text-gray-900 md:text-5xl lg:text-4xl"
+			style="line-height: 120%;"
+		>
+			<!-- I have 
             <span class="bg-underline8 bg-100% bg-left-bottom bg-no-repeat pb-2">8&nbsp;years of experience</span>
             supporting the technical needs of design and marketing departments. This background gives me a solid understanding of market demands, allowing me to turn ideas into market-ready products. I also collaborate with experts as needed. -->
-            With 8&nbsp;years of experience
-            <!-- in supporting the technical needs of design and marketing departments, I have a solid understanding of turning ideas into market-ready products. I also collaborate with specialists as needed. -->
-            supporting design and marketing departments, I have developed strong skills
-            and built a solid network of
-            <br />
-            <span class="bg-underline7 bg-100% bg-left-bottom bg-no-repeat pb-2"
-                >top-tier specialists ready to collaborate:</span
-            >
-        </h2>
-    </div>
-    <div class=" grid auto-rows-fr gap-8 md:grid-cols-2">
-        {
-            content.cards.map(({ title, description, photo }) => (
-                <div class="flex h-full flex-row gap-4 rounded-lg border-2 p-8">
-                    <div class="flex-shrink">
-                        <div class="pb-3 font-pt-serif text-sm uppercase" set:html={title} />
-                        <div class="text-gray-600 text-md italic" set:html={description} />
-                    </div>
-                    <div class="min-w-28 flex-grow">
-                        <Image
-                            src="https://css-tricks.com/wp-content/cache/breeze-extra/gravatars/8081b26e05bb4354f7d65ffc34cbbd67"
-                            alt={`Portrait of ${title}`}
-                            height={160}
-                            width={160}
-                            class="border-8 border-black"
-                        />
-                    </div>
-                </div>
-            ))
-        }
-    </div>
+			With 8&nbsp;years of experience
+			<!-- in supporting the technical needs of design and marketing departments, I have a solid understanding of turning ideas into market-ready products. I also collaborate with specialists as needed. -->
+			supporting design and marketing departments, I have developed strong skills
+			and built a solid network of
+			<br />
+			<span class="bg-underline7 bg-100% bg-left-bottom bg-no-repeat pb-2"
+				>top-tier specialists ready to collaborate:</span
+			>
+		</h2>
+	</div>
+	<div class="grid auto-rows-fr gap-8 md:grid-cols-2">
+		{
+			content.cards.map(({ title, description, photo }) => (
+				<div class="flex h-full flex-row gap-4 rounded-lg border-2 p-8">
+					<div class="flex-shrink">
+						<div
+							class="pb-3 font-pt-serif text-sm uppercase"
+							set:html={title}
+						/>
+						<div class="text-md italic text-gray-600" set:html={description} />
+					</div>
+					<div class="min-w-28 flex-grow">
+						<Image
+							src="https://css-tricks.com/wp-content/cache/breeze-extra/gravatars/8081b26e05bb4354f7d65ffc34cbbd67"
+							alt={`Portrait of ${title}`}
+							height={160}
+							width={160}
+							class="border-8 border-black"
+						/>
+					</div>
+				</div>
+			))
+		}
+	</div>
 </div>

@@ -20,14 +20,14 @@ const { title, testimonials } = Astro.props;
 			{
 				testimonials.map((item) => (
 					// <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-					<div class="bg-gray-50 rounded-md py-10">
+					<div class="rounded-md bg-gray-50 py-10">
 						<div class="relative">
 							<Image
 								src={QuotationLeft}
 								alt="Quotation mark"
 								class="absolute -left-24 top-3 h-12 md:-left-36 md:top-0 md:h-16"
 							/>
-							<p class="text-gray-500 text-md mx-10 mb-4 font-normal italic">
+							<p class="text-md mx-10 mb-4 font-normal italic text-gray-500">
 								{item.quote}
 							</p>
 							<Image
@@ -40,7 +40,7 @@ const { title, testimonials } = Astro.props;
 						<h6 class="text-md font-semibold text-[#000]">
 							{item.title}
 							<br />
-							<span class="text-gray-300 text-sm font-medium">
+							<span class="text-sm font-medium text-gray-300">
 								— {item.role} at {item.company}
 							</span>
 						</h6>

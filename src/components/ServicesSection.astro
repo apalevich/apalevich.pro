@@ -9,12 +9,12 @@ const { title, services } = Astro.props;
 		<h2
 			class="secondaryTitle bg-underline9 bg-100% bg-left-bottom bg-no-repeat pb-4"
 		>
-			{ title }
+			{title}
 		</h2>
 	</div>
 	<div class="flex flex-col md:flex-row">
 		{
-			services.map(({icon, title, description}: ListItem, i) => (
+			services.map(({ icon, title, description }: ListItem, i) => (
 				<div class="mx-8 my-4 flex flex-1 flex-col items-center">
 					<div
 						class="mb-3 flex h-12 w-12 items-center justify-center rounded-full border-2 bg-white text-xl text-black"
