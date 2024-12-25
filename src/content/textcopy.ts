@@ -170,7 +170,8 @@ marcomPageCopy = {
         ]
     },
     staff: {
-        title: "With 8 years of experience supporting design and marketing departments, I have developed strong skills and built a solid network of top-tier specialists ready to collaborate:",
+        title: "I enjoy collaborating with intelligent, ambitious, and kind people. My network of top-tier specialists ready to collaborate:",
+        // title: "With 8 years of experience supporting design and marketing departments, I have developed strong skills and built a solid network of top-tier specialists ready to collaborate:",
         cards: [
             {
                 icon: null,
