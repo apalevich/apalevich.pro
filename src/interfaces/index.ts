@@ -42,6 +42,7 @@ interface PageCopyInterface {
             title: string;
             role: string;
             company: string;
+            url: URL|null;
         }[];
     }
 }

@@ -1,65 +1,23 @@
 ---
 import { Image } from "astro:assets";
 import HeartIcon from "../images/logos/Heart.svg";
+import type { ListItem } from "../interfaces";
 
-interface ContentItem {
-	title: string;
-	description: string;
-}
-
-const content: ContentItem[] = [
-	{
-		title: "Exploration",
-		// description: 'We start with a few emails and a call to understand your business needs, priorities, and conditions. This conversation helps us shape the foundation of the project.'
-		description:
-			"We start with a few emails and a call. During the call, we dive deep into your business conditions, priorities, and specific project requirements.",
-	},
-	{
-		title: "Specialist Scouting",
-		// description: 'Based on your requirements, we identify and approach specialists with the necessary experience and skills. This often involves back-and-forth clarifications to define the project’s scope and ensure alignment between the client and our team.'
-		description:
-			"We scout top-tier specialists with the relevant experience and skills for your project. ",
-	},
-	{
-		title: "Defining the Project",
-		// description: 'Together, we establish the project’s contours: goals, stages, outcomes, required effort, and resources (specialist roles, tools, and access to your resources). At this point, preliminary agreements with the specialists are secured.'
-		description:
-			"Together, we define the project scope, goals, stages, and expected outcomes." +
-			"We determine the amount of effort required, necessary resources, specialist roles, and any access needed to your existing systems.",
-	},
-	{
-		title: "Proposal and Agreement",
-		// description: 'We prepare a comprehensive commercial proposal detailing the project framework. Once approved by the client, we finalize agreements with specialists and confirm the conditions.'
-		description:
-			"With preliminary commitments from our specialists, we prepare a comprehensive commercial proposal for you." +
-			"You review the proposal, and upon acceptance, we move forward.",
-	},
-	{
-		title: "Team Assembly and Kickoff",
-		description:
-			"A Project Manager is assigned as your primary point of contact and the liaison with the specialists.",
-	},
-	{
-		title: "Completion & Feedback",
-		description:
-			"We present the final results, meeting all predefined goals and criteria." +
-			"Post-project, we exchange feedback to improve future collaborations and celebrate successes.",
-	},
-];
+const { title, steps } = Astro.props;
 ---
 
 <section class="sectionSize bg-secondary">
 	<div>
-		<h2 class="secondaryTitle bg-underline3 bg-100%">How It Works</h2>
+		<h2 class="secondaryTitle bg-underline3 bg-100%">{title}</h2>
 	</div>
 	<div class="md:grid md:grid-cols-2 md:grid-rows-2">
 		{
-			content.map((item, i) => (
+			steps.map(({title, description}: ListItem, i) => (
 				<div class="my-6 mr-10 flex items-start font-montserrat">
 					<div class="mr-4 text-2xl font-semibold text-black">{i + 1}.</div>
 					<div>
-						<h3 class="text-2xl font-semibold">{item.title}</h3>
-						<p>{item.description}</p>
+						<h3 class="text-2xl font-semibold">{title}</h3>
+						<p>{description}</p>
 					</div>
 				</div>
 			))

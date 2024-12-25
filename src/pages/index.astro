@@ -14,6 +14,13 @@ import { Picture, Image } from "astro:assets";
 import AstroLogo from "../images/logos/astro-logo-dark.svg";
 import CrossIcon from "../images/logos/Cross.svg";
 import { agencyPageCopy } from "../content/textcopy";
+const {
+	hero,
+	services,
+	staff,
+	flow,
+	proof
+} = agencyPageCopy;
 ---
 
 <!doctype html>
@@ -22,18 +29,19 @@ import { agencyPageCopy } from "../content/textcopy";
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
 	<body>
-		<HeroSection content={agencyPageCopy.hero} />
-		<ServicesSection />
+		<HeroSection {...hero} />
+		<ServicesSection {...services} />
 
 		<div class="sectionSize">
 			<h2
 				class="text-gray-900 mb-8 w-full text-center text-3xl font-thin leading-none tracking-tighter md:text-5xl lg:text-4xl"
 				style="line-height: 120%;"
 			>
-				Our team is made up exclusively of senior professionals, each with <span
+				{ staff.title }
+				<!-- Our team is made up exclusively of senior professionals, each with <span
 					class="bg-underline1-flip bg-100% bg-left-bottom bg-no-repeat pb-1"
 					>up&nbsp;to 8 years</span
-				> of proven track record of success in their respective fields.
+				> of proven track record of success in their respective fields. -->
 			</h2>
 		</div>
 		<div class="flex flex-row justify-center">
@@ -42,8 +50,8 @@ import { agencyPageCopy } from "../content/textcopy";
 			<Image src={CrossIcon} alt="Cross icon" />
 		</div>
 
-		<StepsSection />
-		<TestimonialSection />
-		<BaseFooter />
+		<StepsSection {...flow} />
+		<TestimonialSection {...proof} />
+		<BaseFooter  />
 	</body>
 </html>
