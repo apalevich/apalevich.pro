@@ -424,3 +424,10 @@ recruitmentPageCopy = {
         ]
     },
 };
+
+export {
+    agencyPageCopy,
+    marcomPageCopy,
+    emailPageCopy,
+    recruitmentPageCopy,
+}

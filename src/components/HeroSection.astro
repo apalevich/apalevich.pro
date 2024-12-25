@@ -4,7 +4,10 @@ import heroImage from "../images/photos/hero_image.jpg";
 import Highlight1 from "../images/Highlight1.svg";
 import Highlight2 from "../images/Highlight2.svg";
 
-const { heading, subheading, image } = Astro.props;
+// const { heading, subheading, image } = Astro.props;
+
+const { content } = Astro.props
+const { h1, h2, buttons } = content;
 ---
 
 <section
@@ -13,7 +16,7 @@ const { heading, subheading, image } = Astro.props;
 	<div class="md:mr-10 md:flex-1 text-left">
 		<h1
 			class="mb-7 font-pt-serif text-[3.5rem] leading-none font-bold capitalize md:text-5xl"
-			set:html={heading ||
+			set:html={h1 ||
 				`Web development with
 			<span class="bg-underline1 bg-100% bg-left-bottom bg-no-repeat">
 				results
@@ -22,7 +25,7 @@ const { heading, subheading, image } = Astro.props;
 		/>
 		<p
 			class="md:text-md mb-7 font-pt-serif text-lg font-normal md:pr-6"
-			set:html={subheading ||
+			set:html={h2 ||
 				`<!-- We deliver clear and measurable projects where quality is more important than hours. -->
 				We are a web development agency that delivers clear
 				<!-- <br class="hidden md:block"> -->
@@ -35,7 +38,7 @@ const { heading, subheading, image } = Astro.props;
 		/>
 		<div class="mb-4 font-montserrat flex flex-row gap-1 justify-stretch">
 			<button
-				class="md:mb-2 rounded-lg border-2 border-solid border-black bg-black px-6 md:py-4 text-white flex-grow"
+				class="rounded-lg border-2 border-solid border-black bg-black px-6 md:py-4 text-white flex-grow"
 			>
 				Let's talk
 			</button>
@@ -57,7 +60,7 @@ const { heading, subheading, image } = Astro.props;
 		</div>
 		<Picture
 			formats={["webp", "jpg"]}
-			src={image || heroImage}
+			src={heroImage}
 			alt="Artem Palevich works at computer"
 			class="mx-auto -mb-16 rotate-3 shadow-xl md:mb-0 md:rotate-6"
 			width={heroImage.width * 0.75}
