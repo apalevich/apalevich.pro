@@ -1,18 +1,44 @@
 /** @type {import('tailwindcss').Config} */
 
-import colors from "tailwindcss/colors";
+import colors, { indigo } from "tailwindcss/colors";
 
 export default {
 	content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
 	darkMode: false, // or 'media' or 'class',
 	theme: {
 		colors: {
-			secondary: "white",
-			black: "rgb(99, 102, 241)",
-			white: "white",
-			beige: "#F4F2ED",
+			black: '#000000',
+			white: '#ffffff',
+			transparent: 'transparent',
+			// secondary: "white",
+			// black: "rgb(99, 102, 241)",
+			// white: "white",
+			// beige: "#F4F2ED",
 			// beige: "#FED800"
-			gray: colors.gray,
+			// gray: colors.gray,
+			indigo: {
+				50: '#eef2ff',
+				100: '#e0e7ff',
+				200: '#c7d2fe',
+				300: '#a5b4fc',
+				400: '#818cf8',
+				500: '#6366f1',
+				600: '#4f46e5',
+				700: '#4338ca',
+				800: '#3730a3',
+				900: '#312e81',
+				950: '#1e1b4b',
+			  },
+			  amber: {
+				50: '#fffbeb',
+				100: '#fef3c7',
+				200: '#fde68a',
+				300: '#fcd34d',
+				400: '#fbbf24',
+				500: '#f59e0b',
+				600: '#d97706',
+				700: '#b45309',
+			  },
 		},
 		fontFamily: {
 			"pt-serif": ["PT Serif", "serif"],
