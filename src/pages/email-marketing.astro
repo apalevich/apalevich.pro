@@ -1,0 +1,51 @@
+---
+import GithubWidget from "../components/GithubWidget.astro";
+import HeroSection from "../components/HeroSection.astro";
+import ServicesSection from "../components/ServicesSection.astro";
+import StepsSection from "../components/StepsSection.astro";
+import BannerSection from "../components/BannerSection.astro";
+import TestimonialSection from "../components/TestimonialSection.astro";
+import BaseHead from "../components/BaseHead.astro";
+import BaseFooter from "../components/BaseFooter.astro";
+
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+
+import { Picture, Image } from "astro:assets";
+import AstroLogo from "../images/logos/astro-logo-dark.svg";
+import CrossIcon from "../images/logos/Cross.svg";
+import { emailPageCopy } from "../content/textcopy";
+const { hero, services, staff, flow, proof } = emailPageCopy;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<HeroSection {...hero} />
+		<ServicesSection {...services} />
+
+		<div class="sectionSize">
+			<h2
+				class="mb-8 w-full text-center text-3xl font-thin leading-none tracking-tighter text-gray-900 md:text-5xl lg:text-4xl"
+				style="line-height: 120%;"
+			>
+				{staff.title}
+				<!-- Our team is made up exclusively of senior professionals, each with <span
+					class="bg-underline1-flip bg-100% bg-left-bottom bg-no-repeat pb-1"
+					>up&nbsp;to 8 years</span
+				> of proven track record of success in their respective fields. -->
+			</h2>
+		</div>
+		<div class="flex flex-row justify-center">
+			<Image src={CrossIcon} alt="Cross icon" />
+			<Image src={CrossIcon} alt="Cross icon" />
+			<Image src={CrossIcon} alt="Cross icon" />
+		</div>
+
+		<StepsSection {...flow} />
+		<TestimonialSection {...proof} />
+		<BaseFooter />
+	</body>
+</html>
