@@ -4,10 +4,15 @@ interface ListItem {
 	description: string;
 }
 
+interface RichText {
+	text: string;
+	classList: string[] | null;
+};
+
 interface PageCopyInterface {
 	hero?: {
-		h1: string;
-		h2: string;
+		h1: string | RichText[];
+		h2: string | RichText[];
 		buttons: {
 			text: string;
 			url: string | null;
@@ -47,4 +52,8 @@ interface PageCopyInterface {
 	};
 }
 
-export type { ListItem, PageCopyInterface };
+export type {
+	ListItem,
+	RichText,
+	PageCopyInterface
+};
