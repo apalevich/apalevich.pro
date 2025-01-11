@@ -5,20 +5,23 @@ let marcomPageCopy: PageCopyInterface;
 let emailPageCopy: PageCopyInterface;
 let recruitmentPageCopy: PageCopyInterface;
 
+const callLink = "https://calendly.com/apalevich/45min";
+const emailLink = "mailto:hello@apalevich.com";
+
 agencyPageCopy = {
 	hero: {
 		h1: "Web development with results at the forefront",
 		h2: "We are a web development agency that delivers clear and measurable projects where quality is more important than hours through our Front‑End expertise",
 		buttons: [
 			{
-				text: "Let’s Talk",
+				text: "Schedule Call",
 				primary: true,
-				url: null,
+				url: callLink,
 			},
 			{
-				text: "View Study Cases",
+				text: "Send an Email",
 				primary: false,
-				url: null,
+				url: emailLink,
 			},
 		],
 	},
