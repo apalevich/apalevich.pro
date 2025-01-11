@@ -158,14 +158,14 @@ marcomPageCopy = {
 		h2: "We manage the tech. You master the message.",
 		buttons: [
 			{
-				text: "Discuss Your Project",
+				text: "Schedule Call",
 				primary: true,
-				url: null,
+				url: callLink,
 			},
 			{
-				text: "View Study Cases",
+				text: "Send an Email",
 				primary: false,
-				url: null,
+				url: emailLink,
 			},
 		],
 	},
@@ -247,6 +247,7 @@ marcomPageCopy = {
 				title: "Kirill Zhirnov",
 				role: "CEO",
 				company: "Boundless Commerce",
+				url: null
 			},
 			{
 				quote:
@@ -254,6 +255,7 @@ marcomPageCopy = {
 				title: "Ksenia Koteneva",
 				role: "Talent Hunter",
 				company: "Ogivly",
+				url: null
 			},
 			{
 				quote:
@@ -261,6 +263,7 @@ marcomPageCopy = {
 				title: "Youseff Oulamine",
 				role: "Technical Team Leader",
 				company: "La Redoute",
+				url: null
 			},
 			{
 				quote:
@@ -268,6 +271,7 @@ marcomPageCopy = {
 				title: "Boris Nikitashov",
 				role: "Frontend Developer",
 				company: "La Redoute",
+				url: null
 			},
 		],
 	},
@@ -279,14 +283,14 @@ emailPageCopy = {
 		h2: "Professional email design, coding, and testing – everything you need to start getting results fast",
 		buttons: [
 			{
-				text: "Start Your Campaign",
-				url: null,
+				text: "Schedule Call",
 				primary: true,
+				url: callLink,
 			},
 			{
-				text: "View Recent Work",
-				url: null,
+				text: "Send an Email",
 				primary: false,
+				url: emailLink,
 			},
 		],
 	},
@@ -368,6 +372,7 @@ emailPageCopy = {
 				title: "Kirill Zhirnov",
 				role: "CEO",
 				company: "Boundless Commerce",
+				url: null
 			},
 			{
 				quote:
@@ -375,6 +380,7 @@ emailPageCopy = {
 				title: "Ksenia Koteneva",
 				role: "Talent Hunter",
 				company: "Ogivly",
+				url: null
 			},
 			{
 				quote:
@@ -382,6 +388,7 @@ emailPageCopy = {
 				title: "Youseff Oulamine",
 				role: "Technical Team Leader",
 				company: "La Redoute",
+				url: null
 			},
 			{
 				quote:
@@ -389,6 +396,7 @@ emailPageCopy = {
 				title: "Boris Nikitashov",
 				role: "Frontend Developer",
 				company: "La Redoute",
+				url: null
 			},
 		],
 	},
@@ -400,14 +408,14 @@ recruitmentPageCopy = {
 		h2: "Access cherry-picked developers, designers and PMs with more than 8 years of experience",
 		buttons: [
 			{
-				text: "Start Technical Recruitment",
-				url: null,
+				text: "Schedule Call",
 				primary: true,
+				url: callLink,
 			},
 			{
-				text: "Review Assessment Process",
-				url: null,
+				text: "Send an Email",
 				primary: false,
+				url: emailLink,
 			},
 		],
 	},
