@@ -1,52 +1,29 @@
 ---
 import { Picture } from "astro:assets";
 import heroImage from "../images/photos/hero_image.jpg";
-import Highlight1 from "../images/Highlight1.svg";
-import Highlight2 from "../images/Highlight2.svg";
+import Highlight1 from "../images/drawings/Highlight1.svg";
+import Highlight2 from "../images/drawings/Highlight2.svg";
+
+import { renderRichText, renderButtons } from "../utilities";
 
 const { h1, h2, buttons } = Astro.props;
 ---
 
 <section
-	class="sectionSize flex flex-col justify-center bg-secondary px-4 pt-24 text-center md:mt-0 md:h-screen md:flex-row md:items-center md:justify-between md:gap-4 md:px-12 md:text-left lg:px-48"
+	class="flex flex-col justify-center bg-secondary px-6 md:mt-0 md:h-screen md:flex-row md:items-center md:justify-between md:gap-4 md:px-12 lg:px-48"
 >
-	<div class="text-left md:mr-10 md:flex-1">
+	<div class="md:mr-10 md:flex-1">
 		<h1
-			class="mb-7 font-pt-serif text-[3.5rem] font-bold capitalize leading-none md:text-5xl"
-			set:html={h1 ||
-				`Web development with
-			<span class="bg-underline1 bg-100% bg-left-bottom bg-no-repeat">
-				results
-			</span>
-			at the&nbsp;forefront`}
+			class="font-pt-serif text-2xl font-bold text-center pt-12 mx-auto w-72"
+			set:html={renderRichText(h1)}
 		/>
-		<p
-			class="md:text-md mb-7 font-pt-serif text-lg font-normal md:pr-6"
-			set:html={h2 ||
-				`<!-- We deliver clear and measurable projects where quality is more important than hours. -->
-				We are a web development agency that delivers clear
-				<!-- <br class="hidden md:block"> -->
-				and measurable projects where quality is more important
-				<!-- <br class="hidden md:block"> -->
-				than hours through our
-				<span class="bg-underline8 bg-100% bg-left-bottom bg-no-repeat pb-2"
-				>Front&#8209;End&nbsp;expertise</span
-				>`}
+		<div
+			class="text-sm mt-8 leading-5"
+			set:html={renderRichText(h2)}
 		/>
-		<div class="mb-4 flex flex-row justify-stretch gap-1 font-montserrat">
-			<button
-				class="flex-grow rounded-lg border-2 border-solid border-black bg-black px-6 text-white md:py-4"
-			>
-				Let's talk
-			</button>
-			<button
-				class="rounded-lg border-2 border-solid border-black px-6 py-4 text-black"
-			>
-				View Study Cases
-			</button>
-		</div>
+		<div class="mt-7 flex flex-col lg:flex-row justify-stretch gap-2" set:html={renderButtons(buttons)} />
 	</div>
-	<div class="mt-8 flex justify-around md:mt-0 md:block md:flex-1">
+	<div class="mt-28 flex justify-around md:mt-0 md:block md:flex-1">
 		<div class="relative">
 			<Picture
 				src={Highlight1}
@@ -59,9 +36,8 @@ const { h1, h2, buttons } = Astro.props;
 			formats={["webp", "jpg"]}
 			src={heroImage}
 			alt="Artem Palevich works at computer"
-			class="mx-auto -mb-16 rotate-3 shadow-xl md:mb-0 md:rotate-6"
-			width={heroImage.width * 0.75}
-			height={heroImage.height * 0.75}
+			class="mx-auto -mb-16 rotate-6 shadow-xl md:mb-0 md:rotate-6"
+			height="300"
 		/>
 		<div class="relative">
 			<Picture
