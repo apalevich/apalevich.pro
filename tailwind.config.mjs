@@ -4,7 +4,6 @@ import colors, { indigo } from "tailwindcss/colors";
 
 export default {
 	content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
-	darkMode: false, // or 'media' or 'class',
 	theme: {
 		colors: {
 			black: '#000000',
@@ -41,8 +40,8 @@ export default {
 			  },
 		},
 		fontFamily: {
-			"pt-serif": ["PT Serif", "serif"],
-			montserrat: ["Montserrat", "sans-serif"],
+			"pt-serif": ["Palatino", "Cambria", "Georgia", "serif"],
+			inter: ["Inter", "sans-serif"],
 		},
 		backgroundSize: {
 			auto: "auto",
@@ -52,7 +51,7 @@ export default {
 		},
 		extend: {
 			backgroundImage: {
-				underline1: "url('/src/images/Underline1.svg')",
+				underline1: "url('/src/images/drawings/Underline1.svg')",
 				"underline1-flip": "url('/src/images/drawings/Underline1-flip.svg')",
 				underline2: "url('/src/images/drawings/Underline2.svg')",
 				underline3: "url('/src/images/drawings/Underline3.svg')",
