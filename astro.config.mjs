@@ -10,4 +10,7 @@ import tailwind from "@astrojs/tailwind";
 export default defineConfig({
 	site: "https://apalevich.pro",
 	integrations: [mdx(), sitemap(), tailwind()],
+	experimental: {
+		svg: true,
+	},
 });

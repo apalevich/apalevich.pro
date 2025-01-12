@@ -25,26 +25,24 @@ const { h1, h2, buttons } = Astro.props;
 	</div>
 	<div class="mt-28 flex justify-around md:mt-0 md:block md:flex-1">
 		<div class="relative">
-			<Picture
-				src={Highlight1}
-				format="svg"
-				alt="Hightlight decoration"
-				class="absolute -top-20 left-0"
+			<Highlight1
+				width={52}
+				height={65}
+				class="absolute -top-16 left-2"
 			/>
 		</div>
 		<Picture
 			formats={["webp", "jpg"]}
 			src={heroImage}
 			alt="Artem Palevich works at computer"
-			class="mx-auto -mb-16 rotate-6 shadow-xl md:mb-0 md:rotate-6"
+			class="mx-auto -mb-16 rotate-12 shadow-xl md:mb-0 md:rotate-6"
 			height="300"
 		/>
 		<div class="relative">
-			<Picture
-				src={Highlight2}
-				format="svg"
-				alt="Hightlight decoration"
-				class="absolute -bottom-16 right-4"
+			<Highlight2
+				width={38}
+				height={40}
+				class="absolute -bottom-32 right-8"
 			/>
 		</div>
 	</div>
