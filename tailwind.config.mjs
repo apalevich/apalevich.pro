@@ -7,6 +7,7 @@ export default {
 	theme: {
 		colors: {
 			black: '#000000',
+			grayish: '"1E1E1E',
 			white: '#ffffff',
 			transparent: 'transparent',
 			// secondary: "white",
@@ -50,6 +51,9 @@ export default {
 			"100%": "100%",
 		},
 		extend: {
+			boxShadow: {
+				'lg': '0px 4px 6px -2px #0000000D, 0px 10px 15px -3px #0000001A'
+			},
 			backgroundImage: {
 				underline1: "url('/src/images/drawings/Underline1.svg')",
 				"underline1-flip": "url('/src/images/drawings/Underline1-flip.svg')",

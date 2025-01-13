@@ -6,22 +6,22 @@ import type { ListItem } from "../interfaces";
 const { title, steps } = Astro.props;
 ---
 
-<section class="sectionSize bg-secondary">
+<section class="container">
 	<div>
-		<h2 class="secondaryTitle bg-underline3 bg-100%">{title}</h2>
+		<h2 class="font-pt-serif text-xl text-center leading-6 font-medium mt-16">{title}</h2>
 	</div>
-	<div class="md:grid md:grid-cols-2 md:grid-rows-2">
+	<div class="grid grid-col gap-4 mt-7">
 		{
-			steps.map(({ title, description }: ListItem, i) => (
-				<div class="my-6 mr-10 flex items-start font-inter">
-					<div class="mr-4 text-2xl font-semibold text-black">{i + 1}.</div>
-					<div>
-						<h3 class="text-2xl font-semibold">{title}</h3>
-						<p>{description}</p>
-					</div>
+			steps.map(({ title, description }: ListItem) => (
+				<div class="flex relative justify-center flex-col shadow-lg mx-auto px-6 rounded w-[300px] h-[280px] bg-white">
+					<div class="absolute top-[24px] text-xl text-indigo-500 font-bold leading-6">{title}</div>
+					<div class="text-grayish leading-5 mt-10" set:html={description} />
 				</div>
 			))
 		}
+	</div>
+	<div class="mt-8 flex justify-stretch gap-3">
+		<a href="https://calendly.com/apalevich/45min" class="button button-primary">LET'S TALK</a>
 	</div>
 	<div
 		class="mb-4 mt-12 max-w-80 rotate-2 bg-beige p-8 shadow-2xl lg:mt-4 lg:-rotate-3 lg:self-start xl:ml-16"
