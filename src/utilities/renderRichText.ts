@@ -1,12 +1,12 @@
-import type { RichText } from "../interfaces";
+import type { RichText, TextWithRichTextSupport } from "../interfaces";
 
-const renderRichText = (prop: string|RichText[]) => {
+const renderRichText = (prop: TextWithRichTextSupport) => {
     const constructStringFromRichText = (val: RichText[]): string => {
         return val.reduce((acc, { classList, text }) => {
             const prepend = classList ? `<span class="${classList.join(' ')}">` : '';
             const postpend = classList ? `</span>` : '';
             return [acc, prepend, text, postpend].join(" ")
-        }, ''); // Initialize the accumulator as an empty string
+        }, '');
     }
     
     return Array.isArray(prop)

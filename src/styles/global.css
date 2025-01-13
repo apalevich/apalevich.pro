@@ -43,11 +43,9 @@ body {
 	.underline-span::after {
 		@apply block absolute;
 		content: '';
-		background-size: 150px;
+		background-size: cover;
 		background-repeat: no-repeat;
 		position: absolute;
-		left: -30%;
-		right: -70%;
 		top: 1.3em;
 		height: 12px;
 		z-index: -1;

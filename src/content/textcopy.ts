@@ -17,7 +17,7 @@ agencyPageCopy = {
 			},
 			{
 				text: "results",
-				classList: ['underline-span after:bg-underline3'],
+				classList: ['underline-span after:bg-underline3 after:-left-6 after:-right-9'],
 			},
 			{
 				text: "at the forefront",
@@ -63,8 +63,20 @@ agencyPageCopy = {
 		],
 	},
 	staff: {
-		title:
-			"Our team is made up exclusively of senior professionals with up to 8 years of proven track record of success in their respective fields.",
+		title: [
+			{
+				text: "Our team is made up exclusively of senior professionals with up to 8 years of",
+				classList: null,
+			},
+			{
+				text: "proven track record",
+				classList: ['underline-span after:bg-underline3  after:-left-6 after:-right-9'],
+			},
+			{
+				text: "of success in their respective fields.",
+				classList: null,
+			},
+		],
 		cards: [
 			{
 				icon: null,
