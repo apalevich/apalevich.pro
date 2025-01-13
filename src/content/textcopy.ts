@@ -40,7 +40,7 @@ agencyPageCopy = {
 		],
 	},
 	services: {
-		title: "What we do",
+		title: "What we do:",
 		services: [
 			{
 				icon: "1",

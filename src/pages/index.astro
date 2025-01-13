@@ -3,6 +3,7 @@ import LandingLayout from "../layouts/LandingLayout.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 
 import HeroSection from "../components/HeroSection.astro";
+import ServicesSection from "../components/ServicesSection.astro";
 
 import { agencyPageCopy } from "../content/textcopy";
 const { hero, services, staff, flow, proof } = agencyPageCopy;
@@ -10,4 +11,6 @@ const { hero, services, staff, flow, proof } = agencyPageCopy;
 
 <LandingLayout title={SITE_TITLE} description={SITE_DESCRIPTION}>
 		<HeroSection {...hero} />
+		<div class="h-40 bg-indigo-500 md:hidden"/>
+		<ServicesSection {...services} />
 </LandingLayout>
