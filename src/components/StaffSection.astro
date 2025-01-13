@@ -9,23 +9,22 @@ import maksim_t from "../images/photos/maksim_t.jpg";
 import { renderRichText } from "../utilities";
 const { title, cards } = Astro.props;
 
-const specialists = [daria_p, eugene_k, olga_k, zarema_k, maksim_t];
-const emptyItemIndex = Math.ceil(specialists.length/2);
+const specialists = [zarema_k, maksim_t, olga_k, eugene_k, daria_p];
 
 ---
-<div>
+<section class="container">
     <div class="my-6 mx-7">
         <h2
-            class="font-pt-serif font-medium text-xl leading-8 text-[#1E1E1E]"
+            class="font-pt-serif font-medium text-xl leading-8 text-grayish"
             set:html={renderRichText(title)}
         />
     </div>
-    <!-- <div class="mt-14 flex flex-row gap-2"> -->
-    <div class="container mx-auto px-4">
-        <div class="grid grid-cols-6 grid-rows-2">
+    <!-- <div class="flex flex-row gap-2"> -->
+    <div class="mx-auto px-16 mt-14 ">
+        <div class="grid grid-cols-6 grid-rows-2 gap-x-10 gap-y-6">
             {
                 specialists.map((img, i) => (
-                    <div class="p-4 rounded-full bg-gray-100">
+                    <div class="rounded-full bg-gray-100">
                         <Picture height={60} width={60} src={img} alt="Profile" class="rounded-full aspect-square" />
                     </div>
                 ))
