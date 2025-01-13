@@ -4,6 +4,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 
 import HeroSection from "../components/HeroSection.astro";
 import ServicesSection from "../components/ServicesSection.astro";
+import StaffSection from "../components/StaffSection.astro";
 
 import { agencyPageCopy } from "../content/textcopy";
 const { hero, services, staff, flow, proof } = agencyPageCopy;
@@ -13,4 +14,5 @@ const { hero, services, staff, flow, proof } = agencyPageCopy;
 		<HeroSection {...hero} />
 		<div class="h-40 bg-indigo-500 md:hidden"/>
 		<ServicesSection {...services} />
+		<StaffSection {...staff} />
 </LandingLayout>
