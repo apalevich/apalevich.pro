@@ -62,6 +62,7 @@ export default {
 				underline8: "url('/src/images/drawings/Underline8.svg')",
 				underline9: "url('/src/images/drawings/Underline9.svg')",
 				underline10: "url('/src/images/drawings/Underline10.svg')",
+				hightlightCirle: "url('/src/images/drawings/HightlightCirle.svg')",
 			},
 			keyframes: {
 				"fade-in-down": {
