@@ -9,10 +9,12 @@ interface RichText {
 	classList: string[] | null;
 };
 
+type TextWithRichTextSupport = string | RichText[];
+
 interface PageCopyInterface {
 	hero?: {
-		h1: string | RichText[];
-		h2: string | RichText[];
+		h1: TextWithRichTextSupport;
+		h2: TextWithRichTextSupport;
 		buttons: {
 			text: string;
 			url: string | null;
@@ -20,20 +22,20 @@ interface PageCopyInterface {
 		}[];
 	};
 	services?: {
-		title: string;
+		title: TextWithRichTextSupport;
 		services: ListItem[];
 	};
 	staff?: {
-		title: string;
+		title: TextWithRichTextSupport;
 		cards?: ListItem[];
 	};
 	flow?: {
-		title: string;
+		title: TextWithRichTextSupport;
 		steps: ListItem[];
 	};
 	banner?: {
-		title: string;
-		description: string;
+		title: TextWithRichTextSupport;
+		description: TextWithRichTextSupport;
 		button: {
 			text: string;
 			url?: string;
@@ -41,7 +43,7 @@ interface PageCopyInterface {
 		image?: string;
 	};
 	proof?: {
-		title: string;
+		title: TextWithRichTextSupport;
 		testimonials: {
 			quote: string;
 			title: string;
@@ -55,5 +57,6 @@ interface PageCopyInterface {
 export type {
 	ListItem,
 	RichText,
+	TextWithRichTextSupport,
 	PageCopyInterface
 };
