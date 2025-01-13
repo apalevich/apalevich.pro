@@ -109,13 +109,16 @@ agencyPageCopy = {
 		steps: [
 			{
 				title: "Exploration",
-				description:
-					"We start with a few emails and a call. During the call, we dive deep into your business conditions, priorities, and specific project requirements.,",
+				description: [
+					"We start with a few emails and a call.",
+					"During the call, we dive deep into your business conditions, priorities, and specific project requirements.",
+				]
 			},
 			{
 				title: "Specialist Scouting",
-				description:
-					"We scout top-tier specialists with the relevant experience and skills for your project.,",
+				description: [
+					"We scout top-tier specialists with the relevant experience and skills for your project.",
+				]
 			},
 			{
 				title: "Defining the Project",

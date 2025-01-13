@@ -1,7 +1,7 @@
 interface ListItem {
 	icon?: number | string;
 	title: string;
-	description: string;
+	description: string | string[];
 }
 
 interface RichText {
