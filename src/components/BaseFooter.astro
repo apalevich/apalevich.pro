@@ -1,30 +1,41 @@
 ---
-import { Image } from "astro:assets";
-import TwitterLogo from "../images/logos/Twitter.svg";
-import InstagramLogo from "../images/logos/Instagram.svg";
-import FacebookLogo from "../images/logos/Facebook.svg";
+import FacebookLogo from '../images/logos/Facebook.svg'
+import TwitterLogo from '../images/logos/Twitter.svg'
+import LinkedinLogo from '../images/logos/LinkedIn.svg'
+
+const logoArray = [
+	{
+		img: FacebookLogo,
+		href: 'https://www.facebook.com/artyompalevich',
+	},
+	{
+		img: TwitterLogo,
+		href: 'https://x.com/apalevich',
+	},
+	{
+		img: LinkedinLogo,
+		href: 'https://www.linkedin.com/in/apalevich',
+	},
+];
 
 import BaseNoscript from "./BaseNoscript.astro";
 ---
 
 <!-- Footer -->
-<section class="sectionSize bg-black">
-	<!-- <div class="mb-4">
-        <img src='favicon.svg' alt="Logo" class="h-4 grayscale" />
-    </div> -->
-	<div class="mb-8 flex">
-		<a href="https://www.facebook.com/artyompalevich/" target="_blank">
-			<Image src={FacebookLogo} alt="Facebook logo" class="mx-4" />
-		</a>
-		<a href="https://instagram.com/apalevich" target="_blank">
-			<Image src={InstagramLogo} alt="Instagram logo" class="mx-4" />
-		</a>
-		<a href="https://x.com/apalevich" target="_blank">
-			<Image src={TwitterLogo} alt="Twitter logo" class="mx-4" />
-		</a>
+<footer class="py-14">
+	<div class="w-[254px] mx-auto">
+		<div class="flex justify-between ">
+			{
+				logoArray.map(({img: LogoComponent, href})=>(
+					<div>
+						<a href={href} target="_blank">
+							<LogoComponent width={38} height={38} />
+						</a>
+					</div>
+				))
+			}
+		</div>
+		<div class="font-light text-xs leading-4 text-center mt-10">© 2025 Artem Palevich. All rights reserved</div>
 	</div>
-	<div class="font-inter text-sm text-white opacity-40">
-		© 2024 Artem Palevich. All rights reserved
-	</div>
-</section>
+</footer>
 <BaseNoscript />
