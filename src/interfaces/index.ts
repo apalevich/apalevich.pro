@@ -32,6 +32,7 @@ interface PageCopyInterface {
 	flow?: {
 		title: TextWithRichTextSupport;
 		steps: ListItem[];
+		callout?: TextWithRichTextSupport;
 	};
 	banner?: {
 		title: TextWithRichTextSupport;

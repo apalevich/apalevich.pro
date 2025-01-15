@@ -38,12 +38,12 @@ body {
 		@apply bg-100% bg-left-bottom bg-no-repeat;
 	}
 	.underline-span {
-		@apply relative inline-block; /* Ensure the element is positioned relative for the ::after to be positioned correctly */
+		@apply relative inline-block;
 	}  
 	.underline-span::after {
 		@apply block absolute;
 		content: '';
-		background-size: cover;
+		background-size: contain;
 		background-repeat: no-repeat;
 		position: absolute;
 		top: 1.3em;

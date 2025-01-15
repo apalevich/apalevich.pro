@@ -141,6 +141,28 @@ agencyPageCopy = {
 					"We present the final results, meeting all predefined goals and criteria. Post-project, we exchange feedback to improve future collaborations and celebrate successes.,",
 			},
 		],
+		callout: [
+			{
+				text: "We follow an",
+				classList: null,
+			},
+			{
+				text: "agile model,",
+				classList: ['underline-span after:w-24 after:bg-underline1-flip after:left-1 after:right-2'],
+			},
+			{
+				text: "meaning tasks are estimated in advance, and the project has defined milestones.<br>This approach",
+				classList: null,
+			},
+			{
+				text: 'ensures transparency',
+				classList: ['underline-span after:w-[218px] after:h-10 after:bg-highlight-oval after:-left-3 after:-right-6 after:-top-2'],
+			},
+			{
+				text: 'for our clients and allows our professionals to work efficiently.',
+				classList: null,
+			},
+		]
 	},
 	proof: {
 		title: "Testimonials",
