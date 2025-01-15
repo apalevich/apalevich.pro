@@ -164,41 +164,40 @@ agencyPageCopy = {
 			},
 		]
 	},
-	proof: {
+	testimonials: {
 		title: "Testimonials",
-		testimonials: [
+		cards: [
 			{
-				quote:
-					"Artem is an experienced developer. I was really happy to work with him!",
+				quote: "Artem is an experienced developer. I was really happy to work with him!",
 				title: "Kirill Zhirnov",
 				role: "CEO",
 				company: "Boundless Commerce",
 				url: new URL("https://boundless-commerce.com"),
 			},
-			{
-				quote:
-					"Artem is an excellent team player, he quickly picked up on the new workflow, and showed excellent results in interacting with the team",
-				title: "Ksenia Koteneva",
-				role: "Talent Hunter",
-				company: "Ogivly",
-				url: null,
-			},
-			{
-				quote:
-					"Strong technical knowledge with a keen understanding of the business stakes. A true asset within a digital team!",
-				title: "Youseff Oulamine",
-				role: "Technical Team Leader",
-				company: "La Redoute",
-				url: null,
-			},
-			{
-				quote:
-					"he always knew perfectly well what was going on with the project and answered any of my questions accurately and in a timely manner",
-				title: "Boris Nikitashov",
-				role: "Frontend Developer",
-				company: "La Redoute",
-				url: null,
-			},
+			// {
+			// 	quote:
+			// 		"Artem is an excellent team player, he quickly picked up on the new workflow, and showed excellent results in interacting with the team",
+			// 	title: "Ksenia Koteneva",
+			// 	role: "Talent Hunter",
+			// 	company: "Ogivly",
+			// 	url: null,
+			// },
+			// {
+			// 	quote:
+			// 		"Strong technical knowledge with a keen understanding of the business stakes. A true asset within a digital team!",
+			// 	title: "Youseff Oulamine",
+			// 	role: "Technical Team Leader",
+			// 	company: "La Redoute",
+			// 	url: null,
+			// },
+			// {
+			// 	quote:
+			// 		"he always knew perfectly well what was going on with the project and answered any of my questions accurately and in a timely manner",
+			// 	title: "Boris Nikitashov",
+			// 	role: "Frontend Developer",
+			// 	company: "La Redoute",
+			// 	url: null,
+			// },
 		],
 	},
 };
@@ -289,9 +288,9 @@ marcomPageCopy = {
 			},
 		],
 	},
-	proof: {
+	testimonials: {
 		title: "Testimonials",
-		testimonials: [
+		cards: [
 			{
 				quote:
 					"Artem is an experienced developer. I was really happy to work with him!",
@@ -414,9 +413,9 @@ emailPageCopy = {
 			},
 		],
 	},
-	proof: {
+	testimonials: {
 		title: "Results That Speak",
-		testimonials: [
+		cards: [
 			{
 				quote:
 					"Artem is an experienced developer. I was really happy to work with him!",

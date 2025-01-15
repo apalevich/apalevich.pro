@@ -8,7 +8,8 @@ import StaffSection from "../components/StaffSection.astro";
 import FlowSection from "../components/FlowSection.astro";
 
 import { agencyPageCopy } from "../content/textcopy";
-const { hero, services, staff, flow, proof } = agencyPageCopy;
+import TestimonialSection from "../components/TestimonialSection.astro";
+const { hero, services, staff, flow, testimonials } = agencyPageCopy;
 ---
 
 <LandingLayout title={SITE_TITLE} description={SITE_DESCRIPTION}>
@@ -17,4 +18,5 @@ const { hero, services, staff, flow, proof } = agencyPageCopy;
 		<ServicesSection {...services} />
 		<StaffSection {...staff} />
 		<FlowSection {...flow} />
+		<TestimonialSection {...testimonials} />
 </LandingLayout>

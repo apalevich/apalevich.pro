@@ -43,9 +43,9 @@ interface PageCopyInterface {
 		};
 		image?: string;
 	};
-	proof?: {
-		title: TextWithRichTextSupport;
-		testimonials: {
+	testimonials?: {
+		title?: TextWithRichTextSupport;
+		cards: {
 			quote: string;
 			title: string;
 			role: string;

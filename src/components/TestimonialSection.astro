@@ -1,53 +1,39 @@
 ---
-import { Image } from "astro:assets";
-import QuotationLeft from "../images/Quotation_left.svg";
-import QuotationRight from "../images/Quotemark_right.svg";
+import QuotationLeft from "../images/drawings/Quotation_left.svg";
+import QuotationRight from "../images/drawings/Quotemark_right.svg";
 
-const { title, testimonials } = Astro.props;
+const { title, cards } = Astro.props;
 ---
 
-<section class="sectionSize pb-10 pt-4 text-center md:pb-16">
-	<div class="mx-auto max-w-screen-xl">
-		<!-- <div class="">
-            <h2 class="secondaryTitle bg-underline2 bg-100%">Testimonial</h2>
-        </div> -->
-
-		<!-- <p class="font-normal text-gray-500 text-xs md:text-base mb-10 md:mb-20">
-            We are proud to work with our clients
-        </p> -->
-
-		<div class="mx-auto md:max-w-96">
-			{
-				testimonials.map((item) => (
-					// <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-					<div class="rounded-md bg-gray-50 py-10">
-						<div class="relative">
-							<Image
-								src={QuotationLeft}
-								alt="Quotation mark"
-								class="absolute -left-24 top-3 h-12 md:-left-36 md:top-0 md:h-16"
-							/>
-							<p class="text-md mx-10 mb-4 font-normal italic text-gray-500">
-								{item.quote}
+<section class="container bg-indigo-500">
+	<div class="pt-10 pb-12 relative">
+		{
+			cards.map(({quote, title, role, company}) => (
+				<div>
+					<QuotationLeft
+						width={45}
+						height={35}
+						class="absolute left-4 top-10"
+					/>
+					<div class="text-white ml-9">
+						<p class="mt-16 font-semibold text-2xl leading-6">
+							{quote}
+						</p>
+						<div class="text-lg leading-7 mt-10">
+							<p class="font-normal">{title}</p>					
+							<p class="font-bold">
+							{role} at {company}
 							</p>
-							<Image
-								src={QuotationRight}
-								alt="Quotation mark"
-								class="absolute -right-24 top-3 h-12 rotate-2 md:-right-36 md:top-0 md:h-16"
-							/>
-						</div>
-
-						<h6 class="text-md font-semibold text-[#000]">
-							{item.title}
-							<br />
-							<span class="text-sm font-medium text-gray-300">
-								— {item.role} at {item.company}
-							</span>
-						</h6>
 					</div>
-					// </div>
-				))
-			}
-		</div>
+					</div>
+					<QuotationRight
+						width={45}
+						height={35}
+						class="absolute right-6 bottom-28"
+					/>
+					
+				</div>
+			))
+		}
 	</div>
 </section>
