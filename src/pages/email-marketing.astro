@@ -14,7 +14,7 @@ import { Picture, Image } from "astro:assets";
 import AstroLogo from "../images/logos/astro-logo-dark.svg";
 import CrossIcon from "../images/logos/Cross.svg";
 import { emailPageCopy } from "../content/textcopy";
-const { hero, services, staff, flow, proof } = emailPageCopy;
+const { hero, services, staff, flow, testimonials } = emailPageCopy;
 ---
 
 <!doctype html>
@@ -45,7 +45,7 @@ const { hero, services, staff, flow, proof } = emailPageCopy;
 		</div>
 
 		<FlowSection {...flow} />
-		<TestimonialSection {...proof} />
+		<TestimonialSection {...testimonials} />
 		<BaseFooter />
 	</body>
 </html>
