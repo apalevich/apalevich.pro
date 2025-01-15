@@ -2,7 +2,7 @@
 import HeroSection from "../components/HeroSection.astro";
 import ServicesSection from "../components/ServicesSection.astro";
 import SliderSection from "../components/SliderSection.astro";
-import StepsSection from "../components/StepsSection.astro";
+import FlowSection from "../components/FlowSection.astro";
 import BannerSection from "../components/BannerSection.astro";
 import TestimonialSection from "../components/TestimonialSection.astro";
 import BaseHead from "../components/BaseHead.astro";
@@ -43,7 +43,7 @@ const { hero, services, staff, flow, proof } = marcomPageCopy;
 			</h2>
 		</div>
 
-		<StepsSection {...flow} />
+		<FlowSection {...flow} />
 		<TestimonialSection {...proof} />
 		<BaseFooter />
 	</body>

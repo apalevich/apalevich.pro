@@ -2,7 +2,7 @@
 import GithubWidget from "../components/GithubWidget.astro";
 import HeroSection from "../components/HeroSection.astro";
 import ServicesSection from "../components/ServicesSection.astro";
-import StepsSection from "../components/StepsSection.astro";
+import FlowSection from "../components/FlowSection.astro";
 import BannerSection from "../components/BannerSection.astro";
 import TestimonialSection from "../components/TestimonialSection.astro";
 import BaseHead from "../components/BaseHead.astro";
@@ -44,7 +44,7 @@ const { hero, services, staff, flow, proof } = emailPageCopy;
 			<Image src={CrossIcon} alt="Cross icon" />
 		</div>
 
-		<StepsSection {...flow} />
+		<FlowSection {...flow} />
 		<TestimonialSection {...proof} />
 		<BaseFooter />
 	</body>
