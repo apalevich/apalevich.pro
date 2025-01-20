@@ -1,0 +1,23 @@
+---
+// @ts-ignore
+import { Picture } from "astro:assets";
+import { Icon } from "astro-icon/components";
+import MoscowMarathon_Logo from "../components/ui/icons/moscowMarathon_Logo.astro";
+import Unbiased_Logo from "../components/ui/icons/unbiased.astro";
+import LaRedoute_Logo from "../components/ui/icons/la_redoute_logo.jpg";
+import Ogilvy_Logo from "../components/ui/icons/ogilvy_logo.jpg";
+
+---
+
+<div class="mt-24">
+  <h2 class="text-center text-slate-500">Our clients</h2>
+  <div class="flex gap-16 md:gap-20 items-center justify-center mt-10 flex-wrap">
+
+    <Icon class="size-12" name="simple-icons:apple" />
+    <Picture src={Ogilvy_Logo} alt="Ogilvy Logo" height={48} width={48} densities={[1.5, 2]} class="h-50 aspect-square"/>
+    <MoscowMarathon_Logo class="h-12" />
+    <Unbiased_Logo class="h-12" />
+    <Picture src={LaRedoute_Logo} alt="LaRedoute Logo" height={48} width={48} densities={[1.5, 2]} class="h-50 aspect-square"/>
+
+  </div>
+</div>
