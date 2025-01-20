@@ -33,19 +33,20 @@ const makeTitle = title
 
     <!-- <link rel="preload" as="image" href={src} alt="Hero" /> -->
     <SEO
-      title={makeTitle}
-      description={makeTitle}
+      title={title ?? "Technical Solutions for Marketing Leaders"}
+      description={"APalevich.Pro"}
       canonical={canonicalURL}
       twitter={{
         creator: "@apalevich",
         site: "@apalevich",
         card: "summary_large_image",
+        title: makeTitle,
       }}
       openGraph={{
         basic: {
           url: canonicalURL,
           type: "website",
-          title: "APalevich.Pro — Technical Solutions for Marketing Leaders",
+          title: makeTitle,
           image: resolvedImageWithDomain,
         },
         image: {
@@ -53,6 +54,35 @@ const makeTitle = title
         },
       }}
     />
+    <!-- Google Tag Manager -->
+    <script>
+      {
+        import.meta.env.PROD &&
+          (() => {
+            const initializeGTM = (
+              w: Window,
+              d: Document,
+              s: string,
+              l: string,
+              i: string,
+            ) => {
+              const dataLayer = (w[l] = (w[l] || []) as { [key: string]: any }[]);
+              dataLayer.push({
+                "gtm.start": new Date().getTime(),
+                event: "gtm.js",
+              });
+              const firstScript = d.getElementsByTagName(s)[0];
+              const scriptElement = d.createElement(s) as HTMLScriptElement;
+              const dataLayerParam = l !== "dataLayer" ? `&l=${l}` : "";
+              scriptElement.async = true;
+              scriptElement.src = `https://www.googletagmanager.com/gtm.js?id=${i}${dataLayerParam}`;
+              firstScript.parentNode?.insertBefore(scriptElement, firstScript);
+            };
+            initializeGTM(window, document, "script", "dataLayer", "GTM-KGRW3QLF");
+          })();
+      }
+    </script>
+    <!-- End Google Tag Manager -->
   </head>
   <body>
     <!-- <Navbar /> -->
