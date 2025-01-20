@@ -15,9 +15,9 @@
 				];
 				return acc + `${d[0]}h ${d[1]}m ago | ${el.commit.message}\n`;
 			}, "");
-			document.getElementById("message").innerHTML = markup;
+			document.getElementById("message")?.innerHTML = markup;
 		})
 		.catch(() => {
-			document.getElementById("message").classList.add("hidden");
+			document.getElementById("message")?.classList.add("hidden");
 		});
 </script>
