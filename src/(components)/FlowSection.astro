@@ -1,0 +1,29 @@
+---
+import { Image } from "astro:assets";
+import type { ListItem } from "../interfaces";
+import { renderRichText } from "../utils";
+
+const { title, steps, callout } = Astro.props;
+---
+
+<section class="container">
+	<div>
+		<h2 class="font-pt-serif text-xl text-center leading-6 font-medium mt-16">{title}</h2>
+	</div>
+	<div class="grid grid-col gap-4 mt-7">
+		{
+			steps.map(({ title, description }: ListItem) => (
+				<div class="flex relative justify-center flex-col shadow-lg mx-auto px-6 rounded w-[300px] h-[280px] bg-white">
+					<div class="absolute top-[24px] text-xl text-indigo-500 font-bold leading-6">{title}</div>
+					<div class="text-grayish leading-5 mt-10" set:html={description} />
+				</div>
+			))
+		}
+	</div>
+	<div class="mt-8 flex justify-stretch gap-3">
+		<a href="https://calendly.com/apalevich/45min" class="button button-primary">LET'S TALK</a>
+	</div>
+	<div class="pt-16 px-7 mb-14">
+		<p class="font-pt-serif text-grayish font-medium text-xl mx-auto" set:html={renderRichText(callout)} />
+	</div>
+</section>

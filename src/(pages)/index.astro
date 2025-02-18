@@ -1,0 +1,22 @@
+---
+import LandingLayout from "../layouts/LandingLayout.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+
+import HeroSection from "../components/HeroSection.astro";
+import ServicesSection from "../components/ServicesSection.astro";
+import StaffSection from "../components/StaffSection.astro";
+import FlowSection from "../components/FlowSection.astro";
+
+import { agencyPageCopy } from "../content/LandingCopy";
+import TestimonialSection from "../components/TestimonialSection.astro";
+const { hero, services, staff, flow, testimonials } = agencyPageCopy;
+---
+
+<LandingLayout title={SITE_TITLE} description={SITE_DESCRIPTION}>
+		<HeroSection {...hero} />
+		<div class="container h-40 bg-indigo-500 md:hidden"/>
+		<ServicesSection {...services} />
+		<StaffSection {...staff} />
+		<FlowSection {...flow} />
+		<TestimonialSection {...testimonials} />
+</LandingLayout>

@@ -1,0 +1,27 @@
+---
+import { Picture } from "astro:assets";
+import heroImage from '../images/photos/artem_palevich_square.jpg';
+
+const colors = {
+    primary: "#09090B",
+    secondary: "#FAFAFA",
+    tertiary: "#A1A1AA",
+    background: "#0E0E11",
+}
+---
+<section class:list={['containes', `bg-${colors.background}`]}>
+    <div class:list="max-w-[460px] rounded-lg">
+        <div class=`max-h-full relative bg-gradient-to-t from-[#09090B] to-transparent`>
+            <Picture
+                loading="lazy"
+                src={heroImage}
+                formats={['webp', 'jpg']}
+                alt="Photo of Artem Palevich"
+                densities={[1, 1.5, 2]}
+                class="aspect-square -z-10"
+            />
+            <div class=`absolute inset-0 top-1/2 h-1/2 bg-gradient-to-t from-[#09090B] to-transparent`></div>
+        </div>
+        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad est quis qui ipsum, autem nisi, illo cum excepturi necessitatibus odit provident sunt nostrum dolorum consectetur sint ratione. Iure, enim rerum?</div>
+    </div>
+</section>

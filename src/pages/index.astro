@@ -1,22 +1,17 @@
 ---
-import LandingLayout from "../layouts/LandingLayout.astro";
-import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
-
-import HeroSection from "../components/HeroSection.astro";
-import ServicesSection from "../components/ServicesSection.astro";
-import StaffSection from "../components/StaffSection.astro";
-import FlowSection from "../components/FlowSection.astro";
-
-import { agencyPageCopy } from "../content/textcopy";
-import TestimonialSection from "../components/TestimonialSection.astro";
-const { hero, services, staff, flow, testimonials } = agencyPageCopy;
+import Container from "@components/container.astro";
+import Cta from "@components/cta.astro";
+import Features from "@components/features.astro";
+import Hero from "@components/hero.astro";
+import Logos from "@components/logos.astro";
+import Layout from "@layouts/Layout.astro";
 ---
 
-<LandingLayout title={SITE_TITLE} description={SITE_DESCRIPTION}>
-		<HeroSection {...hero} />
-		<div class="h-40 bg-indigo-500 md:hidden"/>
-		<ServicesSection {...services} />
-		<StaffSection {...staff} />
-		<FlowSection {...flow} />
-		<TestimonialSection {...testimonials} />
-</LandingLayout>
+<Layout title="Technical Solutions for Marketing Leaders">
+  <Container>
+    <Hero />
+    <Features />
+    <Logos />
+    <Cta />
+  </Container>
+</Layout>
