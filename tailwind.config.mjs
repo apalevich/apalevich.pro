@@ -1,90 +1,48 @@
 /** @type {import('tailwindcss').Config} */
-
-import colors, { indigo } from "tailwindcss/colors";
-
-export default {
-	content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
-	theme: {
-		colors: {
-			black: '#000000',
-			grayish: '"1E1E1E',
-			white: '#ffffff',
-			transparent: 'transparent',
-			// secondary: "white",
-			// black: "rgb(99, 102, 241)",
-			// white: "white",
-			// beige: "#F4F2ED",
-			// beige: "#FED800"
-			// gray: colors.gray,
-			indigo: {
-				50: '#eef2ff',
-				100: '#e0e7ff',
-				200: '#c7d2fe',
-				300: '#a5b4fc',
-				400: '#818cf8',
-				500: '#6366f1',
-				600: '#4f46e5',
-				700: '#4338ca',
-				800: '#3730a3',
-				900: '#312e81',
-				950: '#1e1b4b',
-			  },
-			  amber: {
-				50: '#fffbeb',
-				100: '#fef3c7',
-				200: '#fde68a',
-				300: '#fcd34d',
-				400: '#fbbf24',
-				500: '#f59e0b',
-				600: '#d97706',
-				700: '#b45309',
-			  },
-		},
-		fontFamily: {
-			"pt-serif": ["Palatino", "Cambria", "Georgia", "serif"],
-			inter: ["Inter", "sans-serif"],
-		},
-		backgroundSize: {
-			auto: "auto",
-			cover: "cover",
-			contain: "contain",
-			"100%": "100%",
-		},
-		extend: {
-			boxShadow: {
-				'lg': '0px 4px 6px -2px #0000000D, 0px 10px 15px -3px #0000001A'
-			},
-			backgroundImage: {
-				underline1: "url('/src/images/drawings/Underline1.svg')",
-				"underline1-flip": "url('/src/images/drawings/Underline1-flip.svg')",
-				underline2: "url('/src/images/drawings/Underline2.svg')",
-				underline3: "url('/src/images/drawings/Underline3.svg')",
-				underline4: "url('/src/images/drawings/Underline4.svg')",
-				underline5: "url('/src/images/drawings/Underline5.svg')",
-				underline6: "url('/src/images/drawings/Underline6.svg')",
-				underline7: "url('/src/images/drawings/Underline7.svg')",
-				underline8: "url('/src/images/drawings/Underline8.svg')",
-				underline9: "url('/src/images/drawings/Underline9.svg')",
-				underline10: "url('/src/images/drawings/Underline10.svg')",
-				"highlight-cirle": "url('/src/images/drawings/HightlightCirle.svg')",
-				"highlight-oval": "url('/src/images/drawings/HighlightOval.svg')",
-			},
-			keyframes: {
-				"fade-in-down": {
-					"0%": {
-						opacity: "0",
-						transform: "translateY(-10px)",
-					},
-					"100%": {
-						opacity: "1",
-						transform: "translateY(0)",
-					},
-				},
-			},
-			animation: {
-				"fade-in-down": "fade-in-down 0.5s ease-out",
-			},
-		},
-	},
-	plugins: [],
+const defaultTheme = require("tailwindcss/defaultTheme");
+module.exports = {
+  content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
+  theme: {
+    extend: {
+      fontFamily: {
+        sans: [
+          "Bricolage Grotesque Variable",
+          "Inter Variable",
+          "Inter",
+          ...defaultTheme.fontFamily.sans,
+        ],
+      },
+      colors: {
+        primary: {
+          DEFAULT: "#4a0908",
+          50: "#FCE4E3",
+          100: "#F9C9C8",
+          200: "#F39291",
+          300: "#ED5C59",
+          400: "#E72522",
+          500: "#B81714",
+          600: "#81100E",
+          700: "#4A0908",
+          800: "#330605",
+          900: "#170302",
+          950: "#0E0201"
+        },
+        secondary: {
+          DEFAULT: "#08494A",
+          50: "#DAFAFB",
+          100: "#B1F5F7",
+          200: "#63ECEE",
+          300: "#19E3E6",
+          400: "#109698",
+          500: "#08494A",
+          600: "#063B3C",
+          700: "#052D2E",
+          800: "#031B1C",
+          900: "#010E0E",
+          950: "#010909"
+        }
+      }
+    },
+  },
+  plugins: [require("@tailwindcss/typography")],
 };

@@ -1,0 +1,60 @@
+---
+import { Picture } from "astro:assets";
+import heroImage from "images/portrait.png";
+import Link from "@components/ui/link.astro";
+import { Icon } from "astro-icon/components";
+---
+
+<main
+  class="grid lg:grid-cols-2 place-items-center pt-16 pb-8 md:pt-12 md:pb-24">
+  <div class="mb-12 md:order-1 block relative lg:w-7/12">
+    <div
+        class="bg-primary rounded-full absolute aspect-square w-1/2 lg:w-auto lg:h-full top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 opacity-85"
+    >
+    </div>
+    <Picture
+        src={heroImage}
+        class="w-1/2 lg:w-full scale-125 top-1/2 left-1/2 -translate-x-1/2 lg:translate-x-0 ml-auto grayscale brightness-125"
+        alt="portrait"
+        widths={[200, 400, 600]}
+        sizes="(max-width: 800px) 100vw, 620px"
+        loading="eager"
+        format="avif"
+    />
+  </div>
+  <div>
+    <h1
+      class="text-5xl lg:text-6xl xl:text-7xl font-bold lg:tracking-tight xl:tracking-tighter">
+      <!-- Marketing website done with Astro -->
+      <!-- Web development with results at the forefront -->
+      Technical Solutions for<wbr/> Marketing Success
+    </h1>
+    <p class="text-lg mt-4 text-slate-600 max-w-xl">
+      <!-- Astroship is a starter template for startups, marketing websites & landing
+      pages.<wbr /> Built with Astro.build and TailwindCSS. You can quickly
+      create any website with this starter. -->
+      <!-- We are a web development team for startups, marketing websites & email.<wbr/> We deliver clear and measurable projects through our Front‑End expertise. -->
+      Your one-stop technical partner for websites, e-mail newsletters, and tech talent acquisition.
+    </p>
+    <div class="mt-6 flex flex-col sm:flex-row gap-3">
+      <Link
+        href="mailto:hello@apalevich.com"
+        target="_blank"
+        class="flex gap-1 items-center justify-center bg-gradient-to-l from-primary to-secondary"
+        rel="noopener">
+        <Icon class="text-white w-4 h-4" name="bx:bxs-envelope" />
+          Send an Email
+      </Link>
+      <Link
+        size="lg"
+        style="outline"
+        rel="noopener"
+        href="https://wa.me/995511106964"
+        class="flex gap-1 items-center justify-center"
+        target="_blank">
+        <Icon class="text-black w-4 h-4" name="bx:bxl-whatsapp" />
+          WhatsApp
+      </Link>
+    </div>
+  </div>
+</main>

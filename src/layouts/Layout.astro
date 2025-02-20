@@ -1,0 +1,99 @@
+---
+import { SEO } from "astro-seo";
+import Footer from "@components/Footer.astro";
+// import Navbar from "@components/navbar/navbar.astro";
+import "@fontsource-variable/inter/index.css";
+import '@fontsource-variable/bricolage-grotesque';
+
+export interface Props {
+  title: string;
+}
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
+
+const resolvedImageWithDomain = new URL(
+  "/opengraph.jpg",
+  Astro.site
+).toString();
+
+const { title } = Astro.props;
+
+const makeTitle = title
+  ? title + " | " + "APalevich.Pro"
+  : "Technical Solutions for Marketing Leaders" + " | " + "APalevich.Pro";
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- <link rel="preload" as="image" href={src} alt="Hero" /> -->
+    <SEO
+      title={title ?? "Technical Solutions for Marketing Leaders"}
+      description={"APalevich.Pro"}
+      canonical={canonicalURL}
+      twitter={{
+        creator: "@apalevich",
+        site: "@apalevich",
+        card: "summary_large_image",
+        title: makeTitle,
+      }}
+      openGraph={{
+        basic: {
+          url: canonicalURL,
+          type: "website",
+          title: makeTitle,
+          image: resolvedImageWithDomain,
+        },
+        image: {
+          alt: "Astronaut in the air",
+        },
+      }}
+    />
+    <!-- Google Tag Manager -->
+    <script>
+      {
+        import.meta.env.PROD &&
+          (() => {
+            const initializeGTM = (
+              w: Window,
+              d: Document,
+              s: string,
+              l: string,
+              i: string,
+            ) => {
+              const dataLayer = (w[l] = (w[l] || []) as { [key: string]: any }[]);
+              dataLayer.push({
+                "gtm.start": new Date().getTime(),
+                event: "gtm.js",
+              });
+              const firstScript = d.getElementsByTagName(s)[0];
+              const scriptElement = d.createElement(s) as HTMLScriptElement;
+              const dataLayerParam = l !== "dataLayer" ? `&l=${l}` : "";
+              scriptElement.async = true;
+              scriptElement.src = `https://www.googletagmanager.com/gtm.js?id=${i}${dataLayerParam}`;
+              firstScript.parentNode?.insertBefore(scriptElement, firstScript);
+            };
+            initializeGTM(window, document, "script", "dataLayer", "GTM-KGRW3QLF");
+          })();
+      }
+    </script>
+    <!-- End Google Tag Manager -->
+  </head>
+  <body>
+    <!-- <Navbar /> -->
+    <slot />
+    <Footer />
+    <style is:global>
+      /* Improve Page speed */
+      /* https://css-tricks.com/almanac/properties/c/content-visibility/ */
+      img {
+        content-visibility: auto;
+      }
+    </style>
+  </body>
+</html>
