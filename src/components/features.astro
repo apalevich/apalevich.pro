@@ -3,7 +3,7 @@
 import { Icon } from "astro-icon/components";
 import Card from "./card.astro";
 
-const features = [
+const featuresBackup = [
   {
     title: "Marketing Web Development",
     description: "Rapid development of high-converting websites and newsletters with seamless marketing tool integration. Get your marketing assets launched in days, not weeks, with guaranteed performance and mobile responsiveness.",
@@ -20,31 +20,51 @@ const features = [
     icon: "bx:bxs-user",
   },
 ];
+
+const features = [
+  {
+    title: "Landing Pages",
+    subtitle: "1-5 days",
+    description: "High-performance, SEO-optimized pages built with modern tech stack. Perfect for campaigns and product launches.",
+    icon: "bx:bxs-window-alt",
+  },
+  {
+    title: "Email Newsletters",
+    subtitle: "1-12 hours",
+    description: "Bulletproof templates with guaranteed deliverability. Including automation setup and performance tracking.",
+    icon: "bx:bxs-envelope",
+  },
+  {
+    title: "Web Applications",
+    subtitle: "Custom",
+    description: "Full-cycle development of modern applications, from concept to launch. Scalable, maintainable, future-proof.",
+    icon: "bx:bxs-bot",
+  },
+];
 ---
 
 <div class="mt-16 md:mt-0">
   <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight">
-    Web development with results at the forefront
+    Web development with results at the&nbsp;forefront
   </h2>
   <!-- <p class="text-lg mt-4 text-slate-600">
     We provide custom web development that turns your vision into high-converting digital experiences
   </p> -->
 </div>
 
-<div class="grid grid-cols-1 lg:grid-cols-3 mt-16 gap-16">
+<div class="grid grid-cols-1 lg:grid-cols-3 mt-16 gap-4">
   {
-    features.map(({title, description, icon}) => (
+    features.map(({title, subtitle, description, icon}) => (
       <Card text={description}>
         <div class="flex-1" slot="heading">
           <h2 class="text-4xl font-semibold" set:text={title} />
-          {/* <p
+          <p
               class="mt-1 text-base lg:text-lg font-normal text-gray-500 opacity-50"
-          >
-              React.js, Vue.js, Nuxt
-          </p> */}
+              set:text={subtitle}
+          />
         </div>
 
-        <Fragment slot="links">
+        {/* <Fragment slot="links">
             <a
                 class="text-link  lg:text-lg"
                 href="https://github.com/apalevich"
@@ -57,7 +77,7 @@ const features = [
                 target="_blank"
                 aria-label="Open in new tab">LinkedIn</a
             >
-        </Fragment>
+        </Fragment> */}
         <Icon size={145} class="text-white" name={icon} slot="icon" />
       </Card>
     ))
