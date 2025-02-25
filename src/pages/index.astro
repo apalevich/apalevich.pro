@@ -2,9 +2,10 @@
 import Container from "@components/container.astro";
 import Cta from "@components/cta.astro";
 import Features from "@components/features.astro";
+import BulletPoints from "@components/bulletpoints.astro";
+import Portfolio from "@components/portfolio.astro";
 import Hero from "@components/hero.astro";
 import Logos from "@components/logos.astro";
-// import FullScreenSection from "@components/FullScreenSection.astro";
 import Layout from "@layouts/Layout.astro";
 
 ---
@@ -13,6 +14,10 @@ import Layout from "@layouts/Layout.astro";
   <Container>
     <Hero />
     <Features />
+    <BulletPoints />
+  </Container>
+  <Portfolio />
+  <Container>
     <Logos />
     <Cta />
   </Container>
