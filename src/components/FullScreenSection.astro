@@ -1,4 +1,8 @@
 ---
+// @ts-ignore
+import { Icon } from "astro-icon/components";
+import Container from "@components/container.astro";
+
 type Button = {
     text: string;
     url: string | null;
@@ -31,67 +35,85 @@ const portfolioContent: Content[] = [
     {
         label: "🪐 FAANG",
         title: "Apple",
-        description: "I've been a part of Marketing Communication projects for Apple for almost two years in regions of Russia and Mid East"
+        description: "I've been a part of Marketing Communication projects for Apple for almost two years."
     },
     // {
+    //     // Apple
+    // },
+    // {
     //     // MATE
+    //     own product
+    //     React, AI, reduce costs on implementing new features, apply changes effectively
     // },
     // {
     //     // Admirals
-    // },
-    // {
-    //     // Unbiased
-    // },
-    // {
-    //     // La Redoute
+           // remove?
     // },
     // {
     //     // Hubba
+    //     // developing and launch app for customer, next.js, leading team of engineer and qa, from idea to market
+    // },
+    // {
+    //     // La Redoute
+           // client
+    //     // x years, custom software, 8 hours to 40 min, marketing department
+    // },
+    // {
+    //     // Unbiased
+    //     // led frontend development for new market on Vue. Design and functionality, ahead of dealines for 2 weeks
     // },
     // {
             // Иноагенты?
     // }
 ]
 ---
-<main>
+<Container>
+  <div class="my-16 md:my-0">
+    <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight">
+      Selected Projects ✨
+    </h2>
+  </div>
+</Container>
+<main class="h-screen grid place-items-center overflow-hidden">
+  <div class="relative w-full h-full shadow-lg">
     <ul class='slider'>
         {
             portfolioContent.map(({label, title, description}, i) => (
-                <li class='item' style={`background-image: url('${images[i]}')`}>
-                    <div class='content'>
-                        <div>{label}</div>
-                    <h2 class='title'>{title}</h2>
-                    <p class='description'>{description}</p>
-                    <button>Read More</button>
-                    </div>
-                </li>
+            <li class="item absolute top-1/2 -translate-y-1/2 z-10 bg-cover bg-fixed bg-center rounded-2xl shadow-inner transition-all duration-75" style={`background-image: url('${images[i]}')`}>
+              <div class="content absolute top-1/2 left-3 translate-y-[-50%] min-w-[30vw] max-w-[400px] text-white text-shadow-lg opacity-0">
+              <div>{label}</div>
+              <h2 class="title font-black uppercase">{title}</h2>
+              <p class="description line-height-7 mt-4 mb-6 text-sm">{description}</p>
+                <button class="bg-gray-200 text-white border-2 border-white rounded-md px-4 py-2 cursor-pointer">Read More</button>
+              </div>
+            </li>
             ))
         }
     </ul>
-    <nav class='nav'>
-      <ion-icon class='btn prev' name="arrow-back-outline"></ion-icon>
-      <ion-icon class='btn next' name="arrow-forward-outline"></ion-icon>
+    <nav class="nav absolute bottom-4 left-1/2 -translate-x-1/2 z-5">
+      <!-- <ion-icon class='btn prev' name="arrow-back-outline"></ion-icon> -->
+      <Icon class="inline-block text-white btn prev" name="bx:chevron-left" slot="icon" size={52} />
+      <Icon class="inline-block text-white btn next" name="bx:chevron-right" slot="icon" size={52} />
+      <!-- <ion-icon class='btn next' name="arrow-forward-outline"></ion-icon> -->
     </nav>
-  </main>
-  
-  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  </div>
+</main>
 
-  <style>
-    * {
+<style scoped>
+main {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body {
+main {
   height: 100vh;
   display: grid;
   place-items: center;
   overflow: hidden;
 }
 
-main {
+main > div {
   position: relative;
   width: 100%;
   height: 100%;
@@ -135,7 +157,7 @@ main {
   top: 50%;
   left: 3rem;
   transform: translateY(-50%);
-  font: 400 0.85rem helvetica,sans-serif;
+  /* font: 400 0.85rem helvetica,sans-serif; */
   color: white;
   text-shadow: 0 3px 8px rgba(0,0,0,0.5);
   opacity: 0;
@@ -204,8 +226,8 @@ main {
 
 @media (width > 650px) and (width < 900px) {
   .content {
-    & .title        { font-size: 1rem; }
-    & .description  { font-size: 0.7rem; }
+    /* & .title        { font-size: 1rem; } */
+    /* & .description  { font-size: 0.7rem; } */
     & button        { font-size: 0.7rem; }
   }
   .item {
@@ -221,9 +243,9 @@ main {
 
 @media (width < 650px) {
   .content {
-    & .title        { font-size: 0.9rem; }
-    & .description  { font-size: 0.65rem; }
-    & button        { font-size: 0.7rem; }
+    /* & .title        { font-size: 0.9rem; } */
+    /* & .description  { font-size: 0.65rem; } */
+    /* & button        { font-size: 0.7rem; } */
   }
   .item {
     width: 130px;
@@ -235,16 +257,15 @@ main {
     &:nth-child(6) { left: calc(50% + 420px); opacity: 0; }
   }
 }
-  </style>
+</style>
 
 <script>
-    const slider = document.querySelector('.slider');
-
-function activate(e) {
-  const items = document.querySelectorAll('.item');
-  e.target.matches('.next') && slider.append(items[0])
-  e.target.matches('.prev') && slider.prepend(items[items.length-1]);
-}
-
-document.addEventListener('click',activate,false);
-  </script>
+  const slider = document.querySelector('.slider');
+  function activate(e) {
+    const items = document.querySelectorAll('.item');
+    e.target.matches('.next') && slider && slider.append(items[0]);
+    e.target.matches('.prev') && slider && slider.prepend(items[items.length-1]);
+  }
+  
+  document.addEventListener('click', activate, false);
+</script>
