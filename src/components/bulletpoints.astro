@@ -12,7 +12,8 @@ import MoscowMarathonLogo from "../components/ui/icons/moscowMarathon_Logo.astro
 
 const content = [
     {
-        cardClasses: 'md:col-span-2 md:row-span-2',
+        cardStyles: 'md:col-span-2 lg:row-span-2',
+        quoteStyles: "md:text-xl lg:text-4xl md:font-medium",
         logo: logo_ogilvy,
         quote: "Artem is an excellent team player, he quickly picked up on the new workflow, and showed excellent results in working and interacting with the team. We look forward to working with him again!",
         name: "Ksenia Koteneva",
@@ -20,22 +21,25 @@ const content = [
         photo: portrait_ksenia,
     },
     {
-        cardClasses: 'md:col-span-2',
+        cardStyles: 'md:col-span-2',
+        quoteStyles: "md:text-xl md:font-medium lg:font-thin",
         logo: laredoute_logo,
-        quote: "I got the impression that Artyom was constantly monitoring developments in technology and had his finger on the pulse. More than once he suggested to me new ways to improve my current work just from the technical side — thanks to this I learned a lot and grew as a developer.",
+        quote: "I got the impression that Artyom was constantly monitoring developments in technology and had his finger on the pulse. Thanks to him I learned a lot and grew as a developer.",
         name: "Boris Nikitashov",
         company: "Ex-colleague",
         photo: portrait_boris,
     },
     {
-        cardClasses: 'md:col-span-1',
+        cardStyles: 'md:col-span-1',
+        quoteStyles: "md:text-xl md:font-medium lg:font-thin",
         quote: "Strong technical knowledge with a keen understanding of the business stakes. A true asset within a digital team!",
         name: "Youssef Oulamine",
         company: "La Redoute",
         photo: portrait_youssef,
     },
     {
-        cardClasses: 'md:col-span-1',
+        cardStyles: 'md:col-span-1',
+        quoteStyles: "md:text-xl md:font-medium lg:font-thin",
         quote: "Artem is an experienced developer. I was really happy to work with him!",
         name: "Kirill Zhirnov",
         company: "Boundless Commerce",
@@ -45,18 +49,18 @@ const content = [
 ]
 ---
 <section class="bg-white py-20 dark:bg-transparent">
-    <div class="mx-auto max-w-5xl space-y-16 px-6">
+    <div class="mx-auto space-y-16 px-4 md:max-w-5xl">
         <div class="relative z-10 mx-auto max-w-xl space-y-6 text-center md:space-y-12">
-            <h2 class="text-title text-4xl font-medium lg:text-5xl">Client Testimonials</h2>
+            <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight">Client Testimonials</h2>
             <!-- <p class="text-body">Gemini is evolving to be more than just the models. It supports an entire to the APIs and platforms helping developers and businesses innovate.</p> -->
         </div>
 
         <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-4 md:grid-rows-3 lg:grid-rows-2">
             {
-                content.map(({cardClasses, logo, quote, name, company, photo}, i) => (
-                    <div class:list={[cardClasses, 'bg-gray-100 p-6 flex flex-col gap-8 rounded-lg']}>
+                content.map(({cardStyles, quoteStyles, logo, quote, name, company, photo}, i) => (
+                    <div class:list={[cardStyles, 'bg-gray-100 p-6 flex flex-col gap-8 rounded-lg']}>
                         {logo && <Picture src={logo} class="h-8 w-fit" alt="photo" />}
-                        <blockquote class:list={!i && ["text-xl font-medium"]}>"{quote}"</blockquote>
+                        <blockquote class:list={['grow', quoteStyles]}>"{quote}"</blockquote>
                         <div class="flex gap-3">
                             <Picture src={photo} class="h-9 w-fit rounded-full my-auto" alt="photo" />
                             <div class="flex flex-col">
