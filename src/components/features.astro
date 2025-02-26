@@ -44,6 +44,7 @@ const features = [
 ---
 
 <div class="mt-16 md:mt-0">
+  <!-- <h2 class="bg-gradient-to-r from-primary-500 to-secondary-500 bg-clip-text text-transparent text-4xl lg:text-5xl font-bold lg:tracking-tight"> -->
   <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight">
     Web development with results at the&nbsp;forefront
   </h2>
@@ -52,12 +53,12 @@ const features = [
   </p> -->
 </div>
 
-<div class="grid grid-cols-1 lg:grid-cols-3 my-16 gap-4">
+<div class="grid grid-cols-1 lg:grid-cols-3 my-16 lg:my-8 gap-4 lg:px-8 ">
   {
     features.map(({title, subtitle, description, icon}) => (
       <Card text={description}>
         <div class="flex-1" slot="heading">
-          <h2 class="text-4xl font-semibold" set:text={title} />
+          <h2 class="text-4xl lg:text-5xl font-semibold" set:text={title} />
           <p
               class="mt-1 text-base lg:text-lg font-normal text-gray-500 opacity-50"
               set:text={subtitle}
