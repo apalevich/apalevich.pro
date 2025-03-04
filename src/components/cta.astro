@@ -1,17 +1,18 @@
 ---
 import Link from "./ui/link.astro";
+import { CALL_LINK_20, EMAIL_LINK } from "consts.ts"
 ---
 
 <div
   class="bg-black p-8 md:px-20 md:py-20 mt-20 mx-auto max-w-5xl rounded-lg flex flex-col items-center text-center">
-  <h2 class="text-white text-4xl md:text-6xl tracking-tight">
+  <h2 class="text-white text-4xl md:text-6xl tracking-tight mb-16">
     You master the message.<br class="hidden md:block"/> We master the tech.
   </h2>
-  <p class="text-slate-400 mt-4 text-lg md:text-xl">
+  <!-- <p class="text-slate-400 mt-4 text-lg md:text-xl">
     Our team is made up exclusively of senior professionals with up to 8 years of proven track record of success in their respective fields.
-  </p>
+  </p> -->
   <div class="flex gap-4 flex-col mt-5">
-    <Link href="https://calendly.com/apalevich/45min" style="inverted">Let's Talk</Link>
-    <Link href="mailto:hello@apalevich.com" >hello@apalevich.com</Link>
+    <Link href={CALL_LINK_20} style="inverted">Let's Talk</Link>
+    <Link href={EMAIL_LINK} class="text-xs text-gray-300 font-thin">hello@apalevich.com</Link>
   </div>
 </div>
