@@ -51,6 +51,15 @@ module.exports = {
           900: "#010E0E",
           950: "#010909"
         },
+      },
+      animation: {
+        'fancy': 'fancy 5s linear infinite',
+      },
+      keyframes: {
+        fancy: {
+          '0%, 100%': { backgroundPosition: '0% 50%' },
+          '50%': { backgroundPosition: '100% 50%' },
+        }
       }
     },
   },
