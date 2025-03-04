@@ -1,49 +1,133 @@
 ---
 import Link from "@components/ui/link.astro";
+import { Icon } from "astro-icon/components";
+import { EMAIL_LINK } from "consts";
 
 const options = [
   {
-    title: "Discovery Call",
-    description: "30-minute discussion to understand your needs and outline potential solutions.",
-    price: "Free",
+    title: "High-Performance Landing Page",
+    description: "Custom landing page development with SEO optimization, mobile responsiveness, and sub-2 second load time for maximum conversion rates.",
+    price: "$1,999+",
+    category: "web",
+    popular: false,
+  },
+  {
+    title: "Email Template Development",
+    description: "Pixel-perfect HTML email coding from your design, optimized for deliverability across all email clients and devices.",
+    price: "$299+",
+    category: "email",
+    popular: false,
+  },
+  {
+    title: "Full Email Campaign Package",
+    description: "Complete email creation from design to code with anti-spam optimization, tracking setup, and deliverability testing.",
+    price: "$599+",
+    category: "email",
+    popular: true,
+  },
+  {
+    title: "Marketing Website Development",
+    description: "Full marketing website built with modern tech (Astro.js, e11ty) including CMS integration, SEO optimization, and analytics setup.",
+    price: "$4,999+",
+    category: "web",
+    popular: true,
+  },
+  {
+    title: "Interactive Marketing Campaign",
+    description: "Custom interactive experiences, games, or applications designed to boost engagement during promotional periods like Black Friday.",
+    price: "$3,499+",
+    category: "marketing",
+    popular: false,
+  },
+  {
+    title: "Marketing AI Assistant",
+    description: "Custom AI agent development with intuitive UI, designed to enhance customer engagement and streamline marketing processes.",
+    price: "$4,999+",
+    category: "marketing",
+    popular: true,
   },
   {
     title: "Technical Planning",
-    description: "2-hour deep dive into your project's architecture, stack, and implementation plan.",
+    description: "2-hour deep dive into your project with senior specialists in your specific area (Marketing Strategy, SEO, Frontend Development, etc).",
     price: "$199",
+    category: "consulting",
+    popular: true,
   },
   {
-    title: "Project Development",
-    description: "Full implementation including documentation and guarantee period.",
-    price: "$9,999+",
+    title: "Marketing Chatbot Development",
+    description: "Intelligent chatbot creation for lead generation, customer support, or promotional campaigns across websites and messaging platforms.",
+    price: "$2,499+",
+    category: "marketing",
+    popular: false,
   },
 ];
 
+const categories = [
+  { id: "web", name: "Web Development" },
+  { id: "email", name: "Email Marketing" },
+  { id: "marketing", name: "Marketing Solutions" },
+  { id: "consulting", name: "Consultation" },
+];
+
+
 ---
-<section id="faqs" class="scroll-py-32 bg-white py-32 dark:bg-transparent">
-  <div class="mx-auto max-w-6xl px-6">
-      <div class="grid gap-y-12 px-2 lg:[grid-template-columns:1fr_auto]">
-          <div class="text-center lg:text-left">
-              <h2 class="text-title mb-4 text-3xl font-semibold md:text-4xl">Pricing</h2>
-              <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam totam eligendi inventore recusandae, consectetur alias animi veritatis. Rem, consequuntur iusto tempore reiciendis suscipit dolores, perspiciatis tempora, voluptatem rerum totam laboriosam.</p> -->
-          </div>
-          <div class="divide-y divide-dashed sm:mx-auto sm:max-w-lg lg:mx-0">
-              {
-                options.map(({title, description, price}) => (
-                  <div class="py-6">
-                    <h3 class="text-4xl md:text-3xl font-medium">{title}</h3>
-                    <p class="mt-4 mb-12">{description}</p>
-                    <Link
-                      href="mailto:hello@apalevich.com"
-                      target="_blank"
-                      style="fancy"
-                      class="text-2xl font-bold mt-12">
-                        {price}
-                    </Link>
-                </div>
-                ))
-              }
-          </div>
+<section class="w-full py-24 md:py-24 bg-background">
+  <div class="container max-w-4xl mx-auto">
+    <div class="border-white border-border rounded-lg overflow-hidden">
+      <div class="p-0">
+        <div class="bg-white px-6 py-10 flex flex-col justify-between items-center">
+          <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight text-center">Services Menu</h2>
+        </div>
+        <div class="py-6 bg-white">
+          {categories.map((category) => (
+            <div class="mb-8 last:mb-0">
+              <h3 class="text-xl font-bold mb-4">{category.name}</h3>
+              <div class="space-y-4">
+                {options
+                  .filter((service) => service.category === category.id)
+                  .map((service) => (
+                    <div class={`p-4 border rounded-lg transition-all border-border shadow-sm`} >
+                      <a href={`mailto:hello@apalevich.com?subject=${service.title}&body=Hello,`}>
+                        <div class="flex flex-col md:flex-row items-center gap-4">
+                          <div class="flex-1">
+                            <div class="flex items-center gap-2">
+                              {/* <Icon size={145} class="text-white h-5 w-5" name="bx:bxs-window-alt" slot="icon" /> */}
+                              <div class="flex items-center gap-2">
+                                <label class="text-lg font-medium cursor-pointer">
+                                  {service.title}
+                                </label>
+                                {service.popular && (
+                                  <div class="hidden md:inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 bg-secondary/10 text-secondary border-secondary/20">
+                                    Popular
+                                  </div>
+                                )}
+                              </div>
+                            </div>
+                            <p class="text-zinc-500 mt-1 md:ml-7 font-thin">{service.description}</p>
+                          </div>
+                          <div class="ml-0 md:ml-7 whitespace-nowrap w-full md:w-auto">
+                            <p class="font-bold text-right">{service.price}</p>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                  ))}
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
+    </div>
+
+    <div class="mt-12 text-center">
+      <h3 class="text-xl font-bold mb-4">Can't find what you're looking for?</h3>
+      <p class="text-muted-foreground mb-6 max-w-[600px] mx-auto">
+        Let's have 20-minute call to discuss your specific requirements.
+      </p>
+      <Link variant="outline" class="group" href={EMAIL_LINK}>
+        Schedule a consultation
+        <!-- <Icon name="bx:bxs-window-alt" class="h-4 w-4 ml-1 group-hover:translate-x-1 transition-transform" /> -->
+      </Link>
+    </div>
   </div>
 </section>
