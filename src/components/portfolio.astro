@@ -47,7 +47,7 @@ const portfolioContent: Content[] = [
 ---
 <section class="bg-white dark:bg-transparent">
     <div class="space-y-12 md:px-4  lg:px-0">
-        <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight text-center">Selected Projects</h2>
+        <h2 class="text-4xl lg:text-7xl font-bold lg:tracking-tight text-center from-primary to-secondary animate-fancy">Selected Projects</h2>
         <div class="grid gap-[1px] md:grid-cols-2 *:py-6 md:*:py-12 bg-zinc-200 py-[1px] mx-4 md:mx-0">
             { 
                 portfolioContent.map(({label, title, description}, i) => (
@@ -71,3 +71,35 @@ const portfolioContent: Content[] = [
         </div>
     </div>
 </section>
+<style scoped>
+    @keyframes masked{
+        0% {
+            background-position: -10000px 5000px;
+        }
+        100% {
+            background-position: 0 0;
+        }
+    }
+
+    h2 {
+      background: -webkit-linear-gradient(
+          right,
+          #000 0%,
+          #08494A 20%,
+          #4a0908 100%
+        )
+        repeat;
+      -webkit-background-clip: text;
+      -ms-background-clip: text;
+      -moz-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      -ms-text-fill-color: transparent;
+      -moz-text-fill-color: transparent;
+      /*Animation  한번에 여러개 적용하기 */
+      animation: masked 25s linear infinite;
+      -webkit-animation: masked 25s linear infinite;
+      -moz-animation:masked 25s linear infinite;
+      -o-animation: masked 25s linear infinite;
+    }
+</style>
