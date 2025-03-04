@@ -1,7 +1,7 @@
 ---
 import Link from "@components/ui/link.astro";
 import { Icon } from "astro-icon/components";
-import { EMAIL_LINK } from "consts";
+import { CALL_LINK_20 } from "consts";
 
 const options = [
   {
@@ -81,7 +81,7 @@ const categories = [
         <div class="py-6 bg-white">
           {categories.map((category) => (
             <div class="mb-8 last:mb-0">
-              <h3 class="text-xl font-bold mb-4">{category.name}</h3>
+              <h3 class="text-2xl font-thin mb-4 text-zinc-500">{category.name}</h3>
               <div class="space-y-4">
                 {options
                   .filter((service) => service.category === category.id)
@@ -124,9 +124,8 @@ const categories = [
       <p class="text-muted-foreground mb-6 max-w-[600px] mx-auto">
         Let's have 20-minute call to discuss your specific requirements.
       </p>
-      <Link variant="outline" class="group" href={EMAIL_LINK}>
+      <Link variant="outline" class="group" href={CALL_LINK_20}>
         Schedule a consultation
-        <!-- <Icon name="bx:bxs-window-alt" class="h-4 w-4 ml-1 group-hover:translate-x-1 transition-transform" /> -->
       </Link>
     </div>
   </div>
