@@ -1,5 +1,4 @@
 ---
-import FullScreenSection from "@components/FullScreenSection.astro";
 import { Picture } from "astro:assets";
 
 import portfolio_apple_lg from "@images/portfolio_apple_lg.png";
@@ -45,9 +44,9 @@ const portfolioContent: Content[] = [
     }
 ]
 ---
-<section class="bg-white dark:bg-transparent">
+<section class="bg-white dark:bg-transparent lg:mt-20">
     <div class="space-y-12 md:px-4  lg:px-0">
-        <h2 class="text-4xl lg:text-7xl font-bold lg:tracking-tight text-center from-primary to-secondary animate-fancy">Selected Projects</h2>
+        <h2 class="text-4xl md:text-7xl font-bold lg:tracking-tight text-center from-primary to-secondary animate-fancy">Selected Projects</h2>
         <div class="grid gap-[1px] md:grid-cols-2 *:py-6 md:*:py-12 bg-zinc-200 py-[1px] mx-4 md:mx-0">
             { 
                 portfolioContent.map(({label, title, description}, i) => (
@@ -72,7 +71,7 @@ const portfolioContent: Content[] = [
     </div>
 </section>
 <style scoped>
-    @keyframes masked{
+    @keyframes masked {
         0% {
             background-position: -10000px 5000px;
         }
