@@ -1,16 +1,22 @@
 ---
 import { Picture } from "astro:assets";
 
-import portfolio_apple_lg from "@images/portfolio_apple_lg.png";
+import portfolio_unbiased from '@images/portfolio_unbiased.jpeg';
+import portfolio_mate from '@images/portfolio_mate.jpeg';
+import portfolio_hubba from '@images/portfolio_hubba.jpeg';
+import portfolio_laredoute from '@images/portfolio_laredoute.jpeg';
+
+
+
 
 type Button = {
-    text: string;
+    text?: string;
     url: string | null;
     // primary: boolean;
 };
 
 type Content = {
-    image?: string;
+    image: ImageMetadata;
     label: string;
     title: string;
     description: string;
@@ -19,28 +25,31 @@ type Content = {
 
 const portfolioContent: Content[] = [
     {
-        label: "8x Faster Email Production",
+        label: "Increased Email Production 8x Faster",
         title: "La Redoute",
-        description: "Partnered with France's largest fashion retailer to eliminate operational bottlenecks. We automated email template creation, reducing production time by <strong>8x</strong>, and built a financial dashboard that accelerated referral payments by <strong>5x</strong>."
+        description: "Partnered with France's largest fashion retailer to eliminate operational bottlenecks. We automated email template creation, reducing production time by <strong>8x</strong>, and built a financial dashboard that accelerated referral payments by&nbsp;<strong>5x</strong>.",
+        image: portfolio_laredoute,
     },
     {
-        label: "Code Review On Hand",
+        label: "Launched AI Product for Developers",
         title: "MATE",
-        description: "Developed and launched a browser extension that enables developers to check code on any GitHub repository instantly, saving significant development time and improving code quality.",
+        description: "Developed and launched a browser extension that enables developers to check code on any GitHub repository instantly, saving significant development time and improving code&nbsp;quality.",
+        image: portfolio_mate,
         button: {
-          text: "Read more",
-          url: "https://mate.apalevich.com",
+            url: "https://mate.apalevich.com"
         }
     },
     {
-        label: "3-Month AI Implementation",
-        title: "Hubba",
-        description: "Delivered an interactive AI chat application from concept to production in just three months. Our comprehensive approach included development and consulting services that enhanced API architecture and streamlined development processes."
+        label: "Implemented AI Chatbot App in 3-Months",
+        title: "[NDA]",
+        description: "Delivered an interactive AI chat application from concept to production in just three months. Our comprehensive approach included development and consulting services that enhanced API architecture and streamlined development processes.",
+        image: portfolio_hubba,
     },
     {
         label: "Accelerated Market Entry",
         title: "Unbiased.com",
-        description: "Fast-tracked US market entry with a new Vue/Nuxt frontend delivered ahead of schedule. Additionally, I improved infrastructure with shared UI component storage and recruited a top-tier Infrastructure Engineer to strengthen the client's team."
+        description: "Fast-tracked US market entry with a new Vue/Nuxt frontend delivered ahead of schedule. Additionally, I improved infrastructure with shared UI component storage and recruited a top-tier Infrastructure Engineer to strengthen the client's&nbsp;team.",
+        image: portfolio_unbiased,
     }
 ]
 ---
@@ -49,7 +58,7 @@ const portfolioContent: Content[] = [
         <h2 class="text-4xl md:text-7xl font-bold lg:tracking-tight text-center from-primary to-secondary animate-fancy">Selected Projects</h2>
         <div class="grid gap-[1px] md:grid-cols-2 *:py-6 md:*:py-12 bg-zinc-200 py-[1px] mx-4 md:mx-0">
             { 
-                portfolioContent.map(({label, title, description}, i) => (
+                portfolioContent.map(({label, title, description, image}, i) => (
                     <div class:list={[
                         "flex flex-col space-y-6 sm:pr-6 lg:pr-12 bg-white",
                         i%2===0 ? "md:pr-6 md:pl-0" : "md:pl-6 md:pr-0",
@@ -60,9 +69,9 @@ const portfolioContent: Content[] = [
                             <p class="mt-1 text-base lg:text-lg font-normal text-gray-500 opacity-50">{label}</p>
                         </div>
                         <p class="text-zinc-700 md:grow " set:html={description}></p>
-                        <div class="relative pt-6">
-                            <div class="absolute inset-0 z-[1] bg-gradient-to-br from-white dark:from-gray-950"></div>
-                            <Picture src={portfolio_apple_lg} alt="screenshot" />
+                        <div class="relative pt-6 w-full">
+                            {/* <div class="absolute inset-0 z-[1] bg-gradient-to-b from-white dark:from-gray-950" /> */}
+                            <Picture src={image} alt="screenshot" class="object-cover w-full h-full shadow-lg" formats={['avif', 'webp']} height={246 * 2}/>
                         </div>
                     </div>
                 ))
