@@ -2,13 +2,11 @@
 import { Picture } from "astro:assets";
 import portrait_ksenia from "@images/portrait_ksenia.jpeg";
 import portrait_youssef from "@images/portrait_youssef.jpeg";
-import portrait_boris from "@images/portrait_boris.jpeg";
+import portrait_laszlo from "@images/portrait_laszlo.jpeg";
 import portrait_kirill from "@images/portrait_kirill.jpeg";
 
-import laredoute_logo from "../components/ui/icons/la_redoute_logo.jpg";
 import logo_ogilvy from "@images/logo_ogilvy.svg";
-
-import MoscowMarathonLogo from "../components/ui/icons/moscowMarathon_Logo.astro";
+import unbiased_astro from "./ui/icons/unbiased.svg";
 
 const content = [
     {
@@ -23,11 +21,11 @@ const content = [
     {
         cardStyles: 'md:col-span-2',
         quoteStyles: "md:text-xl md:font-medium lg:font-thin",
-        logo: laredoute_logo,
-        quote: "I got the impression that Artyom was constantly monitoring developments in technology and had his finger on the pulse. Thanks to him I learned a lot and grew as a developer.",
-        name: "Boris Nikitashov",
-        company: "Ex-colleague",
-        photo: portrait_boris,
+        logo: unbiased_astro,
+        quote: "Artem focuses on the ‘why’ behind every feature, ensuring that technical decisions align with business goals. He consistently challenged us to think about user experience, loading speed, and scalability, making our products better in every way.",
+        name: "László Vaszi",
+        company: "Unbiased",
+        photo: portrait_laszlo,
     },
     {
         cardStyles: 'md:col-span-1',
@@ -65,7 +63,7 @@ const content = [
                             <Picture src={photo} class="h-9 w-fit rounded-full my-auto" alt="photo" />
                             <div class="flex flex-col">
                                 <cite class="text-sm font-medium">{name}</cite>
-                                <i class="text-gray-600 text-sm">{company}</i>
+                                <i class="text-gray-600 text-sm not-italic">{company}</i>
                             </div>
                         </div>
                     </div>

@@ -3,7 +3,7 @@
 import { Picture } from "astro:assets";
 import { Icon } from "astro-icon/components";
 import MoscowMarathon_Logo from "../components/ui/icons/moscowMarathon_Logo.astro";
-import Unbiased_Logo from "../components/ui/icons/unbiased.astro";
+import Unbiased_Logo from "../components/ui/icons/unbiased.svg";
 import LaRedoute_Logo from "../components/ui/icons/la_redoute_logo.jpg";
 import Ogilvy_Logo from "../components/ui/icons/ogilvy_logo.jpg";
 
@@ -16,7 +16,7 @@ import Ogilvy_Logo from "../components/ui/icons/ogilvy_logo.jpg";
     <Icon class="size-12" name="simple-icons:apple" />
     <Picture src={Ogilvy_Logo} alt="Ogilvy Logo" height={48} width={48} densities={[1.5, 2]} class="h-50 aspect-square"/>
     <MoscowMarathon_Logo class="h-12" />
-    <Unbiased_Logo class="h-12" />
+    <Picture class="h-12" src={Unbiased_Logo} alt="Unbiased Logo"/>
     <Picture src={LaRedoute_Logo} alt="LaRedoute Logo" height={48} width={48} densities={[1.5, 2]} class="h-50 aspect-square"/>
 
   </div>
