@@ -1,18 +1,51 @@
 ---
 import Container from "@components/container.astro";
-import Layout from "@layouts/Layout.astro";
+import { SEO } from "astro-seo";
+
+const resolvedImageWithDomain = new URL(
+  "/opengraph.jpg",
+  Astro.site
+).toString();
 ---
 
-<Layout>
-  <Container>
-    <a href="https://apalevich.pro" target="_self">
-      <div class="min-h-[calc(100vh-16rem)] flex items-center justify-center">
-        <div class="mt-16 text-center">
-          <p class="text-sm my-4 text-slate-600">This site is under construction.</p>
-          <h1 class="text-4xl lg:text-5xl font-bold lg:tracking-tight">🚧</h1>
-          <p class="text-lg py-12 text-slate-600">Click here to visit our main website →</p>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- <link rel="preload" as="image" href={src} alt="Hero" /> -->
+    <SEO
+      title="Technical Solutions for Marketing Leaders"
+      description={"APalevich Frontend Bureau"}
+      canonical="https://4palevich.com"
+      openGraph={{
+        basic: {
+          url: "https://4palevich.com",
+          type: "website",
+          title: "Technical Solutions for Marketing Leaders",
+          image: resolvedImageWithDomain,
+        },
+        image: {
+          alt: "Technical Solutions for Marketing Leaders",
+        },
+      }}
+    />
+    
+  </head>
+  <body>
+    <Container>
+      <a href="https://apalevich.pro" target="_self">
+        <div class="min-h-[calc(100vh-16rem)] flex items-center justify-center">
+          <div class="mt-16 text-center">
+            <p class="text-sm my-4 text-slate-600">This site is under construction.</p>
+            <h1 class="text-4xl lg:text-5xl font-bold lg:tracking-tight">🚧</h1>
+            <p class="text-lg py-12 text-slate-600">Click here to visit our main website →</p>
+          </div>
         </div>
-      </div>
-    </a>
-  </Container>
-</Layout>
+      </a>
+    </Container>
+  </body>
+</html>
