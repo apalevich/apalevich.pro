@@ -6,7 +6,7 @@ import "@fontsource-variable/inter/index.css";
 import '@fontsource-variable/bricolage-grotesque';
 
 export interface Props {
-  title: string;
+  title?: string;
 }
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();

@@ -1,8 +1,9 @@
 ---
 // @ts-ignore
 import { Icon } from "astro-icon/components";
+import Card from "./card.astro";
 
-const features = [
+const featuresBackup = [
   {
     title: "Marketing Web Development",
     description: "Rapid development of high-converting websites and newsletters with seamless marketing tool integration. Get your marketing assets launched in days, not weeks, with guaranteed performance and mobile responsiveness.",
@@ -18,66 +19,68 @@ const features = [
     description: "Access pre-vetted senior developers and technical experts within 2 weeks. Each candidate goes through rigorous technical assessment and comes with a 30-day satisfaction guarantee.",
     icon: "bx:bxs-user",
   },
-  // {
-  //   title: "Bring Your Own Framework",
-  //   description:
-  //     "Build your site using React, Svelte, Vue, Preact, web components, or just plain ol' HTML + JavaScript.",
-  //   icon: "bx:bxs-briefcase",
-  // },
-  // {
-  //   title: "100% Static HTML, No JS",
-  //   description:
-  //     "Astro renders your entire page to static HTML, removing all JavaScript from your final build by default.",
-  //   icon: "bx:bxs-window-alt",
-  // },
-  // {
-  //   title: "On-Demand Components",
-  //   description:
-  //     "Need some JS? Astro can automatically hydrate interactive components when they become visible on the page.  ",
-  //   icon: "bx:bxs-data",
-  // },
-  // {
-  //   title: "Broad Integration",
-  //   description:
-  //     "Astro supports TypeScript, Scoped CSS, CSS Modules, Sass, Tailwind, Markdown, MDX, and any other npm packages.",
-  //   icon: "bx:bxs-bot",
-  // },
-  // {
-  //   title: "SEO Enabled",
-  //   description:
-  //     "Automatic sitemaps, RSS feeds, pagination and collections take the pain out of SEO and syndication. It just works!",
-  //   icon: "bx:bxs-file-find",
-  // },
-  // {
-  //   title: "Community",
-  //   description:
-  //     "Astro is an open source project powered by hundreds of contributors making thousands of individual contributions.",
-  //   icon: "bx:bxs-user",
-  // },
+];
+
+const features = [
+  {
+    title: "Landing Pages",
+    subtitle: "1-5 days",
+    description: "High-performance, SEO-optimized pages built with modern tech stack. Perfect for campaigns and product launches.",
+    icon: "bx:bxs-window-alt",
+  },
+  {
+    title: "Email Newsletters",
+    subtitle: "1-12 hours",
+    description: "Bulletproof templates with guaranteed deliverability. Including automation setup and performance tracking.",
+    icon: "bx:bxs-envelope",
+  },
+  {
+    title: "Web Applications",
+    subtitle: "Custom",
+    description: "Full-cycle development of modern applications, from concept to launch. Scalable, maintainable, future-proof.",
+    icon: "bx:bxs-bot",
+  },
 ];
 ---
 
 <div class="mt-16 md:mt-0">
+  <!-- <h2 class="bg-gradient-to-r from-primary-500 to-secondary-500 bg-clip-text text-transparent text-4xl lg:text-5xl font-bold lg:tracking-tight"> -->
   <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight">
-    Web development with results at the forefront
+    Web development with results at the&nbsp;forefront
   </h2>
-  <p class="text-lg mt-4 text-slate-600">
+  <!-- <p class="text-lg mt-4 text-slate-600">
     We provide custom web development that turns your vision into high-converting digital experiences
-  </p>
+  </p> -->
 </div>
 
-<div class="grid sm:grid-cols-2 md:grid-cols-3 mt-16 gap-16">
+<div class="grid grid-cols-1 lg:grid-cols-3 my-16 lg:my-8 gap-4 lg:px-8 ">
   {
-    features.map((item) => (
-      <div class="flex gap-4 items-start">
-        <div class="mt-1 bg-black rounded-full  p-2 w-8 h-8 shrink-0">
-          <Icon class="text-white" name={item.icon} />
+    features.map(({title, subtitle, description, icon}) => (
+      <Card text={description}>
+        <div class="flex-1" slot="heading">
+          <h2 class="text-4xl lg:text-5xl font-semibold" set:text={title} />
+          <p
+              class="mt-1 text-base lg:text-lg font-normal text-gray-500 opacity-50"
+              set:text={subtitle}
+          />
         </div>
-        <div>
-          <h3 class="font-semibold text-lg">{item.title}</h3>{" "}
-          <p class="text-slate-500 mt-2 leading-relaxed">{item.description}</p>
-        </div>
-      </div>
+
+        {/* <Fragment slot="links">
+            <a
+                class="text-link  lg:text-lg"
+                href="https://github.com/apalevich"
+                target="_blank"
+                aria-label="Open in new tab">GitHub</a
+            > /
+            <a
+                class="text-link  lg:text-lg"
+                href="https://linkedin.com/in/apalevich/"
+                target="_blank"
+                aria-label="Open in new tab">LinkedIn</a
+            >
+        </Fragment> */}
+        <Icon size={145} class="text-white" name={icon} slot="icon" />
+      </Card>
     ))
   }
 </div>

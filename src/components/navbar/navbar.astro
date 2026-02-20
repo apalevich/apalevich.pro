@@ -6,13 +6,13 @@ import { Astronav, MenuItems, MenuIcon } from "astro-navbar";
 
 const menuitems = [
   {
-    title: "Features",
+    title: "Services",
     path: "#",
     children: [
-      { title: "Action", path: "/" },
-      { title: "Another action", path: "#" },
-      { title: "Dropdown Submenu", path: "#" },
-      { title: "404 Page", path: "/404" },
+      { title: "Websites", path: "/" },
+      { title: "Email marketing", path: "#" },
+      { title: "AI agents", path: "#" },
+      // { title: "404 Page", path: "/404" },
     ],
   },
   {
@@ -31,16 +31,16 @@ const menuitems = [
     title: "Contact",
     path: "/contact",
   },
-  {
-    title: "Pro Version",
-    badge: true,
-    path: "https://astroship-pro.web3templates.com/",
-  },
+  // {
+  //   title: "Pro Version",
+  //   badge: true,
+  //   path: "https://astroship-pro.web3templates.com/",
+  // },
 ];
 ---
 
 <Container>
-  <header class="flex flex-col lg:flex-row justify-between items-center my-5">
+  <header class="flex flex-col lg:flex-row justify-between items-center my-5 backdrop-blur">
     <Astronav>
       <div class="flex w-full lg:w-auto items-center justify-between">
         <a href="/" class="text-lg"
@@ -84,15 +84,15 @@ const menuitems = [
           }
         </ul>
         <div class="lg:hidden flex items-center mt-3 gap-4">
-          <Link href="#" style="muted" block size="md">Log in</Link>
+          <!-- <Link href="#" style="muted" block size="md">Log in</Link> -->
           <Link href="#" size="md" block>Sign up</Link>
         </div>
       </MenuItems>
     </Astronav>
     <div>
       <div class="hidden lg:flex items-center gap-4">
-        <a href="#">Log in</a>
-        <Link href="#" size="md">Sign up</Link>
+        <!-- <a href="#">Contact</a> -->
+        <Link href="/contact" size="md" style="outline">Contact</Link>
       </div>
     </div>
   </header>

@@ -1,17 +1,70 @@
 ---
 import Link from "./ui/link.astro";
+import { CALL_LINK_20, EMAIL_LINK } from "consts.ts"
 ---
 
-<div
-  class="bg-black p-8 md:px-20 md:py-20 mt-20 mx-auto max-w-5xl rounded-lg flex flex-col items-center text-center">
-  <h2 class="text-white text-4xl md:text-6xl tracking-tight">
-    You master the message.<br class="hidden md:block"/> We master the tech.
-  </h2>
-  <p class="text-slate-400 mt-4 text-lg md:text-xl">
-    Our team is made up exclusively of senior professionals with up to 8 years of proven track record of success in their respective fields.
-  </p>
-  <div class="flex gap-4 flex-col mt-5">
-    <Link href="https://calendly.com/apalevich/45min" style="inverted">Let's Talk</Link>
-    <Link href="mailto:hello@apalevich.com" >hello@apalevich.com</Link>
+<div class="relative bg-black overflow-hidden h-min mx-auto max-w-5xl rounded-xl">
+  <div id="blob"></div>
+  <div id="blur"></div>
+
+  <div class="relative p-12 md:px-20 md:py-20 flex flex-col items-center text-center z-10">
+    <h2 class="text-white text-4xl md:text-6xl tracking-tight mb-16">
+      You master <span class="whitespace-nowrap">the message.</span><br/> We master the tech.
+    </h2>
+    <div class="flex gap-4 flex-col mt-5">
+      <Link href={CALL_LINK_20} style="inverted">Let's have a call</Link>
+      <Link href={EMAIL_LINK} class="text-xs text-gray-300 font-thin bg-transparent">hello@apalevich.com</Link>
+    </div>
   </div>
 </div>
+
+<script>
+  const blob = document.getElementById("blob");
+
+  window.onpointermove = event => { 
+    const { clientX, clientY } = event;
+    
+    blob?.animate({
+      left: `${clientX}px`,
+      top: `${clientY}px`
+    }, { duration: 1000, fill: "forwards" });
+  }
+</script>
+
+<style scoped>
+  @keyframes rotate {
+    from {
+      rotate: 0deg;
+    }
+    
+    50% {
+      scale: 1 1.5;
+    }
+    
+    to {
+      rotate: 360deg;
+    }
+  }
+
+  #blob {
+    background-color: white;
+    height: 34vmax;
+    aspect-ratio: 1;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    translate: -80% -90%;
+    border-radius: 50%;
+    background: linear-gradient(to right, aquamarine, mediumpurple);
+    animation: rotate 20s infinite;
+    opacity: 0.8;
+  }
+
+  #blur {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 2;
+    backdrop-filter: blur(12vmax);
+  }
+</style>

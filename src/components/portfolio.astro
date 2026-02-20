@@ -1,0 +1,115 @@
+---
+import { Picture } from "astro:assets";
+
+import portfolio_unbiased from '@images/portfolio_unbiased.jpeg';
+import portfolio_mate from '@images/portfolio_mate.jpeg';
+import portfolio_hubba from '@images/portfolio_hubba.jpeg';
+import portfolio_laredoute from '@images/portfolio_laredoute.jpeg';
+
+
+
+
+type Button = {
+    text?: string;
+    url: string | null;
+    // primary: boolean;
+};
+
+type Content = {
+    image: ImageMetadata;
+    label: string;
+    title: string;
+    description: string;
+    button?: Button;
+};
+
+const portfolioContent: Content[] = [
+    {
+        label: "Increased Email Production 8x Faster",
+        title: "La Redoute",
+        // description: "Partnered with France's largest fashion retailer to eliminate operational bottlenecks. We automated email template creation, reducing production time by <strong>8x</strong>, and built a financial dashboard that accelerated referral payments by&nbsp;<strong>5x</strong>.",
+        description: "Partnered with France's largest fashion retailer to eliminate critical bottlenecks. Our automation solution reduced email production time by <strong>8x</strong> and accelerated referral payment processing by <strong>5x</strong>, significantly improving marketing agility.",
+        image: portfolio_laredoute,
+    },
+    {
+        label: "Gained Developer Productivity",
+        title: "MATE",
+        description: "Developed a browser extension that enables instant code review on GitHub repositories. This AI-powered tool significantly reduced QA cycles, accelerated feature delivery, and improved code quality across development teams.",
+        image: portfolio_mate,
+        button: {
+            url: "https://mate.apalevich.com"
+        }
+    },
+    {
+        label: "Implemented AI Chatbot App in 3-Months",
+        title: "[NDA]",
+        // description: "Delivered an interactive AI chat application from concept to production in just three months. Our comprehensive approach included development and consulting services that enhanced API architecture and streamlined development processes.",
+        description: "Delivered an interactive AI chat application in just three months, beating industry standard timelines. Our comprehensive approach enhanced API architecture and streamlined development processes, enabling faster time-to-market.",
+        image: portfolio_hubba,
+    },
+    {
+        label: "Reduced Market Entry Time",
+        title: "Unbiased.com",
+        description: "Fast-tracked US market launch with a new Vue/Nuxt frontend delivered ahead of schedule. Our infrastructure improvements and strategic talent acquisition strengthened the client's technical foundation for sustainable growth.",
+        image: portfolio_unbiased,
+    }
+]
+---
+<section class="bg-white dark:bg-transparent lg:mt-20">
+    <div class="space-y-12 md:px-4  lg:px-0">
+        <h2 class="text-4xl md:text-7xl font-bold lg:tracking-tight text-center from-primary to-secondary animate-fancy">Selected Projects</h2>
+        <div class="grid gap-[1px] md:grid-cols-2 *:py-6 md:*:py-12 bg-zinc-200 py-[1px] mx-4 md:mx-0">
+            { 
+                portfolioContent.map(({label, title, description, image}, i) => (
+                    <div class:list={[
+                        "flex flex-col space-y-6 sm:pr-6 lg:pr-12 bg-white",
+                        i%2===0 ? "md:pr-6 md:pl-0" : "md:pl-6 md:pr-0",
+                        "lg:px-12"
+                    ]}>
+                        <div class="">
+                            <h3 class="font-medium text-title text-xl">{title}</h3>
+                            <p class="mt-1 text-base lg:text-lg font-normal text-gray-500 opacity-50">{label}</p>
+                        </div>
+                        <p class="text-zinc-700 md:grow " set:html={description}></p>
+                        <div class="relative pt-6 w-full">
+                            {/* <div class="absolute inset-0 z-[1] bg-gradient-to-b from-white dark:from-gray-950" /> */}
+                            <Picture src={image} alt="screenshot" class="object-cover w-full h-full shadow-lg" formats={['avif', 'webp']} height={246 * 2}/>
+                        </div>
+                    </div>
+                ))
+            }
+        </div>
+    </div>
+</section>
+<style scoped>
+    @keyframes masked {
+        0% {
+            background-position: -10000px 5000px;
+        }
+        100% {
+            background-position: 0 0;
+        }
+    }
+
+    h2 {
+      background: -webkit-linear-gradient(
+          right,
+          #000 0%,
+          #08494A 20%,
+          #4a0908 100%
+        )
+        repeat;
+      -webkit-background-clip: text;
+      -ms-background-clip: text;
+      -moz-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      -ms-text-fill-color: transparent;
+      -moz-text-fill-color: transparent;
+      /*Animation  한번에 여러개 적용하기 */
+      animation: masked 25s linear infinite;
+      -webkit-animation: masked 25s linear infinite;
+      -moz-animation:masked 25s linear infinite;
+      -o-animation: masked 25s linear infinite;
+    }
+</style>

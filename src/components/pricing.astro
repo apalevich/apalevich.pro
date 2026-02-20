@@ -1,45 +1,132 @@
 ---
-import { Tick } from "@components/ui/icons";
 import Link from "@components/ui/link.astro";
+import { Icon } from "astro-icon/components";
+import { CALL_LINK_20 } from "consts";
 
-const { plan } = Astro.props;
+const options = [
+  {
+    title: "High-Performance Landing Page",
+    description: "Custom landing page development with SEO optimization, mobile responsiveness, and sub-2 second load time for maximum conversion rates.",
+    price: "$1,999+",
+    category: "web",
+    popular: false,
+  },
+  {
+    title: "Email Template Development",
+    description: "Pixel-perfect HTML email coding from your design, optimized for deliverability across all email clients and devices.",
+    price: "$299+",
+    category: "email",
+    popular: false,
+  },
+  {
+    title: "Full Email Campaign Package",
+    description: "Complete email creation from design to code with anti-spam optimization, tracking setup, and deliverability testing.",
+    price: "$599+",
+    category: "email",
+    popular: true,
+  },
+  {
+    title: "Marketing Website Development",
+    description: "Full marketing website built with modern tech (Astro.js, e11ty) including CMS integration, SEO optimization, and analytics setup.",
+    price: "$4,999+",
+    category: "web",
+    popular: true,
+  },
+  {
+    title: "Interactive Marketing Campaign",
+    description: "Custom interactive experiences, games, or applications designed to boost engagement during promotional periods like Black Friday.",
+    price: "$3,499+",
+    category: "marketing",
+    popular: false,
+  },
+  {
+    title: "Marketing AI Assistant",
+    description: "Custom AI agent development with intuitive UI, designed to enhance customer engagement and streamline marketing processes.",
+    price: "$4,999+",
+    category: "marketing",
+    popular: true,
+  },
+  {
+    title: "Technical Planning",
+    description: "2-hour deep dive into your project with senior specialists in your specific area (Marketing Strategy, SEO, Frontend Development, etc).",
+    price: "$199",
+    category: "consulting",
+    popular: true,
+  },
+  {
+    title: "Marketing Chatbot Development",
+    description: "Intelligent chatbot creation for lead generation, customer support, or promotional campaigns across websites and messaging platforms.",
+    price: "$2,499+",
+    category: "marketing",
+    popular: false,
+  },
+];
+
+const categories = [
+  { id: "web", name: "Web Development" },
+  { id: "email", name: "Email Marketing" },
+  { id: "marketing", name: "Marketing Solutions" },
+  { id: "consulting", name: "Consultation" },
+];
+
+
 ---
+<section class="w-full py-24 md:py-24 bg-background">
+  <div class="container max-w-4xl mx-auto">
+    <div class="border-white border-border rounded-lg overflow-hidden">
+      <div class="p-0">
+        <div class="bg-white px-6 py-10 flex flex-col justify-between items-center">
+          <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight text-center">Services Menu</h2>
+        </div>
+        <div class="py-6 bg-white">
+          {categories.map((category) => (
+            <div class="mb-8 last:mb-0">
+              <h3 class="text-2xl font-thin mb-4 text-zinc-500">{category.name}</h3>
+              <div class="space-y-4">
+                {options
+                  .filter((service) => service.category === category.id)
+                  .map((service) => (
+                    <div class={`p-4 border rounded-lg transition-all border-border shadow-sm`} >
+                      <a href={`mailto:hello@apalevich.com?subject=${service.title}&body=Hello,`}>
+                        <div class="flex flex-col md:flex-row items-center gap-4">
+                          <div class="flex-1">
+                            <div class="flex items-center gap-2">
+                              {/* <Icon size={145} class="text-white h-5 w-5" name="bx:bxs-window-alt" slot="icon" /> */}
+                              <div class="flex items-center gap-2">
+                                <label class="text-lg font-medium cursor-pointer">
+                                  {service.title}
+                                </label>
+                                {service.popular && (
+                                  <div class="hidden md:inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 bg-secondary/10 text-secondary border-secondary/20">
+                                    Popular
+                                  </div>
+                                )}
+                              </div>
+                            </div>
+                            <p class="text-zinc-500 mt-1 md:ml-7 font-thin">{service.description}</p>
+                          </div>
+                          <div class="ml-0 md:ml-7 whitespace-nowrap w-full md:w-auto">
+                            <p class="font-bold text-right">{service.price}</p>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                  ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
 
-<div>
-  <div
-    class="flex flex-col w-full order-first lg:order-none border-2 border-[#D8DEE9] border-opacity-50 py-5 px-6 rounded-md">
-    <div class="text-center">
-      <h4 class="text-lg font-medium text-gray-400">{plan.name}</h4><p
-        class="mt-3 text-4xl font-bold text-black md:text-4xl">
-        {
-          plan.price && typeof plan.price === "object"
-            ? plan.price.monthly
-            : plan.price
-        }
+    <div class="mt-12 text-center">
+      <h3 class="text-xl font-bold mb-4">Can't find what you're looking for?</h3>
+      <p class="text-muted-foreground mb-6 max-w-[600px] mx-auto">
+        Let's have 20-minute call to discuss your specific requirements.
       </p>
-      <!-- {
-        plan.price.original && (
-          <p class="mt-1 text-xl font-medium text-gray-400 line-through md:text-2xl">
-            {plan.price.original}
-          </p>
-        )
-      } -->
-    </div><ul class="grid mt-8 text-left gap-y-4">
-      {
-        plan.features.map((item) => (
-          <li class="flex items-start gap-3 text-gray-800">
-            <Tick class="w-6 h-6" />
-            <span>{item}</span>
-          </li>
-        ))
-      }
-    </ul><div class="flex mt-8">
-      <Link
-        href={plan.button.link || "#"}
-        block
-        style={plan.popular ? "primary" : "outline"}>
-        {plan.button.text || "Get Started"}
+      <Link variant="outline" class="group" href={CALL_LINK_20}>
+        Schedule a consultation
       </Link>
     </div>
   </div>
-</div>
+</section>

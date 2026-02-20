@@ -1,0 +1,74 @@
+---
+import { Picture } from "astro:assets";
+import portrait_ksenia from "@images/portrait_ksenia.jpeg";
+import portrait_youssef from "@images/portrait_youssef.jpeg";
+import portrait_laszlo from "@images/portrait_laszlo.jpeg";
+import portrait_kirill from "@images/portrait_kirill.jpeg";
+
+import logo_ogilvy from "@images/logo_ogilvy.svg";
+import unbiased_astro from "./ui/icons/unbiased.svg";
+
+const content = [
+    {
+        cardStyles: 'md:col-span-2 lg:row-span-2',
+        quoteStyles: "md:text-xl lg:text-4xl md:font-medium",
+        logo: logo_ogilvy,
+        quote: "Artem is an excellent team player, he quickly picked up on the new workflow, and showed excellent results in working and interacting with the team. We look forward to working with him again!",
+        name: "Ksenia Koteneva",
+        company: "Ogilvy",
+        photo: portrait_ksenia,
+    },
+    {
+        cardStyles: 'md:col-span-2',
+        quoteStyles: "md:text-xl md:font-medium lg:font-thin",
+        logo: unbiased_astro,
+        quote: "Artem focuses on the ‘why’ behind every feature, ensuring that technical decisions align with business goals. He consistently challenged us to think about user experience, loading speed, and scalability, making our products better in every way.",
+        name: "László Vaszi",
+        company: "Unbiased",
+        photo: portrait_laszlo,
+    },
+    {
+        cardStyles: 'md:col-span-1',
+        quoteStyles: "md:text-xl md:font-medium lg:font-thin",
+        quote: "Strong technical knowledge with a keen understanding of the business stakes. A true asset within a digital team!",
+        name: "Youssef Oulamine",
+        company: "La Redoute",
+        photo: portrait_youssef,
+    },
+    {
+        cardStyles: 'md:col-span-1',
+        quoteStyles: "md:text-xl md:font-medium lg:font-thin",
+        quote: "Artem is an experienced developer. I was really happy to work with him!",
+        name: "Kirill Zhirnov",
+        company: "Boundless Commerce",
+        photo: portrait_kirill,
+    },
+
+]
+---
+<section class="bg-white pb-16 lg:py-20 dark:bg-transparent">
+    <div class="mx-auto space-y-16 px-4 md:max-w-5xl lg:max-w-max lg:px-0">
+        <div class="relative z-10 mx-auto max-w-xl space-y-6 text-center md:space-y-12">
+            <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight">Testimonials</h2>
+            <!-- <p class="text-body">Gemini is evolving to be more than just the models. It supports an entire to the APIs and platforms helping developers and businesses innovate.</p> -->
+        </div>
+
+        <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-4 md:grid-rows-3 lg:grid-rows-2">
+            {
+                content.map(({cardStyles, quoteStyles, logo, quote, name, company, photo}, i) => (
+                    <div class:list={[cardStyles, 'bg-gray-100 p-6 flex flex-col gap-8 rounded-lg']}>
+                        {logo && <Picture src={logo} class="h-8 w-fit" alt="photo" />}
+                        <blockquote class:list={['grow', quoteStyles]}>"{quote}"</blockquote>
+                        <div class="flex gap-3">
+                            <Picture src={photo} class="h-9 w-fit rounded-full my-auto" alt="photo" />
+                            <div class="flex flex-col">
+                                <cite class="text-sm font-medium">{name}</cite>
+                                <i class="text-gray-600 text-sm not-italic">{company}</i>
+                            </div>
+                        </div>
+                    </div>
+                ))
+            }
+        </div>
+    </div>
+</section>

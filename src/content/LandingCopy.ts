@@ -1,12 +1,10 @@
 import type { PageCopyInterface } from "../interfaces";
+import { CALL_LINK_20, EMAIL_LINK } from "consts.ts"
 
 let agencyPageCopy: PageCopyInterface;
 let marcomPageCopy: PageCopyInterface;
 let emailPageCopy: PageCopyInterface;
 let recruitmentPageCopy: PageCopyInterface;
-
-const callLink = "https://calendly.com/apalevich/45min";
-const emailLink = "mailto:hello@apalevich.com";
 
 agencyPageCopy = {
 	hero: {
@@ -39,12 +37,12 @@ agencyPageCopy = {
 			{
 				text: "Schedule a Call",
 				primary: true,
-				url: callLink,
+				url: CALL_LINK_20,
 			},
 			{
 				text: "Send an Email",
 				primary: false,
-				url: emailLink,
+				url: EMAIL_LINK,
 			},
 		],
 	},
@@ -219,12 +217,12 @@ marcomPageCopy = {
 			{
 				text: "Schedule Call",
 				primary: true,
-				url: callLink,
+				url: CALL_LINK_20,
 			},
 			{
 				text: "Send an Email",
 				primary: false,
-				url: emailLink,
+				url: EMAIL_LINK,
 			},
 		],
 	},
@@ -344,12 +342,12 @@ emailPageCopy = {
 			{
 				text: "Schedule Call",
 				primary: true,
-				url: callLink,
+				url: CALL_LINK_20,
 			},
 			{
 				text: "Send an Email",
 				primary: false,
-				url: emailLink,
+				url: EMAIL_LINK,
 			},
 		],
 	},
@@ -469,12 +467,12 @@ recruitmentPageCopy = {
 			{
 				text: "Schedule Call",
 				primary: true,
-				url: callLink,
+				url: CALL_LINK_20,
 			},
 			{
 				text: "Send an Email",
 				primary: false,
-				url: emailLink,
+				url: EMAIL_LINK,
 			},
 		],
 	},

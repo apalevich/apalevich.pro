@@ -1,8 +1,18 @@
 /** @type {import('tailwindcss').Config} */
 const defaultTheme = require("tailwindcss/defaultTheme");
+const colors = require('tailwindcss/colors')
+
 module.exports = {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   theme: {
+    colors: {
+      transparent: 'transparent',
+      current: 'currentColor',
+      black: colors.black,
+      white: colors.white,
+      gray: colors.gray,
+      zinc: colors.zinc,
+    },
     extend: {
       fontFamily: {
         sans: [
@@ -40,6 +50,15 @@ module.exports = {
           800: "#031B1C",
           900: "#010E0E",
           950: "#010909"
+        },
+      },
+      animation: {
+        'fancy': 'fancy 5s linear infinite',
+      },
+      keyframes: {
+        fancy: {
+          '0%, 100%': { backgroundPosition: '0% 50%' },
+          '50%': { backgroundPosition: '100% 50%' },
         }
       }
     },

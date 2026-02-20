@@ -1,0 +1,39 @@
+---
+interface Props {
+  border?: string;
+  background?: string;
+  text: string;
+}
+
+const {
+  border = "bg-gray-500 p-[3px]",
+  background = "bg-white text-black",
+  text,
+} = Astro.props;
+
+---
+<div class:list={[
+  "m-4 rounded-2xl col-span-1 overflow-hidden",
+  border,
+]}>
+  <div class:list={[
+    "p-4 rounded-[calc(1rem-4px)] flex flex-col h-full",
+    background,
+  ]}>
+      <div class="flex h-min-content pt-2 pb-5 px-3 grow-0">
+          <slot name="heading" />
+      </div>
+      <div class="px-3 pb-3 flex flex-col justify-between overflow-visible grow text gap-4 relative">
+          <p class="text-base lg:text-lg opacity-90 font-thin pb-4" set:html={text}></p>
+          <div class="links">
+              <slot name="links" />
+          </div>
+          <div class:list={[
+            "rounded-full p-2 w-40 h-40 absolute -right-[75px] -bottom-[75px] opacity-5 scale-150",
+            "bg-black" // TODO: Make an interface for icon base color
+          ]}>
+            <slot name="icon" />
+          </div>
+      </div>
+  </div>
+</div>
