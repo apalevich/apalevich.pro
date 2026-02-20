@@ -9,7 +9,7 @@ This is a personal portfolio/marketing website built with **Astro** v5 based on 
 **Key Site Details:**
 - Site URL: https://apalevich.pro
 - Built with: Astro, TailwindCSS, MDX
-- Package Manager: pnpm (recommended, but npm/yarn also work)
+- Package Manager: npm (required — pnpm and yarn are blocked by preinstall hook)
 - Node/npm requirement: `.npmrc` has `engine-strict=true`
 
 ## Common Commands
@@ -28,7 +28,7 @@ npm run astro add    # Add new Astro integrations
 npm run astro [cmd]  # Run other Astro CLI commands
 ```
 
-The project recommends **pnpm** for disk space efficiency, but npm works fine. Dev server automatically tries different ports if 4321 is in use.
+Dev server automatically tries different ports if 4321 is in use.
 
 ## Project Architecture
 
