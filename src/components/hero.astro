@@ -12,6 +12,7 @@ import { Icon } from "astro-icon/components";
     >
     </div>
     <Picture
+        fetchpriority="high"
         src={heroImage}
         class="w-1/2 lg:w-full scale-125 top-1/2 left-1/2 -translate-x-1/2 lg:translate-x-0 ml-auto grayscale brightness-125"
         alt="portrait"
@@ -37,7 +38,7 @@ import { Icon } from "astro-icon/components";
     </p>
     <div class="mt-6 flex flex-col sm:flex-row gap-3">
       <Link
-        style="fancy"  
+        style="fancy"
         href="mailto:hello@apalevich.com"
         target="_blank"
         class="flex gap-1 items-center justify-center "
