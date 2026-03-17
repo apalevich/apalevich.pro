@@ -1,6 +1,5 @@
 import { useState, useEffect, useRef } from "react";
 import { marked } from "marked";
-import Link from "./ui/link.astro";
 
 type AppState = "form" | "loading" | "results";
 
@@ -47,12 +46,12 @@ function FormState({
   }
 
   return (
-    <form onSubmit={handleSubmit} noValidate>
-      <div className="mb-5">
+    <form onSubmit={handleSubmit} noValidate className="wva-form space-y-6">
+      <div>
         <label
           htmlFor="wva-url"
-          className="block text-sm font-medium text-gray-700 mb-1">
-          Your website URL
+          className="block text-sm font-semibold text-gray-800 mb-2">
+          Website URL
         </label>
         <input
           id="wva-url"
@@ -60,47 +59,48 @@ function FormState({
           value={url}
           onChange={(e) => setUrl(e.target.value)}
           onBlur={() => setUrlTouched(true)}
-          placeholder="https://example.com"
-          className={`w-full px-4 py-3 border-2 rounded-md outline-none focus:ring-4 ring-gray-100 transition
+          placeholder="example.com"
+          className={`w-full px-4 py-3 border-2 rounded-lg outline-none transition duration-200 font-normal bg-white
             ${
               showError
-                ? "border-red-400 focus:border-red-500"
-                : "border-gray-300 focus:border-secondary"
+                ? "border-red-300 focus:border-red-500 focus:ring-2 focus:ring-red-100"
+                : "border-gray-200 focus:border-secondary focus:ring-2 focus:ring-secondary/10"
             }`}
         />
         {showError && (
-          <p className="text-red-400 text-sm mt-1">
-            Please enter a valid URL (e.g. example.com or https://example.com).
+          <p className="text-red-500 text-xs font-medium mt-1.5">
+            Please enter a valid URL (example.com, https://example.com, or with a path)
           </p>
         )}
       </div>
 
-      <div className="mb-6">
+      <div>
         <label
           htmlFor="wva-contact"
-          className="block text-sm font-medium text-gray-700 mb-1">
-          Your email or messenger handle
+          className="block text-sm font-semibold text-gray-800 mb-2">
+          Your Email or Messenger
         </label>
         <input
           id="wva-contact"
           type="text"
           value={contact}
           onChange={(e) => setContact(e.target.value)}
-          placeholder="you@example.com or @yourhandle"
-          className="w-full px-4 py-3 border-2 border-gray-300 rounded-md outline-none focus:ring-4 ring-gray-100 focus:border-secondary transition"
+          placeholder="you@example.com"
+          className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg outline-none focus:border-secondary focus:ring-2 focus:ring-secondary/10 transition duration-200 bg-white font-normal"
         />
       </div>
 
       <button
         type="submit"
         disabled={!canSubmit}
-        className={`w-full px-6 py-3 rounded text-center font-medium transition
+        className={`w-full px-6 py-3.5 rounded-lg text-center font-semibold text-sm tracking-wide transition duration-300 transform
           ${
             canSubmit
-              ? "bg-secondary text-white hover:bg-secondary-600 cursor-pointer"
-              : "bg-gray-200 text-gray-400 cursor-not-allowed"
-          }`}>
-        Analyze My Website
+              ? "bg-gradient-to-r from-secondary to-secondary/80 text-white hover:shadow-lg hover:shadow-secondary/30 hover:scale-105 cursor-pointer active:scale-95"
+              : "bg-gray-100 text-gray-400 cursor-not-allowed"
+          }`}
+        title={!canSubmit ? "Fill in all fields with a valid URL to continue" : ""}>
+        {canSubmit ? "→ Analyze Website" : "Complete the form"}
       </button>
     </form>
   );
@@ -126,31 +126,30 @@ function LoadingState({ url }: { url: string }) {
   }, []);
 
   return (
-    <div className="flex flex-col items-center py-10 gap-6">
-      <p
-        key={messageIndex}
-        className="wva-fade-in text-slate-600 text-center text-base max-w-xs">
-        {STATUS_MESSAGES[messageIndex]}
-      </p>
-
+    <div className="flex flex-col items-center py-16 gap-8">
       <div className="spinner-box">
         <div className="blue-orbit leo"></div>
-
         <div className="green-orbit leo"></div>
-
         <div className="red-orbit leo"></div>
-
         <div className="red-orbit w1 leo"></div>
         <div className="green-orbit w2 leo"></div>
         <div className="blue-orbit w3 leo"></div>
       </div>
 
-      <p className="text-4xl font-bold text-primary tabular-nums">
-        {secondsLeft > 0 ? secondsLeft + "s" : "A little more..."}
-      </p>
+      <div className="flex flex-col items-center gap-4">
+        <p className="text-5xl font-bold text-primary tabular-nums leading-none">
+          {secondsLeft > 0 ? `${secondsLeft}s` : "✓"}
+        </p>
 
-      <p className="text-xs text-slate-400 text-center">
-        Analyzing: <span className="font-mono">{url}</span>
+        <p
+          key={messageIndex}
+          className="wva-fade-in text-gray-600 text-center text-sm font-medium px-4 max-w-sm leading-relaxed">
+          {STATUS_MESSAGES[messageIndex]}
+        </p>
+      </div>
+
+      <p className="text-xs text-gray-400 text-center font-mono px-4 max-w-xs break-all">
+        {url}
       </p>
     </div>
   );
@@ -174,38 +173,39 @@ function ResultsState({
   }
 
   return (
-    <>
-      <p className="text-slate-600 mb-6 text-center">
-        You can send these recommendations directly to your webmaster
-        <br />
-        If you need support on the implementation side, our team
-        <a
-          href="/contact"
-          className="text-secondary underline hover:text-secondary-400 transition">
-          can help.
-        </a>
-      </p>
-
-      <div className="wva-fade-in">
-        <div
-          className="prose prose-slate max-w-none border border-gray-100 rounded-lg p-6 bg-white shadow-sm"
-          dangerouslySetInnerHTML={{ __html: html }}
-        />
-
-        <div className="flex flex-col gap-3 mt-6 justify-end">
-          <button
-            onClick={handleCopy}
-            className="px-4 py-2 rounded border-2 border-secondary text-white bg-secondary transition text-sm font-medium">
-            {copied ? "Copied!" : "Copy Results"}
-          </button>
-          <button
-            onClick={onReset}
-            className="px-4 py-2 rounded text-gray-600 hover:bg-gray-100 transition text-sm font-medium">
-            Analyze Another Site
-          </button>
-        </div>
+    <div className="wva-fade-in space-y-6">
+      <div className="bg-gradient-to-r from-secondary/5 to-primary/5 border border-secondary/10 rounded-lg p-5 space-y-2">
+        <p className="text-sm font-semibold text-gray-800">
+          Your personalized Core Web Vitals roadmap is ready.
+        </p>
+        <p className="text-xs text-gray-600 leading-relaxed">
+          Share these recommendations with your development team or webmaster. Need implementation support?{" "}
+          <a
+            href="/contact"
+            className="text-secondary font-semibold hover:text-secondary/80 transition">
+            Our team can help.
+          </a>
+        </p>
       </div>
-    </>
+
+      <div
+        className="prose prose-slate max-w-none rounded-lg p-7 bg-gradient-to-b from-gray-50 to-white border border-gray-100 shadow-md"
+        dangerouslySetInnerHTML={{ __html: html }}
+      />
+
+      <div className="flex flex-col sm:flex-row gap-3 justify-between pt-3">
+        <button
+          onClick={onReset}
+          className="px-5 py-2.5 rounded-lg text-gray-700 font-semibold text-sm hover:bg-gray-100 transition duration-200 border border-gray-200 hover:border-gray-300">
+          Analyze Another Site
+        </button>
+        <button
+          onClick={handleCopy}
+          className="px-5 py-2.5 rounded-lg bg-gradient-to-r from-secondary to-secondary/80 text-white font-semibold text-sm shadow-md hover:shadow-lg transition duration-200">
+          {copied ? "✓ Copied to Clipboard" : "Copy Results"}
+        </button>
+      </div>
+    </div>
   );
 }
 
@@ -254,10 +254,16 @@ export default function WebVitalsAnalyzer() {
   }
 
   return (
-    <div className="bg-white rounded-xl shadow-md p-8">
+    <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-10 md:p-12 backdrop-blur-xl">
       {fetchError && (
-        <div className="mb-4 px-4 py-3 rounded bg-red-50 border border-red-200 text-red-700 text-sm">
-          {fetchError}
+        <div className="mb-6 px-5 py-4 rounded-lg bg-red-50/70 border border-red-200 text-red-700 text-sm font-medium animate-in fade-in slide-in-from-top-2 duration-300">
+          <div className="flex items-start gap-3">
+            <span className="text-lg leading-none">⚠️</span>
+            <div>
+              <p className="font-semibold mb-0.5">Something went wrong</p>
+              <p className="text-xs opacity-90">{fetchError}</p>
+            </div>
+          </div>
         </div>
       )}
 
