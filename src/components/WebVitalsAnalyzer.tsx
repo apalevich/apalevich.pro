@@ -9,11 +9,13 @@ interface AnalysisResponse {
 }
 
 const STATUS_MESSAGES = [
-  "Fetching your website's source code...",
-  "Analyzing loading performance...",
-  "Running Core Web Vitals tests...",
-  "Comparing against industry benchmarks...",
-  "Generating personalized recommendations...",
+  "Parsing your website source code...",
+  "Checking loading performance...",
+  "Reviewing Core Web Vitals...",
+  "Comparing results to benchmarks...",
+  "Identifying priority issues...",
+  "Preparing recommendations...",
+  "Finalizing your report...",
 ];
 
 const COUNTDOWN_SECONDS = 60;
@@ -59,7 +61,7 @@ function FormState({
           value={url}
           onChange={(e) => setUrl(e.target.value)}
           onBlur={() => setUrlTouched(true)}
-          placeholder="example.com"
+          placeholder="https://yourwebsite.com"
           className={`w-full px-4 py-3 border-2 rounded-lg outline-none transition duration-200 font-normal bg-white
             ${
               showError
@@ -69,7 +71,7 @@ function FormState({
         />
         {showError && (
           <p className="text-red-500 text-xs font-medium mt-1.5">
-            Please enter a valid URL (example.com, https://example.com, or with a path)
+            Please enter a valid URL (starting with http:// or https://)
           </p>
         )}
       </div>
@@ -78,14 +80,14 @@ function FormState({
         <label
           htmlFor="wva-contact"
           className="block text-sm font-semibold text-gray-800 mb-2">
-          Your Email or Messenger
+          Your email or WhatsApp / Telegram
         </label>
         <input
           id="wva-contact"
           type="text"
           value={contact}
           onChange={(e) => setContact(e.target.value)}
-          placeholder="you@example.com"
+          placeholder="you@example.com / @username"
           className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg outline-none focus:border-secondary focus:ring-2 focus:ring-secondary/10 transition duration-200 bg-white font-normal"
         />
       </div>
@@ -99,8 +101,10 @@ function FormState({
               ? "bg-gradient-to-r from-secondary to-secondary/80 text-white hover:shadow-lg hover:shadow-secondary/30 hover:scale-105 cursor-pointer active:scale-95"
               : "bg-gray-100 text-gray-400 cursor-not-allowed"
           }`}
-        title={!canSubmit ? "Fill in all fields with a valid URL to continue" : ""}>
-        {canSubmit ? "→ Analyze Website" : "Complete the form"}
+        title={
+          !canSubmit ? "Fill in all fields with a valid URL to continue" : ""
+        }>
+        {canSubmit ? "→ Get Recommendations" : "Complete the form"}
       </button>
     </form>
   );
@@ -126,7 +130,11 @@ function LoadingState({ url }: { url: string }) {
   }, []);
 
   return (
-    <div className="flex flex-col items-center py-16 gap-8">
+    <div className="flex flex-col items-center py-8">
+      <p className="text-xs text-gray-400 text-center font-mono px-4 max-w-xs break-all">
+        Analyzing your website. This usually takes up to 60 seconds.
+      </p>
+
       <div className="spinner-box">
         <div className="blue-orbit leo"></div>
         <div className="green-orbit leo"></div>
@@ -147,10 +155,6 @@ function LoadingState({ url }: { url: string }) {
           {STATUS_MESSAGES[messageIndex]}
         </p>
       </div>
-
-      <p className="text-xs text-gray-400 text-center font-mono px-4 max-w-xs break-all">
-        {url}
-      </p>
     </div>
   );
 }
@@ -174,16 +178,16 @@ function ResultsState({
 
   return (
     <div className="wva-fade-in space-y-6">
-      <div className="bg-gradient-to-r from-secondary/5 to-primary/5 border border-secondary/10 rounded-lg p-5 space-y-2">
-        <p className="text-sm font-semibold text-gray-800">
-          Your personalized Core Web Vitals roadmap is ready.
+      <div className="bg-gradient-to-r from-secondary/50 to-primary/50 border border-secondary/10 rounded-lg p-5 space-y-2 text-white">
+        <p className="text-sm font-semibold">
+          You can send these recommendations directly to your webmaster
         </p>
-        <p className="text-xs text-gray-600 leading-relaxed">
-          Share these recommendations with your development team or webmaster. Need implementation support?{" "}
+        <p className="text-xs text-gray-800 leading-relaxed">
+          If you need support on the implementation side,{" "}
           <a
             href="/contact"
-            className="text-secondary font-semibold hover:text-secondary/80 transition">
-            Our team can help.
+            className="font-semibold hover:text-primary/80 transition underline whitespace-nowrap">
+            our team can help
           </a>
         </p>
       </div>
@@ -195,14 +199,14 @@ function ResultsState({
 
       <div className="flex flex-col sm:flex-row gap-3 justify-between pt-3">
         <button
-          onClick={onReset}
-          className="px-5 py-2.5 rounded-lg text-gray-700 font-semibold text-sm hover:bg-gray-100 transition duration-200 border border-gray-200 hover:border-gray-300">
-          Analyze Another Site
-        </button>
-        <button
           onClick={handleCopy}
           className="px-5 py-2.5 rounded-lg bg-gradient-to-r from-secondary to-secondary/80 text-white font-semibold text-sm shadow-md hover:shadow-lg transition duration-200">
           {copied ? "✓ Copied to Clipboard" : "Copy Results"}
+        </button>
+        <button
+          onClick={onReset}
+          className="px-5 py-2.5 rounded-lg text-gray-700 font-semibold text-sm hover:bg-gray-100 transition duration-200 border border-gray-200 hover:border-gray-300">
+          Analyze Another Site
         </button>
       </div>
     </div>
@@ -226,7 +230,6 @@ export default function WebVitalsAnalyzer() {
     try {
       const params = new URLSearchParams({ url, contact });
       const response = await fetch(
-        // `https://apalevich.com/backend/web-tools/analyze?${params.toString()}`,
         `${import.meta.env.PUBLIC_BACKEND_BASE_URL}/web-tools/analyze?${params.toString()}`,
         { signal: abortRef.current.signal },
       );
@@ -241,6 +244,7 @@ export default function WebVitalsAnalyzer() {
     } catch (err) {
       if ((err as Error).name === "AbortError") return;
       setFetchError("Something went wrong. Please try again.");
+      console.error("fetchError", err);
       setState("form");
     }
   }
@@ -254,7 +258,7 @@ export default function WebVitalsAnalyzer() {
   }
 
   return (
-    <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-10 md:p-12 backdrop-blur-xl">
+    <div className="bg-white rounded-2xl shadow-lg border border-gray-100 py-10 px-4 md:p-12 backdrop-blur-xl">
       {fetchError && (
         <div className="mb-6 px-5 py-4 rounded-lg bg-red-50/70 border border-red-200 text-red-700 text-sm font-medium animate-in fade-in slide-in-from-top-2 duration-300">
           <div className="flex items-start gap-3">
