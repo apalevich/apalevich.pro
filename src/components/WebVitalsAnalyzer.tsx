@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { marked } from "marked";
+import Link from "./ui/link.astro";
 
 type AppState = "form" | "loading" | "results";
 
@@ -173,36 +174,38 @@ function ResultsState({
   }
 
   return (
-    <div className="wva-fade-in">
+    <>
       <p className="text-slate-600 mb-6 text-center">
-        These results have been sent to your webmaster.{" "}
-        <strong>No webmaster?</strong> We're ready to implement these
-        improvements.{" "}
+        You can send these recommendations directly to your webmaster
+        <br />
+        If you need support on the implementation side, our team
         <a
           href="/contact"
           className="text-secondary underline hover:text-secondary-400 transition">
-          Get in touch.
+          can help.
         </a>
       </p>
 
-      <div
-        className="prose prose-slate max-w-none border border-gray-100 rounded-lg p-6 bg-white shadow-sm"
-        dangerouslySetInnerHTML={{ __html: html }}
-      />
+      <div className="wva-fade-in">
+        <div
+          className="prose prose-slate max-w-none border border-gray-100 rounded-lg p-6 bg-white shadow-sm"
+          dangerouslySetInnerHTML={{ __html: html }}
+        />
 
-      <div className="flex flex-col gap-3 mt-6 justify-end">
-        <button
-          onClick={handleCopy}
-          className="px-4 py-2 rounded border-2 border-secondary text-white bg-secondary transition text-sm font-medium">
-          {copied ? "Copied!" : "Copy Results"}
-        </button>
-        <button
-          onClick={onReset}
-          className="px-4 py-2 rounded text-gray-600 hover:bg-gray-100 transition text-sm font-medium">
-          Analyze Another Site
-        </button>
+        <div className="flex flex-col gap-3 mt-6 justify-end">
+          <button
+            onClick={handleCopy}
+            className="px-4 py-2 rounded border-2 border-secondary text-white bg-secondary transition text-sm font-medium">
+            {copied ? "Copied!" : "Copy Results"}
+          </button>
+          <button
+            onClick={onReset}
+            className="px-4 py-2 rounded text-gray-600 hover:bg-gray-100 transition text-sm font-medium">
+            Analyze Another Site
+          </button>
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 
