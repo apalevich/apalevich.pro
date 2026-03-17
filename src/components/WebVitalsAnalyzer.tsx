@@ -18,6 +18,8 @@ const STATUS_MESSAGES = [
   "Finalizing your report...",
 ];
 
+const FINAL_STATUS_MESSAGE = "We need a little more time...";
+
 const COUNTDOWN_SECONDS = 60;
 const MESSAGE_INTERVAL_MS = 7000;
 
@@ -129,6 +131,8 @@ function LoadingState({ url }: { url: string }) {
     };
   }, []);
 
+  const currentMessage = secondsLeft === 0 ? FINAL_STATUS_MESSAGE : STATUS_MESSAGES[messageIndex];
+
   return (
     <div className="flex flex-col items-center py-8">
       <p className="text-xs text-gray-400 text-center font-mono px-4 max-w-xs">
@@ -152,9 +156,9 @@ function LoadingState({ url }: { url: string }) {
         </p>
 
         <p
-          key={messageIndex}
+          key={secondsLeft === 0 ? "final" : messageIndex}
           className="wva-fade-in text-gray-600 text-center text-sm font-medium px-4 max-w-sm leading-relaxed">
-          {STATUS_MESSAGES[messageIndex]}
+          {currentMessage}
         </p>
       </div>
     </div>
