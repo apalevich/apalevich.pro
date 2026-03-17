@@ -1,0 +1,71 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/container.astro";
+import Sectionhead from "@components/sectionhead.astro";
+import WebVitalsAnalyzer from "@components/WebVitalsAnalyzer";
+---
+
+<Layout title="Free Web Vitals Analysis | APalevich.Pro">
+  <Container>
+    <Sectionhead>
+      <Fragment slot="title">We Make Web Faster</Fragment>
+      <Fragment slot="desc">
+        Enter your website and we'll run a free Core Web Vitals audit —
+        then send you a personalized improvement plan.
+      </Fragment>
+    </Sectionhead>
+
+    <div class="mx-auto max-w-2xl mt-12 mb-20">
+      <WebVitalsAnalyzer client:load />
+    </div>
+
+    <div class="text-center mt-8 mb-16">
+      <a href="/" class="text-sm text-slate-500 hover:text-primary transition">
+        &larr; Back to home
+      </a>
+    </div>
+  </Container>
+</Layout>
+
+<style is:global>
+  @keyframes wva-spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes wva-pulse {
+    0%,
+    100% {
+      opacity: 1;
+    }
+
+    50% {
+      opacity: 0.4;
+    }
+  }
+
+  @keyframes wva-fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(6px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .wva-spinner {
+    animation: wva-spin 1s linear infinite;
+  }
+
+  .wva-pulse {
+    animation: wva-pulse 2s ease-in-out infinite;
+  }
+
+  .wva-fade-in {
+    animation: wva-fade-in 0.5s ease both;
+  }
+</style>
