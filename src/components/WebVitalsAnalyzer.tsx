@@ -131,8 +131,10 @@ function LoadingState({ url }: { url: string }) {
 
   return (
     <div className="flex flex-col items-center py-8">
-      <p className="text-xs text-gray-400 text-center font-mono px-4 max-w-xs break-all">
-        Analyzing your website. This usually takes up to 60 seconds.
+      <p className="text-xs text-gray-400 text-center font-mono px-4 max-w-xs">
+        Analyzing your website.
+        <br />
+        This usually takes up to 60 seconds...
       </p>
 
       <div className="spinner-box">
@@ -193,7 +195,7 @@ function ResultsState({
       </div>
 
       <div
-        className="prose prose-slate max-w-none rounded-lg p-7 bg-gradient-to-b from-gray-50 to-white border border-gray-100 shadow-md"
+        className="prose prose-slate max-w-none rounded-lg p-2"
         dangerouslySetInnerHTML={{ __html: html }}
       />
 
