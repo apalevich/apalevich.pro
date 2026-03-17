@@ -126,26 +126,30 @@ function LoadingState({ url }: { url: string }) {
 
   return (
     <div className="flex flex-col items-center py-10 gap-6">
-      <p className="text-xs text-slate-400 text-center">
-        Analyzing: <span className="font-mono">{url}</span>
+      <p
+        key={messageIndex}
+        className="wva-fade-in text-slate-600 text-center text-base max-w-xs">
+        {STATUS_MESSAGES[messageIndex]}
       </p>
 
-      <div className="relative w-16 h-16">
-        <div className="wva-spinner absolute inset-0 rounded-full border-4 border-secondary-100 border-t-secondary" />
-        <div
-          className="wva-pulse absolute inset-2 rounded-full"
-          style={{ background: "rgba(8,73,74,0.08)" }}
-        />
+      <div className="spinner-box">
+        <div className="blue-orbit leo"></div>
+
+        <div className="green-orbit leo"></div>
+
+        <div className="red-orbit leo"></div>
+
+        <div className="red-orbit w1 leo"></div>
+        <div className="green-orbit w2 leo"></div>
+        <div className="blue-orbit w3 leo"></div>
       </div>
 
       <p className="text-4xl font-bold text-primary tabular-nums">
         {secondsLeft > 0 ? secondsLeft + "s" : "A little more..."}
       </p>
 
-      <p
-        key={messageIndex}
-        className="wva-fade-in text-slate-600 text-center text-base max-w-xs">
-        {STATUS_MESSAGES[messageIndex]}
+      <p className="text-xs text-slate-400 text-center">
+        Analyzing: <span className="font-mono">{url}</span>
       </p>
     </div>
   );

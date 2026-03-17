@@ -28,44 +28,71 @@ import WebVitalsAnalyzer from "@components/WebVitalsAnalyzer";
 </Layout>
 
 <style is:global>
-  @keyframes wva-spin {
-    to {
-      transform: rotate(360deg);
-    }
-  }
-
-  @keyframes wva-pulse {
-    0%,
-    100% {
-      opacity: 1;
-    }
-
-    50% {
-      opacity: 0.4;
-    }
-  }
-
-  @keyframes wva-fade-in {
+    @keyframes spin {
     from {
-      opacity: 0;
-      transform: translateY(6px);
+        transform: rotate(0);
+    }
+    to{
+        transform: rotate(359deg);
+    }
     }
 
-    to {
-      opacity: 1;
-      transform: translateY(0);
+    @keyframes spin3D {
+    from {
+        transform: rotate3d(.5,.5,.5, 360deg);
     }
-  }
+    to{
+        transform: rotate3d(0deg);
+    }
+    }
 
-  .wva-spinner {
-    animation: wva-spin 1s linear infinite;
-  }
+    .spinner-box {
+    width: 300px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    }
 
-  .wva-pulse {
-    animation: wva-pulse 2s ease-in-out infinite;
-  }
+    .leo {
+    	position: absolute;
+    	display: flex;
+    	justify-content: center;
+    	align-items: center;
+    	border-radius: 50%;
+    }
 
-  .wva-fade-in {
-    animation: wva-fade-in 0.5s ease both;
-  }
+    .blue-orbit {
+       	width: 165px;
+       	height: 165px;
+        border: 1px solid #a1a1aa;
+        -webkit-animation: spin3D 3s linear .2s infinite;
+    }
+
+    .green-orbit {
+       	width: 120px;
+       	height: 120px;
+        border: 1px solid #109698;
+        -webkit-animation: spin3D 2s linear 0s infinite;
+    }
+
+    .red-orbit {
+       	width: 90px;
+       	height: 90px;
+        border: 2px solid #F39291;
+        -webkit-animation: spin3D 1s linear 0s infinite;
+    }
+
+    .w1 {
+    transform: rotate3D(1, 1, 1, 90deg);
+    }
+
+    .w2 {
+    transform: rotate3D(1, 2, .5, 90deg);
+    }
+
+    .w3 {
+    transform: rotate3D(.5, 1, 2, 90deg);
+    }
 </style>
