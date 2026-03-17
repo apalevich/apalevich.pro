@@ -50,8 +50,7 @@ function FormState({
       <div className="mb-5">
         <label
           htmlFor="wva-url"
-          className="block text-sm font-medium text-gray-700 mb-1"
-        >
+          className="block text-sm font-medium text-gray-700 mb-1">
           Your website URL
         </label>
         <input
@@ -78,8 +77,7 @@ function FormState({
       <div className="mb-6">
         <label
           htmlFor="wva-contact"
-          className="block text-sm font-medium text-gray-700 mb-1"
-        >
+          className="block text-sm font-medium text-gray-700 mb-1">
           Your email or messenger handle
         </label>
         <input
@@ -100,8 +98,7 @@ function FormState({
             canSubmit
               ? "bg-primary text-white hover:bg-primary-600 cursor-pointer"
               : "bg-gray-200 text-gray-400 cursor-not-allowed"
-          }`}
-      >
+          }`}>
         Analyze My Website
       </button>
     </form>
@@ -143,8 +140,7 @@ function LoadingState({ url }: { url: string }) {
 
       <p
         key={messageIndex}
-        className="wva-fade-in text-slate-600 text-center text-base max-w-xs"
-      >
+        className="wva-fade-in text-slate-600 text-center text-base max-w-xs">
         {STATUS_MESSAGES[messageIndex]}
       </p>
 
@@ -180,8 +176,7 @@ function ResultsState({
         improvements.{" "}
         <a
           href="/contact"
-          className="text-secondary underline hover:text-secondary-400 transition"
-        >
+          className="text-secondary underline hover:text-secondary-400 transition">
           Get in touch.
         </a>
       </p>
@@ -194,14 +189,12 @@ function ResultsState({
       <div className="flex gap-3 mt-6 justify-end">
         <button
           onClick={handleCopy}
-          className="px-4 py-2 rounded border-2 border-secondary text-secondary hover:bg-secondary hover:text-white transition text-sm font-medium"
-        >
+          className="px-4 py-2 rounded border-2 border-secondary text-secondary hover:bg-secondary hover:text-white transition text-sm font-medium">
           {copied ? "Copied!" : "Copy Results"}
         </button>
         <button
           onClick={onReset}
-          className="px-4 py-2 rounded border-2 border-gray-300 text-gray-600 hover:bg-gray-100 transition text-sm font-medium"
-        >
+          className="px-4 py-2 rounded border-2 border-gray-300 text-gray-600 hover:bg-gray-100 transition text-sm font-medium">
           Analyze Another Site
         </button>
       </div>
@@ -226,8 +219,9 @@ export default function WebVitalsAnalyzer() {
     try {
       const params = new URLSearchParams({ url, contact });
       const response = await fetch(
-        `https://apalevich.com/backend/web-tools/analyze?${params.toString()}`,
-        { signal: abortRef.current.signal }
+        // `https://apalevich.com/backend/web-tools/analyze?${params.toString()}`,
+        `${import.meta.env.PUBLIC_BACKEND_BASE_URL}/web-tools/analyze?${params.toString()}`,
+        { signal: abortRef.current.signal },
       );
 
       if (!response.ok) {
