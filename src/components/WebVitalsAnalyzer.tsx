@@ -203,11 +203,11 @@ function ResultsState({
           className="px-5 py-2.5 rounded-lg bg-gradient-to-r from-secondary to-secondary/80 text-white font-semibold text-sm shadow-md hover:shadow-lg transition duration-200">
           {copied ? "✓ Copied to Clipboard" : "Copy Results"}
         </button>
-        <button
-          onClick={onReset}
-          className="px-5 py-2.5 rounded-lg text-gray-700 font-semibold text-sm hover:bg-gray-100 transition duration-200 border border-gray-200 hover:border-gray-300">
-          Analyze Another Site
-        </button>
+        <a
+          href="/contact"
+          className="px-5 py-2.5 rounded-lg bg-gradient-to-r from-primary to-primary/80 text-white font-semibold text-sm shadow-md hover:shadow-lg hover:scale-105 transition duration-200 text-center">
+          Implement These Changes
+        </a>
       </div>
     </div>
   );
