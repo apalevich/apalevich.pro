@@ -39,7 +39,7 @@ function FormState({
   const canSubmit = url.trim() !== "" && contact.trim() !== "" && urlValid;
   const showError = urlTouched && url.trim() !== "" && !urlValid;
 
-  function handleSubmit(e: React.FormEvent) {
+  function handleSubmit(e: React.SubmitEvent) {
     e.preventDefault();
     if (!canSubmit) return;
     onSubmit(url.trim(), contact.trim());
@@ -96,7 +96,7 @@ function FormState({
         className={`w-full px-6 py-3 rounded text-center font-medium transition
           ${
             canSubmit
-              ? "bg-primary text-white hover:bg-primary-600 cursor-pointer"
+              ? "bg-secondary text-white hover:bg-secondary-600 cursor-pointer"
               : "bg-gray-200 text-gray-400 cursor-not-allowed"
           }`}>
         Analyze My Website
@@ -126,6 +126,10 @@ function LoadingState({ url }: { url: string }) {
 
   return (
     <div className="flex flex-col items-center py-10 gap-6">
+      <p className="text-xs text-slate-400 text-center">
+        Analyzing: <span className="font-mono">{url}</span>
+      </p>
+
       <div className="relative w-16 h-16">
         <div className="wva-spinner absolute inset-0 rounded-full border-4 border-secondary-100 border-t-secondary" />
         <div
@@ -135,17 +139,13 @@ function LoadingState({ url }: { url: string }) {
       </div>
 
       <p className="text-4xl font-bold text-primary tabular-nums">
-        {secondsLeft}s
+        {secondsLeft > 0 ? secondsLeft + "s" : "A little more..."}
       </p>
 
       <p
         key={messageIndex}
         className="wva-fade-in text-slate-600 text-center text-base max-w-xs">
         {STATUS_MESSAGES[messageIndex]}
-      </p>
-
-      <p className="text-xs text-slate-400 text-center">
-        Analyzing: <span className="font-mono">{url}</span>
       </p>
     </div>
   );
@@ -186,15 +186,15 @@ function ResultsState({
         dangerouslySetInnerHTML={{ __html: html }}
       />
 
-      <div className="flex gap-3 mt-6 justify-end">
+      <div className="flex flex-col gap-3 mt-6 justify-end">
         <button
           onClick={handleCopy}
-          className="px-4 py-2 rounded border-2 border-secondary text-secondary hover:bg-secondary hover:text-white transition text-sm font-medium">
+          className="px-4 py-2 rounded border-2 border-secondary text-white bg-secondary transition text-sm font-medium">
           {copied ? "Copied!" : "Copy Results"}
         </button>
         <button
           onClick={onReset}
-          className="px-4 py-2 rounded border-2 border-gray-300 text-gray-600 hover:bg-gray-100 transition text-sm font-medium">
+          className="px-4 py-2 rounded text-gray-600 hover:bg-gray-100 transition text-sm font-medium">
           Analyze Another Site
         </button>
       </div>
