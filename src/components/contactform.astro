@@ -1,18 +1,14 @@
 ---
 import Button from "./ui/button.astro";
+
+const backendUrl = import.meta.env.PUBLIC_BACKEND_BASE_URL;
 ---
 
-<!-- To make this contact form work, create your free access key from https://web3forms.com/
-     Then you will get all form submissions in your email inbox. -->
 <form
-  action="https://api.web3forms.com/submit"
-  method="POST"
   id="form"
   class="needs-validation"
+  data-backend-url={backendUrl}
   novalidate>
-  <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE" />
-  <!-- Create your free access key from https://web3forms.com/ -->
-  <input type="checkbox" class="hidden" style="display:none" name="botcheck" />
   <div class="mb-5">
     <input
       type="text"
@@ -26,19 +22,16 @@ import Button from "./ui/button.astro";
     </div>
   </div>
   <div class="mb-5">
-    <label for="email_address" class="sr-only">Email Address</label><input
-      id="email_address"
-      type="email"
-      placeholder="Email Address"
-      name="email"
+    <label for="contact" class="sr-only">Contact</label><input
+      id="contact"
+      type="text"
+      placeholder="Email or Phone"
+      name="contact"
       required
       class="w-full px-4 py-3 border-2 placeholder:text-gray-800 rounded-md outline-none focus:ring-4 border-gray-300 focus:border-gray-600 ring-gray-100"
     />
-    <div class="empty-feedback text-red-400 text-sm mt-1">
-      Please provide your email address.
-    </div>
-    <div class="invalid-feedback text-red-400 text-sm mt-1">
-      Please provide a valid email address.
+    <div class="empty-feedback invalid-feedback text-red-400 text-sm mt-1">
+      Please provide your contact information.
     </div>
   </div>
   <div class="mb-3">
@@ -79,6 +72,7 @@ import Button from "./ui/button.astro";
 <script is:inline>
   const form = document.getElementById("form");
   const result = document.getElementById("result");
+  const backendUrl = form.getAttribute("data-backend-url");
 
   form.addEventListener("submit", function (e) {
     e.preventDefault();
@@ -88,32 +82,34 @@ import Button from "./ui/button.astro";
       return;
     }
     const formData = new FormData(form);
-    const object = Object.fromEntries(formData);
-    const json = JSON.stringify(object);
+    const data = {
+      message: formData.get("message"),
+      name: formData.get("name"),
+      contact: formData.get("contact"),
+    };
+    const json = JSON.stringify(data);
 
     result.innerHTML = "Sending...";
 
-    fetch("https://api.web3forms.com/submit", {
+    fetch(`${backendUrl}/web-tools/feedback`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        Accept: "application/json",
       },
       body: json,
     })
       .then(async (response) => {
-        let json = await response.json();
         if (response.status == 200) {
           result.classList.add("text-green-500");
-          result.innerHTML = json.message;
+          result.innerHTML = "Message sent successfully!";
         } else {
-          console.log(response);
           result.classList.add("text-red-500");
-          result.innerHTML = json.message;
+          result.innerHTML = "Failed to send message. Please try again.";
         }
       })
       .catch((error) => {
         console.log(error);
+        result.classList.add("text-red-500");
         result.innerHTML = "Something went wrong!";
       })
       .then(function () {
