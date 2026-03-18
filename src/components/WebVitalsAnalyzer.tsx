@@ -131,7 +131,8 @@ function LoadingState({ url }: { url: string }) {
     };
   }, []);
 
-  const currentMessage = secondsLeft === 0 ? FINAL_STATUS_MESSAGE : STATUS_MESSAGES[messageIndex];
+  const currentMessage =
+    secondsLeft === 0 ? FINAL_STATUS_MESSAGE : STATUS_MESSAGES[messageIndex];
 
   return (
     <div className="flex flex-col items-center py-8">
@@ -241,7 +242,23 @@ export default function WebVitalsAnalyzer() {
       );
 
       if (!response.ok) {
-        throw new Error(`Server error: ${response.status}`);
+        let errorMessage = `Server error: ${response.status}`;
+
+        // For 4XX errors, try to extract message from response body
+        if (response.status >= 400 && response.status < 500) {
+          console.warn("ERROR", response);
+          console.warn("BODY", response.body);
+          try {
+            const errorData = (await response.json()) as { message?: string };
+            if (errorData.message) {
+              errorMessage = `Error ${response.status} — ${errorData.message}`;
+            }
+          } catch {
+            // If response body is not JSON, use default message
+          }
+        }
+
+        throw new Error(errorMessage);
       }
 
       const data: AnalysisResponse = await response.json();
@@ -249,7 +266,8 @@ export default function WebVitalsAnalyzer() {
       setState("results");
     } catch (err) {
       if ((err as Error).name === "AbortError") return;
-      setFetchError("Something went wrong. Please try again.");
+      const errorMsg = (err as Error).message;
+      setFetchError(errorMsg ?? "Something went wrong. Please try again.");
       console.error("fetchError", err);
       setState("form");
     }
