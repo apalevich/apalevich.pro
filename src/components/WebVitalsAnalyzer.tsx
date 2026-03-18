@@ -24,7 +24,7 @@ const COUNTDOWN_SECONDS = 60;
 const MESSAGE_INTERVAL_MS = 7000;
 
 const URL_REGEX =
-  /^(https?:\/\/)?([a-zA-Z0-9]([a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?\.)+[a-zA-Z]{2,}(\/[^\s]*)?$/;
+  /^(https?:\/\/)?([a-zA-Z0-9]([a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?\.)*[a-zA-Z0-9]([a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(\.[a-zA-Z]{2,})?(\/.*)?\s*$/;
 
 function isValidUrl(value: string): boolean {
   return URL_REGEX.test(value.trim());
