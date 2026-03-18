@@ -163,4 +163,19 @@ import WebVitalsAnalyzer from "@components/WebVitalsAnalyzer";
   .wva-button-ready:hover {
     animation: button-pulse 1.5s infinite;
   }
+
+  /* === Code Element Wrapping === */
+  code {
+    word-break: break-word;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    display: block;
+    white-space: pre-wrap;
+  }
+
+  pre code {
+    display: block;
+    overflow-x: auto;
+    max-width: 100%;
+  }
 </style>
