@@ -36,13 +36,9 @@ Dev server automatically tries different ports if 4321 is in use.
 
 ```
 src/
-├── (components)/        # New Astro route groups - shared components with naming convention
-├── (layouts)/          # New Astro route groups - layout components
-├── (pages)/            # New Astro route groups - website pages
-├── (styles)/           # Global styles directory
-├── components/         # Legacy components (being phased out)
-├── layouts/            # Legacy layouts (being phased out)
-├── pages/              # Legacy pages (being phased out)
+├── components/         # Shared components
+├── layouts/            # Layout components
+├── pages/              # Website pages (file-based routing)
 ├── content/            # Content collections
 │   ├── blog/          # Blog posts (markdown/mdx)
 │   ├── team/          # Team member data
@@ -55,7 +51,7 @@ src/
 └── env.d.ts           # Astro environment type declarations
 ```
 
-**Important Note:** The project is in transition between two organizational patterns. New work should use parentheses-based route groups `(components)/`, `(layouts)/`, `(pages)/` rather than the flat structure. Both currently coexist.
+**Note:** The project uses a flat/legacy structure. Parentheses-based route groups `(components)/`, `(layouts)/`, `(pages)/` were considered for future migration but are not currently implemented.
 
 ### Core Integrations & Features
 
@@ -82,20 +78,21 @@ Configured in `tsconfig.json` for cleaner imports:
 @components/* → src/components/*
 @layouts/*    → src/layouts/*
 @assets/*     → src/assets/*
+@images/*     → src/images/*
 @pages/*      → src/pages/*
 ```
 
 ### Routing
 
 Astro routes are file-based:
-- Files in `src/pages/` (or `src/(pages)/`) become routes
+- Files in `src/pages/` become routes
 - `src/pages/index.astro` → `/`
 - `src/pages/about.astro` → `/about`
-- `src/(pages)/blog/[...slug].astro` → Dynamic blog routing
+- Dynamic routes use `[slug]` pattern; blog uses `[...slug].astro` for nested paths
 
 ## Configuration Files
 
-- **astro.config.mjs** - Astro configuration with integrations
+- **astro.config.mjs** - Astro configuration with integrations and site URL (`https://apalevich.pro`)
 - **tailwind.config.mjs** - TailwindCSS customization (colors, fonts)
 - **tsconfig.json** - TypeScript config with strict null checks and path aliases
 - **.prettierrc.json** - Code formatting (2-space tabs, no semicolons on same line)
@@ -106,13 +103,26 @@ Astro routes are file-based:
 - **TypeScript**: Strict null checks enabled
 - **No ESLint/Stylelint**: Not configured in this project
 
+## Interactive Components & Islands
+
+**React Islands:** If adding interactive React components, you'll need to:
+1. Install React integration: `npm run astro add react`
+2. Create `.tsx` or `.jsx` files in `src/components/`
+3. Use Astro's client directives to hydrate components:
+   - `client:load` - Hydrate immediately
+   - `client:idle` - Hydrate when browser is idle
+   - `client:visible` - Hydrate when element enters viewport
+   - `client:media="(max-width: 768px)"` - Hydrate on media query match
+4. Example: `<MyComponent client:idle />`
+
+**Environment Variables:** Access via `import.meta.env.PROD` for production detection or define custom env vars in `.env` files.
+
+**Inline Scripts:** For vanilla JS interactivity, use `<script>` tags in `.astro` files. The GTM initialization in `Layout.astro` shows the pattern.
+
 ## Important Known Issues & Patterns
 
 ### GithubWidget Component
-The `src/(components)/GithubWidget.astro` component has optional chaining in script blocks. If modifying this file, ensure proper null-checking instead of using `?.` on assignment targets (e.g., `document.getElementById("message")?.innerHTML =` is invalid syntax).
-
-### Component Duplication
-Both `src/(components)/` and `src/components/` may contain similar components. This is due to design updates. Prefer using parentheses-based versions for new work.
+The `src/components/GithubWidget.astro` component has optional chaining in script blocks. If modifying this file, ensure proper null-checking instead of using `?.` on assignment targets (e.g., `document.getElementById("message")?.innerHTML =` is invalid syntax).
 
 ## Content Management
 

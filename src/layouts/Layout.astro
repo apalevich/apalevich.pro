@@ -7,6 +7,7 @@ import '@fontsource-variable/bricolage-grotesque';
 
 export interface Props {
   title?: string;
+  description?: string;
 }
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
@@ -16,7 +17,7 @@ const resolvedImageWithDomain = new URL(
   Astro.site
 ).toString();
 
-const { title } = Astro.props;
+const { title, description } = Astro.props;
 
 const makeTitle = title
   ? title + " | " + "APalevich.Pro"
@@ -34,7 +35,7 @@ const makeTitle = title
     <!-- <link rel="preload" as="image" href={src} alt="Hero" /> -->
     <SEO
       title={title ?? "Technical Solutions for Marketing Leaders"}
-      description={"APalevich.Pro"}
+      description={description ?? "APalevich.Pro"}
       canonical={canonicalURL}
       twitter={{
         creator: "@apalevich",
