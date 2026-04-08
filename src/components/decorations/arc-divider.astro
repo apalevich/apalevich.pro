@@ -1,0 +1,33 @@
+---
+interface Props {
+  class?: string;
+  direction?: 'top' | 'bottom';
+}
+
+const { class: className = '', direction = 'bottom' } = Astro.props;
+---
+
+<div class:list={['arc-divider', `arc-${direction}`, className]}>
+  <svg viewBox="0 0 1200 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,50 Q300,0 600,50 T1200,50 L1200,120 L0,120 Z" fill="currentColor" />
+  </svg>
+</div>
+
+<style>
+  .arc-divider {
+    width: 100%;
+    height: 60px;
+    color: inherit;
+    overflow: hidden;
+  }
+
+  .arc-divider svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  .arc-top svg {
+    transform: scaleY(-1);
+  }
+</style>

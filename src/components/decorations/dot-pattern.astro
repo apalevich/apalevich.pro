@@ -1,0 +1,38 @@
+---
+interface Props {
+  class?: string;
+  count?: number;
+  size?: 'sm' | 'md' | 'lg';
+}
+
+const { class: className = '', count = 3, size = 'md' } = Astro.props;
+
+const sizeMap = {
+  sm: '6px',
+  md: '12px',
+  lg: '24px',
+};
+
+const dotSize = sizeMap[size];
+---
+
+<div class:list={['dot-pattern', className]}>
+  {Array.from({ length: count }).map(() => (
+    <div class="dot"></div>
+  ))}
+</div>
+
+<style define:vars={{ dotSize }}>
+  .dot-pattern {
+    display: flex;
+    gap: 16px;
+  }
+
+  .dot {
+    width: var(--dotSize);
+    height: var(--dotSize);
+    border-radius: 50%;
+    background: currentColor;
+    opacity: 0.15;
+  }
+</style>

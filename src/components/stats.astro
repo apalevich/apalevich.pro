@@ -1,56 +1,76 @@
 ---
+import DotPattern from './decorations/dot-pattern.astro';
 ---
 
-<section class="py-16 md:py-24">
-  <div class="max-w-4xl mx-auto px-4">
-    <div class="text-center mb-12">
-      <h2 class="text-3xl md:text-4xl font-bold mb-4">
-        Trusted by 20+ companies
+<section class="relative py-24 md:py-40 overflow-hidden">
+  {/* Background decoration */}
+  <div class="absolute inset-0 -z-10">
+    <div class="absolute top-20 left-10 w-72 h-72 bg-primary/5 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-0 right-20 w-96 h-96 bg-secondary/5 rounded-full blur-3xl"></div>
+  </div>
+
+  <div class="max-w-6xl mx-auto px-4">
+    {/* Header */}
+    <div class="mb-20 md:mb-32">
+      <div class="flex items-center gap-4 mb-6">
+        <DotPattern count={4} size="md" class="text-primary" />
+      </div>
+      <h2 class="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6">
+        Trusted by<br />20+ companies
       </h2>
-      <p class="text-lg text-slate-600">
-        Proven results that speak for themselves
+      <p class="text-lg md:text-xl text-slate-600 max-w-2xl">
+        Our metrics speak louder than words. Real results from real projects.
       </p>
     </div>
 
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
+    {/* Stats Grid */}
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
       {/* Projects */}
-      <div class="text-center">
-        <div class="text-4xl md:text-5xl font-bold text-primary mb-2">
-          20+
+      <div class="group relative">
+        <div class="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        <div class="relative p-8 md:p-10 rounded-2xl border border-slate-200 dark:border-slate-800 hover:border-primary/30 transition-colors duration-300">
+          <p class="text-sm font-semibold text-slate-500 uppercase tracking-wide mb-4">Projects Delivered</p>
+          <div class="text-6xl md:text-7xl font-bold text-primary mb-2">
+            20<span class="text-4xl font-light">+</span>
+          </div>
+          <div class="h-1 w-12 bg-primary/20 rounded-full mt-4"></div>
         </div>
-        <p class="text-slate-600 text-sm md:text-base">
-          Projects Delivered
-        </p>
       </div>
 
       {/* Core Web Vitals */}
-      <div class="text-center">
-        <div class="text-4xl md:text-5xl font-bold text-primary mb-2">
-          90+
+      <div class="group relative">
+        <div class="absolute inset-0 bg-gradient-to-br from-secondary/10 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        <div class="relative p-8 md:p-10 rounded-2xl border border-slate-200 dark:border-slate-800 hover:border-secondary/30 transition-colors duration-300">
+          <p class="text-sm font-semibold text-slate-500 uppercase tracking-wide mb-4">CWV Guarantee</p>
+          <div class="text-6xl md:text-7xl font-bold text-secondary mb-2">
+            90<span class="text-4xl font-light">+</span>
+          </div>
+          <div class="h-1 w-12 bg-secondary/20 rounded-full mt-4"></div>
         </div>
-        <p class="text-slate-600 text-sm md:text-base">
-          Core Web Vitals Guarantee
-        </p>
       </div>
 
       {/* Time to Hire */}
-      <div class="text-center">
-        <div class="text-4xl md:text-5xl font-bold text-primary mb-2">
-          1.5 mo
+      <div class="group relative">
+        <div class="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        <div class="relative p-8 md:p-10 rounded-2xl border border-slate-200 dark:border-slate-800 hover:border-primary/30 transition-colors duration-300">
+          <p class="text-sm font-semibold text-slate-500 uppercase tracking-wide mb-4">Time-to-Hire</p>
+          <div class="text-6xl md:text-7xl font-bold text-primary mb-2">
+            1.5<span class="text-3xl font-light">mo</span>
+          </div>
+          <div class="h-1 w-12 bg-primary/20 rounded-full mt-4"></div>
         </div>
-        <p class="text-slate-600 text-sm md:text-base">
-          Total Time-to-Hire
-        </p>
       </div>
 
-      {/* Leadership Time Saved */}
-      <div class="text-center">
-        <div class="text-4xl md:text-5xl font-bold text-primary mb-2">
-          60 hrs
+      {/* Leadership Time */}
+      <div class="group relative">
+        <div class="absolute inset-0 bg-gradient-to-br from-secondary/10 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        <div class="relative p-8 md:p-10 rounded-2xl border border-slate-200 dark:border-slate-800 hover:border-secondary/30 transition-colors duration-300">
+          <p class="text-sm font-semibold text-slate-500 uppercase tracking-wide mb-4">Time Saved</p>
+          <div class="text-6xl md:text-7xl font-bold text-secondary mb-2">
+            60<span class="text-3xl font-light">hrs</span>
+          </div>
+          <div class="h-1 w-12 bg-secondary/20 rounded-full mt-4"></div>
         </div>
-        <p class="text-slate-600 text-sm md:text-base">
-          Leadership Time Saved
-        </p>
       </div>
     </div>
   </div>

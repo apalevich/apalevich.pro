@@ -3,9 +3,10 @@ import { Picture } from "astro:assets";
 import heroImage from "images/portrait.png";
 import Link from "@components/ui/link.astro";
 import { Icon } from "astro-icon/components";
+import DotPattern from "./decorations/dot-pattern.astro";
 ---
 
-<main class="grid lg:grid-cols-2 place-items-center pt-16 pb-8 md:pt-12 md:pb-12">
+<main class="grid lg:grid-cols-2 place-items-center pt-20 pb-12 md:pt-32 md:pb-20">
   <div class="mb-12 md:order-1 block relative lg:w-7/12 md:my-12">
     <div
         class="bg-primary rounded-full absolute aspect-square w-1/2 lg:w-auto lg:h-full top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 opacity-85"
@@ -23,19 +24,26 @@ import { Icon } from "astro-icon/components";
     />
   </div>
   <div>
+    <div class="flex items-center gap-3 mb-8">
+      <DotPattern count={3} size="md" class="text-primary" />
+      <span class="text-sm font-semibold uppercase tracking-widest text-slate-600">Technical Solutions</span>
+    </div>
+
     <h1
-      class="text-5xl lg:text-6xl xl:text-7xl font-bold lg:tracking-tight xl:tracking-tighter">
+      class="text-6xl lg:text-7xl xl:text-8xl font-bold lg:tracking-tight xl:tracking-tighter leading-tight mb-6">
       Ship Faster.<wbr/> Rank Better.<wbr/> Hire Smarter.
     </h1>
-    <p class="text-lg mt-4 text-slate-600 max-w-xl">
-      Over 20 companies have used our technical expertise to launch websites in weeks, reach Core Web Vitals of 90+, and hire senior talent in 1.5 months—without the months-long waiting.
+
+    <p class="text-lg md:text-xl text-slate-600 max-w-xl leading-relaxed mb-8">
+      Over 20 companies have used our technical expertise to launch websites in weeks, reach Core Web Vitals of 90+, and hire senior talent in 1.5 months.
     </p>
-    <div class="mt-6 flex flex-col sm:flex-row gap-3">
+
+    <div class="mt-10 flex flex-col sm:flex-row gap-4">
       <Link
         style="fancy"
         href="https://cal.com/apalevich/20min"
         target="_blank"
-        class="flex gap-1 items-center justify-center"
+        class="flex gap-2 items-center justify-center px-8 py-3"
         rel="noopener">
           Schedule a Call
       </Link>
@@ -44,9 +52,9 @@ import { Icon } from "astro-icon/components";
         style="outline"
         rel="noopener"
         href="https://wa.me/995511106964"
-        class="flex gap-1 items-center justify-center"
+        class="flex gap-2 items-center justify-center px-8 py-3"
         target="_blank">
-          <Icon class="text-black w-4 h-4" name="bx:bxl-whatsapp" />
+          <Icon class="text-black w-5 h-5" name="bx:bxl-whatsapp" />
           WhatsApp
       </Link>
     </div>
