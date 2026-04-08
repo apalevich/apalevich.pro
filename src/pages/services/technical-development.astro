@@ -1,0 +1,113 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/container.astro";
+import Sectionhead from "@components/sectionhead.astro";
+import Cta from "@components/cta.astro";
+import { Icon } from "astro-icon/components";
+---
+
+<Layout title="Technical Development & Implementation | APalevich.Pro" description="Full-cycle web app and website development with AI integration and post-launch support.">
+  <Container>
+    <Sectionhead>
+      <Fragment slot="title">Technical Development & Implementation</Fragment>
+      <Fragment slot="desc">Build modern web applications and websites from concept to production with AI integration and full-cycle support.</Fragment>
+    </Sectionhead>
+
+    <!-- What We Do -->
+    <section class="mt-16 lg:mt-20">
+      <h2 class="text-4xl font-bold mb-12">What We Do</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="flex flex-col">
+          <div class="flex items-start gap-4">
+            <Icon size={32} name="bx:bxs-window-alt" class="text-primary flex-shrink-0 mt-1" />
+            <div>
+              <h3 class="text-xl font-semibold mb-2">Web Applications</h3>
+              <p class="text-slate-600">Full-stack development from concept through launch. React, Vue, Node.js, or custom tech stacks—we ship production-ready code with scalability built in.</p>
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-col">
+          <div class="flex items-start gap-4">
+            <Icon size={32} name="bx:bxs-window-alt" class="text-primary flex-shrink-0 mt-1" />
+            <div>
+              <h3 class="text-xl font-semibold mb-2">Websites & Platforms</h3>
+              <p class="text-slate-600">Marketing websites, SaaS platforms, and content sites optimized for performance and conversions. Built with Astro, Next.js, or modern frameworks.</p>
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-col">
+          <div class="flex items-start gap-4">
+            <Icon size={32} name="bx:bxs-bot" class="text-primary flex-shrink-0 mt-1" />
+            <div>
+              <h3 class="text-xl font-semibold mb-2">AI Integration</h3>
+              <p class="text-slate-600">Integrate LLMs, AI agents, and conversational interfaces into your product. We handle API architecture, streaming, and real-time interactions.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Proof Points -->
+    <section class="mt-20 bg-gradient-to-br from-slate-50 to-slate-100 rounded-2xl p-12 md:p-16">
+      <h2 class="text-4xl font-bold mb-16 text-center">Proven Results</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
+        <div>
+          <p class="text-6xl font-bold text-primary mb-2">2 weeks</p>
+          <p class="text-slate-600">Average delivery ahead of schedule</p>
+        </div>
+        <div>
+          <p class="text-6xl font-bold text-primary mb-2">100%</p>
+          <p class="text-slate-600">Post-launch support included</p>
+        </div>
+        <div>
+          <p class="text-6xl font-bold text-primary mb-2">3 months</p>
+          <p class="text-slate-600">From brief to shipped AI product</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Case Study Highlight -->
+    <section class="mt-20">
+      <h2 class="text-4xl font-bold mb-12">Recent Wins</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-[1px] bg-zinc-200 rounded-lg overflow-hidden">
+        <div class="bg-white p-8 md:p-12">
+          <p class="text-sm font-medium text-secondary mb-2">Fast-Tracked Launch</p>
+          <h3 class="text-2xl font-bold mb-4">AI Chat Application (NDA)</h3>
+          <p class="text-slate-700 mb-6">Delivered a fully functional conversational AI platform from concept to production in just 3 months—beating industry standard timelines by 3+ months. We handled full-stack development, API architecture, and provided 6 months of post-launch support and optimization.</p>
+          <p class="text-sm text-slate-500"><strong>Key metrics:</strong> 200k+ monthly active conversations, sub-100ms API response times</p>
+        </div>
+        <div class="bg-white p-8 md:p-12 border-l border-zinc-200">
+          <p class="text-sm font-medium text-secondary mb-2">US Market Expansion</p>
+          <h3 class="text-2xl font-bold mb-4">Unbiased.com</h3>
+          <p class="text-slate-700 mb-6">Led the technical execution for Unbiased's US market launch, delivering a new Vue/Nuxt frontend ahead of schedule. Implemented strategic infrastructure improvements that strengthened the platform's foundation for sustainable international growth.</p>
+          <p class="text-sm text-slate-500"><strong>Impact:</strong> 50%+ faster market entry than typical expansion projects</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="mt-20">
+      <h2 class="text-4xl font-bold mb-12">Why We're Different</h2>
+      <div class="space-y-6">
+        <div class="border-l-4 border-primary pl-6 py-2">
+          <h3 class="text-xl font-semibold mb-2">Full-Cycle Ownership</h3>
+          <p class="text-slate-600">From initial architecture to post-launch support. You get a technical partner, not just a dev shop that disappears after deploy.</p>
+        </div>
+        <div class="border-l-4 border-primary pl-6 py-2">
+          <h3 class="text-xl font-semibold mb-2">AI-Ready Architecture</h3>
+          <p class="text-slate-600">We design systems anticipating AI integration—streaming APIs, real-time updates, and scalable inference patterns built in from day one.</p>
+        </div>
+        <div class="border-l-4 border-primary pl-6 py-2">
+          <h3 class="text-xl font-semibold mb-2">Speed Without Compromise</h3>
+          <p class="text-slate-600">Consistent track record of shipping ahead of schedule while maintaining production code quality and maintainability.</p>
+        </div>
+        <div class="border-l-4 border-primary pl-6 py-2">
+          <h3 class="text-xl font-semibold mb-2">Startup-to-Enterprise Experience</h3>
+          <p class="text-slate-600">We've scaled products from MVP to millions of users. We understand both the hustle of early-stage and the rigor of mature platforms.</p>
+        </div>
+      </div>
+    </section>
+
+    <Cta />
+  </Container>
+</Layout>

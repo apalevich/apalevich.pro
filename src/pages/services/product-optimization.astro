@@ -1,0 +1,156 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/container.astro";
+import Sectionhead from "@components/sectionhead.astro";
+import Cta from "@components/cta.astro";
+import { Icon } from "astro-icon/components";
+---
+
+<Layout title="Product & UX Optimization | APalevich.Pro" description="Transform underperforming products with infrastructure optimization, Core Web Vitals improvements, and SEO enhancements.">
+  <Container>
+    <Sectionhead>
+      <Fragment slot="title">Product & UX Optimization</Fragment>
+      <Fragment slot="desc">Transform underperforming products into revenue drivers through infrastructure optimization, speed improvements, and strategic enhancements.</Fragment>
+    </Sectionhead>
+
+    <!-- What We Do -->
+    <section class="mt-16 lg:mt-20">
+      <h2 class="text-4xl font-bold mb-12">What We Optimize</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="flex flex-col">
+          <div class="flex items-start gap-4">
+            <Icon size={32} name="bx:bxs-bolt" class="text-primary flex-shrink-0 mt-1" />
+            <div>
+              <h3 class="text-xl font-semibold mb-2">Loading Speed & Core Web Vitals</h3>
+              <p class="text-slate-600">Cut page load times, reduce JavaScript, and improve LCP, FID, and CLS. We audit, identify bottlenecks, and implement measurable improvements.</p>
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-col">
+          <div class="flex items-start gap-4">
+            <Icon size={32} name="bx:bxs-window-alt" class="text-primary flex-shrink-0 mt-1" />
+            <div>
+              <h3 class="text-xl font-semibold mb-2">Infrastructure Optimization</h3>
+              <p class="text-slate-600">Audit and improve your CDN, caching strategy, database queries, and deployment pipeline. Reduce server costs while improving performance.</p>
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-col">
+          <div class="flex items-start gap-4">
+            <Icon size={32} name="bx:bxs-bot" class="text-primary flex-shrink-0 mt-1" />
+            <div>
+              <h3 class="text-xl font-semibold mb-2">SEO & Discoverability</h3>
+              <p class="text-slate-600">Audit on-page SEO, schema markup, technical SEO issues, and crawlability. Improve your visibility to search engines and AI indexes.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Proof Points -->
+    <section class="mt-20 bg-gradient-to-br from-slate-50 to-slate-100 rounded-2xl p-12 md:p-16">
+      <h2 class="text-4xl font-bold mb-16 text-center">Measurable Impact</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
+        <div>
+          <p class="text-6xl font-bold text-primary mb-2">26%</p>
+          <p class="text-slate-600">JavaScript reduction (typical)</p>
+        </div>
+        <div>
+          <p class="text-6xl font-bold text-primary mb-2">70%</p>
+          <p class="text-slate-600">Frame drop reduction in animations</p>
+        </div>
+        <div>
+          <p class="text-6xl font-bold text-primary mb-2">8x</p>
+          <p class="text-slate-600">Speed increase on operational workflows</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Case Study Highlight -->
+    <section class="mt-20">
+      <h2 class="text-4xl font-bold mb-12">Case Studies</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-[1px] bg-zinc-200 rounded-lg overflow-hidden">
+        <div class="bg-white p-8 md:p-12">
+          <p class="text-sm font-medium text-secondary mb-2">Animation Performance</p>
+          <h3 class="text-2xl font-bold mb-4">CSLand</h3>
+          <p class="text-slate-700 mb-6">An international gaming assets platform was struggling with heavy animations on mobile and throttled devices. We identified the root causes through performance profiling and optimized rendering pipelines, reducing JavaScript code by 26% and frame drops by 70%.</p>
+          <p class="text-sm text-slate-500"><strong>Result:</strong> Mobile conversion increased by 18%; users on low-end devices retained</p>
+        </div>
+        <div class="bg-white p-8 md:p-12 border-l border-zinc-200">
+          <p class="text-sm font-medium text-secondary mb-2">Operational Efficiency</p>
+          <h3 class="text-2xl font-bold mb-4">La Redoute</h3>
+          <p class="text-slate-700 mb-6">France's largest fashion retailer faced bottlenecks in email marketing and financial workflows. We built an automation solution that reduced email template production time by 8x and accelerated referral payment processing by 5x, freeing up the marketing team for strategic work.</p>
+          <p class="text-sm text-slate-500"><strong>Impact:</strong> ~40 hours/month saved in operational work</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Process -->
+    <section class="mt-20">
+      <h2 class="text-4xl font-bold mb-12">How We Work</h2>
+      <div class="space-y-8">
+        <div class="flex gap-6">
+          <div class="flex-shrink-0">
+            <div class="flex items-center justify-center h-12 w-12 rounded-md bg-primary text-white font-bold">1</div>
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold mb-2">Performance Audit</h3>
+            <p class="text-slate-600">We profile your product with real-world data. Chrome DevTools, Lighthouse, synthetic monitoring—we find where time is being lost.</p>
+          </div>
+        </div>
+        <div class="flex gap-6">
+          <div class="flex-shrink-0">
+            <div class="flex items-center justify-center h-12 w-12 rounded-md bg-primary text-white font-bold">2</div>
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold mb-2">Root Cause Analysis</h3>
+            <p class="text-slate-600">Not just the symptoms. We dig into code, infrastructure, and workflows to identify what's actually slowing you down.</p>
+          </div>
+        </div>
+        <div class="flex gap-6">
+          <div class="flex-shrink-0">
+            <div class="flex items-center justify-center h-12 w-12 rounded-md bg-primary text-white font-bold">3</div>
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold mb-2">Strategic Optimization</h3>
+            <p class="text-slate-600">We prioritize changes by impact and effort. High-impact fixes first, measured results every step.</p>
+          </div>
+        </div>
+        <div class="flex gap-6">
+          <div class="flex-shrink-0">
+            <div class="flex items-center justify-center h-12 w-12 rounded-md bg-primary text-white font-bold">4</div>
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold mb-2">Monitoring & Iteration</h3>
+            <p class="text-slate-600">We set up monitoring so you can track improvements over time. Continuous optimization is built in.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="mt-20">
+      <h2 class="text-4xl font-bold mb-12">Why Partners Choose Us</h2>
+      <div class="space-y-6">
+        <div class="border-l-4 border-primary pl-6 py-2">
+          <h3 class="text-xl font-semibold mb-2">Results-Driven Approach</h3>
+          <p class="text-slate-600">We measure everything. No vague claims—just hard numbers showing where performance improved and why.</p>
+        </div>
+        <div class="border-l-4 border-primary pl-6 py-2">
+          <h3 class="text-xl font-semibold mb-2">Weeks, Not Months</h3>
+          <p class="text-slate-600">Most optimization projects show measurable wins within 2-4 weeks. Fast iteration, fast feedback.</p>
+        </div>
+        <div class="border-l-4 border-primary pl-6 py-2">
+          <h3 class="text-xl font-semibold mb-2">Technical Depth</h3>
+          <p class="text-slate-600">We understand the full stack—frontend rendering, backend APIs, databases, CDNs. Optimization isn't just about minification.</p>
+        </div>
+        <div class="border-l-4 border-primary pl-6 py-2">
+          <h3 class="text-xl font-semibold mb-2">Knowledge Transfer</h3>
+          <p class="text-slate-600">We document improvements and train your team so you can maintain and build on the changes long-term.</p>
+        </div>
+      </div>
+    </section>
+
+    <Cta />
+  </Container>
+</Layout>

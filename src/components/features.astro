@@ -27,18 +27,21 @@ const features = [
     subtitle: "Web apps, websites, AI integration",
     description: "Build modern web applications and websites from concept to production. We specialize in integrating AI solutions, optimizing architecture for scale, and delivering full-cycle development with post-launch support.",
     icon: "bx:bxs-window-alt",
+    href: "/services/technical-development",
   },
   {
     title: "Product & UX Optimization",
     subtitle: "Speed, performance, SEO",
     description: "Transform underperforming products into revenue drivers. We optimize infrastructure, reduce load times, improve Core Web Vitals, and enhance SEO—often delivering measurable improvements in weeks, not months.",
     icon: "bx:bxs-bolt",
+    href: "/services/product-optimization",
   },
   {
     title: "IT Recruitment for Technical Teams",
     subtitle: "Hire senior talent in weeks, not months",
     description: "Access pre-vetted senior developers and specialists without months of wasted pipeline. We manage the full hiring process—from candidate profiling to offer stage—so your team stays focused on building.",
     icon: "bx:bxs-user-check",
+    href: "/services/it-recruitment",
   },
 ];
 ---
@@ -55,32 +58,34 @@ const features = [
 
 <div class="grid grid-cols-1 lg:grid-cols-3 my-16 lg:my-8 gap-4 lg:px-8 ">
   {
-    features.map(({title, subtitle, description, icon}) => (
-      <Card text={description}>
-        <div class="flex-1" slot="heading">
-          <h2 class="text-4xl lg:text-5xl font-semibold" set:text={title} />
-          <p
-              class="mt-1 text-base lg:text-lg font-normal text-gray-500 opacity-50"
-              set:text={subtitle}
-          />
-        </div>
+    features.map(({title, subtitle, description, icon, href}) => (
+      <a href={href} class="block group hover:opacity-80 transition-opacity">
+        <Card text={description}>
+          <div class="flex-1" slot="heading">
+            <h2 class="text-4xl lg:text-5xl font-semibold group-hover:text-primary transition-colors" set:text={title} />
+            <p
+                class="mt-1 text-base lg:text-lg font-normal text-gray-500 opacity-50"
+                set:text={subtitle}
+            />
+          </div>
 
-        {/* <Fragment slot="links">
-            <a
-                class="text-link  lg:text-lg"
-                href="https://github.com/apalevich"
-                target="_blank"
-                aria-label="Open in new tab">GitHub</a
-            > /
-            <a
-                class="text-link  lg:text-lg"
-                href="https://linkedin.com/in/apalevich/"
-                target="_blank"
-                aria-label="Open in new tab">LinkedIn</a
-            >
-        </Fragment> */}
-        <Icon size={145} class="text-white" name={icon} slot="icon" />
-      </Card>
+          {/* <Fragment slot="links">
+              <a
+                  class="text-link  lg:text-lg"
+                  href="https://github.com/apalevich"
+                  target="_blank"
+                  aria-label="Open in new tab">GitHub</a
+              > /
+              <a
+                  class="text-link  lg:text-lg"
+                  href="https://linkedin.com/in/apalevich/"
+                  target="_blank"
+                  aria-label="Open in new tab">LinkedIn</a
+              >
+          </Fragment> */}
+          <Icon size={145} class="text-white" name={icon} slot="icon" />
+        </Card>
+      </a>
     ))
   }
 </div>
