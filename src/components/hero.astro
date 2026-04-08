@@ -1,9 +1,32 @@
 ---
 import { Picture } from "astro:assets";
-import heroImage from "images/hero-artem.png";
+import type { ImageMetadata } from "astro";
+import defaultHeroImage from "images/hero-artem.png";
 import Link from "@components/ui/link.astro";
 import { Icon } from "astro-icon/components";
 import DotPattern from "./decorations/dot-pattern.astro";
+
+interface Props {
+  image?: ImageMetadata;
+  imageAlt?: string;
+  badge?: string;
+  headline?: string;
+  subheadline?: string;
+  bullets?: string[];
+  ctaPrimary?: { text: string; href: string };
+  ctaSecondary?: { text: string; href: string; icon?: string };
+}
+
+const {
+  image = defaultHeroImage,
+  imageAlt = "portrait",
+  badge = "Technical Solutions",
+  headline = "Ship Faster.<wbr/> Rank Better.<wbr/> Hire Smarter.",
+  subheadline = "Over 20 companies have used our technical expertise to launch websites in weeks, reach Core Web Vitals of 90+, and hire senior talent in 1.5 months.",
+  bullets,
+  ctaPrimary = { text: "Schedule a Call", href: "https://cal.com/apalevich/20min" },
+  ctaSecondary = { text: "WhatsApp", href: "https://wa.me/995511106964", icon: "bx:bxl-whatsapp" },
+} = Astro.props;
 ---
 
 <main class="grid lg:grid-cols-2 place-items-center pt-20 pb-12 md:pt-32 md:pb-20">
@@ -14,9 +37,9 @@ import DotPattern from "./decorations/dot-pattern.astro";
     </div>
     <Picture
         fetchpriority="high"
-        src={heroImage}
+        src={image}
         class="w-1/2 lg:w-full scale-125 top-1/2 left-1/2 -translate-x-1/2 lg:translate-x-0 ml-auto grayscale brightness-125"
-        alt="portrait"
+        alt={imageAlt}
         widths={[200, 400, 600]}
         sizes="(max-width: 800px) 100vw, 620px"
         loading="eager"
@@ -26,36 +49,47 @@ import DotPattern from "./decorations/dot-pattern.astro";
   <div>
     <div class="flex items-center gap-3 mb-8">
       <DotPattern count={3} size="md" class="text-primary" />
-      <span class="text-sm font-semibold uppercase tracking-widest text-slate-600">Technical Solutions</span>
+      <span class="text-sm font-semibold uppercase tracking-widest text-slate-600">{badge}</span>
     </div>
 
     <h1
-      class="text-6xl lg:text-7xl xl:text-8xl font-bold lg:tracking-tight xl:tracking-tighter leading-tight mb-6">
-      Ship Faster.<wbr/> Rank Better.<wbr/> Hire Smarter.
-    </h1>
+      class="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold lg:tracking-tight xl:tracking-tighter leading-tight mb-6"
+      set:html={headline}
+    />
 
-    <p class="text-lg md:text-xl text-slate-600 max-w-xl leading-relaxed mb-8">
-      Over 20 companies have used our technical expertise to launch websites in weeks, reach Core Web Vitals of 90+, and hire senior talent in 1.5 months.
+    <p class="text-base sm:text-lg md:text-xl text-slate-600 max-w-xl leading-relaxed mb-6">
+      {subheadline}
     </p>
 
-    <div class="mt-10 flex flex-col sm:flex-row gap-4">
+    {bullets && bullets.length > 0 && (
+      <ul class="mb-8 space-y-2">
+        {bullets.map(bullet => (
+          <li class="flex items-start gap-2 text-sm sm:text-base text-slate-700">
+            <span class="text-secondary font-bold mt-0.5 flex-shrink-0">✓</span>
+            <span set:html={bullet} />
+          </li>
+        ))}
+      </ul>
+    )}
+
+    <div class="mt-8 flex flex-col sm:flex-row gap-3">
       <Link
         style="fancy"
-        href="https://cal.com/apalevich/20min"
+        href={ctaPrimary.href}
         target="_blank"
-        class="flex gap-2 items-center justify-center px-8 py-3"
+        class="flex gap-2 items-center justify-center px-6 py-3"
         rel="noopener">
-          Schedule a Call
+          {ctaPrimary.text}
       </Link>
       <Link
         size="lg"
         style="outline"
         rel="noopener"
-        href="https://wa.me/995511106964"
-        class="flex gap-2 items-center justify-center px-8 py-3"
+        href={ctaSecondary.href}
+        class="flex gap-2 items-center justify-center px-6 py-3"
         target="_blank">
-          <Icon class="text-black w-5 h-5" name="bx:bxl-whatsapp" />
-          WhatsApp
+          {ctaSecondary.icon && <Icon class="text-black w-5 h-5" name={ctaSecondary.icon} />}
+          {ctaSecondary.text}
       </Link>
     </div>
   </div>

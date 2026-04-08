@@ -2,214 +2,300 @@
 import Layout from "@layouts/Layout.astro";
 import Container from "@components/container.astro";
 import Sectionhead from "@components/sectionhead.astro";
+import Hero from "@components/hero.astro";
 import Cta from "@components/cta.astro";
+import Card from "@components/card.astro";
 import { Icon } from "astro-icon/components";
+import heroVictoria from "@images/hero-victoria.png";
 ---
 
-<Layout title="IT Recruitment for Technical Teams | APalevich.Pro" description="Senior developer and specialist placement. Hire hard-to-fill roles in weeks, not months. 93% probation pass rate.">
+<Layout
+  title="Hire Developers Faster | Senior IT Recruiter for Complex Technical Roles | APalevich.Pro"
+  description="Senior IT recruiter for startups, SMBs, and product teams. Hire developers, analysts, and technical specialists faster with end-to-end recruitment, targeted search, and quality-first screening."
+>
   <Container>
-    <Sectionhead>
-      <Fragment slot="title">IT Recruitment for Technical Teams</Fragment>
-      <Fragment slot="desc">Access pre-vetted senior developers and specialists without months of wasted pipeline. We manage the full hiring process so your team stays focused on building.</Fragment>
-    </Sectionhead>
+    {/* Hero Section */}
+    <Hero
+      image={heroVictoria}
+      imageAlt="Victoria"
+      badge="IT Recruitment"
+      headline="Hire Stronger Developers Faster"
+      subheadline="We help startups, growing product companies, and mid-sized businesses hire with more precision, less noise, and better long-term outcomes. From briefing and candidate profiling to screening, coordination, and offer support, we manage the search autonomously so your team can stay focused on building."
+      bullets={[
+        "<strong>Strongest expertise:</strong> web and mobile hiring",
+        "<strong>Core talent pool:</strong> JavaScript, Node.js, React, React Native, Golang, Android, DevOps, PHP, system analysts, and business analysts",
+        "<strong>Access to rare talent:</strong> senior specialists across the world",
+        "<strong>Quality-first approach:</strong> we optimize for fit, speed, and retention"
+      ]}
+      ctaPrimary={{ text: "Book a hiring consultation", href: "https://cal.com/apalevich/20min" }}
+      ctaSecondary={{ text: "WhatsApp", href: "https://wa.me/995511106964", icon: "bx:bxl-whatsapp" }}
+    />
 
-    <!-- Who We Hire For -->
-    <section class="mt-16 lg:mt-20">
-      <h2 class="text-4xl font-bold mb-12">Who We Recruit</h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="flex flex-col">
-          <div class="flex items-start gap-4">
-            <Icon size={32} name="bx:bxs-window-alt" class="text-primary flex-shrink-0 mt-1" />
-            <div>
-              <h3 class="text-xl font-semibold mb-2">Frontend Developers</h3>
-              <p class="text-slate-600">React, Vue, TypeScript, and modern web frameworks. We find developers who can ship high-quality, maintainable UIs.</p>
+    {/* Trusted Partner Section */}
+    <section class="mt-16 md:mt-24">
+      <div class="max-w-3xl">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
+          Trusted hiring partner for hard-to-fill technical roles
+        </h2>
+        <p class="text-base sm:text-lg text-slate-600 mb-4 leading-relaxed">
+          We do more than source candidates. We help companies design a smarter hiring process for the role, the team, and the product stage.
+        </p>
+        <p class="text-base sm:text-lg text-slate-600 mb-6 leading-relaxed">
+          Whether you need to hire one niche engineer or build an entire delivery team, we combine targeted search, structured screening, and recruitment consulting to improve both speed and quality of hire.
+        </p>
+        <p class="text-base sm:text-lg text-slate-600 leading-relaxed">
+          Our positioning is simple: <strong>senior IT recruitment for startups, SMBs, product companies, and custom software teams that need high-quality technical hiring without wasting months on the wrong pipeline.</strong>
+        </p>
+      </div>
+    </section>
+
+    {/* What We Help Hire */}
+    <section class="mt-16 md:mt-24">
+      <Sectionhead align="left">
+        <Fragment slot="title">What we help you hire</Fragment>
+      </Sectionhead>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-12">
+        {[
+          { title: "Frontend developers", desc: "React, Vue, TypeScript" },
+          { title: "Full-stack engineers", desc: "Across any tech stack" },
+          { title: "Backend engineers", desc: "Node.js, Golang, PHP" },
+          { title: "Mobile developers", desc: "Android, React Native" },
+          { title: "DevOps and infrastructure", desc: "Specialists and architects" },
+          { title: "Analysts", desc: "System and business analysts" }
+        ].map(role => (
+          <div class="p-4 border border-slate-200 rounded-lg">
+            <h3 class="font-semibold text-base sm:text-lg mb-1">{role.title}</h3>
+            <p class="text-sm text-slate-600">{role.desc}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    {/* Why Companies Hire Us */}
+    <section class="mt-16 md:mt-24">
+      <Sectionhead align="left">
+        <Fragment slot="title">Why companies hire us</Fragment>
+      </Sectionhead>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
+        {[
+          {
+            num: "1",
+            title: "End-to-end recruitment ownership",
+            desc: "We lead the vacancy from the initial brief to the candidate's first day — and, when needed, through probation. Your team stays involved where it matters most: technical evaluation and final decision-making."
+          },
+          {
+            num: "2",
+            title: "Better candidate fit, not just more CVs",
+            desc: "We define the candidate profile around your product stage, team dynamics, and company values. That means fewer irrelevant interviews and stronger finalists."
+          },
+          {
+            num: "3",
+            title: "Faster hiring for complex roles",
+            desc: "We have experience reducing time-to-hire for rare technical profiles from 6 months to 1.5 months by combining focused headhunting with sharper screening and faster process management."
+          },
+          {
+            num: "4",
+            title: "Strong technical talent network",
+            desc: "Our database is especially strong in web and mobile engineering, and we also work with a wider network of trusted recruiters who share access to ultra-rare senior specialists."
+          },
+          {
+            num: "5",
+            title: "Lower cost of hiring mistakes",
+            desc: "A weak hire is expensive. We help reduce the risk of mismatch and can save companies up to $12,000+ in avoided hiring mistakes, rehiring costs, and lost team time."
+          }
+        ].map(item => (
+          <div class="relative pl-10">
+            <div class="absolute left-0 top-0 h-8 w-8 bg-primary text-white rounded-full flex items-center justify-center text-sm font-bold">
+              {item.num}
+            </div>
+            <h3 class="font-bold text-base sm:text-lg mb-2">{item.title}</h3>
+            <p class="text-sm sm:text-base text-slate-600 leading-relaxed">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    {/* How We Work */}
+    <section class="mt-16 md:mt-24">
+      <Sectionhead align="left">
+        <Fragment slot="title">How we work</Fragment>
+      </Sectionhead>
+
+      <div class="space-y-6 mt-12">
+        {[
+          {
+            num: "1",
+            title: "Discovery and hiring brief",
+            desc: "We clarify not only the stack and requirements, but also the business context behind the hire: why this role matters now, what success looks like, and which signals actually predict performance."
+          },
+          {
+            num: "2",
+            title: "Candidate profile and search strategy",
+            desc: "We build a focused search strategy based on role seniority, market realities, compensation, motivation drivers, and the level of rarity in the talent pool."
+          },
+          {
+            num: "3",
+            title: "Screening and shortlist management",
+            desc: "We handle sourcing, outreach, communication, screening, and shortlist calibration so your team only meets the most relevant candidates."
+          },
+          {
+            num: "4",
+            title: "Process support and hiring recommendations",
+            desc: "We advise on evaluation flow, help identify bottlenecks, and recommend improvements to increase conversion from interview to offer acceptance."
+          },
+          {
+            num: "5",
+            title: "Offer to onboarding",
+            desc: "We stay involved through offer stage and can support the process until the candidate joins — or, if agreed, until they successfully pass probation."
+          }
+        ].map(step => (
+          <div class="flex gap-4 sm:gap-6">
+            <div class="flex-shrink-0">
+              <div class="h-10 w-10 sm:h-12 sm:w-12 rounded-full bg-primary text-white flex items-center justify-center font-bold text-sm sm:text-base">
+                {step.num}
+              </div>
+            </div>
+            <div class="flex-1 pt-1">
+              <h3 class="font-bold text-base sm:text-lg mb-2">{step.title}</h3>
+              <p class="text-sm sm:text-base text-slate-600 leading-relaxed">{step.desc}</p>
             </div>
           </div>
+        ))}
+      </div>
+    </section>
+
+    {/* Recruitment Metrics */}
+    <section class="mt-16 md:mt-24 bg-slate-50 rounded-2xl p-6 sm:p-8 lg:p-12">
+      <Sectionhead align="center">
+        <Fragment slot="title">Recruitment metrics that matter</Fragment>
+      </Sectionhead>
+
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 mt-12 text-center">
+        <div>
+          <p class="text-4xl sm:text-5xl font-bold text-primary mb-2">3–6</p>
+          <p class="text-sm sm:text-base text-slate-600">Technical interviews to 1 hire</p>
         </div>
-        <div class="flex flex-col">
-          <div class="flex items-start gap-4">
-            <Icon size={32} name="bx:bxs-bot" class="text-primary flex-shrink-0 mt-1" />
-            <div>
-              <h3 class="text-xl font-semibold mb-2">Backend & Full-Stack</h3>
-              <p class="text-slate-600">Node.js, Golang, PHP, Python engineers. We specialize in finding seasoned backend talent that understands scalability.</p>
-            </div>
-          </div>
+        <div>
+          <p class="text-4xl sm:text-5xl font-bold text-primary mb-2">93%</p>
+          <p class="text-sm sm:text-base text-slate-600">Probation pass rate</p>
         </div>
-        <div class="flex flex-col">
-          <div class="flex items-start gap-4">
-            <Icon size={32} name="bx:bxs-envelope" class="text-primary flex-shrink-0 mt-1" />
-            <div>
-              <h3 class="text-xl font-semibold mb-2">Mobile & DevOps</h3>
-              <p class="text-slate-600">iOS, Android, React Native developers. Plus DevOps specialists, system architects, and technical analysts.</p>
-            </div>
-          </div>
+        <div>
+          <p class="text-4xl sm:text-5xl font-bold text-primary mb-2">1.5 mo</p>
+          <p class="text-sm sm:text-base text-slate-600">Average time-to-hire</p>
         </div>
       </div>
     </section>
 
-    <!-- Proof Points -->
-    <section class="mt-20 bg-gradient-to-br from-slate-50 to-slate-100 rounded-2xl p-12 md:p-16">
-      <h2 class="text-4xl font-bold mb-16 text-center">Why We're Trusted</h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
-        <div>
-          <p class="text-6xl font-bold text-primary mb-2">93%</p>
-          <p class="text-slate-600">Probation pass rate (vs. 60% industry avg)</p>
-        </div>
-        <div>
-          <p class="text-6xl font-bold text-primary mb-2">1.5 months</p>
-          <p class="text-slate-600">Average time-to-hire (vs. 6+ month typical)</p>
-        </div>
-        <div>
-          <p class="text-6xl font-bold text-primary mb-2">4x faster</p>
-          <p class="text-slate-600">Process speed for rare/niche profiles</p>
-        </div>
-      </div>
-    </section>
+    {/* Case Study */}
+    <section class="mt-16 md:mt-24">
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-8">Case study: Senior Frontend / Full-Stack Developer for Novakid</h2>
 
-    <!-- Case Study Highlight -->
-    <section class="mt-20">
-      <h2 class="text-4xl font-bold mb-12">How We Work: A Real Example</h2>
-      <div class="bg-white rounded-lg overflow-hidden border border-zinc-200">
-        <div class="p-8 md:p-12 bg-gradient-to-r from-primary/5 to-secondary/5 border-b border-zinc-200">
-          <p class="text-sm font-medium text-secondary mb-2">Case Study</p>
-          <h3 class="text-3xl font-bold mb-4">Senior React + Conversational AI Engineer for Novakid</h3>
-          <p class="text-slate-700 mb-4">Novakid, an AI education platform, needed a rare combination: a senior developer with React/TypeScript expertise AND proven production experience with conversational AI, voice interfaces, and NLP. Five agencies were already engaged. The role had been open for 3+ months.</p>
+      <div class="bg-white rounded-lg overflow-hidden border border-slate-200">
+        {/* Header */}
+        <div class="p-6 sm:p-8 lg:p-12 bg-gradient-to-r from-primary/5 to-secondary/5 border-b border-slate-200">
+          <p class="text-sm font-medium text-secondary mb-2">The Challenge</p>
+          <p class="text-base sm:text-lg text-slate-700 leading-relaxed">
+            Novakid needed a senior developer for a new AI education direction — someone with a rare combination of frontend or full-stack engineering experience, React and TypeScript expertise, and hands-on production work with conversational AI, voice interfaces, ASR, NLP, and AI agents. The internal team had been unable to close the role for over 3 months. Five recruitment agencies were engaged at the same time, and the business risk was real: slow hiring could delay product launch.
+          </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-zinc-200">
-          <!-- Our Approach -->
-          <div class="p-8 md:p-12">
-            <h4 class="font-semibold text-lg mb-4">Our Approach</h4>
-            <ul class="space-y-3 text-slate-700">
-              <li class="flex gap-3">
-                <span class="text-primary font-bold flex-shrink-0">1.</span>
-                <span><strong>Precision Brief:</strong> Understood not just the stack, but the business context and product goals.</span>
-              </li>
-              <li class="flex gap-3">
-                <span class="text-primary font-bold flex-shrink-0">2.</span>
-                <span><strong>Targeted Search:</strong> Focused headhunting for candidates with proven conversational AI production experience, not generic frontend profiles.</span>
-              </li>
-              <li class="flex gap-3">
-                <span class="text-primary font-bold flex-shrink-0">3.</span>
-                <span><strong>Tight Screening:</strong> High-bar early screening meant the team only interviewed strong, relevant finalists.</span>
-              </li>
-              <li class="flex gap-3">
-                <span class="text-primary font-bold flex-shrink-0">4.</span>
-                <span><strong>Offer Support:</strong> Negotiation and onboarding coordination through first week.</span>
-              </li>
+        {/* Two-Column Grid on Desktop */}
+        <div class="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-slate-200">
+          {/* Approach */}
+          <div class="p-6 sm:p-8 lg:p-12">
+            <h3 class="font-bold text-lg sm:text-xl mb-6">Our Approach</h3>
+            <ul class="space-y-4">
+              {[
+                { title: "Detailed brief", desc: "Focused on business context, product goals, and success criteria" },
+                { title: "Targeted headhunting", desc: "Candidates with proven conversational AI and production delivery experience" },
+                { title: "Early-stage screening", desc: "High bar so hiring team only spent time with strong, relevant profiles" },
+                { title: "Process efficiency", desc: "Smart coordination from brief to offer" }
+              ].map(item => (
+                <div>
+                  <p class="font-semibold text-sm sm:text-base">{item.title}</p>
+                  <p class="text-sm text-slate-600 mt-1">{item.desc}</p>
+                </div>
+              ))}
             </ul>
           </div>
 
-          <!-- Results -->
-          <div class="p-8 md:p-12">
-            <h4 class="font-semibold text-lg mb-4">Results</h4>
-            <ul class="space-y-3 text-slate-700">
-              <li class="flex gap-3">
-                <span class="text-secondary font-bold flex-shrink-0">✓</span>
-                <span><strong>First candidates:</strong> Within 2 days of contract signature</span>
-              </li>
-              <li class="flex gap-3">
-                <span class="text-secondary font-bold flex-shrink-0">✓</span>
-                <span><strong>Total time-to-hire:</strong> 1.5 months (vs. 3+ months prior)</span>
-              </li>
-              <li class="flex gap-3">
-                <span class="text-secondary font-bold flex-shrink-0">✓</span>
-                <span><strong>Quality:</strong> 89 contacts → 17 HR interviews → 7 technical → 2 final → 1 offer → 1 hire</span>
-              </li>
-              <li class="flex gap-3">
-                <span class="text-secondary font-bold flex-shrink-0">✓</span>
-                <span><strong>Leadership time saved:</strong> ~60 hours due to smart screening</span>
-              </li>
+          {/* Results */}
+          <div class="p-6 sm:p-8 lg:p-12">
+            <h3 class="font-bold text-lg sm:text-xl mb-6">Results</h3>
+            <ul class="space-y-3">
+              {[
+                { label: "First candidates:", value: "within 2 days" },
+                { label: "Search time:", value: "1 month" },
+                { label: "Time to start:", value: "2 weeks" },
+                { label: "Total time-to-hire:", value: "1.5 months" },
+                { label: "Pipeline efficiency:", value: "89 → 17 → 7 → 2 → 1 → 1" },
+                { label: "Leadership time saved:", value: "~60 hours" }
+              ].map(item => (
+                <div class="flex justify-between text-sm sm:text-base">
+                  <span class="font-semibold text-slate-700">{item.label}</span>
+                  <span class="text-slate-600">{item.value}</span>
+                </div>
+              ))}
             </ul>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Our Recruitment Process -->
-    <section class="mt-20">
-      <h2 class="text-4xl font-bold mb-12">Our Recruitment Process</h2>
-      <div class="space-y-8">
-        <div class="flex gap-6">
-          <div class="flex-shrink-0">
-            <div class="flex items-center justify-center h-12 w-12 rounded-md bg-primary text-white font-bold">1</div>
-          </div>
-          <div>
-            <h3 class="text-xl font-semibold mb-2">Discovery & Hiring Brief</h3>
-            <p class="text-slate-600">We deep-dive into your role, team, product stage, and what success looks like. Not just skills—the full context of why this hire matters.</p>
-          </div>
-        </div>
-        <div class="flex gap-6">
-          <div class="flex-shrink-0">
-            <div class="flex items-center justify-center h-12 w-12 rounded-md bg-primary text-white font-bold">2</div>
-          </div>
-          <div>
-            <h3 class="text-xl font-semibold mb-2">Candidate Profile & Search Strategy</h3>
-            <p class="text-slate-600">We build a focused candidate profile and sourcing strategy. For rare roles, we combine direct headhunting with our network of trusted recruiters.</p>
-          </div>
-        </div>
-        <div class="flex gap-6">
-          <div class="flex-shrink-0">
-            <div class="flex items-center justify-center h-12 w-12 rounded-md bg-primary text-white font-bold">3</div>
-          </div>
-          <div>
-            <h3 class="text-xl font-semibold mb-2">Screening & Shortlist Management</h3>
-            <p class="text-slate-600">We handle sourcing, outreach, and initial screening. Your team only meets strong candidates who clear our bar.</p>
-          </div>
-        </div>
-        <div class="flex gap-6">
-          <div class="flex-shrink-0">
-            <div class="flex items-center justify-center h-12 w-12 rounded-md bg-primary text-white font-bold">4</div>
-          </div>
-          <div>
-            <h3 class="text-xl font-semibold mb-2">Process Support & Hiring Recommendations</h3>
-            <p class="text-slate-600">We advise on interview flow, help identify red flags, and recommend improvements to increase offer acceptance.</p>
-          </div>
-        </div>
-        <div class="flex gap-6">
-          <div class="flex-shrink-0">
-            <div class="flex items-center justify-center h-12 w-12 rounded-md bg-primary text-white font-bold">5</div>
-          </div>
-          <div>
-            <h3 class="text-xl font-semibold mb-2">Offer to Onboarding</h3>
-            <p class="text-slate-600">We stay involved through offer negotiation and can support onboarding to ensure a smooth transition.</p>
-          </div>
-        </div>
+    {/* When Companies Come to Us */}
+    <section class="mt-16 md:mt-24">
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-8">When companies usually come to us</h2>
+
+      <div class="space-y-3">
+        {[
+          { title: "Hiring timelines have stalled", desc: "You've been recruiting for weeks/months without results" },
+          { title: "Internal HR lacks deep IT recruitment expertise", desc: "Your team needs help hiring for technical roles" },
+          { title: "The employer brand is not strong enough", desc: "You can't attract technical talent organically" },
+          { title: "Too few qualified applicants", desc: "Or too many offer rejections from existing pipeline" },
+          { title: "Need help hiring for a rare role", desc: "Business-critical hiring that's hard to fill" },
+          { title: "Want a more transparent process", desc: "Leadership wants fewer bad interviews and cleaner pipeline" }
+        ].map(item => (
+          <label class="flex items-start gap-3 p-4 bg-slate-50 rounded-lg cursor-pointer hover:bg-slate-100 transition">
+            <div class="flex-shrink-0 mt-0.5 text-primary font-bold text-lg">✓</div>
+            <div>
+              <p class="font-semibold text-base">{item.title}</p>
+              <p class="text-sm text-slate-600 mt-1">{item.desc}</p>
+            </div>
+          </label>
+        ))}
       </div>
     </section>
 
-    <!-- Who Should Work With Us -->
-    <section class="mt-20">
-      <h2 class="text-4xl font-bold mb-12">Good Fit Checklist</h2>
-      <div class="space-y-4">
-        <label class="flex items-start gap-3 p-4 bg-slate-50 rounded-lg cursor-pointer">
-          <div class="flex-shrink-0 mt-1 text-primary font-bold">✓</div>
-          <div>
-            <p class="font-semibold">Hiring timelines have stalled</p>
-            <p class="text-sm text-slate-600">You've been recruiting for weeks/months without results</p>
+    {/* FAQ */}
+    <section class="mt-16 md:mt-24">
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-8">FAQs</h2>
+
+      <div class="space-y-6">
+        {[
+          { q: "Do you only work with startups?", a: "No. We work with startups, small and mid-sized businesses, product teams, and custom software companies that need strong technical hiring support." },
+          { q: "Do you recruit only developers?", a: "No. While our strongest expertise is in web and mobile development hiring, we also recruit DevOps specialists, analysts, and other technical professionals." },
+          { q: "Can you help with hard-to-fill roles?", a: "Yes. This is one of our core strengths. We are especially effective when the market is narrow, the profile is rare, or the business impact of a wrong hire is high." },
+          { q: "Who does the technical interview?", a: "Technical assessment usually remains on the client side. If needed, we can also help find a suitable technical interviewer." }
+        ].map(faq => (
+          <div class="border-l-2 border-primary pl-6 py-2">
+            <h3 class="font-bold text-base sm:text-lg mb-2">{faq.q}</h3>
+            <p class="text-sm sm:text-base text-slate-600 leading-relaxed">{faq.a}</p>
           </div>
-        </label>
-        <label class="flex items-start gap-3 p-4 bg-slate-50 rounded-lg cursor-pointer">
-          <div class="flex-shrink-0 mt-1 text-primary font-bold">✓</div>
-          <div>
-            <p class="font-semibold">You need rare or specialized talent</p>
-            <p class="text-sm text-slate-600">The profile is niche and hard to find (e.g., conversational AI + React)</p>
-          </div>
-        </label>
-        <label class="flex items-start gap-3 p-4 bg-slate-50 rounded-lg cursor-pointer">
-          <div class="flex-shrink-0 mt-1 text-primary font-bold">✓</div>
-          <div>
-            <p class="font-semibold">Your internal team needs help</p>
-            <p class="text-sm text-slate-600">HR doesn't have deep tech recruitment expertise</p>
-          </div>
-        </label>
-        <label class="flex items-start gap-3 p-4 bg-slate-50 rounded-lg cursor-pointer">
-          <div class="flex-shrink-0 mt-1 text-primary font-bold">✓</div>
-          <div>
-            <p class="font-semibold">You want a predictable, managed process</p>
-            <p class="text-sm text-slate-600">Fewer bad interviews, cleaner pipeline, smarter decisions</p>
-          </div>
-        </label>
+        ))}
+      </div>
+    </section>
+
+    {/* Final CTA Section */}
+    <section class="mt-16 md:mt-24 py-8">
+      <div class="max-w-3xl">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
+          Need to hire faster without compromising on quality?
+        </h2>
+        <p class="text-base sm:text-lg text-slate-600 mb-8 leading-relaxed">
+          Let's build a hiring process that brings you stronger finalists, shorter timelines, and better long-term results.
+        </p>
       </div>
     </section>
 
