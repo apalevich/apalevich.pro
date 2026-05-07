@@ -7,6 +7,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 This is an Astro-based marketing website with agency template design, using Tailwind CSS for styling. The site features multiple sections including hero, stats, services, pricing, team, blog, and CTA blocks. It includes JavaScript for interactive features (menu, countdown, counter-up animations).
 
 **Tech Stack:**
+
 - **Framework:** Astro 6.1.10
 - **Styling:** Tailwind CSS 4.2.4 (bundled via @tailwindcss/vite, not CLI)
 - **Node:** >=22.12.0
@@ -16,13 +17,13 @@ This is an Astro-based marketing website with agency template design, using Tail
 
 ## Development Commands
 
-| Command | Purpose |
-|---------|---------|
-| `npm run dev` | Start local dev server at `http://localhost:4321` |
-| `npm run build` | Build production site to `./dist/` |
-| `npm run preview` | Preview built site locally before deployment |
-| `npm run astro` | Run Astro CLI directly |
-| `npm run astro -- --help` | View Astro CLI documentation |
+| Command                   | Purpose                                           |
+| ------------------------- | ------------------------------------------------- |
+| `npm run dev`             | Start local dev server at `http://localhost:4321` |
+| `npm run build`           | Build production site to `./dist/`                |
+| `npm run preview`         | Preview built site locally before deployment      |
+| `npm run astro`           | Run Astro CLI directly                            |
+| `npm run astro -- --help` | View Astro CLI documentation                      |
 
 ## Project Structure
 
@@ -71,18 +72,22 @@ design-upgrade-2026/
 ## Key Architecture Patterns
 
 ### Data-Driven Sections
+
 Homepage is built from centralized `src/data/homepage.json`. Each section component accepts data props and renders content dynamically. Modify `homepage.json` to update content site-wide.
 
 ### Component Layers
+
 - **Layout components** (`BaseLayout`): Wrap pages, manage `<head>`, inject global scripts
 - **Site components** (`SiteHeader`, `SiteFooter`): Global reusable parts
 - **Section components** (`HeroSection`, etc.): Homepage sections that consume data
 - **UI components** (`Button`, `Section`): Low-level reusable elements
 
 ### Styling System
+
 Tailwind extends configured in `tailwind.config.mjs`:
 
 **Custom Colors:**
+
 - `ColorBlack: #121212`
 - `ColorDark: #0A102F`
 - `ColorLight: #FDFBF9`
@@ -90,6 +95,7 @@ Tailwind extends configured in `tailwind.config.mjs`:
 - `ColorPurple: #6B3FF2`
 
 **Custom Fonts:**
+
 - `Inter` (body)
 - `Public Sans` (headings)
 
@@ -98,13 +104,16 @@ Tailwind extends configured in `tailwind.config.mjs`:
 **Responsive Container Padding:** DEFAULT `1rem`, `sm: 1.5rem`, `lg: 2rem`, `xl: 2.5rem`
 
 ### JavaScript Interactivity
+
 Scripts in `/public/assets/js/` are loaded via `scripts` prop in `BaseLayout`:
+
 - `menu.js` - Mobile navigation toggle (requires: `mobile-menu-trigger`, `menu-block`, `menu-overlay` selectors)
 - `countdown.js` - Countdown timer functionality
 - `counterup.js` - Animated counter animations (requires: `data-module="countup"` attribute)
 - `main.js` - General site interactivity
 
 **Important:** Preserve these selector names when refactoring HTML—they're hardcoded in the scripts:
+
 - `.mobile-menu-trigger` - Mobile menu button
 - `.menu-block` - Menu container
 - `.menu-overlay` - Menu overlay backdrop

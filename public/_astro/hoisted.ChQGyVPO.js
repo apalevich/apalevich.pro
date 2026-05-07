@@ -1,1 +1,11 @@
-import"./hoisted.C6FmMv1o.js";import"./_commonjsHelpers.CqkleIqs.js";function t(){document.querySelectorAll(".price-month, .price-year").forEach(e=>{e.classList.contains("hidden")?e.classList.remove("hidden"):e.classList.add("hidden")})}const n=document.getElementById("toggle");n.addEventListener("change",t);
+import "./hoisted.C6FmMv1o.js";
+import "./_commonjsHelpers.CqkleIqs.js";
+function t() {
+  document.querySelectorAll(".price-month, .price-year").forEach((e) => {
+    e.classList.contains("hidden")
+      ? e.classList.remove("hidden")
+      : e.classList.add("hidden");
+  });
+}
+const n = document.getElementById("toggle");
+n.addEventListener("change", t);

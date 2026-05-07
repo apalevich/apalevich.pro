@@ -1,13 +1,491 @@
-import{g as I}from"./_commonjsHelpers.CqkleIqs.js";var z={exports:{}};(function(v){(function(m){m()})(function(){(function(_,o){o===void 0&&(o={});var a=o.insertAt;if(_&&typeof document<"u"){var t=document.head||document.getElementsByTagName("head")[0],e=document.createElement("style");e.type="text/css",a==="top"&&t.firstChild?t.insertBefore(e,t.firstChild):t.appendChild(e),e.styleSheet?e.styleSheet.cssText=_:e.appendChild(document.createTextNode(_))}})(".jos,.jos-anchor{transition:all .4s ease-in-out}.jos-anchor{opacity:0;transition-timing-function:ease-in-out}.jos-static{opacity:1;transform:translate(0)}.jos-no-transition{transition-duration:0s;transition-timing-function:linear}.jos-hidden{display:none}.jos-visible{display:block;opacity:1}.jos-fade{opacity:0}.jos-fade-right{opacity:0;transform:translateX(-100px)}.jos-fade-left{opacity:0;transform:translateX(100px)}.jos-fade-up{opacity:0;transform:translateY(50px)}.jos-fade-down{opacity:0;transform:translateY(-50px)}.jos-fade-right-up{opacity:0;transform:translateX(-100px) translateY(50px)}.jos-fade-right-down{opacity:0;transform:translateX(-100px) translateY(-50px)}.jos-fade-left-up{opacity:0;transform:translateX(100px) translateY(50px)}.jos-fade-left-down{opacity:0;transform:translateX(100px) translateY(-50px)}.jos-slide,.jos-slide-right{transform:translateX(-100px)}.jos-slide-left{transform:translateX(100px)}.jos-slide-up{transform:translateY(100px)}.jos-slide-down{transform:translateY(-100px)}.jos-slide-right-up{transform:translateX(-100px) translateY(100px)}.jos-slide-right-down{transform:translateX(-100px) translateY(-100px)}.jos-slide-left-up{transform:translateX(100px) translateY(100px)}.jos-slide-left-down{transform:translateX(100px) translateY(-100px)}.jos-zoom,.jos-zoom-out{opacity:0;transform:scale(.8)}.jos-zoom-out-right,.jos-zoom-right{opacity:0;transform:scale(.8) translate3d(-100px,0,-100px)}.jos-zoom-left,.jos-zoom-out-left{opacity:0;transform:scale(.8) translate3d(100px,0,-100px)}.jos-zoom-down,.jos-zoom-out-down{opacity:0;transform:scale(.8) translate3d(0,-100px,0)}.jos-zoom-out-up,.jos-zoom-up{opacity:0;transform:scale(.8) translate3d(0,100px,0)}.jos-grow{transform:scale(0)}.jos-grow-right{transform:scale(0) translate3d(-100px,0,-100px)}.jos-grow-left{transform:scale(0) translate3d(100px,0,-100px)}.jos-grow-down{transform:scale(0) translate3d(0,-100px,0)}.jos-grow-up{transform:scale(0) translate3d(0,100px,0)}.jos-zoom-in{opacity:0;transform:scale(1.1)}.jos-zoom-in-down{opacity:0;transform:scale(1.1) translate3d(0,-100px,0)}.jos-zoom-in-up{opacity:0;transform:scale(1.1) translate3d(0,100px,0)}.jos-zoom-in-right{opacity:0;transform:scale(1.1) translate3d(-100px,0,-100px)}.jos-zoom-in-left{opacity:0;transform:scale(1.1) translate3d(100px,0,-100px)}.jos-shrink{transform:scale(1.4)}.jos-shrink-right{transform:scale(1.4) translate3d(-100px,0,-100px)}.jos-shrink-left{transform:scale(1.4) translate3d(100px,0,-100px)}.jos-shrink-down{transform:scale(1.4) translate3d(0,-100px,0)}.jos-shrink-up{transform:scale(1.4) translate3d(0,100px,0)}.jos-flip,.jos-flip-right{opacity:0;transform:perspective(2500px) rotateY(-100deg)}.jos-flip-left{opacity:0;transform:perspective(2500px) rotateY(100deg)}.jos-flip-up{opacity:0;transform:perspective(2500px) rotateX(-100deg)}.jos-flip-down{opacity:0;transform:perspective(2500px) rotateX(100deg)}.jos-rotate,.jos-rotate-right{opacity:0;transform:rotate(-180deg)}.jos-rotate-left{opacity:0;transform:rotate(180deg)}.jos-spin,.jos-spin-right{opacity:0;transform:rotate(-180deg) scale(0)}.jos-spin-left{opacity:0;transform:rotate(180deg) scale(0)}.jos-revolve,.jos-revolve-right{opacity:0;transform:rotate(-1turn) scale(0)}.jos-revolve-left{opacity:0;transform:rotate(1turn) scale(0)}.jos-stretch{opacity:0;transform:scaleX(0)}.jos-stretch-vertical{opacity:0;transform:scaleY(0)}.jos-skew{opacity:0;transform:skew(20deg,20deg)}.jos-skew-right{opacity:0;transform:skew(20deg,20deg) translate3d(-100px,0,-100px)}.jos-skew-left{opacity:0;transform:skew(20deg,20deg) translate3d(100px,0,-100px)}.jos-skew-down{opacity:0;transform:skew(20deg,20deg) translate3d(0,-100px,0)}.jos-skew-up{opacity:0;transform:skew(20deg,20deg) translate3d(0,100px,0)}.jos-slant{transform:skew(25deg,25deg)}.jos-slant-right{transform:skew(25deg,0deg)}.jos-slant-left{transform:skew(0deg,25deg)}.jos-bar,.jos-bar_vertical{transform:perspective(2500px) rotateY(-100deg)}.jos-bar_horizontal{transform:perspective(2500px) rotateX(-100deg)}.jos-grey{filter:grayscale(100%)}.jos-blur{filter:blur(7px)}.jos-backdrop{backdrop-filter:blur(7px);opacity:.8}.jos-invert{filter:invert(100%)}.jos-sepia{filter:sepia(100%)}.jos-saturate{filter:saturate(100%)}.jos-hue-rotate{filter:hue-rotate(90deg)}.jos-brightness{filter:brightness(.5)}[data-jos_timing_function=ease]{transition-timing-function:ease!important}[data-jos_timing_function=ease-in]{transition-timing-function:ease-in!important}[data-jos_timing_function=ease-out]{transition-timing-function:ease-out!important}[data-jos_timing_function=ease-in-out]{transition-timing-function:ease-in-out!important}[data-jos_timing_function=linear]{transition-timing-function:linear!important}[data-jos_timing_function=step-start]{transition-timing-function:step-start!important}[data-jos_timing_function=step-end]{transition-timing-function:step-end!important}[data-jos_timing_function=steps]{transition-timing-function:steps(5)!important}[data-jos_timing_function=frames]{transition-timing-function:frames(5)!important}.jos-slide-horizontal-play,.jos-slide-play{animation:jos-slide-play .7s ease-in-out infinite;animation-direction:alternate-reverse;transition:1s}@keyframes jos-slide-play{0%{transform:translateX(-100px)}to{transform:translateX(100px)}}.jos-slide-vertical-play{animation:jos-slide-vertical-play .7s ease-in-out infinite;animation-direction:alternate-reverse}@keyframes jos-slide-vertical-play{0%{transform:translateY(-100px)}to{transform:translateY(100px)}}.jos-pulse-play,.jos-zoom-in-play{animation:jos-zoom-in-play 1s infinite;animation-direction:alternate}@keyframes jos-zoom-in-play{0%{opacity:0;transform:scale(1)}to{opacity:1;transform:scale(.8)}}.jos-pulse-out-play,.jos-zoom-out-play,.jos-zoom-play{animation:jos-zoom-play .5s linear infinite;animation-direction:alternate}@keyframes jos-zoom-play{0%{opacity:0;transform:scale(1)}to{opacity:1;transform:scale(1.1)}}.jos-flip-play{animation:jos-flip-play .7s infinite;animation-direction:alternate}@keyframes jos-flip-play{0%{transform:rotateY(0deg)}to{transform:rotateY(180deg)}}.jos-rotate-play{animation:jos-rotate-play 1s linear infinite forwards;animation-direction:alternate-reverse;border-radius:0}@keyframes jos-rotate-play{0%{transform:rotate(0deg)}to{transform:rotate(1turn)}}.jos-spin-play{animation:jos-spin-play 1.5s infinite;animation-direction:alternate}@keyframes jos-spin-play{0%{opacity:0;transform:rotate(0deg)}to{opacity:1;transform:rotate(1turn)}}.jos-revolve-play{animation:jos-revolve-play 1.5s infinite;animation-direction:alternate}@keyframes jos-revolve-play{0%{transform:rotate(0deg)}to{transform:rotate(1turn)}}.jos-grow-play,.jos-shrink-play{animation:jos-grow-play 1s infinite;animation-direction:alternate}@keyframes jos-grow-play{0%{transform:scale(0)}to{transform:scale(1)}}.jos-shrink-play{animation-direction:alternate-reverse}.jos-stretch-play{animation:jos-stretch-play .7s infinite;animation-direction:alternate}@keyframes jos-stretch-play{0%{transform:scaleX(1)}to{transform:scaleX(0)}}.jos-stretch-vertical-play{animation:jos-stretch-vertical-play .7s infinite;animation-direction:alternate-reverse}@keyframes jos-stretch-vertical-play{0%{transform:scaleY(1)}to{transform:scaleY(0)}}.jos-fade-play{animation:jos-fade-play .8s infinite;animation-direction:alternate}@keyframes jos-fade-play{0%{opacity:0}to{opacity:1}}.jos-fade-horizontal-play{animation:jos-fade-horizontal-play 1s infinite;animation-direction:alternate-reverse}@keyframes jos-fade-horizontal-play{0%{opacity:0;transform:translateX(100px)}to{opacity:1;transform:translateX(-100px)}}.jos-fade-vertical-play{animation:jos-fade-vertical-play 1s infinite;animation-direction:alternate-reverse}@keyframes jos-fade-vertical-play{0%{opacity:0;transform:translateY(100px)}to{opacity:1;transform:translateY(-100px)}}.jos-blink-play{animation:jos-blink-play 1s step-end infinite}@keyframes jos-blink-play{0%{opacity:1}50%{opacity:0}}");class m{default_once=!1;default_animation="fade";default_animationinverse=void 0;default_timingFunction="ease-in-out";default_threshold=0;default_duration=.4;default_delay=0;default_intersectionRatio=0;default_rootMargin="-10% 0% -40% 0%";default_startVisible=void 0;default_scrolldirection=void 0;default_passive=!0;default_mirror=void 0;setRange=new Set;debug=!1;scrollProgressDisable=void 0;disable=!1;static version="0.9.2";static author="Jesvi Jonathan";static webpage="https://jos-animation.vercel.app";static github="https://github.com/jesvijonathan/JOS-Animation-Library";options={};jos_stylesheet=void 0;boxes=void 0;observers=[];scrollEnter=[];constructor(){}version(){console.log(`JOS: Javascript On Scroll Animation Library
+import { g as I } from "./_commonjsHelpers.CqkleIqs.js";
+var z = { exports: {} };
+(function (v) {
+  (function (m) {
+    m();
+  })(function () {
+    (function (_, o) {
+      o === void 0 && (o = {});
+      var a = o.insertAt;
+      if (_ && typeof document < "u") {
+        var t = document.head || document.getElementsByTagName("head")[0],
+          e = document.createElement("style");
+        ((e.type = "text/css"),
+          a === "top" && t.firstChild
+            ? t.insertBefore(e, t.firstChild)
+            : t.appendChild(e),
+          e.styleSheet
+            ? (e.styleSheet.cssText = _)
+            : e.appendChild(document.createTextNode(_)));
+      }
+    })(
+      ".jos,.jos-anchor{transition:all .4s ease-in-out}.jos-anchor{opacity:0;transition-timing-function:ease-in-out}.jos-static{opacity:1;transform:translate(0)}.jos-no-transition{transition-duration:0s;transition-timing-function:linear}.jos-hidden{display:none}.jos-visible{display:block;opacity:1}.jos-fade{opacity:0}.jos-fade-right{opacity:0;transform:translateX(-100px)}.jos-fade-left{opacity:0;transform:translateX(100px)}.jos-fade-up{opacity:0;transform:translateY(50px)}.jos-fade-down{opacity:0;transform:translateY(-50px)}.jos-fade-right-up{opacity:0;transform:translateX(-100px) translateY(50px)}.jos-fade-right-down{opacity:0;transform:translateX(-100px) translateY(-50px)}.jos-fade-left-up{opacity:0;transform:translateX(100px) translateY(50px)}.jos-fade-left-down{opacity:0;transform:translateX(100px) translateY(-50px)}.jos-slide,.jos-slide-right{transform:translateX(-100px)}.jos-slide-left{transform:translateX(100px)}.jos-slide-up{transform:translateY(100px)}.jos-slide-down{transform:translateY(-100px)}.jos-slide-right-up{transform:translateX(-100px) translateY(100px)}.jos-slide-right-down{transform:translateX(-100px) translateY(-100px)}.jos-slide-left-up{transform:translateX(100px) translateY(100px)}.jos-slide-left-down{transform:translateX(100px) translateY(-100px)}.jos-zoom,.jos-zoom-out{opacity:0;transform:scale(.8)}.jos-zoom-out-right,.jos-zoom-right{opacity:0;transform:scale(.8) translate3d(-100px,0,-100px)}.jos-zoom-left,.jos-zoom-out-left{opacity:0;transform:scale(.8) translate3d(100px,0,-100px)}.jos-zoom-down,.jos-zoom-out-down{opacity:0;transform:scale(.8) translate3d(0,-100px,0)}.jos-zoom-out-up,.jos-zoom-up{opacity:0;transform:scale(.8) translate3d(0,100px,0)}.jos-grow{transform:scale(0)}.jos-grow-right{transform:scale(0) translate3d(-100px,0,-100px)}.jos-grow-left{transform:scale(0) translate3d(100px,0,-100px)}.jos-grow-down{transform:scale(0) translate3d(0,-100px,0)}.jos-grow-up{transform:scale(0) translate3d(0,100px,0)}.jos-zoom-in{opacity:0;transform:scale(1.1)}.jos-zoom-in-down{opacity:0;transform:scale(1.1) translate3d(0,-100px,0)}.jos-zoom-in-up{opacity:0;transform:scale(1.1) translate3d(0,100px,0)}.jos-zoom-in-right{opacity:0;transform:scale(1.1) translate3d(-100px,0,-100px)}.jos-zoom-in-left{opacity:0;transform:scale(1.1) translate3d(100px,0,-100px)}.jos-shrink{transform:scale(1.4)}.jos-shrink-right{transform:scale(1.4) translate3d(-100px,0,-100px)}.jos-shrink-left{transform:scale(1.4) translate3d(100px,0,-100px)}.jos-shrink-down{transform:scale(1.4) translate3d(0,-100px,0)}.jos-shrink-up{transform:scale(1.4) translate3d(0,100px,0)}.jos-flip,.jos-flip-right{opacity:0;transform:perspective(2500px) rotateY(-100deg)}.jos-flip-left{opacity:0;transform:perspective(2500px) rotateY(100deg)}.jos-flip-up{opacity:0;transform:perspective(2500px) rotateX(-100deg)}.jos-flip-down{opacity:0;transform:perspective(2500px) rotateX(100deg)}.jos-rotate,.jos-rotate-right{opacity:0;transform:rotate(-180deg)}.jos-rotate-left{opacity:0;transform:rotate(180deg)}.jos-spin,.jos-spin-right{opacity:0;transform:rotate(-180deg) scale(0)}.jos-spin-left{opacity:0;transform:rotate(180deg) scale(0)}.jos-revolve,.jos-revolve-right{opacity:0;transform:rotate(-1turn) scale(0)}.jos-revolve-left{opacity:0;transform:rotate(1turn) scale(0)}.jos-stretch{opacity:0;transform:scaleX(0)}.jos-stretch-vertical{opacity:0;transform:scaleY(0)}.jos-skew{opacity:0;transform:skew(20deg,20deg)}.jos-skew-right{opacity:0;transform:skew(20deg,20deg) translate3d(-100px,0,-100px)}.jos-skew-left{opacity:0;transform:skew(20deg,20deg) translate3d(100px,0,-100px)}.jos-skew-down{opacity:0;transform:skew(20deg,20deg) translate3d(0,-100px,0)}.jos-skew-up{opacity:0;transform:skew(20deg,20deg) translate3d(0,100px,0)}.jos-slant{transform:skew(25deg,25deg)}.jos-slant-right{transform:skew(25deg,0deg)}.jos-slant-left{transform:skew(0deg,25deg)}.jos-bar,.jos-bar_vertical{transform:perspective(2500px) rotateY(-100deg)}.jos-bar_horizontal{transform:perspective(2500px) rotateX(-100deg)}.jos-grey{filter:grayscale(100%)}.jos-blur{filter:blur(7px)}.jos-backdrop{backdrop-filter:blur(7px);opacity:.8}.jos-invert{filter:invert(100%)}.jos-sepia{filter:sepia(100%)}.jos-saturate{filter:saturate(100%)}.jos-hue-rotate{filter:hue-rotate(90deg)}.jos-brightness{filter:brightness(.5)}[data-jos_timing_function=ease]{transition-timing-function:ease!important}[data-jos_timing_function=ease-in]{transition-timing-function:ease-in!important}[data-jos_timing_function=ease-out]{transition-timing-function:ease-out!important}[data-jos_timing_function=ease-in-out]{transition-timing-function:ease-in-out!important}[data-jos_timing_function=linear]{transition-timing-function:linear!important}[data-jos_timing_function=step-start]{transition-timing-function:step-start!important}[data-jos_timing_function=step-end]{transition-timing-function:step-end!important}[data-jos_timing_function=steps]{transition-timing-function:steps(5)!important}[data-jos_timing_function=frames]{transition-timing-function:frames(5)!important}.jos-slide-horizontal-play,.jos-slide-play{animation:jos-slide-play .7s ease-in-out infinite;animation-direction:alternate-reverse;transition:1s}@keyframes jos-slide-play{0%{transform:translateX(-100px)}to{transform:translateX(100px)}}.jos-slide-vertical-play{animation:jos-slide-vertical-play .7s ease-in-out infinite;animation-direction:alternate-reverse}@keyframes jos-slide-vertical-play{0%{transform:translateY(-100px)}to{transform:translateY(100px)}}.jos-pulse-play,.jos-zoom-in-play{animation:jos-zoom-in-play 1s infinite;animation-direction:alternate}@keyframes jos-zoom-in-play{0%{opacity:0;transform:scale(1)}to{opacity:1;transform:scale(.8)}}.jos-pulse-out-play,.jos-zoom-out-play,.jos-zoom-play{animation:jos-zoom-play .5s linear infinite;animation-direction:alternate}@keyframes jos-zoom-play{0%{opacity:0;transform:scale(1)}to{opacity:1;transform:scale(1.1)}}.jos-flip-play{animation:jos-flip-play .7s infinite;animation-direction:alternate}@keyframes jos-flip-play{0%{transform:rotateY(0deg)}to{transform:rotateY(180deg)}}.jos-rotate-play{animation:jos-rotate-play 1s linear infinite forwards;animation-direction:alternate-reverse;border-radius:0}@keyframes jos-rotate-play{0%{transform:rotate(0deg)}to{transform:rotate(1turn)}}.jos-spin-play{animation:jos-spin-play 1.5s infinite;animation-direction:alternate}@keyframes jos-spin-play{0%{opacity:0;transform:rotate(0deg)}to{opacity:1;transform:rotate(1turn)}}.jos-revolve-play{animation:jos-revolve-play 1.5s infinite;animation-direction:alternate}@keyframes jos-revolve-play{0%{transform:rotate(0deg)}to{transform:rotate(1turn)}}.jos-grow-play,.jos-shrink-play{animation:jos-grow-play 1s infinite;animation-direction:alternate}@keyframes jos-grow-play{0%{transform:scale(0)}to{transform:scale(1)}}.jos-shrink-play{animation-direction:alternate-reverse}.jos-stretch-play{animation:jos-stretch-play .7s infinite;animation-direction:alternate}@keyframes jos-stretch-play{0%{transform:scaleX(1)}to{transform:scaleX(0)}}.jos-stretch-vertical-play{animation:jos-stretch-vertical-play .7s infinite;animation-direction:alternate-reverse}@keyframes jos-stretch-vertical-play{0%{transform:scaleY(1)}to{transform:scaleY(0)}}.jos-fade-play{animation:jos-fade-play .8s infinite;animation-direction:alternate}@keyframes jos-fade-play{0%{opacity:0}to{opacity:1}}.jos-fade-horizontal-play{animation:jos-fade-horizontal-play 1s infinite;animation-direction:alternate-reverse}@keyframes jos-fade-horizontal-play{0%{opacity:0;transform:translateX(100px)}to{opacity:1;transform:translateX(-100px)}}.jos-fade-vertical-play{animation:jos-fade-vertical-play 1s infinite;animation-direction:alternate-reverse}@keyframes jos-fade-vertical-play{0%{opacity:0;transform:translateY(100px)}to{opacity:1;transform:translateY(-100px)}}.jos-blink-play{animation:jos-blink-play 1s step-end infinite}@keyframes jos-blink-play{0%{opacity:1}50%{opacity:0}}",
+    );
+    class m {
+      default_once = !1;
+      default_animation = "fade";
+      default_animationinverse = void 0;
+      default_timingFunction = "ease-in-out";
+      default_threshold = 0;
+      default_duration = 0.4;
+      default_delay = 0;
+      default_intersectionRatio = 0;
+      default_rootMargin = "-10% 0% -40% 0%";
+      default_startVisible = void 0;
+      default_scrolldirection = void 0;
+      default_passive = !0;
+      default_mirror = void 0;
+      setRange = new Set();
+      debug = !1;
+      scrollProgressDisable = void 0;
+      disable = !1;
+      static version = "0.9.2";
+      static author = "Jesvi Jonathan";
+      static webpage = "https://jos-animation.vercel.app";
+      static github = "https://github.com/jesvijonathan/JOS-Animation-Library";
+      options = {};
+      jos_stylesheet = void 0;
+      boxes = void 0;
+      observers = [];
+      scrollEnter = [];
+      constructor() {}
+      version() {
+        console.log(`JOS: Javascript On Scroll Animation Library
     - Version: ${m.version}
     - Author: ${m.author}
     - Webpage: ${m.webpage}
     - Github: ${m.github}
-`)}debugger(o=0){if(o===0&&this.debugMode){this.version();const a={};for(const t of Object.keys(this))typeof this[t]!="function"&&(a[t]=this[t]);console.log(`JOS Values:
-`,a),console.log(`JOS Initialized:
+`);
+      }
+      debugger(o = 0) {
+        if (o === 0 && this.debugMode) {
+          this.version();
+          const a = {};
+          for (const t of Object.keys(this))
+            typeof this[t] != "function" && (a[t] = this[t]);
+          (console.log(
+            `JOS Values:
+`,
+            a,
+          ),
+            console.log(`JOS Initialized:
 
-`)}}callbackRouter_anchor=(o,a)=>{if(this.disable)return;let t=o[0],e=t.target;document.querySelectorAll("[data-jos_anchor='#"+e.id+"']").forEach(s=>{let n=s.dataset.jos_animation,r=s.dataset.jos_animationinverse;if(t.isIntersecting){if(s.dataset.jos_counter!=null){let d=parseInt(s.dataset.jos_counter);d++,s.dataset.jos_counter=d}n&&(s.classList.remove("jos-"+n),s.dataset.jos_invoke!=null&&window[s.dataset.jos_invoke](s),s.dataset.jos_once==null&&s.dataset.jos_once=="false"||(s.dataset.jos_once=="true"||s.dataset.jos_counter>=s.dataset.jos_once)&&a.unobserve(s),r!=null&&s.classList.add("jos-"+r))}else s.dataset.jos_scrolldirection!==void 0&&s.dataset.jos_scrolldirection!=="down"&&s.dataset.jos_scrolldirection!=="none"||(s.classList.add("jos-"+n),s.dataset.jos_invoke_out!==void 0&&window[s.dataset.jos_invoke_out](s))})};rand=o=>Array.isArray(o)?o[Math.floor(Math.random()*o.length)]:typeof o=="number"?o%1!=0?Math.random()*o:Math.floor(Math.random()*o):Math.random();callbackScroller=o=>{if(this.disable||this.scrollProgressDisable)return;const a=this.default_rootMargin;let t=window.innerHeight;const e=s=>{const n=s.dataset.jos_rootmargin||a,r=n.split(" ").map(parseFloat),d=t*r[0]/100,c=t*r[2]/100;s.jos={rootMargin:n,rootMarginValues:r,topMargin:d,bottomMargin:c};const f=s.getBoundingClientRect(),j=f.top-s.jos.topMargin,l=f.bottom-s.jos.bottomMargin,h=f.top/t,p=j/(t-s.jos.topMargin-s.jos.bottomMargin);let u=0;u=p<=0?0:p>=100?1:p,s.jos={elementRect:f,elementTop:j,elementBottom:l,windowScrollProgress:h,rootScrollProgress:p,scrollProgress:u},window[s.dataset.jos_scroll](s)};document.onscroll=s=>{this.disable||this.scrollProgressDisable||o.forEach(e)}};callbackRouter=(o,a,t=1)=>{if(this.disable)return;let e=o[0],s=e.target,n=s.dataset.jos_animation,r=s.dataset.jos_animationinverse,d=1;if(d=e.boundingClientRect.top<0?0:1,e.isIntersecting){if(s.dataset.jos_scroll!="false"&&s.dataset.jos_scroll!=null&&(this.scrollEnter.push(s),this.callbackScroller(this.scrollEnter)),s.dataset.jos_counter!=null){let c=parseInt(s.dataset.jos_counter);c++,s.dataset.jos_counter=c}s.dataset.jos_mirror=="false"&&s.classList.remove("jos-no-mirror"),n&&(s.classList.remove("jos-"+n),s.dataset.jos_invoke!=null&&window[s.dataset.jos_invoke](s),s.dataset.jos_once==null&&s.dataset.jos_once=="false"||(s.dataset.jos_once=="true"||s.dataset.jos_counter>=s.dataset.jos_once)&&a.unobserve(s)),r!=null&&s.classList.add("jos-"+r)}else(s.dataset.jos_scrolldirection===void 0||d===1&&s.dataset.jos_scrolldirection==="down"||d===0&&s.dataset.jos_scrolldirection==="up"||s.dataset.jos_scrolldirection==="none")&&(s.classList.toggle("jos-no-mirror",s.dataset.jos_mirror=="false"),s.classList.add("jos-"+n),r!=null&&s.classList.remove("jos-"+r),s.dataset.jos_invoke_out!==void 0&&window[s.dataset.jos_invoke_out](s)),s.dataset.jos_scroll!="false"&&s.dataset.jos_scroll!=null&&(this.scrollEnter=this.scrollEnter.filter(c=>c.id!==s.id),this.callbackScroller(this.scrollEnter))};animationInit(){let o=[],a=t=>{let e=t.dataset.jos_once||this.default_once,s=t.dataset.jos_animation||this.default_animation,n=t.dataset.jos_animationinverse||this.default_animationinverse,r=t.dataset.jos_timingFunction||this.default_timingFunction,d=t.dataset.jos_duration||this.default_duration,c=t.dataset.jos_delay||this.default_delay,f=t.dataset.jos_mirror||this.default_mirror;if(t.classList.contains("jos_disabled")&&(t.classList.remove("jos_disabled"),t.classList.add("jos")),e&&(e=="true"||/^\d+$/.test(e))?t.setAttribute("data-jos_once",e):t.setAttribute("data-jos_once",this.default_once?"1":"false"),t.dataset.jos_stagger){const l=this.default_delay,h=this.default_duration,p=this.once,u=this.mirror,g=this.scrolldirection,y=this.rootMargin,b=this.animationinverse;if(t.id||(t.id=Math.random().toString(36).substring(7)),Array.from(t.children).forEach((i,k)=>{if(!i.classList.contains("jos")){i.classList.add("jos"),i.id||(i.id=`${t.id}_${k}`);const S=t.dataset.jos_stagger,Y=t.dataset.jos_stagger_delay||l,L=t.dataset.jos_stagger_seq||0,X=t.dataset.jos_stagger_duration||h,E=t.dataset.jos_stagger_once||p,w=t.dataset.jos_staggerinverse||b,R=t.dataset.jos_stagger_mirror||u,F=t.dataset.jos_stagger_startVisible,M=t.dataset.jos_stagger_scrolldirection||g,A=t.dataset.jos_stagger_rootmargin||y;if(t.dataset.jos_stagger_anchor||i.dataset.jos_anchor){const $=t.dataset.jos_stagger_anchor==="true"?"#"+t.id:t.dataset.jos_stagger_anchor;i.setAttribute("data-jos_anchor",$)}i.setAttribute("data-jos_animation",S),w&&i.setAttribute("data-jos_animationinverse",w),i.setAttribute("data-jos_duration",X);const O=parseFloat(L*k+Y);i.setAttribute("data-jos_delay",O),i.setAttribute("data-jos_once",E),R==="false"&&i.setAttribute("data-jos_mirror","false"),F&&o.push(i),M&&i.setAttribute("data-jos_scrolldirection",M),A&&i.setAttribute("data-jos_rootmargin",A),t.dataset.jos_stagger_scroll&&i.setAttribute("data-jos_scroll",t.dataset.jos_stagger_scroll),t.dataset.jos_stagger_timingFunction&&i.setAttribute("data-jos_timingFunction",t.dataset.jos_stagger_timingFunction),t.dataset.jos_stagger_invoke&&i.setAttribute("data-jos_invoke",t.dataset.jos_stagger_invoke),t.dataset.jos_stagger_invoke_out&&i.setAttribute("data-jos_invoke_out",t.dataset.jos_stagger_invoke_out),this.boxes=[...this.boxes,i],a(i)}}),!t.dataset.jos_animation)return void t.classList.remove("jos")}t.setAttribute("data-jos_animation",s),n&&t.setAttribute("data-jos_animationinverse",n),r&&t.setAttribute("data-jos_timingFunction",r),f=="false"&&t.setAttribute("data-jos_mirror",f),d&&(t.setAttribute("data-jos_duration",d),this.setRange.add(parseFloat(d))),c&&(t.setAttribute("data-jos_delay",c),this.setRange.add(parseFloat(c))),t.setAttribute("data-jos_counter","0"),t.classList.add("jos-"+s),(t.dataset.jos_startvisible||this.default_startVisible)&&o.push(t),this.default_scrolldirection&&t.setAttribute("data-jos_scrolldirection",this.default_scrolldirection);let j={rootMargin:[t.dataset.jos_rootmargin_top||this.default_rootMargin.split(" ")[0],t.dataset.jos_rootmargin_right||this.default_rootMargin.split(" ")[1],t.dataset.jos_rootmargin_bottom||this.default_rootMargin.split(" ")[2],t.dataset.jos_rootmargin_left||this.default_rootMargin.split(" ")[3]].map(l=>l.startsWith("-")?l.substring(1):`-${l}`).join(" "),threshold:t.dataset.jos_threshold||this.default_threshold,passive:t.dataset.jos_passive||this.default_passive};if(t.dataset.jos_anchor){const l=new IntersectionObserver(this.callbackRouter_anchor,j);this.observers.push(l),l.observe(document.getElementById(t.dataset.jos_anchor.substring(1)))}else{const l=new IntersectionObserver(this.callbackRouter,j);this.observers.push(l),l.observe(t)}};this.boxes.forEach(t=>{a(t)}),setTimeout(()=>{o.forEach(t=>{let e=t.dataset.jos_startvisible;setTimeout(()=>{e=="true"&&(e=0),t.classList.remove("jos-"+t.dataset.jos_animation)},e||this.default_startVisible)})},100)}animationUnset(o=0){o!=-1&&this.boxes?.forEach(a=>{a.classList.remove("jos"),a.classList.add("jos_disabled"),o==0?a.classList.add("jos-"+a.dataset.jos_animation):a.classList.remove("jos-"+a.dataset.jos_animation)}),this.observers?.forEach(a=>a.disconnect())}getStylesheet(){const o=document.createElement("style");document.head.appendChild(o);const a=o.sheet;a.insertRule(".jos-no-mirror {    transition: 0s forwards !important;}");let t="all "+this.default_duration+"s "+this.default_timingFunction+" "+this.default_delay+"s ;";a.insertRule(".jos {transition: "+t+";}");for(const e of this.setRange)a.insertRule(`[data-jos_duration="${e}"] {
+`));
+        }
+      }
+      callbackRouter_anchor = (o, a) => {
+        if (this.disable) return;
+        let t = o[0],
+          e = t.target;
+        document
+          .querySelectorAll("[data-jos_anchor='#" + e.id + "']")
+          .forEach((s) => {
+            let n = s.dataset.jos_animation,
+              r = s.dataset.jos_animationinverse;
+            if (t.isIntersecting) {
+              if (s.dataset.jos_counter != null) {
+                let d = parseInt(s.dataset.jos_counter);
+                (d++, (s.dataset.jos_counter = d));
+              }
+              n &&
+                (s.classList.remove("jos-" + n),
+                s.dataset.jos_invoke != null && window[s.dataset.jos_invoke](s),
+                (s.dataset.jos_once == null && s.dataset.jos_once == "false") ||
+                  ((s.dataset.jos_once == "true" ||
+                    s.dataset.jos_counter >= s.dataset.jos_once) &&
+                    a.unobserve(s)),
+                r != null && s.classList.add("jos-" + r));
+            } else
+              (s.dataset.jos_scrolldirection !== void 0 &&
+                s.dataset.jos_scrolldirection !== "down" &&
+                s.dataset.jos_scrolldirection !== "none") ||
+                (s.classList.add("jos-" + n),
+                s.dataset.jos_invoke_out !== void 0 &&
+                  window[s.dataset.jos_invoke_out](s));
+          });
+      };
+      rand = (o) =>
+        Array.isArray(o)
+          ? o[Math.floor(Math.random() * o.length)]
+          : typeof o == "number"
+            ? o % 1 != 0
+              ? Math.random() * o
+              : Math.floor(Math.random() * o)
+            : Math.random();
+      callbackScroller = (o) => {
+        if (this.disable || this.scrollProgressDisable) return;
+        const a = this.default_rootMargin;
+        let t = window.innerHeight;
+        const e = (s) => {
+          const n = s.dataset.jos_rootmargin || a,
+            r = n.split(" ").map(parseFloat),
+            d = (t * r[0]) / 100,
+            c = (t * r[2]) / 100;
+          s.jos = {
+            rootMargin: n,
+            rootMarginValues: r,
+            topMargin: d,
+            bottomMargin: c,
+          };
+          const f = s.getBoundingClientRect(),
+            j = f.top - s.jos.topMargin,
+            l = f.bottom - s.jos.bottomMargin,
+            h = f.top / t,
+            p = j / (t - s.jos.topMargin - s.jos.bottomMargin);
+          let u = 0;
+          ((u = p <= 0 ? 0 : p >= 100 ? 1 : p),
+            (s.jos = {
+              elementRect: f,
+              elementTop: j,
+              elementBottom: l,
+              windowScrollProgress: h,
+              rootScrollProgress: p,
+              scrollProgress: u,
+            }),
+            window[s.dataset.jos_scroll](s));
+        };
+        document.onscroll = (s) => {
+          this.disable || this.scrollProgressDisable || o.forEach(e);
+        };
+      };
+      callbackRouter = (o, a, t = 1) => {
+        if (this.disable) return;
+        let e = o[0],
+          s = e.target,
+          n = s.dataset.jos_animation,
+          r = s.dataset.jos_animationinverse,
+          d = 1;
+        if (((d = e.boundingClientRect.top < 0 ? 0 : 1), e.isIntersecting)) {
+          if (
+            (s.dataset.jos_scroll != "false" &&
+              s.dataset.jos_scroll != null &&
+              (this.scrollEnter.push(s),
+              this.callbackScroller(this.scrollEnter)),
+            s.dataset.jos_counter != null)
+          ) {
+            let c = parseInt(s.dataset.jos_counter);
+            (c++, (s.dataset.jos_counter = c));
+          }
+          (s.dataset.jos_mirror == "false" &&
+            s.classList.remove("jos-no-mirror"),
+            n &&
+              (s.classList.remove("jos-" + n),
+              s.dataset.jos_invoke != null && window[s.dataset.jos_invoke](s),
+              (s.dataset.jos_once == null && s.dataset.jos_once == "false") ||
+                ((s.dataset.jos_once == "true" ||
+                  s.dataset.jos_counter >= s.dataset.jos_once) &&
+                  a.unobserve(s))),
+            r != null && s.classList.add("jos-" + r));
+        } else
+          ((s.dataset.jos_scrolldirection === void 0 ||
+            (d === 1 && s.dataset.jos_scrolldirection === "down") ||
+            (d === 0 && s.dataset.jos_scrolldirection === "up") ||
+            s.dataset.jos_scrolldirection === "none") &&
+            (s.classList.toggle(
+              "jos-no-mirror",
+              s.dataset.jos_mirror == "false",
+            ),
+            s.classList.add("jos-" + n),
+            r != null && s.classList.remove("jos-" + r),
+            s.dataset.jos_invoke_out !== void 0 &&
+              window[s.dataset.jos_invoke_out](s)),
+            s.dataset.jos_scroll != "false" &&
+              s.dataset.jos_scroll != null &&
+              ((this.scrollEnter = this.scrollEnter.filter(
+                (c) => c.id !== s.id,
+              )),
+              this.callbackScroller(this.scrollEnter)));
+      };
+      animationInit() {
+        let o = [],
+          a = (t) => {
+            let e = t.dataset.jos_once || this.default_once,
+              s = t.dataset.jos_animation || this.default_animation,
+              n =
+                t.dataset.jos_animationinverse || this.default_animationinverse,
+              r = t.dataset.jos_timingFunction || this.default_timingFunction,
+              d = t.dataset.jos_duration || this.default_duration,
+              c = t.dataset.jos_delay || this.default_delay,
+              f = t.dataset.jos_mirror || this.default_mirror;
+            if (
+              (t.classList.contains("jos_disabled") &&
+                (t.classList.remove("jos_disabled"), t.classList.add("jos")),
+              e && (e == "true" || /^\d+$/.test(e))
+                ? t.setAttribute("data-jos_once", e)
+                : t.setAttribute(
+                    "data-jos_once",
+                    this.default_once ? "1" : "false",
+                  ),
+              t.dataset.jos_stagger)
+            ) {
+              const l = this.default_delay,
+                h = this.default_duration,
+                p = this.once,
+                u = this.mirror,
+                g = this.scrolldirection,
+                y = this.rootMargin,
+                b = this.animationinverse;
+              if (
+                (t.id || (t.id = Math.random().toString(36).substring(7)),
+                Array.from(t.children).forEach((i, k) => {
+                  if (!i.classList.contains("jos")) {
+                    (i.classList.add("jos"), i.id || (i.id = `${t.id}_${k}`));
+                    const S = t.dataset.jos_stagger,
+                      Y = t.dataset.jos_stagger_delay || l,
+                      L = t.dataset.jos_stagger_seq || 0,
+                      X = t.dataset.jos_stagger_duration || h,
+                      E = t.dataset.jos_stagger_once || p,
+                      w = t.dataset.jos_staggerinverse || b,
+                      R = t.dataset.jos_stagger_mirror || u,
+                      F = t.dataset.jos_stagger_startVisible,
+                      M = t.dataset.jos_stagger_scrolldirection || g,
+                      A = t.dataset.jos_stagger_rootmargin || y;
+                    if (t.dataset.jos_stagger_anchor || i.dataset.jos_anchor) {
+                      const $ =
+                        t.dataset.jos_stagger_anchor === "true"
+                          ? "#" + t.id
+                          : t.dataset.jos_stagger_anchor;
+                      i.setAttribute("data-jos_anchor", $);
+                    }
+                    (i.setAttribute("data-jos_animation", S),
+                      w && i.setAttribute("data-jos_animationinverse", w),
+                      i.setAttribute("data-jos_duration", X));
+                    const O = parseFloat(L * k + Y);
+                    (i.setAttribute("data-jos_delay", O),
+                      i.setAttribute("data-jos_once", E),
+                      R === "false" &&
+                        i.setAttribute("data-jos_mirror", "false"),
+                      F && o.push(i),
+                      M && i.setAttribute("data-jos_scrolldirection", M),
+                      A && i.setAttribute("data-jos_rootmargin", A),
+                      t.dataset.jos_stagger_scroll &&
+                        i.setAttribute(
+                          "data-jos_scroll",
+                          t.dataset.jos_stagger_scroll,
+                        ),
+                      t.dataset.jos_stagger_timingFunction &&
+                        i.setAttribute(
+                          "data-jos_timingFunction",
+                          t.dataset.jos_stagger_timingFunction,
+                        ),
+                      t.dataset.jos_stagger_invoke &&
+                        i.setAttribute(
+                          "data-jos_invoke",
+                          t.dataset.jos_stagger_invoke,
+                        ),
+                      t.dataset.jos_stagger_invoke_out &&
+                        i.setAttribute(
+                          "data-jos_invoke_out",
+                          t.dataset.jos_stagger_invoke_out,
+                        ),
+                      (this.boxes = [...this.boxes, i]),
+                      a(i));
+                  }
+                }),
+                !t.dataset.jos_animation)
+              )
+                return void t.classList.remove("jos");
+            }
+            (t.setAttribute("data-jos_animation", s),
+              n && t.setAttribute("data-jos_animationinverse", n),
+              r && t.setAttribute("data-jos_timingFunction", r),
+              f == "false" && t.setAttribute("data-jos_mirror", f),
+              d &&
+                (t.setAttribute("data-jos_duration", d),
+                this.setRange.add(parseFloat(d))),
+              c &&
+                (t.setAttribute("data-jos_delay", c),
+                this.setRange.add(parseFloat(c))),
+              t.setAttribute("data-jos_counter", "0"),
+              t.classList.add("jos-" + s),
+              (t.dataset.jos_startvisible || this.default_startVisible) &&
+                o.push(t),
+              this.default_scrolldirection &&
+                t.setAttribute(
+                  "data-jos_scrolldirection",
+                  this.default_scrolldirection,
+                ));
+            let j = {
+              rootMargin: [
+                t.dataset.jos_rootmargin_top ||
+                  this.default_rootMargin.split(" ")[0],
+                t.dataset.jos_rootmargin_right ||
+                  this.default_rootMargin.split(" ")[1],
+                t.dataset.jos_rootmargin_bottom ||
+                  this.default_rootMargin.split(" ")[2],
+                t.dataset.jos_rootmargin_left ||
+                  this.default_rootMargin.split(" ")[3],
+              ]
+                .map((l) => (l.startsWith("-") ? l.substring(1) : `-${l}`))
+                .join(" "),
+              threshold: t.dataset.jos_threshold || this.default_threshold,
+              passive: t.dataset.jos_passive || this.default_passive,
+            };
+            if (t.dataset.jos_anchor) {
+              const l = new IntersectionObserver(this.callbackRouter_anchor, j);
+              (this.observers.push(l),
+                l.observe(
+                  document.getElementById(t.dataset.jos_anchor.substring(1)),
+                ));
+            } else {
+              const l = new IntersectionObserver(this.callbackRouter, j);
+              (this.observers.push(l), l.observe(t));
+            }
+          };
+        (this.boxes.forEach((t) => {
+          a(t);
+        }),
+          setTimeout(() => {
+            o.forEach((t) => {
+              let e = t.dataset.jos_startvisible;
+              setTimeout(() => {
+                (e == "true" && (e = 0),
+                  t.classList.remove("jos-" + t.dataset.jos_animation));
+              }, e || this.default_startVisible);
+            });
+          }, 100));
+      }
+      animationUnset(o = 0) {
+        (o != -1 &&
+          this.boxes?.forEach((a) => {
+            (a.classList.remove("jos"),
+              a.classList.add("jos_disabled"),
+              o == 0
+                ? a.classList.add("jos-" + a.dataset.jos_animation)
+                : a.classList.remove("jos-" + a.dataset.jos_animation));
+          }),
+          this.observers?.forEach((a) => a.disconnect()));
+      }
+      getStylesheet() {
+        const o = document.createElement("style");
+        document.head.appendChild(o);
+        const a = o.sheet;
+        a.insertRule(
+          ".jos-no-mirror {    transition: 0s forwards !important;}",
+        );
+        let t =
+          "all " +
+          this.default_duration +
+          "s " +
+          this.default_timingFunction +
+          " " +
+          this.default_delay +
+          "s ;";
+        a.insertRule(".jos {transition: " + t + ";}");
+        for (const e of this.setRange)
+          (a.insertRule(`[data-jos_duration="${e}"] {
     transition-duration: ${e}s !important;
-  }`),a.insertRule(`[data-jos_delay="${e}"] {
+  }`),
+            a.insertRule(`[data-jos_delay="${e}"] {
     transition-delay: ${e}s !important;
-  }`);this.jos_stylesheet=a}getBoxes(){return this.boxes=void 0,this.boxes||(this.boxes=document.querySelectorAll(".jos")),this.boxes}getDefault(o={}){let{once:a,animation:t,animationinverse:e,timingFunction:s,threshold:n,startVisible:r,scrolldirection:d,intersectionRatio:c,duration:f,mirror:j,delay:l,debugMode:h,disable:p,scrollProgressDisable:u,rootMargin:g,rootMarginTop:y,rootMarginBottom:b}=o;this.default_once=a||this.default_once,this.default_animation=t||this.default_animation,this.default_animationinverse=e||this.default_animationinverse,this.default_timingFunction=s||this.default_timingFunction,this.default_threshold=n||this.default_threshold,this.default_startVisible=r||this.default_startVisible,this.default_scrolldirection=d||this.default_scrolldirection,this.default_intersectionRatio=c||this.default_threshold,this.default_duration=f||this.default_duration,this.default_delay=l||this.default_delay,this.debugMode=h||this.debugMode,p!=null&&(this.disable=p),this.scrollProgressDisable=u||this.scrollProgressDisable,this.default_rootMargin=g||`${y||"-10%"} 0% ${b||"-40%"} 0%`,this.default_mirror=j||this.default_mirror}init(o=this.options){this.options=o,this.getDefault(o),this.disable||(this.getBoxes(),this.debugMode&&this.debugger(),this.start(),this.getStylesheet())}start(o=0){return o!=-1&&(this.stop(),this.animationInit()),this.disable=!1,"Started"}stop(o=0){return o==1?o=0:o==0&&(o=1),this.disable=!0,o!=-1&&this.animationUnset(o),"Stopped"}refresh(){return this.animationUnset(-1),this.boxes=void 0,this.getBoxes(),this.animationInit(),this.debugger(1),"Refreshed"}destroy(o=0){this.animationUnset(-1),this.boxes=void 0,this.observers=[],o==1&&(this.jos_stylesheet.disabled=!0),this.jos_stylesheet=void 0;for(let a in this)this.hasOwnProperty(a)&&typeof this[a]!="function"&&(this[a]=void 0);return Object.setPrototypeOf(this,null),"JOS Instance Nuked"}}const x=new m;v.exports!==void 0?v.exports=x:window.JOS=x})})(z);var J=z.exports;const P=I(J);P.init({passive:!1,once:!0,animation:"fade-up",timingFunction:"ease",threshold:0,delay:.5,duration:.7,scrollDirection:"down",rootMargin:"0% 0% 15% 0%"});
+  }`));
+        this.jos_stylesheet = a;
+      }
+      getBoxes() {
+        return (
+          (this.boxes = void 0),
+          this.boxes || (this.boxes = document.querySelectorAll(".jos")),
+          this.boxes
+        );
+      }
+      getDefault(o = {}) {
+        let {
+          once: a,
+          animation: t,
+          animationinverse: e,
+          timingFunction: s,
+          threshold: n,
+          startVisible: r,
+          scrolldirection: d,
+          intersectionRatio: c,
+          duration: f,
+          mirror: j,
+          delay: l,
+          debugMode: h,
+          disable: p,
+          scrollProgressDisable: u,
+          rootMargin: g,
+          rootMarginTop: y,
+          rootMarginBottom: b,
+        } = o;
+        ((this.default_once = a || this.default_once),
+          (this.default_animation = t || this.default_animation),
+          (this.default_animationinverse = e || this.default_animationinverse),
+          (this.default_timingFunction = s || this.default_timingFunction),
+          (this.default_threshold = n || this.default_threshold),
+          (this.default_startVisible = r || this.default_startVisible),
+          (this.default_scrolldirection = d || this.default_scrolldirection),
+          (this.default_intersectionRatio = c || this.default_threshold),
+          (this.default_duration = f || this.default_duration),
+          (this.default_delay = l || this.default_delay),
+          (this.debugMode = h || this.debugMode),
+          p != null && (this.disable = p),
+          (this.scrollProgressDisable = u || this.scrollProgressDisable),
+          (this.default_rootMargin =
+            g || `${y || "-10%"} 0% ${b || "-40%"} 0%`),
+          (this.default_mirror = j || this.default_mirror));
+      }
+      init(o = this.options) {
+        ((this.options = o),
+          this.getDefault(o),
+          this.disable ||
+            (this.getBoxes(),
+            this.debugMode && this.debugger(),
+            this.start(),
+            this.getStylesheet()));
+      }
+      start(o = 0) {
+        return (
+          o != -1 && (this.stop(), this.animationInit()),
+          (this.disable = !1),
+          "Started"
+        );
+      }
+      stop(o = 0) {
+        return (
+          o == 1 ? (o = 0) : o == 0 && (o = 1),
+          (this.disable = !0),
+          o != -1 && this.animationUnset(o),
+          "Stopped"
+        );
+      }
+      refresh() {
+        return (
+          this.animationUnset(-1),
+          (this.boxes = void 0),
+          this.getBoxes(),
+          this.animationInit(),
+          this.debugger(1),
+          "Refreshed"
+        );
+      }
+      destroy(o = 0) {
+        (this.animationUnset(-1),
+          (this.boxes = void 0),
+          (this.observers = []),
+          o == 1 && (this.jos_stylesheet.disabled = !0),
+          (this.jos_stylesheet = void 0));
+        for (let a in this)
+          this.hasOwnProperty(a) &&
+            typeof this[a] != "function" &&
+            (this[a] = void 0);
+        return (Object.setPrototypeOf(this, null), "JOS Instance Nuked");
+      }
+    }
+    const x = new m();
+    v.exports !== void 0 ? (v.exports = x) : (window.JOS = x);
+  });
+})(z);
+var J = z.exports;
+const P = I(J);
+P.init({
+  passive: !1,
+  once: !0,
+  animation: "fade-up",
+  timingFunction: "ease",
+  threshold: 0,
+  delay: 0.5,
+  duration: 0.7,
+  scrollDirection: "down",
+  rootMargin: "0% 0% 15% 0%",
+});

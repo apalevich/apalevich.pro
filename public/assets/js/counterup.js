@@ -15,7 +15,7 @@ class countUp {
     this.observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         const end = parseFloat(
-          entry.target.dataset.countupNumber.replace(/,/g, "")
+          entry.target.dataset.countupNumber.replace(/,/g, ""),
         );
         const decimals = this.countDecimals(end);
         if (entry.isIntersecting) {
