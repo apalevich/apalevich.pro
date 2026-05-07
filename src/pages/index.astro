@@ -1,25 +1,44 @@
 ---
-import Layout from "@layouts/Layout.astro";
-import Container from "@components/container.astro";
-import Cta from "@components/cta.astro";
-import Features from "@components/features.astro";
-import Stats from "@components/stats.astro";
-import BulletPoints from "@components/bulletpoints.astro";
-import Portfolio from "@components/portfolio.astro";
-import Hero from "@components/hero.astro";
-import Logos from "@components/logos.astro";
-import Pricing from "@components/pricing.astro";
-
+import BaseLayout from "../components/layout/BaseLayout.astro";
+import SiteHeader from "../components/site/SiteHeader.astro";
+import SiteFooter from "../components/site/SiteFooter.astro";
+import HeroSection from "../components/home/HeroSection.astro";
+import StatsSection from "../components/home/StatsSection.astro";
+import ContentSplitSection from "../components/home/ContentSplitSection.astro";
+import ServicesSection from "../components/home/ServicesSection.astro";
+import PricingSection from "../components/home/PricingSection.astro";
+import TeamSection from "../components/home/TeamSection.astro";
+import BlogSection from "../components/home/BlogSection.astro";
+import CtaSection from "../components/home/CtaSection.astro";
+import data from "../data/homepage.json";
 ---
-<Layout title="Technical Solutions for Marketing Leaders">
-  <Container>
-    <Hero />
-    <Features />
-    <Stats />
-    <BulletPoints />
-    <Portfolio />
-    <Logos />
-    <Pricing />
-    <Cta />
-  </Container>
-</Layout>
+
+<BaseLayout
+    title={data.site.title}
+    description={data.site.description}
+    scripts={[
+        "/assets/js/menu.js",
+        "/assets/js/countdown.js",
+        "/assets/js/counterup.js",
+        "/assets/js/main.js",
+    ]}
+>
+    <div class="relative z-1 bg-ColorLight">
+        <SiteHeader navigation={data.navigation} />
+
+        <main class="relative overflow-hidden">
+            <HeroSection hero={data.hero} />
+            <StatsSection stats={data.stats} />
+            <ContentSplitSection block={data.story} reverse />
+            <ContentSplitSection block={data.speed} checklist />
+            <ServicesSection services={data.services} />
+            <ContentSplitSection block={data.process} dark />
+            <!-- <PricingSection pricing={data.pricing} /> -->
+            <TeamSection team={data.team} />
+            <!-- <BlogSection blog={data.blog} /> -->
+            <CtaSection cta={data.cta} />
+        </main>
+
+        <SiteFooter footer={data.footer} logo={data.navigation.logo} />
+    </div>
+</BaseLayout>

@@ -1,0 +1,68 @@
+---
+import Button from '../ui/Button.astro';
+import Icon from '../ui/Icon.astro';
+import Section from '../ui/Section.astro';
+import SectionHeading from '../ui/SectionHeading.astro';
+
+const { block, reverse = false, dark = false, checklist = false } = Astro.props;
+const items = block.bullets ?? block.points ?? [];
+---
+<Section tone={dark ? 'dark' : 'light'}>
+  <div class="container py-16 lg:py-20">
+    <div class="grid items-center gap-10 md:grid-cols-2 lg:gap-24 xl:gap-60">
+      <div class:list={reverse ? 'order-1 md:order-2' : 'order-1'}>
+        <SectionHeading title={block.title} description={block.description || ''} tone={dark ? 'light' : 'dark'} />
+        {block.paragraphs ? (
+          <div class="mt-5 space-y-4">
+            {block.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+          </div>
+        ) : null}
+
+        {items.length > 0 ? (
+          <ul class="mt-6 grid gap-4 font-semibold lg:grid-cols-2">
+            {items.map((bullet) => (
+              <li class="flex items-start gap-3">
+                <Icon name={checklist ? 'check' : 'badge'} class="mt-1 h-5 w-5 shrink-0 text-ColorLime" />
+                <span>{bullet}</span>
+              </li>
+            ))}
+          </ul>
+        ) : null}
+
+        {block.action ? (
+          <div class="mt-8 lg:mt-[50px]">
+            <Button href={block.action.href} variant="solid">{block.action.label}</Button>
+          </div>
+        ) : null}
+      </div>
+
+      {block.image ? (
+        <div class:list={['relative order-2', reverse ? 'md:order-1' : 'md:order-2']}>
+          <img
+            src={block.image.src}
+            alt={block.image.alt}
+            width={block.image.width}
+            height={block.image.height}
+            loading="lazy"
+            decoding="async"
+            class="h-auto w-full rounded-md"
+          />
+          {block.image.overlay ? (
+            <img
+              src={block.image.overlay}
+              alt=""
+              width="304"
+              height="104"
+              loading="lazy"
+              decoding="async"
+              class:list={[
+                'pointer-events-none absolute hidden xl:inline-block',
+                reverse ? 'bottom-6 left-full -translate-x-1/2' : 'bottom-6 left-0 -translate-x-1/2'
+              ]}
+            />
+          ) : null}
+        </div>
+      ) : null}
+    </div>
+  </div>
+</Section>

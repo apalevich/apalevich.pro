@@ -1,0 +1,24 @@
+---
+import Section from '../ui/Section.astro';
+import SectionHeading from '../ui/SectionHeading.astro';
+
+const { team } = Astro.props;
+---
+<Section tone="light">
+  <div class="container py-16 lg:py-20">
+    <div class="grid gap-10 lg:grid-cols-[0.85fr_minmax(0,_1fr)] xl:gap-16">
+      <SectionHeading title={team.title} description={team.description} tone="dark" />
+      <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        {team.cards.map((member) => (
+          <article class="overflow-hidden rounded-md border border-ColorBlack/10 bg-white">
+            <img src={member.image} alt={member.name} width="376" height="376" loading="lazy" decoding="async" class="aspect-square w-full object-cover" />
+            <div class="p-4">
+              <div class="font-PublicSans text-xl font-bold text-ColorBlack">{member.name}</div>
+              <div class="mt-1 text-sm text-ColorDark/70">{member.role}</div>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </div>
+</Section>

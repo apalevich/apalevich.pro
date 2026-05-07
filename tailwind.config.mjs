@@ -1,67 +1,37 @@
 /** @type {import('tailwindcss').Config} */
-const defaultTheme = require("tailwindcss/defaultTheme");
-const colors = require('tailwindcss/colors')
-
-module.exports = {
-  content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
+export default {
+  content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
   theme: {
-    colors: {
-      transparent: 'transparent',
-      current: 'currentColor',
-      black: colors.black,
-      white: colors.white,
-      gray: colors.gray,
-      zinc: colors.zinc,
-    },
     extend: {
-      fontFamily: {
-        sans: [
-          "Bricolage Grotesque Variable",
-          "Inter Variable",
-          "Inter",
-          ...defaultTheme.fontFamily.sans,
-        ],
-      },
       colors: {
-        primary: {
-          DEFAULT: "#4a0908",
-          50: "#FCE4E3",
-          100: "#F9C9C8",
-          200: "#F39291",
-          300: "#ED5C59",
-          400: "#E72522",
-          500: "#B81714",
-          600: "#81100E",
-          700: "#4A0908",
-          800: "#330605",
-          900: "#170302",
-          950: "#0E0201"
-        },
-        secondary: {
-          DEFAULT: "#08494A",
-          50: "#DAFAFB",
-          100: "#B1F5F7",
-          200: "#63ECEE",
-          300: "#19E3E6",
-          400: "#109698",
-          500: "#08494A",
-          600: "#063B3C",
-          700: "#052D2E",
-          800: "#031B1C",
-          900: "#010E0E",
-          950: "#010909"
-        },
+        ColorBlack: '#121212',
+        ColorDark: '#0A102F',
+        ColorLight: '#FDFBF9',
+        ColorLime: '#C1FF00',
+        ColorLimeAlt: '#A6FF00',
+        ColorPurple: '#6B3FF2'
       },
-      animation: {
-        'fancy': 'fancy 5s linear infinite',
+      fontFamily: {
+        Inter: ['Inter', 'sans-serif'],
+        PublicSans: ['Public Sans', 'sans-serif']
       },
-      keyframes: {
-        fancy: {
-          '0%, 100%': { backgroundPosition: '0% 50%' },
-          '50%': { backgroundPosition: '100% 50%' },
+      borderRadius: {
+        xs: '3px',
+        sm: '5px',
+        md: '10px'
+      },
+      container: {
+        center: true,
+        padding: {
+          DEFAULT: '1rem',
+          sm: '1.5rem',
+          lg: '2rem',
+          xl: '2.5rem'
         }
+      },
+      maxWidth: {
+        container: '1320px'
       }
-    },
-  },
-  plugins: [require("@tailwindcss/typography")],
+    }
+  }
 };

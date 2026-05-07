@@ -1,0 +1,106 @@
+---
+import Icon from "../ui/Icon.astro";
+
+const { footer, logo } = Astro.props;
+---
+
+<footer class="relative z-20 bg-ColorBlack text-ColorLight/80">
+    <div class="pt-20 lg:pt-24 xl:pt-32 xxl:pt-[200px]">
+        <div class="container">
+            <div
+                class="grid gap-x-16 gap-y-10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-[1.2fr_repeat(3,_auto)] xl:gap-x-20 xxl:gap-x-[134px]"
+            >
+                <div class="flex flex-col gap-y-7 md:col-span-3 lg:col-span-1">
+                    <a href="/">
+                        <img
+                            src={logo.light}
+                            alt={logo.alt}
+                            width="120"
+                            height="44"
+                            loading="lazy"
+                            decoding="async"
+                        />
+                    </a>
+                    <div class="lg:max-w-[416px] space-y-6">
+                        <p>{footer.description}</p>
+                        <p>{footer.location}</p>
+                        <a
+                            href={`mailto:${footer.email}`}
+                            class="block underline-offset-4 transition hover:underline"
+                        >
+                            {footer.email}
+                        </a>
+                        <div class="flex flex-wrap gap-4">
+                            {
+                                footer.socials.map((social) => (
+                                    <a
+                                        href={social.href}
+                                        target="_blank"
+                                        rel="noreferrer noopener"
+                                        class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-white/10 text-white transition hover:bg-ColorLime hover:text-ColorBlack"
+                                        aria-label={social.label}
+                                    >
+                                        <Icon
+                                            name={social.icon}
+                                            class="h-4 w-4"
+                                        />
+                                    </a>
+                                ))
+                            }
+                        </div>
+                    </div>
+                </div>
+
+                {
+                    footer.columns.map((column) => (
+                        <div class="flex flex-col gap-y-6">
+                            <div class="text-xl font-semibold capitalize">
+                                {column.title}
+                            </div>
+                            <ul class="flex flex-col gap-y-2 capitalize">
+                                {column.links.map((link) => (
+                                    <li>
+                                        <a
+                                            href={link.href}
+                                            class="underline-offset-4 opacity-80 transition hover:underline hover:opacity-100"
+                                        >
+                                            {link.label}
+                                        </a>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    ))
+                }
+            </div>
+        </div>
+    </div>
+
+    <div class="mt-12 bg-white/10 py-[18px] text-center text-white/80">
+        <div class="container">{footer.copyright}</div>
+    </div>
+
+    <div class="pointer-events-none absolute left-0 top-0 -z-10 w-full">
+        <img
+            src={footer.decorations.arc}
+            alt=""
+            class="w-full"
+            width="1600"
+            height="94"
+            loading="lazy"
+            decoding="async"
+        />
+    </div>
+    <div
+        class="pointer-events-none absolute -z-10 hidden xl:right-10 xl:top-20 xl:inline-block xxl:right-20 xxl:top-[100px]"
+    >
+        <img
+            src={footer.decorations.dot}
+            alt=""
+            width="268"
+            height="291"
+            loading="lazy"
+            decoding="async"
+        />
+    </div>
+</footer>

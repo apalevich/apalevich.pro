@@ -1,0 +1,120 @@
+---
+import Button from "../ui/Button.astro";
+import Icon from "../ui/Icon.astro";
+
+const { navigation } = Astro.props;
+const menuId = "append-menu-header";
+---
+
+<header id="sticky-menu" class="absolute left-0 top-0 z-40 w-full py-3">
+    <div class="container">
+        <div class="flex items-center justify-between gap-6">
+            <a href="/" class="shrink-0">
+                <img
+                    src={navigation.logo.dark}
+                    alt={navigation.logo.alt}
+                    width="150"
+                    height="44"
+                    loading="eager"
+                    decoding="async"
+                />
+            </a>
+
+            <div class="menu-block-wrapper">
+                <div class="menu-overlay"></div>
+                <nav id={menuId} class="menu-block">
+                    <div class="mobile-menu-head">
+                        <button
+                            type="button"
+                            class="go-back"
+                            aria-label={navigation.labels.back}
+                        >
+                            <Icon name="chevron-left" class="h-5 w-5" />
+                        </button>
+                        <div class="current-menu-title text-sm font-semibold">
+                        </div>
+                        <button
+                            type="button"
+                            class="mobile-menu-close"
+                            aria-label={navigation.labels.closeMenu}
+                        >
+                            <Icon name="x" class="h-5 w-5" />
+                        </button>
+                    </div>
+
+                    <ul class="site-menu-main">
+                        {
+                            navigation.links.map((item, index) => (
+                                <li
+                                    class:list={[
+                                        "nav-item",
+                                        item.children
+                                            ? "nav-item-has-children group"
+                                            : "",
+                                    ]}
+                                >
+                                    <a
+                                        href={item.href}
+                                        class:list={[
+                                            "nav-link-item",
+                                            item.children ? "drop-trigger" : "",
+                                        ]}
+                                    >
+                                        {item.label}
+                                        {item.children ? (
+                                            <Icon
+                                                name="chevron-down"
+                                                class="h-4 w-4"
+                                            />
+                                        ) : null}
+                                    </a>
+                                    {item.children ? (
+                                        <ul
+                                            class="sub-menu"
+                                            id={`submenu-${index}`}
+                                        >
+                                            {item.children.map((child) => (
+                                                <li class="sub-menu--item">
+                                                    <a
+                                                        href={child.href}
+                                                        class="block rounded-xs px-3 py-2 text-sm font-medium text-ColorBlack/80 hover:bg-ColorLight hover:text-ColorPurple"
+                                                    >
+                                                        {child.label}
+                                                    </a>
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    ) : null}
+                                </li>
+                            ))
+                        }
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="flex items-center gap-4">
+                {
+                    navigation.actions.map(({ href, variant, label }) => (
+                        <Button
+                            href={href}
+                            variant={variant}
+                            class="hidden sm:inline-flex"
+                        >
+                            {label}
+                        </Button>
+                    ))
+                }
+                <button
+                    type="button"
+                    id="openBtn"
+                    class="hamburger-menu mobile-menu-trigger"
+                    aria-label={navigation.labels.openMenu}
+                >
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </div>
+</header>

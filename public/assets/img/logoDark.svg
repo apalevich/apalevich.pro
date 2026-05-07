@@ -1,0 +1,92 @@
+<svg
+    width="450"
+    height="120"
+    viewBox="0 0 450 120"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+>
+    <!-- Background / Canvas -->
+    <rect width="400" height="120" rx="8" fill="transparent" />
+
+    <!-- The Architect's Grid Icon -->
+    <g transform="translate(20, 25)">
+        <!-- Base Grid (Infrastructure) -->
+        <rect
+            x="0"
+            y="46"
+            width="20"
+            height="20"
+            rx="2"
+            fill="#0A102F"
+            opacity="0.4"
+        />
+        <rect
+            x="24"
+            y="46"
+            width="20"
+            height="20"
+            rx="2"
+            fill="#94A3B8"
+            opacity="0.6"
+        />
+        <rect
+            x="48"
+            y="46"
+            width="20"
+            height="20"
+            rx="2"
+            fill="#94A3B8"
+            opacity="0.8"
+        />
+
+        <rect
+            x="0"
+            y="23"
+            width="20"
+            height="20"
+            rx="2"
+            fill="#64748B"
+            opacity="0.5"
+        />
+        <rect
+            x="24"
+            y="23"
+            width="20"
+            height="20"
+            rx="2"
+            fill="#64748B"
+            opacity="0.7"
+        />
+
+        <!-- Growth Node (Scaling/MVP) -->
+        <rect x="48" y="0" width="20" height="20" rx="2" fill="#A6FF00">
+            <animate
+                attributeName="opacity"
+                values="1;0.7;1"
+                dur="3s"
+                repeatCount="indefinite"
+            />
+        </rect>
+
+        <!-- Connecting Infrastructure Lines -->
+        <path
+            d="M10 46V43M34 46V43M58 46V20M10 23V20M34 23V20"
+            stroke="#CBD5E1"
+            stroke-width="1.5"
+            stroke-linecap="round"
+        />
+    </g>
+
+    <!-- Typography -->
+    <text
+        x="110"
+        y="88"
+        font-family="Inter, system-ui, sans-serif"
+        font-weight="700"
+        font-size="52"
+        fill="#0F172A"
+    >
+        APalevich.
+        <tspan fill="#6B3FF2">pro</tspan>
+    </text>
+</svg>

@@ -1,0 +1,321 @@
+{
+  "site": {
+    "name": "Fast, Conversion-Focused Apps | Web Development Agency | APalevich.Pro",
+    "title": "Fast, Conversion-Focused Apps | Web Development Agency | APalevich.Pro",
+    "description": "Lean web development agency building high-performance Vue, React & Next.js apps. Based in Georgia. 200+ projects, 12+ years. No account managers."
+  },
+  "navigation": {
+    "logo": {
+      "alt": "APalevich.Pro logo",
+      "dark": "/assets/img/logoDark.svg",
+      "light": "/assets/img/logoLight.svg"
+    },
+    "labels": {
+      "openMenu": "Open menu",
+      "closeMenu": "Close menu",
+      "back": "Back"
+    },
+    "links": [
+      { "label": "Study Cases", "href": "/projects" },
+      {
+        "label": "Services",
+        "href": "#",
+        "children": [
+          {
+            "label": "Frontend & Web Development",
+            "href": "/frontend-development"
+          },
+          {
+            "label": "Backend & Infrastructure Optimization",
+            "href": "/backend-development"
+          },
+          { "label": "AI Solution Integration", "href": "/ai" },
+          { "label": "UI/UX Design", "href": "/design" },
+          { "label": "Web Performance & SEO", "href": "/seo" },
+          { "label": "IT Recruitment", "href": "/it-recruitment" }
+        ]
+      },
+      { "label": "Testimonials", "href": "/testimonials" }
+    ],
+    "actions": [{ "label": "Contact", "href": "/contact", "variant": "solid" }]
+  },
+  "hero": {
+    "title": "We Built Web Apps That Convert",
+    "description": "We make high-performance web applications oprimized for end users. Built with React, Next.js, Vue, Nuxt.js, Angular, Astro and Claude Code",
+    "actions": [
+      { "label": "Let's Talk", "href": "/contact", "variant": "solid" },
+      {
+        "label": "See Our Work",
+        "href": "/projects",
+        "variant": "outline-dark"
+      }
+    ],
+    "images": [
+      {
+        "src": "/assets/img/th-8/hero-img-1.png",
+        "alt": "Team collaboration photo 1",
+        "width": 279,
+        "height": 307,
+        "delay": 0.3,
+        "rotation": "md:rotate-[5deg]"
+      },
+      {
+        "src": "/assets/img/th-8/hero-img-2.png",
+        "alt": "Team collaboration photo 2",
+        "width": 279,
+        "height": 250,
+        "delay": 0,
+        "rotation": "md:-rotate-[5deg]"
+      },
+      {
+        "src": "/assets/img/th-8/hero-img-3.png",
+        "alt": "Team collaboration photo 3",
+        "width": 279,
+        "height": 250,
+        "delay": 0,
+        "rotation": "md:rotate-[5deg]"
+      },
+      {
+        "src": "/assets/img/th-8/hero-img-4.png",
+        "alt": "Team collaboration photo 4",
+        "width": 279,
+        "height": 307,
+        "delay": 0.3,
+        "rotation": "md:-rotate-[5deg]"
+      }
+    ],
+    "decorations": {
+      "left": "/assets/img/elements/hero-8-content-shape.svg",
+      "right": "/assets/img/elements/home-8-dot-shape.svg",
+      "divider": "/assets/img/elements/section-devider-black.svg"
+    }
+  },
+  "stats": {
+    "title": "We earn trust by working efficiently",
+    "items": [
+      { "value": 12, "suffix": "+", "label": "Years in Web Dev" },
+      { "value": 200, "suffix": "+", "label": "Projects Delivered" },
+      { "value": 7, "suffix": "+", "label": "Countries Served" }
+    ]
+  },
+  "story": {
+    "title": "Hire Senior Talent in Two Days",
+    "paragraphs": [
+      "Hiring is expensive and time-consuming. We've built a network of vetted senior developers and specialists ready to join your team. Skip the months-long recruitment pipeline and get qualified candidates fast.",
+      "We handle sourcing, vetting, and matching. You focus on building."
+    ],
+    "action": { "label": "Learn More", "href": "/hire" },
+    "image": {
+      "src": "/assets/img/th-8/content-img-1.jpg",
+      "alt": "Consulting team planning session",
+      "width": 523,
+      "height": 450,
+      "overlay": "/assets/img/th-8/content-card-1.png"
+    }
+  },
+  "speed": {
+    "title": "Faster Apps = More Revenue",
+    "description": "Slow is expensive. Every 100ms lost on load time costs conversions. We optimize at every level, so your product performs for every user.",
+    "bullets": [
+      "Frontend optimization (React, Vue, code splitting)",
+      "Backend performance & API efficiency",
+      "Database queries & caching strategies",
+      "Infrastructure & CDN deployment"
+    ],
+    "action": { "label": "Learn More", "href": "/performance" },
+    "image": {
+      "src": "/assets/img/th-8/content-img-2.jpg",
+      "alt": "Website performance planning",
+      "width": 520,
+      "height": 450,
+      "overlay": "/assets/img/th-8/content-card-2.png"
+    }
+  },
+  "services": {
+    "eyebrow": "We specialize in",
+    "description": "Six core services. One focus: building products that convert, perform, and scale.",
+    "cards": [
+      {
+        "title": "Website & Web App Development",
+        "description": "Custom-built web solutions from concept to launch, optimized for performance and conversion.",
+        "href": "/web-development"
+      },
+      {
+        "title": "AI Solution Integration",
+        "description": "Seamless integration of AI technologies into your existing systems and workflows.",
+        "href": "/ai-integration"
+      },
+      {
+        "title": "Infrastructure Optimization",
+        "description": "Improve speed, reliability, and scalability of your backend systems and databases.",
+        "href": "/infrastructure"
+      },
+      {
+        "title": "UI/UX Design",
+        "description": "Beautiful, intuitive interfaces designed for real user needs and business goals.",
+        "href": "/ui-ux-design"
+      },
+      {
+        "title": "Web Performance & SEO",
+        "description": "Boost Core Web Vitals, loading speed, and search visibility with data-driven optimization.",
+        "href": "/performance-seo"
+      },
+      {
+        "title": "IT Recruitment",
+        "description": "Access pre-vetted senior developers and specialists without months of wasted pipeline.",
+        "href": "/it-recruitment"
+      }
+    ]
+  },
+  "process": {
+    "title": "Let's Improve Your Product",
+    "description": "Talk to us about your idea. We'll outline the approach, timeline, and investment. First conversation is always free.",
+    "action": { "label": "Get In Touch", "href": "/contact" }
+  },
+  "pricing": {
+    "title": "Our pricing plans are designed for your favor",
+    "description": "Starting any business has a cost, so you need to determine how you will cover the costs. You have ways to finance your startup.",
+    "toggle": [
+      { "label": "Per Month", "active": true },
+      { "label": "Per Year", "active": false }
+    ],
+    "plan": {
+      "label": "For business",
+      "priceMonthly": "$30.00 /Per Month",
+      "priceYearly": "$300.00 /Per Year",
+      "description": "One way to determine how much money you need is to do a break-even analysis.",
+      "features": [
+        "Live chat and email",
+        "Fully managed program",
+        "Experience team members",
+        "Step by step working process"
+      ],
+      "action": { "label": "Choose Plan", "href": "/pricing" }
+    }
+  },
+  "team": {
+    "title": "Meet members of our team",
+    "description": "Meet the team behind APalevich.Pro. 12+ years combined experience in React, infrastructure, AI integration, and web performance. Based in Estonia, serving global clients.",
+    "cards": [
+      {
+        "name": "Artem Palevich",
+        "role": "CEO & Founder",
+        "image": "/assets/img/th-1/team-img-1.jpg"
+      },
+      {
+        "name": "Viktoriya Orlik",
+        "role": "Talent Manager",
+        "image": "/assets/img/th-1/team-img-2.jpg"
+      },
+      {
+        "name": "Daniil Savitskii",
+        "role": "Senior Frontend Engineer",
+        "image": "/assets/img/th-1/team-img-3.jpg"
+      },
+      {
+        "name": "Zarema Khalilova",
+        "role": "SEO & Infrastructure Engineer",
+        "image": "/assets/img/th-1/team-img-4.jpg"
+      }
+    ]
+  },
+  "blog": {
+    "title": "Browse our articles and resources to learn more",
+    "description": "A lot of information is given in our blogs. You can learn more about startup by reading our blogs. It's time to brainstorm ideas for your business.",
+    "readMoreLabel": "Read more",
+    "cards": [
+      {
+        "category": "Business",
+        "author": "Willium Mark",
+        "date": "Jan 28, 2023",
+        "title": "How we use Slack, Trello, and TeamGantt for best project management as a digital agency",
+        "image": "/assets/img/th-1/blog-main-1.jpg",
+        "href": "/blog/how-we-use-slack-trello-and-teamgantt-for-best-project-management-as-a-digital-agency"
+      },
+      {
+        "category": "Marketing",
+        "author": "Willium Mark",
+        "date": "Jan 14, 2023",
+        "title": "Difficulties of running a digital agency in the competitive market [PODCAST] why digital agency sucks",
+        "image": "/assets/img/th-1/blog-main-3.jpg",
+        "href": "/blog/difficulties-of-running-a-digital-agency-in-the-competitive-market-podcast-why-digital-agency-sucks"
+      },
+      {
+        "category": "Technology",
+        "author": "Lesie Alenxander",
+        "date": "Jan 20, 2023",
+        "title": "Hiring a digital agency — 5 things you need to check out before signing up & the future of the digital agency",
+        "image": "/assets/img/th-1/blog-main-2.jpg",
+        "href": "/blog/hiring-a-digital-agency--5-things-you-need-to-check-out-before-signing-up--the-future-of-the-digital-agency"
+      }
+    ]
+  },
+  "cta": {
+    "title": "Ready to Build Something Great?",
+    "description": "Chat with us about your project. We typically respond within a few hours.",
+    "note": "Have questions? Start with a 20-minute consultation. No obligations.",
+    "actions": [
+      { "label": "Get in Touch", "href": "/contact", "variant": "solid" },
+      {
+        "label": "View Our Portfolio",
+        "href": "/projects",
+        "variant": "outline-light"
+      }
+    ],
+    "decorations": {
+      "dot": "/assets/img/elements/home-8-dot-shape-6.svg"
+    }
+  },
+  "footer": {
+    "description": "A lean, experienced web development team focused on delivering fast, beautiful applications that drive real business results.",
+    "location": "Based in Georgia 🇬🇪",
+    "email": "artem@apalevich.pro",
+    "socials": [
+      {
+        "label": "LinkedIn",
+        "href": "https://www.linkedin.com/in/apalevich",
+        "icon": "linkedin"
+      },
+      { "label": "GitHub", "href": "https://www.github.com/", "icon": "github" }
+    ],
+    "columns": [
+      {
+        "title": "Sitemap",
+        "links": [
+          { "label": "Home", "href": "/" },
+          { "label": "Study Cases", "href": "/projects" },
+          { "label": "Contact", "href": "/contact" }
+        ]
+      },
+      {
+        "title": "Services",
+        "links": [
+          {
+            "label": "Website & Web App Development",
+            "href": "/web-development"
+          },
+          { "label": "AI Solution Integration", "href": "/ai-integration" },
+          { "label": "Infrastructure Optimization", "href": "/infrastructure" },
+          { "label": "UI/UX Design", "href": "/ui-ux-design" },
+          { "label": "Web Performance & SEO", "href": "/performance-seo" },
+          { "label": "IT Recruitment", "href": "/it-recruitment" }
+        ]
+      },
+      {
+        "title": "Get in Touch",
+        "links": [
+          {
+            "label": "LinkedIn",
+            "href": "https://www.linkedin.com/company/apalevich-pro/"
+          },
+          { "label": "Email", "href": "mailto:artem@apalevich.pro" }
+        ]
+      }
+    ],
+    "copyright": "© 2026 APalevich.Pro. All rights reserved.",
+    "decorations": {
+      "arc": "/assets/img/elements/arc-shape-black.png",
+      "dot": "/assets/img/elements/home-8-dot-shape-7.svg"
+    }
+  }
+}

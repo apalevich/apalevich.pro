@@ -1,0 +1,47 @@
+---
+import Button from "../ui/Button.astro";
+import Section from "../ui/Section.astro";
+
+const { cta } = Astro.props;
+---
+
+<Section class="relative z-30">
+    <div class="-mb-20 lg:mb-20">
+        <div class="container">
+            <div
+                class="relative z-10 rounded-md bg-ColorPurple px-8 py-16 lg:px-12 lg:py-20 xl:py-[100px]"
+            >
+                <div class="mx-auto max-w-[675px] text-center">
+                    <h4
+                        class="mb-5 font-PublicSans text-4xl font-semibold leading-[1.14] text-white lg:text-5xl xl:text-[56px]"
+                    >
+                        {cta.title}
+                    </h4>
+                    <p class="text-white/90">{cta.description}</p>
+                    <div class="mt-8 flex flex-wrap justify-center gap-4.5">
+                        <Button href={cta.actions[0].href} variant="solid"
+                            >{cta.actions[0].label}</Button
+                        >
+                        <Button
+                            href={cta.actions[1].href}
+                            variant="outline-light"
+                            >{cta.actions[1].label}</Button
+                        >
+                    </div>
+                </div>
+                <div
+                    class="pointer-events-none absolute -z-10 hidden xl:left-10 xl:top-20 xl:inline-block xxl:left-20 xxl:top-[100px]"
+                >
+                    <img
+                        src={cta.decorations.dot}
+                        alt=""
+                        width="209"
+                        height="297"
+                        loading="lazy"
+                        decoding="async"
+                    />
+                </div>
+            </div>
+        </div>
+    </div>
+</Section>

@@ -1,0 +1,16 @@
+---
+const {
+  as: Tag = 'section',
+  class: className = '',
+  tone = 'light'
+} = Astro.props;
+
+const tones = {
+  light: 'bg-ColorLight text-ColorBlack',
+  dark: 'bg-ColorBlack text-ColorLight',
+  accent: 'bg-ColorPurple text-white'
+};
+---
+<Tag class:list={['relative overflow-hidden', tones[tone] ?? tones.light, className]}>
+  <slot />
+</Tag>

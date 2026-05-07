@@ -1,0 +1,48 @@
+---
+import Button from '../ui/Button.astro';
+import Icon from '../ui/Icon.astro';
+import Section from '../ui/Section.astro';
+import SectionHeading from '../ui/SectionHeading.astro';
+
+const { blog } = Astro.props;
+---
+<Section tone="light">
+  <div class="container py-16 lg:py-20">
+    <div class="mx-auto mb-10 max-w-[720px] text-center">
+      <SectionHeading title={blog.title} description={blog.description} tone="dark" align="center" />
+    </div>
+
+    <div class="grid gap-5 lg:grid-cols-3">
+      {blog.cards.map((post) => (
+        <article class="group flex h-full flex-col overflow-hidden rounded-md border border-ColorBlack/10 bg-white p-5">
+          <div class="relative overflow-hidden rounded-md">
+            <a href={post.href} class="block">
+              <img src={post.image} alt={post.title} width="376" height="280" loading="lazy" decoding="async" class="h-auto w-full transition duration-300 group-hover:scale-105" />
+            </a>
+            <a href={post.href} class="absolute right-2 top-2 rounded-xs bg-ColorLight px-4 py-2 text-sm font-bold hover:bg-ColorPurple hover:text-white">
+              {post.category}
+            </a>
+          </div>
+          <div class="mt-6 flex flex-1 flex-col">
+            <div class="mb-4 flex flex-col gap-2 text-sm font-semibold text-ColorBlack/80 xl:flex-row xl:items-center">
+              <a href={post.href} class="flex items-center gap-2 hover:text-ColorPurple">
+                <Icon name="circle-user" class="h-4 w-4" />
+                {post.author}
+              </a>
+              <a href={post.href} class="flex items-center gap-2 hover:text-ColorPurple">
+                <Icon name="calendar" class="h-4 w-4" />
+                {post.date}
+              </a>
+            </div>
+            <a href={post.href} class="mb-6 block font-PublicSans text-xl font-bold leading-[1.35] text-ColorBlack group-hover:text-ColorPurple xl:text-2xl">
+              {post.title}
+            </a>
+            <Button href={post.href} variant="text" iconRight="arrow-right" class="mt-auto px-0">
+              {blog.readMoreLabel}
+            </Button>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</Section>

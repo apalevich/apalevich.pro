@@ -1,0 +1,46 @@
+---
+import Button from '../ui/Button.astro';
+import Icon from '../ui/Icon.astro';
+import Section from '../ui/Section.astro';
+import SectionHeading from '../ui/SectionHeading.astro';
+
+const { pricing } = Astro.props;
+---
+<Section tone="light">
+  <div class="container py-16 lg:py-20">
+    <div class="grid items-center gap-10 lg:grid-cols-[0.85fr_minmax(0,_1fr)] xl:gap-16">
+      <div>
+        <SectionHeading title={pricing.title} description={pricing.description} tone="dark" />
+        <div class="mt-8 flex flex-wrap items-center gap-3">
+          {pricing.toggle.map((item) => (
+            <span class:list={['inline-flex items-center rounded-full px-4 py-2 text-sm font-semibold', item.active ? 'bg-ColorBlack text-ColorLight' : 'border border-ColorBlack/10 text-ColorBlack/70']}>
+              {item.label}
+            </span>
+          ))}
+        </div>
+      </div>
+
+      <div class="rounded-md border border-ColorBlack/10 bg-white p-8 shadow-sm lg:p-10">
+        <div class="mb-5 flex items-center gap-3 text-2xl font-semibold">
+          <Icon name="fire" class="h-8 w-8 text-ColorLime" />
+          {pricing.plan.label}
+        </div>
+        <div class="text-4xl font-PublicSans font-bold text-ColorBlack lg:text-[56px]">
+          {pricing.plan.priceMonthly}
+        </div>
+        <p class="mt-4 text-ColorDark/80">{pricing.plan.description}</p>
+        <ul class="mt-6 grid gap-3">
+          {pricing.plan.features.map((feature) => (
+            <li class="flex items-start gap-3">
+              <Icon name="badge" class="mt-1 h-5 w-5 shrink-0 text-ColorLime" />
+              <span>{feature}</span>
+            </li>
+          ))}
+        </ul>
+        <div class="mt-8">
+          <Button href={pricing.plan.action.href} variant="solid">{pricing.plan.action.label}</Button>
+        </div>
+      </div>
+    </div>
+  </div>
+</Section>

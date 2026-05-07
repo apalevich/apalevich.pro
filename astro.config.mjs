@@ -1,12 +1,11 @@
-import { defineConfig } from "astro/config";
-import tailwind from "@astrojs/tailwind";
-import mdx from "@astrojs/mdx";
-import sitemap from "@astrojs/sitemap";
-import icon from "astro-icon";
-import react from "@astrojs/react";
+// @ts-check
+import { defineConfig } from 'astro/config';
+
+import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://apalevich.pro",
-  integrations: [tailwind(), mdx(), sitemap(), icon(), react()],
+  vite: {
+    plugins: [tailwindcss()]
+  }
 });

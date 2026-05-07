@@ -1,0 +1,91 @@
+---
+import Button from "../ui/Button.astro";
+import Section from "../ui/Section.astro";
+
+const { hero } = Astro.props;
+---
+
+<Section class="pt-[105px] sm:pt-[145px] lg:pt-[185px]">
+    <div class="container relative z-10 text-center">
+        <h1
+            class="mx-auto mb-6 max-w-[856px] font-PublicSans text-5xl font-bold leading-[1.06] tracking-[-0.02em] md:text-[60px] lg:text-[70px] xl:text-[90px]"
+        >
+            {hero.title}
+        </h1>
+        <p class="mx-auto mb-8 max-w-[658px] lg:mb-[50px]">
+            {hero.description}
+        </p>
+        <div class="flex flex-wrap justify-center gap-[18px]">
+            <Button href={hero.actions[0].href} variant="solid"
+                >{hero.actions[0].label}</Button
+            >
+            <Button href={hero.actions[1].href} variant="outline-dark"
+                >{hero.actions[1].label}</Button
+            >
+        </div>
+    </div>
+
+    <div class="-z-10 -mb-4.25 mt-15">
+        <div class="container">
+            <div
+                class="grid grid-cols-1 gap-8 sm:grid-cols-2 md:flex md:gap-10 lg:gap-14 justify-around"
+            >
+                {
+                    hero.images.map((image) => (
+                        <figure class:list={["relative", image.rotation]}>
+                            <img
+                                src={image.src}
+                                alt={image.alt}
+                                width={280}
+                                height={310}
+                                loading="lazy"
+                                decoding="async"
+                                class="h-full rounded-md object-cover md:h-auto"
+                            />
+                        </figure>
+                    ))
+                }
+            </div>
+        </div>
+    </div>
+
+    <div
+        class="pointer-events-none absolute left-0 top-[110px] hidden md:block"
+    >
+        <img
+            src={hero.decorations.left}
+            alt=""
+            class="h-auto w-[230px] xxl:h-[331px] xxl:w-[291px]"
+            width="291"
+            height="331"
+            loading="lazy"
+            decoding="async"
+        />
+    </div>
+    <div
+        class="pointer-events-none absolute top-25 hidden md:block lg:right-10 xxl:right-0"
+    >
+        <img
+            src={hero.decorations.right}
+            alt=""
+            class="h-[200px] w-auto xxl:h-[275px] xxl:w-[125px]"
+            width="126"
+            height="275"
+            loading="lazy"
+            decoding="async"
+        />
+    </div>
+    <div
+        class="pointer-events-none absolute bottom-0 z-10 hidden w-full md:block"
+    >
+        <img
+            src={hero.decorations.divider}
+            alt=""
+            class="w-full"
+            width="1600"
+            height="94"
+            loading="lazy"
+            decoding="async"
+        />
+    </div>
+</Section>
