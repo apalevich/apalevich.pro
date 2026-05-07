@@ -8,13 +8,13 @@ This is an Astro-based marketing website with agency template design, using Tail
 
 **Tech Stack:**
 - **Framework:** Astro 6.1.10
-- **Styling:** Tailwind CSS 4.2.4 (with @tailwindcss/vite)
+- **Styling:** Tailwind CSS 4.2.4 (bundled via @tailwindcss/vite, not CLI)
 - **Node:** >=22.12.0
 - **Module Type:** ES modules
+- **TypeScript:** Strict mode (via `astro/tsconfigs/strict`)
+- **Code Formatting:** Prettier (2-space indentation, configured in `.prettierrc.json`)
 
 ## Development Commands
-
-All commands are run from `/design-upgrade-2026/` directory:
 
 | Command | Purpose |
 |---------|---------|
@@ -42,9 +42,9 @@ design-upgrade-2026/
 │   │   │   ├── StatsSection.astro
 │   │   │   ├── ContentSplitSection.astro
 │   │   │   ├── ServicesSection.astro
-│   │   │   ├── PricingSection.astro
+│   │   │   ├── PricingSection.astro        # Currently disabled (commented out in index.astro)
 │   │   │   ├── TeamSection.astro
-│   │   │   ├── BlogSection.astro
+│   │   │   ├── BlogSection.astro           # Currently disabled (commented out in index.astro)
 │   │   │   └── CtaSection.astro
 │   │   └── ui/
 │   │       ├── Button.astro
@@ -52,7 +52,8 @@ design-upgrade-2026/
 │   │       ├── Section.astro
 │   │       └── SectionHeading.astro
 │   ├── data/
-│   │   └── homepage.json        # Centralized homepage content
+│   │   ├── homepage.json        # Centralized homepage content (site, navigation, hero, stats, story, speed, services, process, team, cta, footer)
+│   │   └── refined_copy.json    # Legacy/unused copy reference
 │   └── styles/
 │       └── global.css
 ├── public/
@@ -98,18 +99,25 @@ Tailwind extends configured in `tailwind.config.mjs`:
 
 ### JavaScript Interactivity
 Scripts in `/public/assets/js/` are loaded via `scripts` prop in `BaseLayout`:
-- `menu.js` - Mobile navigation toggle
+- `menu.js` - Mobile navigation toggle (requires: `mobile-menu-trigger`, `menu-block`, `menu-overlay` selectors)
 - `countdown.js` - Countdown timer functionality
-- `counterup.js` - Animated counter animations
+- `counterup.js` - Animated counter animations (requires: `data-module="countup"` attribute)
 - `main.js` - General site interactivity
+
+**Important:** Preserve these selector names when refactoring HTML—they're hardcoded in the scripts:
+- `.mobile-menu-trigger` - Mobile menu button
+- `.menu-block` - Menu container
+- `.menu-overlay` - Menu overlay backdrop
+- `[data-module="countup"]` - Counter animation elements
 
 ## Styling Conventions
 
-- Use Astro's scoped styling when component-specific styles are needed
+- Use Astro's scoped `<style>` blocks in components—they're automatically scoped to that component only
 - Prefer Tailwind utility classes for layout and spacing
-- Custom classes should be defined in `src/styles/global.css`
+- Custom classes and base styles should be defined in `src/styles/global.css`
 - Media queries use Tailwind's responsive prefixes (`md:`, `lg:`, `xl:`)
 - Dark mode sections use `bg-ColorDark` with `text-ColorLight`
+- Two-space indentation (enforced by Prettier)
 
 ## Development Workflow
 
@@ -125,3 +133,9 @@ Scripts in `/public/assets/js/` are loaded via `scripts` prop in `BaseLayout`:
 - Production site lives in `./dist/` after build
 - Environment: Node.js >=22.12.0 required
 - No database or backend required (fully static)
+- `npm run build` is the primary validation step; always run before pushing changes
+
+## Additional Resources
+
+- **AGENTS.md** - Repository guidelines for component organization, naming conventions, and selector preservation
+- **src/data/homepage.json** - Complete homepage data structure with all configurable content keys
