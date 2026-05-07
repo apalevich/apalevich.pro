@@ -82,6 +82,22 @@
     @apply flex;
   }
 
+  @media (min-width: 992px) {
+    .site-menu-main > .nav-item-has-children:not(.has-megamenu) {
+      position: relative;
+    }
+
+    .site-menu-main > .nav-item-has-children:not(.has-megamenu)::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: max(100%, 16rem);
+      height: 18px;
+      background: transparent;
+    }
+  }
+
   .mobile-menu-head {
     @apply flex items-center justify-between gap-3 lg:hidden;
   }
