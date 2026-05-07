@@ -14,31 +14,30 @@ import data from "../data/homepage.json";
 ---
 
 <BaseLayout
-    title={data.site.title}
-    description={data.site.description}
-    scripts={[
-        "/assets/js/menu.js",
-        "/assets/js/countdown.js",
-        "/assets/js/counterup.js",
-        "/assets/js/main.js",
-    ]}
->
-    <div class="relative z-1 bg-ColorLight">
-        <SiteHeader navigation={data.navigation} />
+  title={data.site.title}
+  description={data.site.description}
+  scripts={[
+    "/assets/js/menu.js",
+    "/assets/js/countdown.js",
+    "/assets/js/counterup.js",
+    "/assets/js/main.js",
+  ]}>
+  <div class="relative z-1 bg-ColorLight">
+    <SiteHeader navigation={data.navigation} />
 
-        <main class="relative overflow-hidden">
-            <HeroSection hero={data.hero} />
-            <StatsSection stats={data.stats} />
-            <ContentSplitSection block={data.story} reverse />
-            <ContentSplitSection block={data.speed} checklist />
-            <ServicesSection services={data.services} />
-            <ContentSplitSection block={data.process} dark />
-            <!-- <PricingSection pricing={data.pricing} /> -->
-            <TeamSection team={data.team} />
-            <!-- <BlogSection blog={data.blog} /> -->
-            <CtaSection cta={data.cta} />
-        </main>
+    <main class="relative overflow-hidden">
+      <HeroSection hero={data.hero} />
+      <StatsSection stats={data.stats} />
+      <ContentSplitSection block={data.story} reverse />
+      <ContentSplitSection block={data.speed} checklist />
+      <ServicesSection services={data.services} />
+      <ContentSplitSection block={data.process} dark />
+      <!-- <PricingSection pricing={data.pricing} /> -->
+      <TeamSection team={data.team} />
+      <!-- <BlogSection blog={data.blog} /> -->
+      <CtaSection cta={data.cta} />
+    </main>
 
-        <SiteFooter footer={data.footer} logo={data.navigation.logo} />
-    </div>
+    <SiteFooter footer={data.footer} logo={data.navigation.logo} />
+  </div>
 </BaseLayout>
