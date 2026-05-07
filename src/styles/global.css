@@ -2,100 +2,100 @@
 @import "tailwindcss";
 
 @font-face {
-    font-family: "Inter";
-    font-style: normal;
-    font-weight: 400;
-    font-display: swap;
-    src: url("/_astro/inter-latin-400-normal.BT1H-PT_.woff2") format("woff2");
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/_astro/inter-latin-400-normal.BT1H-PT_.woff2") format("woff2");
 }
 
 @font-face {
-    font-family: "Public Sans";
-    font-style: normal;
-    font-weight: 800;
-    font-display: swap;
-    src: url("/_astro/public-sans-latin-800-normal.H1oVsFX8.woff2")
-        format("woff2");
+  font-family: "Public Sans";
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("/_astro/public-sans-latin-800-normal.H1oVsFX8.woff2")
+    format("woff2");
 }
 
 @layer base {
-    html {
-        @apply scroll-smooth;
-    }
+  html {
+    @apply scroll-smooth;
+  }
 
-    body {
-        @apply antialiased;
-    }
+  body {
+    @apply antialiased;
+  }
 
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-        @apply font-PublicSans tracking-[-0.02em];
-    }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-PublicSans tracking-[-0.02em];
+  }
 
-    p {
-        @apply leading-7;
-    }
+  p {
+    @apply leading-7;
+  }
 }
 
 @layer components {
-    .menu-block-wrapper {
-        @apply relative;
-    }
+  .menu-block-wrapper {
+    @apply relative;
+  }
 
-    .menu-overlay {
-        @apply fixed inset-0 z-40 hidden bg-black/50 opacity-0 transition-opacity duration-300 lg:hidden;
-    }
+  .menu-overlay {
+    @apply fixed inset-0 z-40 hidden bg-black/50 opacity-0 transition-opacity duration-300 lg:hidden;
+  }
 
-    .menu-overlay.active {
-        @apply block opacity-100;
-    }
+  .menu-overlay.active {
+    @apply block opacity-100;
+  }
 
-    .menu-block {
-        @apply fixed right-0 top-0 z-50 flex h-dvh w-[min(90vw,22rem)] translate-x-full flex-col gap-6 overflow-y-auto bg-white p-6 shadow-2xl transition-transform duration-300 lg:static lg:h-auto lg:w-auto lg:translate-x-0 lg:overflow-visible lg:bg-transparent lg:p-0 lg:shadow-none;
-    }
+  .menu-block {
+    @apply fixed top-0 right-0 z-50 flex h-dvh w-[min(90vw,22rem)] translate-x-full flex-col gap-6 overflow-y-auto bg-white p-6 shadow-2xl transition-transform duration-300 lg:static lg:h-auto lg:w-auto lg:translate-x-0 lg:overflow-visible lg:bg-transparent lg:p-0 lg:shadow-none;
+  }
 
-    .menu-block.active {
-        @apply translate-x-0;
-    }
+  .menu-block.active {
+    @apply translate-x-0;
+  }
 
-    .site-menu-main {
-        @apply flex flex-col gap-2 lg:flex-row lg:items-center lg:gap-8;
-    }
+  .site-menu-main {
+    @apply flex flex-col gap-2 lg:flex-row lg:items-center lg:gap-8;
+  }
 
-    .nav-item {
-        @apply relative;
-    }
+  .nav-item {
+    @apply relative;
+  }
 
-    .nav-link-item {
-        @apply inline-flex items-center gap-2 text-base font-semibold text-ColorBlack transition hover:text-ColorPurple;
-    }
+  .nav-link-item {
+    @apply inline-flex items-center gap-2 text-base font-semibold text-ColorBlack transition hover:text-ColorPurple;
+  }
 
-    .sub-menu {
-        @apply mt-3 hidden flex-col gap-2 border-l border-ColorBlack/10 pl-4 lg:absolute lg:left-0 lg:top-full lg:z-50 lg:mt-4 lg:min-w-56 lg:border lg:border-ColorBlack/10 lg:bg-white lg:p-4 lg:group-hover:flex;
-    }
+  .sub-menu {
+    @apply mt-3 hidden flex-col gap-2 border-l border-ColorBlack/10 pl-4 lg:absolute lg:top-full lg:left-0 lg:z-50 lg:mt-4 lg:min-w-56 lg:border lg:border-ColorBlack/10 lg:bg-white lg:p-4 lg:group-hover:flex;
+  }
 
-    .sub-menu.active {
-        @apply flex;
-    }
+  .sub-menu.active {
+    @apply flex;
+  }
 
-    .mobile-menu-head {
-        @apply flex items-center justify-between gap-3 lg:hidden;
-    }
+  .mobile-menu-head {
+    @apply flex items-center justify-between gap-3 lg:hidden;
+  }
 
-    .go-back,
-    .mobile-menu-close {
-        @apply inline-flex h-10 w-10 items-center justify-center rounded-xs border border-ColorBlack/10 text-ColorBlack;
-    }
+  .go-back,
+  .mobile-menu-close {
+    @apply inline-flex h-10 w-10 items-center justify-center rounded-xs border border-ColorBlack/10 text-ColorBlack;
+  }
 
-    .hamburger-menu {
-        @apply inline-flex h-11 w-11 flex-col items-center justify-center gap-1.5 rounded-xs border border-ColorBlack/10 bg-white lg:hidden;
-    }
+  .hamburger-menu {
+    @apply inline-flex h-11 w-11 flex-col items-center justify-center gap-1.5 rounded-xs border border-ColorBlack/10 bg-white lg:hidden;
+  }
 
-    .hamburger-menu span {
-        @apply block h-0.5 w-5 bg-ColorBlack;
-    }
+  .hamburger-menu span {
+    @apply block h-0.5 w-5 bg-ColorBlack;
+  }
 }
