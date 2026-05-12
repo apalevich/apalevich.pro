@@ -1,0 +1,82 @@
+{
+  "meta": {
+    "title": "Backend Development & Infrastructure Optimization | APalevich.Pro",
+    "description": "We optimize APIs, databases, and cloud infrastructure to eliminate bottlenecks and cut costs. Senior engineers, no overhead. Based in Georgia."
+  },
+  "hero": {
+    "eyebrow": "Backend & Infrastructure",
+    "title": "Your Backend Is Slowing You Down",
+    "description": "We find and fix the bottlenecks in your APIs, databases, and infrastructure that are costing you performance and money. No guesswork — we trace, measure, then fix.",
+    "actions": [
+      { "label": "Let's Talk", "href": "/contact", "variant": "solid" },
+      { "label": "See Our Work", "href": "/projects", "variant": "outline-light" }
+    ]
+  },
+  "features": {
+    "title": "Where We Make the Difference",
+    "description": "Backend performance problems rarely announce themselves. We know where to look.",
+    "cards": [
+      {
+        "title": "API Design & Optimization",
+        "description": "We refactor bloated endpoints, reduce over-fetching, and cut response times without breaking contracts."
+      },
+      {
+        "title": "Database Query Optimization",
+        "description": "Slow queries, missing indexes, N+1 problems — we find and fix them with measurable results."
+      },
+      {
+        "title": "Caching Strategy",
+        "description": "Redis, CDN, and application-layer caching implemented correctly so you stop hitting the database unnecessarily."
+      },
+      {
+        "title": "Cloud Infrastructure",
+        "description": "AWS, GCP, or DigitalOcean — we right-size your setup so you pay for what you use."
+      },
+      {
+        "title": "Scalability Architecture",
+        "description": "Event queues, microservice decomposition, and horizontal scaling patterns built before you need them."
+      },
+      {
+        "title": "Monitoring & Alerting",
+        "description": "Observability setup with actionable alerts so your team knows about problems before users do."
+      }
+    ]
+  },
+  "approach": {
+    "title": "Fix First, Refactor Second",
+    "description": "We prioritize impact — the changes that matter most get done first.",
+    "bullets": [
+      "Profile the system before touching any code",
+      "Identify the top three throughput or latency bottlenecks",
+      "Fix in order of impact, not order of preference",
+      "Validate each change with before/after metrics",
+      "Document what was changed and why for your team"
+    ],
+    "action": { "label": "Start a Project", "href": "/contact" },
+    "image": {
+      "src": "@media/th-8/content-img-2.jpg",
+      "alt": "Backend infrastructure planning",
+      "width": 523,
+      "height": 450
+    }
+  },
+  "stats": {
+    "title": "Infrastructure that holds under pressure",
+    "items": [
+      { "value": 12, "suffix": "+", "label": "Years in Backend Engineering" },
+      { "value": 60, "suffix": "+", "label": "Infrastructure Projects" },
+      { "value": 40, "suffix": "%", "label": "Avg. API Latency Reduction" }
+    ]
+  },
+  "cta": {
+    "title": "Stop Paying for Slow Infrastructure",
+    "description": "Share your stack and symptoms — we'll tell you where to look first.",
+    "actions": [
+      { "label": "Get in Touch", "href": "/contact", "variant": "solid" },
+      { "label": "View Our Portfolio", "href": "/projects", "variant": "outline-light" }
+    ],
+    "decorations": {
+      "dot": "/assets/img/elements/home-8-dot-shape-6.svg"
+    }
+  }
+}

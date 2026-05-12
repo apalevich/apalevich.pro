@@ -1,0 +1,54 @@
+---
+import BaseLayout from "../components/layout/BaseLayout.astro";
+import SiteHeader from "../components/site/SiteHeader.astro";
+import SiteFooter from "../components/site/SiteFooter.astro";
+import ServiceHeroSection from "../components/service/ServiceHeroSection.astro";
+import ServiceFeaturesSection from "../components/service/ServiceFeaturesSection.astro";
+import ContentSplitSection from "../components/home/ContentSplitSection.astro";
+import StatsSection from "../components/home/StatsSection.astro";
+import CtaSection from "../components/home/CtaSection.astro";
+import navigation from "../data/homepage.json";
+
+export async function getStaticPaths() {
+  const services = [
+    "frontend-development",
+    "backend-development",
+    "ai",
+    "design",
+    "seo",
+  ];
+
+  return await Promise.all(
+    services.map(async (slug) => {
+      const data = await import(`../data/services/${slug}.json`);
+      return { params: { service: slug }, props: { data: data.default } };
+    })
+  );
+}
+
+const { data } = Astro.props;
+---
+
+<BaseLayout
+  title={data.meta.title}
+  description={data.meta.description}
+  scripts={[
+    "/assets/js/menu.js",
+    "/assets/js/counterup.js",
+    "/assets/js/main.js",
+  ]}
+>
+  <div class="relative z-1 bg-ColorLight">
+    <SiteHeader navigation={navigation.navigation} theme="light" />
+
+    <main class="relative overflow-hidden">
+      <ServiceHeroSection hero={data.hero} />
+      <ServiceFeaturesSection features={data.features} />
+      <ContentSplitSection block={data.approach} checklist />
+      <StatsSection stats={data.stats} />
+      <CtaSection cta={data.cta} />
+    </main>
+
+    <SiteFooter footer={navigation.footer} logo={navigation.navigation.logo} />
+  </div>
+</BaseLayout>

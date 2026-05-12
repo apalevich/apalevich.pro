@@ -1,0 +1,90 @@
+{
+  "meta": {
+    "title": "Web Performance & Technical SEO | Core Web Vitals | APalevich.Pro",
+    "description": "We improve Core Web Vitals, page speed, and technical SEO for web apps and marketing sites. Data-driven optimization with measurable ranking and revenue impact."
+  },
+  "hero": {
+    "eyebrow": "Performance & SEO",
+    "title": "Faster Sites Rank Higher and Convert More",
+    "description": "Every 100ms of load time costs you conversions. We diagnose and fix the performance and SEO issues holding your site back — with before/after data at every step.",
+    "actions": [
+      { "label": "Let's Talk", "href": "/contact", "variant": "solid" },
+      {
+        "label": "See Our Work",
+        "href": "/projects",
+        "variant": "outline-light"
+      }
+    ]
+  },
+  "features": {
+    "title": "What We Optimize, and How We Measure It",
+    "description": "Performance work without measurement is just guessing. We set baselines first.",
+    "cards": [
+      {
+        "title": "Core Web Vitals",
+        "description": "LCP, CLS, and INP improvements that lift your Google search rankings and user experience scores."
+      },
+      {
+        "title": "Page Speed Optimization",
+        "description": "Image compression, critical CSS, resource hints, and lazy loading that cut Time to Interactive."
+      },
+      {
+        "title": "Technical SEO Audit",
+        "description": "Crawlability, indexation, schema markup, canonical tags, and site architecture reviewed and corrected."
+      },
+      {
+        "title": "JavaScript Performance",
+        "description": "Bundle analysis, code splitting, and render-blocking removal that make your JS stop hurting you."
+      },
+      {
+        "title": "Server & CDN Configuration",
+        "description": "Caching headers, edge delivery, and TTFB improvements that speed up delivery before the browser starts."
+      },
+      {
+        "title": "Ongoing Monitoring",
+        "description": "Lighthouse CI, CrUX data, and ranking tracking so performance regressions get caught before users notice."
+      }
+    ]
+  },
+  "approach": {
+    "title": "Measure First, Fix Second",
+    "description": "We don't touch your site until we know exactly what's hurting you and by how much.",
+    "bullets": [
+      "Baseline audit: Lighthouse, PageSpeed Insights, CrUX, Search Console",
+      "Prioritize fixes by ranking and conversion impact",
+      "Implement in stages so each change can be attributed",
+      "Validate improvement in field data, not just lab scores",
+      "Deliver a report your team can act on independently"
+    ],
+    "action": { "label": "Start a Project", "href": "/contact" },
+    "image": {
+      "src": "@media/th-8/content-img-1.jpg",
+      "alt": "Web performance audit in progress",
+      "width": 523,
+      "height": 450
+    }
+  },
+  "stats": {
+    "title": "Performance that shows up in analytics",
+    "items": [
+      { "value": 16, "suffix": "+", "label": "Years in Web Development" },
+      { "value": 100, "suffix": "+", "label": "Performance Audits Completed" },
+      { "value": 10, "suffix": "%", "label": "Min. LCP Improvement" }
+    ]
+  },
+  "cta": {
+    "title": "Find Out What's Slowing Your Site Down",
+    "description": "Share your URL and we'll run a free preliminary audit and tell you the top three things to fix.",
+    "actions": [
+      { "label": "Get in Touch", "href": "/contact", "variant": "solid" },
+      {
+        "label": "View Our Portfolio",
+        "href": "/projects",
+        "variant": "outline-light"
+      }
+    ],
+    "decorations": {
+      "dot": "/assets/img/elements/home-8-dot-shape-6.svg"
+    }
+  }
+}

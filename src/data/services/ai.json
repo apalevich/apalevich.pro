@@ -1,0 +1,94 @@
+{
+  "meta": {
+    "title": "AI Integration for Web Apps | Claude, OpenAI, Custom Workflows | APalevich.Pro",
+    "description": "We integrate Claude, GPT, and custom AI workflows into your existing product. Practical AI that solves real problems — not demos that never ship."
+  },
+  "hero": {
+    "eyebrow": "AI Integration",
+    "title": "Add AI to Your Product That Actually Works",
+    "description": "We integrate Claude, GPT, and custom AI pipelines into production applications. You get working features, not slide decks about what AI could do.",
+    "actions": [
+      { "label": "Let's Talk", "href": "/contact", "variant": "solid" },
+      {
+        "label": "See Our Work",
+        "href": "/projects",
+        "variant": "outline-light"
+      }
+    ]
+  },
+  "features": {
+    "title": "What We Integrate and Why It Matters",
+    "description": "Every AI feature we ship is tied to a specific user outcome or business metric.",
+    "cards": [
+      {
+        "title": "Claude API Integration",
+        "description": "Anthropic's Claude built into your product for document analysis, chat, generation, and reasoning tasks."
+      },
+      {
+        "title": "OpenAI & GPT Features",
+        "description": "Chat interfaces, completions, function calling, and embeddings integrated cleanly into your existing stack."
+      },
+      {
+        "title": "RAG & Knowledge Bases",
+        "description": "Retrieval-augmented generation that lets your AI answer questions from your own documents and data."
+      },
+      {
+        "title": "AI Workflow Automation",
+        "description": "Multi-step AI pipelines that replace manual processes — from content moderation to data extraction."
+      },
+      {
+        "title": "Prompt Engineering",
+        "description": "We design and test prompts that produce reliable, accurate outputs across edge cases."
+      },
+      {
+        "title": "AI Feature Maintenance",
+        "description": "We own the reliability of what we ship: monitoring, fallback logic, and ongoing prompt iteration."
+      }
+    ]
+  },
+  "approach": {
+    "title": "We Ship AI Features, Not Experiments",
+    "description": "Our AI work follows the same engineering discipline as any other feature.",
+    "bullets": [
+      "Define the specific user problem AI should solve",
+      "Evaluate model options against accuracy, latency, and cost requirements",
+      "Build with fallback behavior from day one",
+      "Test against real data and edge cases before release",
+      "Monitor output quality in production with human review loops where needed"
+    ],
+    "action": { "label": "Start a Project", "href": "/contact" },
+    "image": {
+      "src": "@media/th-8/content-img-1.jpg",
+      "alt": "AI integration planning session",
+      "width": 523,
+      "height": 450
+    }
+  },
+  "stats": {
+    "title": "AI integration without the hype",
+    "items": [
+      { "value": 50, "suffix": "+", "label": "AI-Powered Features Shipped" },
+      { "value": 15, "suffix": "+", "label": "LLM Providers We Work With" },
+      {
+        "value": 12,
+        "suffix": "+",
+        "label": "Years Building Automation Systems"
+      }
+    ]
+  },
+  "cta": {
+    "title": "Turn Your AI Idea Into a Shipped Feature",
+    "description": "Tell us what you want AI to do in your product — we'll tell you if it's feasible and what it'll take.",
+    "actions": [
+      { "label": "Get in Touch", "href": "/contact", "variant": "solid" },
+      {
+        "label": "View Our Portfolio",
+        "href": "/projects",
+        "variant": "outline-light"
+      }
+    ],
+    "decorations": {
+      "dot": "/assets/img/elements/home-8-dot-shape-6.svg"
+    }
+  }
+}

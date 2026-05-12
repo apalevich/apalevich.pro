@@ -1,0 +1,90 @@
+{
+  "meta": {
+    "title": "Frontend & Web App Development | React, Next.js, Vue | APalevich.Pro",
+    "description": "We build fast, conversion-optimized web apps in React, Next.js, Vue, and Astro. Senior engineers only. No account managers. Based in Georgia, serving global clients."
+  },
+  "hero": {
+    "eyebrow": "Web Development",
+    "title": "Web Apps That Load Fast and Convert",
+    "description": "We build production-grade frontend applications in React, Next.js, Vue, Nuxt, Angular, and Astro — optimized for performance from day one. You talk directly to the engineers building your product.",
+    "actions": [
+      { "label": "Let's Talk", "href": "/contact", "variant": "solid" },
+      {
+        "label": "See Our Work",
+        "href": "/projects",
+        "variant": "outline-light"
+      }
+    ]
+  },
+  "features": {
+    "title": "What We Build, and How",
+    "description": "From single-page apps to complex multi-team codebases, we handle the full frontend lifecycle.",
+    "cards": [
+      {
+        "title": "React & Next.js Apps",
+        "description": "Server-side rendering, static generation, and app router — architected for scale and SEO."
+      },
+      {
+        "title": "Vue & Nuxt Development",
+        "description": "Component-driven Vue apps with full SSR/SSG support and a clean separation of concerns."
+      },
+      {
+        "title": "Astro & Static Sites",
+        "description": "Ultra-fast marketing sites and content platforms with near-zero JavaScript by default."
+      },
+      {
+        "title": "Component Systems",
+        "description": "We build reusable, documented component libraries that make future development faster."
+      },
+      {
+        "title": "Performance-First Architecture",
+        "description": "Code splitting, lazy loading, and bundle optimization baked in — not bolted on later."
+      },
+      {
+        "title": "API Integration & State Management",
+        "description": "Clean data layers using React Query, Pinia, Zustand, or custom solutions that don't leak."
+      }
+    ]
+  },
+  "approach": {
+    "title": "How We Approach Frontend Work",
+    "description": "We don't start coding until we understand what the product needs to do for users.",
+    "bullets": [
+      "Audit existing codebase or design specs before writing a line",
+      "Agree on tech stack, routing strategy, and state management upfront",
+      "Build in small, testable increments with regular review checkpoints",
+      "Performance budget tracked from the first commit",
+      "Handoff includes documentation, not just code"
+    ],
+    "action": { "label": "Start a Project", "href": "/contact" },
+    "image": {
+      "src": "@media/th-8/content-img-1.jpg",
+      "alt": "Frontend development planning session",
+      "width": 523,
+      "height": 450
+    }
+  },
+  "stats": {
+    "title": "Frontend work that ships on time",
+    "items": [
+      { "value": 18, "suffix": "+", "label": "Years Building UIs" },
+      { "value": 80, "suffix": "+", "label": "Frontend Projects Delivered" },
+      { "value": 2, "suffix": "wk", "label": "Avg. Time to First Feature" }
+    ]
+  },
+  "cta": {
+    "title": "Let's Build Your Frontend Right",
+    "description": "Tell us what you're working on — we'll outline a realistic approach within 24 hours.",
+    "actions": [
+      { "label": "Get in Touch", "href": "/contact", "variant": "solid" },
+      {
+        "label": "View Our Portfolio",
+        "href": "/projects",
+        "variant": "outline-light"
+      }
+    ],
+    "decorations": {
+      "dot": "/assets/img/elements/home-8-dot-shape-6.svg"
+    }
+  }
+}

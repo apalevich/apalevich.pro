@@ -1,0 +1,35 @@
+---
+import Section from "../ui/Section.astro";
+import SectionHeading from "../ui/SectionHeading.astro";
+
+const { features } = Astro.props;
+---
+
+<Section tone="dark">
+  <div class="container py-16 lg:py-20">
+    <div class="mx-auto mb-[60px] max-w-[700px] text-center xl:mb-20">
+      <SectionHeading
+        title={features.title}
+        description={features.description}
+        tone="light"
+        align="center"
+      />
+    </div>
+
+    <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      {
+        features.cards.map((card, index) => (
+          <article class="rounded-md border border-white/10 bg-white/5 p-6 transition hover:-translate-y-1 hover:bg-white/10">
+            <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-ColorLime text-ColorBlack font-semibold text-sm">
+              {String(index + 1).padStart(2, "0")}
+            </div>
+            <h3 class="mb-2 font-PublicSans text-xl font-bold leading-tight text-ColorLight">
+              {card.title}
+            </h3>
+            <p class="text-sm leading-6 text-ColorLight/60">{card.description}</p>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</Section>
