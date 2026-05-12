@@ -1,10 +1,24 @@
 ---
+import { Picture } from "astro:assets";
 import Button from '../ui/Button.astro';
 import Icon from '../ui/Icon.astro';
 import Section from '../ui/Section.astro';
 import SectionHeading from '../ui/SectionHeading.astro';
+import { resolveImage } from "../../utils/images";
+
+import blogThumbnail from "../../media/blog-thumbnails/pexels-quentin-martinez-2147503099-33074675.jpg";
+import blogImg1 from "../../media/th-1/blog-main-1.jpg";
+import blogImg2 from "../../media/th-1/blog-main-2.jpg";
+import blogImg3 from "../../media/th-1/blog-main-3.jpg";
 
 const { blog } = Astro.props;
+
+const mediaImageMap = {
+  "@media/blog-thumbnails/pexels-quentin-martinez-2147503099-33074675.jpg": blogThumbnail,
+  "@media/th-1/blog-main-1.jpg": blogImg1,
+  "@media/th-1/blog-main-2.jpg": blogImg2,
+  "@media/th-1/blog-main-3.jpg": blogImg3,
+};
 ---
 <Section tone="light">
   <div class="container py-16 lg:py-20">
@@ -17,7 +31,7 @@ const { blog } = Astro.props;
         <article class="group flex h-full flex-col overflow-hidden rounded-md border border-ColorBlack/10 bg-white p-5">
           <div class="relative overflow-hidden rounded-md">
             <a href={post.href} class="block">
-              <img src={post.image} alt={post.title} width="376" height="280" loading="lazy" decoding="async" class="h-auto w-full transition duration-300 group-hover:scale-105" />
+              <Picture src={resolveImage(post.image, mediaImageMap)} alt={post.title} widths={[376]} formats={["avif", "webp"]} width={376} height={280} class="h-auto w-full transition duration-300 group-hover:scale-105" />
             </a>
             <a href={post.href} class="absolute right-2 top-2 rounded-xs bg-ColorLight px-4 py-2 text-sm font-bold hover:bg-ColorPurple hover:text-white">
               {post.category}

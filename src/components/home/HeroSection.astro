@@ -1,8 +1,22 @@
 ---
+import { Picture } from "astro:assets";
 import Button from "../ui/Button.astro";
 import Section from "../ui/Section.astro";
+import { resolveImage } from "../../utils/images";
+
+import heroImg1 from "../../media/th-8/hero-img-1.png";
+import heroImg2 from "../../media/th-8/hero-img-2.png";
+import heroImg3 from "../../media/th-8/hero-img-3.png";
+import heroImg4 from "../../media/th-8/hero-img-4.png";
 
 const { hero } = Astro.props;
+
+const mediaImageMap = {
+  "@media/th-8/hero-img-1.png": heroImg1,
+  "@media/th-8/hero-img-2.png": heroImg2,
+  "@media/th-8/hero-img-3.png": heroImg3,
+  "@media/th-8/hero-img-4.png": heroImg4,
+};
 ---
 
 <Section class="pt-[105px] sm:pt-[145px] lg:pt-[185px]">
@@ -33,13 +47,15 @@ const { hero } = Astro.props;
                 {
                     hero.images.map((image) => (
                         <figure class:list={["relative", image.rotation]}>
-                            <img
-                                src={image.src}
+                            <Picture
+                                src={resolveImage(image.src, mediaImageMap)}
+                                loading="eager"
+                                fetchpriority="high"
                                 alt={image.alt}
-                                width={280}
-                                height={310}
-                                loading="lazy"
-                                decoding="async"
+                                widths={[image.width, image.width * 2]}
+                                formats={["avif", "webp"]}
+                                width={image.width}
+                                height={image.height}
                                 class="h-full rounded-md object-cover md:h-auto"
                             />
                         </figure>
@@ -58,7 +74,7 @@ const { hero } = Astro.props;
             class="h-auto w-[230px] xxl:h-[331px] xxl:w-[291px]"
             width="291"
             height="331"
-            loading="lazy"
+            loading="eager"
             decoding="async"
         />
     </div>
@@ -71,7 +87,7 @@ const { hero } = Astro.props;
             class="h-[200px] w-auto xxl:h-[275px] xxl:w-[125px]"
             width="126"
             height="275"
-            loading="lazy"
+            loading="eager"
             decoding="async"
         />
     </div>
@@ -84,7 +100,7 @@ const { hero } = Astro.props;
             class="w-full"
             width="1600"
             height="94"
-            loading="lazy"
+            loading="eager"
             decoding="async"
         />
     </div>

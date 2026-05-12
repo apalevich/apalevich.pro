@@ -6,10 +6,10 @@ const { cta } = Astro.props;
 ---
 
 <Section class="relative z-30">
-    <div class="-mb-20 lg:mb-20">
+    <div class="mb-20">
         <div class="container">
             <div
-                class="relative z-10 rounded-md bg-ColorPurple px-8 py-16 lg:px-12 lg:py-20 xl:py-[100px]"
+                class="relative z-10 rounded-md bg-ColorPurple px-8 py-16 lg:px-12 lg:py-20 xl:py-25"
             >
                 <div class="mx-auto max-w-[675px] text-center">
                     <h4
@@ -17,14 +17,15 @@ const { cta } = Astro.props;
                     >
                         {cta.title}
                     </h4>
-                    <p class="text-white/90">{cta.description}</p>
+                    <p class="text-white/90 hidden md:block">{cta.description}</p>
                     <div class="mt-8 flex flex-wrap justify-center gap-4.5">
-                        <Button href={cta.actions[0].href} variant="solid"
+                        <Button href={cta.actions[0].href} variant="solid" class="w-full md:max-w-min text-nowrap"
                             >{cta.actions[0].label}</Button
                         >
                         <Button
                             href={cta.actions[1].href}
                             variant="outline-light"
+                            class="w-full md:max-w-min text-nowrap"
                             >{cta.actions[1].label}</Button
                         >
                     </div>

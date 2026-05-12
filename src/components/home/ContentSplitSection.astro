@@ -1,11 +1,25 @@
 ---
+import { Picture } from "astro:assets";
 import Button from '../ui/Button.astro';
 import Icon from '../ui/Icon.astro';
 import Section from '../ui/Section.astro';
 import SectionHeading from '../ui/SectionHeading.astro';
+import { resolveImage } from "../../utils/images";
+
+import contentImg1 from "../../media/th-8/content-img-1.jpg";
+import contentImg2 from "../../media/th-8/content-img-2.jpg";
+import contentCard1 from "../../media/th-8/content-card-1.png";
+import contentCard2 from "../../media/th-8/content-card-2.png";
 
 const { block, reverse = false, dark = false, checklist = false } = Astro.props;
 const items = block.bullets ?? block.points ?? [];
+
+const mediaImageMap = {
+  "@media/th-8/content-img-1.jpg": contentImg1,
+  "@media/th-8/content-img-2.jpg": contentImg2,
+  "@media/th-8/content-card-1.png": contentCard1,
+  "@media/th-8/content-card-2.png": contentCard2,
+};
 ---
 <Section tone={dark ? 'dark' : 'light'}>
   <div class="container py-16 lg:py-20">
@@ -38,23 +52,23 @@ const items = block.bullets ?? block.points ?? [];
 
       {block.image ? (
         <div class:list={['relative order-2', reverse ? 'md:order-1' : 'md:order-2']}>
-          <img
-            src={block.image.src}
+          <Picture
+            src={resolveImage(block.image.src, mediaImageMap)}
             alt={block.image.alt}
+            widths={[block.image.width, block.image.width * 2]}
+            formats={["avif", "webp"]}
             width={block.image.width}
             height={block.image.height}
-            loading="lazy"
-            decoding="async"
             class="h-auto w-full rounded-md"
           />
           {block.image.overlay ? (
-            <img
-              src={block.image.overlay}
+            <Picture
+              src={resolveImage(block.image.overlay, mediaImageMap)}
               alt=""
-              width="304"
-              height="104"
-              loading="lazy"
-              decoding="async"
+              widths={[304]}
+              formats={["avif", "webp"]}
+              width={304}
+              height={104}
               class:list={[
                 'pointer-events-none absolute hidden xl:inline-block',
                 reverse ? 'bottom-6 left-full -translate-x-1/2' : 'bottom-6 left-0 -translate-x-1/2'

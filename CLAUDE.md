@@ -128,6 +128,42 @@ Scripts in `/public/assets/js/` are loaded via `scripts` prop in `BaseLayout`:
 - Dark mode sections use `bg-ColorDark` with `text-ColorLight`
 - Two-space indentation (enforced by Prettier)
 
+## Code Organization & DRY Principle
+
+### Utility Functions
+
+Extract reusable logic into `src/utils/` to avoid duplication across components.
+
+**Example:** Image resolution utility (`src/utils/images.ts`)
+
+When multiple components need the same helper function, centralize it:
+
+```typescript
+// src/utils/images.ts
+export function resolveImage(src: string, mediaMap: Record<string, any>): any {
+  return mediaMap[src] ?? src;
+}
+```
+
+Then import and use in components:
+
+```astro
+---
+import { resolveImage } from "../../utils/images";
+
+const mediaImageMap = { /* component-specific mappings */ };
+---
+<Picture src={resolveImage(post.image, mediaImageMap)} ... />
+```
+
+Each component manages its own `mediaImageMap` (component-specific data), but the resolution logic is shared.
+
+### When to Extract
+
+- **Same function in 2+ files?** → Extract to `src/utils/`
+- **Same import pattern in 3+ places?** → Consider a helper or constant
+- **Logic that doesn't depend on component state?** → Good candidate for utils
+
 ## Development Workflow
 
 1. **Content updates:** Modify `src/data/homepage.json` → changes reflect instantly in dev server

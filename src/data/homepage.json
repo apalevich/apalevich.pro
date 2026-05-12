@@ -52,34 +52,34 @@
     ],
     "images": [
       {
-        "src": "/assets/img/th-8/hero-img-1.png",
-        "alt": "Team collaboration photo 1",
-        "width": 279,
-        "height": 307,
+        "src": "@media/th-8/hero-img-1.png",
+        "alt": "Team collaboration",
+        "width": 280,
+        "height": 310,
         "delay": 0.3,
         "rotation": "md:rotate-[5deg]"
       },
       {
-        "src": "/assets/img/th-8/hero-img-2.png",
-        "alt": "Team collaboration photo 2",
-        "width": 279,
-        "height": 250,
+        "src": "@media/th-8/hero-img-2.png",
+        "alt": "Team collaboration",
+        "width": 280,
+        "height": 310,
         "delay": 0,
         "rotation": "md:-rotate-[5deg]"
       },
       {
-        "src": "/assets/img/th-8/hero-img-3.png",
-        "alt": "Team collaboration photo 3",
-        "width": 279,
-        "height": 250,
+        "src": "@media/th-8/hero-img-3.png",
+        "alt": "Team collaboration",
+        "width": 280,
+        "height": 310,
         "delay": 0,
         "rotation": "md:rotate-[5deg]"
       },
       {
-        "src": "/assets/img/th-8/hero-img-4.png",
-        "alt": "Team collaboration photo 4",
-        "width": 279,
-        "height": 307,
+        "src": "@media/th-8/hero-img-4.png",
+        "alt": "Team collaboration",
+        "width": 280,
+        "height": 310,
         "delay": 0.3,
         "rotation": "md:-rotate-[5deg]"
       }
@@ -106,11 +106,11 @@
     ],
     "action": { "label": "Learn More", "href": "/hire" },
     "image": {
-      "src": "/assets/img/th-8/content-img-1.jpg",
+      "src": "@media/th-8/content-img-1.jpg",
       "alt": "Consulting team planning session",
       "width": 523,
       "height": 450,
-      "overlay": "/assets/img/th-8/content-card-1.png"
+      "overlay": "@media/th-8/content-card-1.png"
     }
   },
   "speed": {
@@ -124,11 +124,11 @@
     ],
     "action": { "label": "Learn More", "href": "/performance" },
     "image": {
-      "src": "/assets/img/th-8/content-img-2.jpg",
+      "src": "@media/th-8/content-img-2.jpg",
       "alt": "Website performance planning",
       "width": 520,
       "height": 450,
-      "overlay": "/assets/img/th-8/content-card-2.png"
+      "overlay": "@media/th-8/content-card-2.png"
     }
   },
   "services": {
@@ -200,52 +200,60 @@
       {
         "name": "Artem Palevich",
         "role": "CEO & Founder",
-        "image": "/assets/img/th-1/team-img-1.jpg"
+        "image": "@media/th-1/team-img-1.jpg"
       },
       {
         "name": "Viktoriya Orlik",
         "role": "Talent Manager",
-        "image": "/assets/img/th-1/team-img-2.jpg"
+        "image": "@media/th-1/team-img-2.jpg"
       },
       {
         "name": "Daniil Savitskii",
         "role": "Senior Frontend Engineer",
-        "image": "/assets/img/th-1/team-img-3.jpg"
+        "image": "@media/th-1/team-img-3.jpg"
       },
       {
         "name": "Zarema Khalilova",
         "role": "SEO & Infrastructure Engineer",
-        "image": "/assets/img/th-1/team-img-4.jpg"
+        "image": "@media/th-1/team-img-4.jpg"
       }
     ]
   },
   "blog": {
     "title": "Browse our articles and resources to learn more",
-    "description": "A lot of information is given in our blogs. You can learn more about startup by reading our blogs. It's time to brainstorm ideas for your business.",
-    "readMoreLabel": "Read more",
+    "description": "You can learn more about startup by reading our blogs. It's time to brainstorm ideas for your business.",
+    "readMoreLabel": "Read on LinkedIn",
     "cards": [
       {
-        "category": "Business",
-        "author": "Willium Mark",
-        "date": "Jan 28, 2023",
-        "title": "How we use Slack, Trello, and TeamGantt for best project management as a digital agency",
-        "image": "/assets/img/th-1/blog-main-1.jpg",
-        "href": "/blog/how-we-use-slack-trello-and-teamgantt-for-best-project-management-as-a-digital-agency"
-      },
-      {
-        "category": "Marketing",
-        "author": "Willium Mark",
-        "date": "Jan 14, 2023",
-        "title": "Difficulties of running a digital agency in the competitive market [PODCAST] why digital agency sucks",
-        "image": "/assets/img/th-1/blog-main-3.jpg",
-        "href": "/blog/difficulties-of-running-a-digital-agency-in-the-competitive-market-podcast-why-digital-agency-sucks"
+        "category": "Case Study",
+        "author": "Artem Palevich",
+        "date": "May 11, 2026",
+        "title": "Frontend Performance Sprint",
+        "image": "@media/blog-thumbnails/pexels-quentin-martinez-2147503099-33074675.jpg",
+        "href": "https://www.linkedin.com/pulse/case-study-tasty-frontend-performance-sprint-apalevich-pro-alwhc"
       },
       {
         "category": "Technology",
-        "author": "Lesie Alenxander",
+        "author": "Artem Palevich",
+        "date": "Apr 28, 2026",
+        "title": "Claude Code for Dummies",
+        "image": "@media/th-1/blog-main-1.jpg",
+        "href": "/blog/how-we-use-slack-trello-and-teamgantt-for-best-project-management-as-a-digital-agency"
+      },
+      {
+        "category": "Product",
+        "author": "Artem Palevich",
+        "date": "Mar 10, 2026",
+        "title": "How We Launched a SaaS Product in Just One Day",
+        "image": "@media/th-1/blog-main-3.jpg",
+        "href": "/blog/difficulties-of-running-a-digital-agency-in-the-competitive-market-podcast-why-digital-agency-sucks"
+      },
+      {
+        "category": "Process",
+        "author": "Daniil Savitskii",
         "date": "Jan 20, 2023",
-        "title": "Hiring a digital agency — 5 things you need to check out before signing up & the future of the digital agency",
-        "image": "/assets/img/th-1/blog-main-2.jpg",
+        "title": "Delivered in 9¹⁄₂ weeks",
+        "image": "@media/th-1/blog-main-2.jpg",
         "href": "/blog/hiring-a-digital-agency--5-things-you-need-to-check-out-before-signing-up--the-future-of-the-digital-agency"
       }
     ]
