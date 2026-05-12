@@ -59,7 +59,7 @@ const isLight = theme === "light";
                                         class:list={[
                                             "nav-link-item",
                                             item.children ? "drop-trigger" : "",
-                                            // isLight ? "nav-link-light" : "",
+                                            isLight ? "md:text-ColorLight text-ColorDark" : "text-ColorDark",
                                         ]}
                                     >
                                         {item.label}
@@ -102,7 +102,6 @@ const isLight = theme === "light";
                                 <Button
                                     href={href}
                                     variant="text-lime"
-                                    class="sm:hidden"
                                 >
                                     {label}
                                 </Button>
