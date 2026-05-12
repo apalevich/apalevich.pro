@@ -2,16 +2,17 @@
 import Button from "../ui/Button.astro";
 import Icon from "../ui/Icon.astro";
 
-const { navigation } = Astro.props;
+const { navigation, theme = "dark" } = Astro.props;
 const menuId = "append-menu-header";
+const isLight = theme === "light";
 ---
 
-<header id="sticky-menu" class="absolute left-0 top-0 z-40 w-full py-3">
+<header id="sticky-menu" class:list={["absolute left-0 top-0 z-40 w-full py-3", isLight && "header-light"]}>
     <div class="container">
         <div class="flex items-center justify-between gap-6">
             <a href="/" class="shrink-0">
                 <img
-                    src={navigation.logo.dark}
+                    src={isLight ? navigation.logo.light : navigation.logo.dark}
                     alt={navigation.logo.alt}
                     width="150"
                     height="44"
@@ -26,7 +27,7 @@ const menuId = "append-menu-header";
                     <div class="mobile-menu-head">
                         <button
                             type="button"
-                            class="go-back"
+                            class="go-back hidden"
                             aria-label={navigation.labels.back}
                         >
                             <Icon name="chevron-left" class="h-5 w-5" />
@@ -58,6 +59,7 @@ const menuId = "append-menu-header";
                                         class:list={[
                                             "nav-link-item",
                                             item.children ? "drop-trigger" : "",
+                                            // isLight ? "nav-link-light" : "",
                                         ]}
                                     >
                                         {item.label}
@@ -95,13 +97,25 @@ const menuId = "append-menu-header";
             <div class="flex items-center gap-4">
                 {
                     navigation.actions.map(({ href, variant, label }) => (
-                        <Button
-                            href={href}
-                            variant={variant}
-                            class="hidden sm:inline-flex"
-                        >
-                            {label}
-                        </Button>
+                        <>
+                            {isLight ? (
+                                <Button
+                                    href={href}
+                                    variant="text-lime"
+                                    class="sm:hidden"
+                                >
+                                    {label}
+                                </Button>
+                            ) : (
+                                <Button
+                                    href={href}
+                                    variant={variant}
+                                    class="hidden sm:inline-flex"
+                                >
+                                    {label}
+                                </Button>
+                            )}
+                        </>
                     ))
                 }
                 <button
@@ -118,3 +132,22 @@ const menuId = "append-menu-header";
         </div>
     </div>
 </header>
+
+<style>
+  .nav-link-light {
+    color: #fdfbf9;
+  }
+
+  .nav-link-light:hover {
+    color: #c1ff00;
+  }
+
+  .hamburger-light {
+    border-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.08);
+  }
+
+  .hamburger-light span {
+    background-color: #fdfbf9;
+  }
+</style>

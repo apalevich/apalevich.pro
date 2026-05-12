@@ -26,7 +26,7 @@
             "href": "/frontend-development"
           },
           {
-            "label": "Backend & Infrastructure Optimization",
+            "label": "Backend & Infrastructure",
             "href": "/backend-development"
           },
           { "label": "AI Solution Integration", "href": "/ai" },
@@ -37,7 +37,7 @@
       },
       { "label": "Testimonials", "href": "/testimonials" }
     ],
-    "actions": [{ "label": "Contact", "href": "/contact", "variant": "solid" }]
+    "actions": [{ "label": "Contact", "href": "/contact", "variant": "text" }]
   },
   "hero": {
     "title": "We Built Web Apps That Convert",
@@ -136,29 +136,29 @@
     "description": "Six core services. One focus: building products that convert, perform, and scale.",
     "cards": [
       {
-        "title": "Website & Web App Development",
-        "description": "Custom-built web solutions from concept to launch, optimized for performance and conversion.",
-        "href": "/web-development"
+        "title": "Frontend & Web Development",
+        "description": "Custom-built web applications in React, Next.js, Vue, and Astro — fast, scalable, and conversion-optimized.",
+        "href": "/frontend-development"
       },
       {
         "title": "AI Solution Integration",
-        "description": "Seamless integration of AI technologies into your existing systems and workflows.",
-        "href": "/ai-integration"
+        "description": "Claude, OpenAI, and custom AI workflows integrated into your product as production-ready features.",
+        "href": "/ai"
       },
       {
-        "title": "Infrastructure Optimization",
-        "description": "Improve speed, reliability, and scalability of your backend systems and databases.",
-        "href": "/infrastructure"
+        "title": "Backend & Infrastructure Optimization",
+        "description": "APIs, databases, caching, and cloud infrastructure tuned for speed, reliability, and lower costs.",
+        "href": "/backend-development"
       },
       {
         "title": "UI/UX Design",
-        "description": "Beautiful, intuitive interfaces designed for real user needs and business goals.",
-        "href": "/ui-ux-design"
+        "description": "Interfaces designed around real user behavior — from research and wireframes to production-ready screens.",
+        "href": "/design"
       },
       {
         "title": "Web Performance & SEO",
-        "description": "Boost Core Web Vitals, loading speed, and search visibility with data-driven optimization.",
-        "href": "/performance-seo"
+        "description": "Core Web Vitals, page speed, and technical SEO improvements that lift rankings and conversions.",
+        "href": "/seo"
       },
       {
         "title": "IT Recruitment",

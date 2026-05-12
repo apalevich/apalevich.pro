@@ -67,7 +67,7 @@ function showSubMenu(hasChildren) {
   subMenuTextArray.push(menuTitle);
 
   menu.querySelector(".current-menu-title").innerHTML = menuTitle;
-  menu.querySelector(".mobile-menu-head").classList.add("active");
+  // menu.querySelector(".mobile-menu-head").classList.add("active");
 }
 window.onresize = function () {
   if (this.innerWidth > 991) {

@@ -13,7 +13,8 @@ const variants = {
   solid: 'border-ColorLime bg-ColorLime text-ColorBlack hover:border-ColorDark hover:bg-white hover:text-ColorBlack',
   'outline-dark': 'border-ColorBlack bg-transparent text-ColorBlack hover:bg-ColorBlack hover:text-white',
   'outline-light': 'border-white bg-transparent text-white hover:bg-white hover:text-ColorBlack',
-  text: 'border-transparent bg-transparent px-0 py-0 text-ColorBlack hover:text-ColorPurple'
+  text: 'border-transparent bg-transparent px-2 py-0 text-ColorBlack hover:text-ColorPurple leading-10',
+  'text-lime': 'border-transparent bg-transparent px-2 py-0 text-ColorLime md:text-ColorLight hover:text-ColorLime leading-10'
 };
 
 const sizes = {
@@ -26,7 +27,7 @@ const classes = [
   'inline-flex items-center justify-center gap-2 border font-semibold transition duration-300',
   'rounded-xs',
   variants[variant] ?? variants.solid,
-  variant === 'text' ? '' : sizes.lg,
+  (variant === 'text' || variant === 'text-lime') ? '' : sizes.lg,
   className
 ].join(' ');
 ---
