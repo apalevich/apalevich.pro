@@ -5,6 +5,7 @@ import SiteFooter from "../components/site/SiteFooter.astro";
 import ServiceHeroSection from "../components/service/ServiceHeroSection.astro";
 import ServiceFeaturesSection from "../components/service/ServiceFeaturesSection.astro";
 import FaqSection from "../components/service/FaqSection.astro";
+import ProcessSection from "../components/service/ProcessSection.astro";
 import ContentSplitSection from "../components/home/ContentSplitSection.astro";
 import StatsSection from "../components/home/StatsSection.astro";
 import TeamSection from "../components/home/TeamSection.astro";
@@ -31,7 +32,7 @@ import data from "../data/services/it-recruitment.json";
       <ContentSplitSection block={data.caseStudy} checklist />
       <ServiceFeaturesSection features={data.roles} />
       <TeamSection team={data.team} />
-      <ServiceFeaturesSection features={data.process} />
+      <ProcessSection process={data.process} />
       <FaqSection faq={data.faq} />
       <CtaSection cta={data.cta} />
     </main>

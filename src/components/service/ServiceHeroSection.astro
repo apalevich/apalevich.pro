@@ -30,7 +30,7 @@ const descriptionClass = isLight
       <div class="flex flex-wrap justify-center gap-4">
         {
           hero.actions.map((action) => (
-            <Button href={action.href} variant={action.variant}>
+            <Button href={action.href} variant={action.variant} class="w-full md:max-w-min text-nowrap">
               {action.label}
             </Button>
           ))

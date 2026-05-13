@@ -11,7 +11,7 @@ const { stats } = Astro.props;
       <div class="grid grid-cols-1 gap-y-6 sm:grid-cols-3">
         {stats.items.map((item, index) => (
           <div class="relative px-0 text-center sm:px-10 first:pl-0 last:pr-0 sm:after:absolute sm:after:left-full sm:after:top-1/2 sm:after:block sm:after:h-10 sm:after:w-0.5 sm:after:-translate-y-1/2 sm:after:bg-ColorLime last:sm:after:hidden">
-            <div class="mb-[5px] font-PublicSans text-5xl font-bold leading-[1.14] text-ColorLight xl:text-[56px]" data-module="countup">
+            <div class="mb-[5px] font-PublicSans text-5xl font-bold leading-[1.14] text-ColorLight xl:text-[56px] text-nowrap" data-module="countup">
               <span class="start-number" data-countup-number={item.value}>{item.value}</span>
               {item.suffix}
             </div>

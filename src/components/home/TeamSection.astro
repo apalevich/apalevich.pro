@@ -22,7 +22,7 @@ const mediaImageMap = {
   <div class="container py-16">
     <div class="grid gap-10 lg:grid-cols-[0.85fr_minmax(0,_1fr)] xl:gap-16">
       <SectionHeading title={team.title} description={team.description} tone="dark" />
-      <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+      <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-[repeat(auto-fit,minmax(171px,1fr))]">
         {team.cards.map((member) => (
           <article class="overflow-hidden rounded-md border border-ColorBlack/10 bg-white">
             <Picture src={resolveImage(member.image, mediaImageMap)} alt={member.name} widths={[376]} formats={["avif", "webp"]} width={376} height={376} class="aspect-square w-full object-cover" />

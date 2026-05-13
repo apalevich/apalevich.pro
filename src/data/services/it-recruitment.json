@@ -32,28 +32,6 @@
       { "value": 45, "suffix": " days", "label": "average time to hire" }
     ]
   },
-  "whyHire": {
-    "title": "Fewer interviews. Stronger hires.",
-    "description": "Generic recruiters flood your inbox with 200 CVs. We do the opposite. Fewer candidates, sharper screening, picked by people who can read code.",
-    "cards": [
-      {
-        "title": "Only finalists, never noise",
-        "description": "We source, screen, and coordinate. Your team interviews 3 to 6 people, not 60. Every candidate who reaches you has already cleared a technical bar."
-      },
-      {
-        "title": "Speed without shortcuts",
-        "description": "First candidates in 2 days. Most roles close in 45 days. We have shipped niche profiles in 8 weeks that other agencies missed for 6 months."
-      },
-      {
-        "title": "We own the process",
-        "description": "From brief to start date: sourcing, outreach, screening, calibration, offer negotiation, onboarding handoff. Your engineers stay on the product."
-      },
-      {
-        "title": "Hires that stick",
-        "description": "93% pass probation against a 60% industry average. One bad senior hire costs $15k or more. We cut that risk with sharper screening and honest fit calls."
-      }
-    ]
-  },
   "roles": {
     "title": "Who we recruit",
     "description": "Technical roles across web, mobile, and infrastructure. We staff builders, not resume matchers.",
@@ -86,27 +64,27 @@
   },
   "process": {
     "title": "How a hire happens, step by step",
-    "description": "Five stages, transparent at every step. You stay in control. We handle the work.",
+    "description": "",
     "cards": [
       {
         "title": "Discovery and hiring brief",
-        "description": "We dig into the role, the team, and what success looks like. Not just the stack. That clarity drives every screen."
+        "description": "We run a 60 minute working session with the hiring manager to map the role, the team, and what success looks like 90 days in. Stack is the easy part. The real output is a written brief covering must haves, nice to haves, dealbreakers, comp range, and the three signals we will screen for on every call."
       },
       {
         "title": "Targeted sourcing",
-        "description": "We pull from our network and headhunt directly. The rarer the profile, the more this matters."
+        "description": "We pull from a curated network of 8,000 plus pre vetted engineers across Europe, LATAM, and the CIS, then headhunt directly on LinkedIn, GitHub, and niche communities. The rarer the profile, the further we reach. No job board spray, no offshore CV resellers, no recycled shortlists from last quarter's search."
       },
       {
         "title": "Screening and shortlist",
-        "description": "Every candidate is calibrated, screened, and aligned before they reach you. You only meet the ones we would hire ourselves."
+        "description": "Every candidate is calibrated against your brief, screened on a 45 minute structured call, and pressure tested on motivation, comp expectations, and notice period before they reach you. You meet only the 3 to 6 people we would hire ourselves. The other 50 to 200 we talk to never hit your calendar."
       },
       {
         "title": "Interview support and offer",
-        "description": "We advise on interview structure, read signals with you, and negotiate the offer so it lands."
+        "description": "We shape the interview loop with you, sit in on debriefs, and read signals you might miss after the tenth call of the week. When it is time to make an offer, we negotiate comp, equity, and start date on your behalf so the candidate hears one consistent story. No ghosting, no last minute counter surprises."
       },
       {
         "title": "Onboarding and probation",
-        "description": "We stay involved past the start date. If something wobbles in month one, we are on it."
+        "description": "We stay involved past the start date and check in with both sides at week 1, week 4, and week 12. If something wobbles in month one, comp confusion, scope drift, manager friction, we step in fast and fix it before it becomes an exit. Your hire sticks, or we run the search again at no extra cost."
       }
     ]
   },
@@ -114,10 +92,10 @@
     "title": "Fewer interviews. Stronger hires.",
     "description": "Generic recruiters flood your inbox with 200 CVs. We do the opposite. Fewer candidates, sharper screening, picked by people who can read code.",
     "bullets": [
-      "We source, screen, and coordinate. Your team interviews 3 to 6 candidates, not 60. Every candidate who reaches you has already passed a rigorous technical review.",
-      "First candidates in 2 days. Most roles close in 45 days. We have shipped niche profiles in 8 weeks that other agencies missed for 6 months.",
-      "From brief to start date: sourcing, outreach, screening, calibration, offer negotiation, onboarding handoff. Your engineers stay on the product.",
-      "93% pass probation against a 60% industry average. One bad senior hire costs $15k or more. We cut that risk with sharper screening and honest fit calls."
+      "Your team interviews 3 to 6 candidates, not 60. Every one has already cleared a technical bar.",
+      "First candidates in 2 days. Most roles close in 45 days. Niche profiles in 8 weeks that other agencies missed for 6 months.",
+      "Sourcing to start date, fully owned. Your engineers stay on the product.",
+      "93% pass probation against a 60% industry average. One bad senior hire costs $15k or more. We cut that risk."
     ],
     "action": {
       "label": "Discuss your role",
@@ -132,7 +110,7 @@
   },
   "team": {
     "title": "Meet your recruiters",
-    "description": "Two people own your search from first brief to first day on the job. You will talk to the same humans the whole way. No account manager middle layer.",
+    "description": "Two senior people own your search from first brief to first day on the job. A lead recruiter who runs sourcing, screening, and candidate care, plus a technical founder who calibrates each role and joins interviews when the stack is dense. You talk to the same humans the whole way. Every candidate you meet has been seen by a real engineer before they reach your team.",
     "cards": [
       {
         "name": "Viktoriya Orlik",
