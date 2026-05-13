@@ -8,14 +8,26 @@
     "title": "Stop Burning Three Months on Broken Hiring Pipelines",
     "description": "Technical recruiting done for you. We own sourcing, screening, and coordination. You only meet finalists. First candidates in 2 days. Most roles close in 45 days.",
     "actions": [
-      { "label": "Book a 20 minute call", "href": "https://cal.com/apalevich/20min", "variant": "solid" },
-      { "label": "Message on WhatsApp", "href": "https://wa.me/995511106964", "variant": "outline-dark" }
+      {
+        "label": "Book a 20 minute call",
+        "href": "https://cal.com/apalevich/20min",
+        "variant": "solid"
+      },
+      {
+        "label": "Message on WhatsApp",
+        "href": "https://wa.me/995511106964",
+        "variant": "outline-dark"
+      }
     ]
   },
   "stats": {
     "title": "Efficient with your time",
     "items": [
-      { "value": 2, "suffix": " days", "label": "to first qualified candidates" },
+      {
+        "value": 2,
+        "suffix": " days",
+        "label": "to first qualified candidates"
+      },
       { "value": 93, "suffix": "%", "label": "probation pass rate" },
       { "value": 45, "suffix": " days", "label": "average time to hire" }
     ]
@@ -99,17 +111,18 @@
     ]
   },
   "caseStudy": {
-    "title": "Closed for Novakid in 45 days after 5 agencies failed in 6 months",
-    "description": "Novakid needed a rare profile: a senior React engineer with real conversational AI and voice interface experience. Five competing agencies had been searching for 3+ months with nothing to show. Product launch was on the clock.",
+    "title": "Fewer interviews. Stronger hires.",
+    "description": "Generic recruiters flood your inbox with 200 CVs. We do the opposite. Fewer candidates, sharper screening, picked by people who can read code.",
     "bullets": [
-      "First candidates in 2 days",
-      "Search closed in 30 days",
-      "Time to start: 2 weeks",
-      "Pipeline funnel: 89 to 17 to 7 to 2 to 1 to 1",
-      "Leadership time saved: about 60 hours",
-      "Result: product shipped on schedule"
+      "We source, screen, and coordinate. Your team interviews 3 to 6 candidates, not 60. Every candidate who reaches you has already passed a rigorous technical review.",
+      "First candidates in 2 days. Most roles close in 45 days. We have shipped niche profiles in 8 weeks that other agencies missed for 6 months.",
+      "From brief to start date: sourcing, outreach, screening, calibration, offer negotiation, onboarding handoff. Your engineers stay on the product.",
+      "93% pass probation against a 60% industry average. One bad senior hire costs $15k or more. We cut that risk with sharper screening and honest fit calls."
     ],
-    "action": { "label": "Discuss your role", "href": "https://cal.com/apalevich/20min" },
+    "action": {
+      "label": "Discuss your role",
+      "href": "https://cal.com/apalevich/20min"
+    },
     "image": {
       "src": "@media/th-8/content-img-1.jpg",
       "alt": "Recruitment planning session",
@@ -158,8 +171,16 @@
     "title": "Ready to close your technical roles faster?",
     "description": "Tell us about your open role. We will come back with a search plan and a realistic timeline.",
     "actions": [
-      { "label": "Book a 20 minute call", "href": "https://cal.com/apalevich/20min", "variant": "solid" },
-      { "label": "Message on WhatsApp", "href": "https://wa.me/995511106964", "variant": "outline-light" }
+      {
+        "label": "Book a 20 minute call",
+        "href": "https://cal.com/apalevich/20min",
+        "variant": "solid"
+      },
+      {
+        "label": "Message on WhatsApp",
+        "href": "https://wa.me/995511106964",
+        "variant": "outline-light"
+      }
     ],
     "decorations": {
       "dot": "/assets/img/elements/home-8-dot-shape-6.svg"
