@@ -1,14 +1,14 @@
 {
   "meta": {
     "title": "Web Performance & Technical SEO | Core Web Vitals | APalevich.Pro",
-    "description": "We improve Core Web Vitals, page speed, and technical SEO for web apps and marketing sites. Data-driven optimization with measurable ranking and revenue impact."
+    "description": "We improve Core Web Vitals, page speed, and technical SEO for web apps and marketing sites. Data driven optimization with measurable ranking and revenue impact."
   },
   "hero": {
     "eyebrow": "Performance & SEO",
     "title": "Faster Sites Rank Higher and Convert More",
-    "description": "Every 100ms of load time costs you conversions. We diagnose and fix the performance and SEO issues holding your site back — with before/after data at every step.",
+    "description": "Every 100ms of load time costs you conversions. We diagnose and fix the performance and SEO issues holding your site back, with before and after data at every step.",
     "actions": [
-      { "label": "Let's Talk", "href": "/contact", "variant": "solid" },
+      { "label": "Get a Free Audit", "href": "/contact", "variant": "solid" },
       {
         "label": "See Our Work",
         "href": "/projects",
@@ -34,7 +34,7 @@
       },
       {
         "title": "JavaScript Performance",
-        "description": "Bundle analysis, code splitting, and render-blocking removal that make your JS stop hurting you."
+        "description": "Bundle analysis, code splitting, and removal of render blocking scripts that make your JS stop hurting you."
       },
       {
         "title": "Server & CDN Configuration",
@@ -42,7 +42,7 @@
       },
       {
         "title": "Ongoing Monitoring",
-        "description": "Lighthouse CI, CrUX data, and ranking tracking so performance regressions get caught before users notice."
+        "description": "Lighthouse CI, CrUX data, and ranking tracking, so performance regressions get caught before users notice."
       }
     ]
   },
@@ -52,7 +52,7 @@
     "bullets": [
       "Baseline audit: Lighthouse, PageSpeed Insights, CrUX, Search Console",
       "Prioritize fixes by ranking and conversion impact",
-      "Implement in stages so each change can be attributed",
+      "Implement in stages, so each change can be attributed",
       "Validate improvement in field data, not just lab scores",
       "Deliver a report your team can act on independently"
     ],
@@ -74,9 +74,9 @@
   },
   "cta": {
     "title": "Find Out What's Slowing Your Site Down",
-    "description": "Share your URL and we'll run a free preliminary audit and tell you the top three things to fix.",
+    "description": "Share your URL. We'll run a free preliminary audit and tell you the top three things to fix.",
     "actions": [
-      { "label": "Get in Touch", "href": "/contact", "variant": "solid" },
+      { "label": "Get My Free Audit", "href": "/contact", "variant": "solid" },
       {
         "label": "View Our Portfolio",
         "href": "/projects",

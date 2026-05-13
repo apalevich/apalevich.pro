@@ -1,8 +1,8 @@
 {
   "site": {
-    "name": "Fast, Conversion-Focused Apps | Web Development Agency | APalevich.Pro",
-    "title": "Fast, Conversion-Focused Apps | Web Development Agency | APalevich.Pro",
-    "description": "Lean web development agency building high-performance Vue, React & Next.js apps. Based in Georgia. 200+ projects, 12+ years. No account managers."
+    "name": "Fast, Converting Web Apps | Web Development Agency | APalevich.Pro",
+    "title": "Fast, Converting Web Apps | Web Development Agency | APalevich.Pro",
+    "description": "Senior web development team building fast Vue, React, and Next.js apps. Based in Georgia. 200+ projects, 12+ years. No account managers."
   },
   "navigation": {
     "logo": {
@@ -40,10 +40,10 @@
     "actions": [{ "label": "Contact", "href": "/contact", "variant": "text" }]
   },
   "hero": {
-    "title": "We Built Web Apps That Convert",
-    "description": "We make high-performance web applications oprimized for end users. Built with React, Next.js, Vue, Nuxt.js, Angular, Astro and Claude Code",
+    "title": "We Build Web Apps That Convert",
+    "description": "Fast web applications that turn visitors into customers. Built with React, Next.js, Vue, Nuxt, Angular, Astro, and Claude Code.",
     "actions": [
-      { "label": "Let's Talk", "href": "/contact", "variant": "solid" },
+      { "label": "Start a Project", "href": "/contact", "variant": "solid" },
       {
         "label": "See Our Work",
         "href": "/projects",
@@ -101,7 +101,7 @@
   "story": {
     "title": "Hire Senior Talent in Two Days",
     "paragraphs": [
-      "Hiring is expensive and time-consuming. We've built a network of vetted senior developers and specialists ready to join your team. Skip the months-long recruitment pipeline and get qualified candidates fast.",
+      "Hiring eats months and budget. We've built a network of vetted senior developers and specialists ready to join your team. Skip the long recruitment pipeline and get qualified candidates fast.",
       "We handle sourcing, vetting, and matching. You focus on building."
     ],
     "action": { "label": "Learn More", "href": "/hire" },
@@ -137,12 +137,12 @@
     "cards": [
       {
         "title": "Frontend & Web Development",
-        "description": "Custom-built web applications in React, Next.js, Vue, and Astro — fast, scalable, and conversion-optimized.",
+        "description": "Web applications in React, Next.js, Vue, and Astro built to load fast, scale cleanly, and convert.",
         "href": "/frontend-development"
       },
       {
         "title": "AI Solution Integration",
-        "description": "Claude, OpenAI, and custom AI workflows integrated into your product as production-ready features.",
+        "description": "Claude, OpenAI, and custom AI workflows integrated into your product as features ready to ship.",
         "href": "/ai"
       },
       {
@@ -152,7 +152,7 @@
       },
       {
         "title": "UI/UX Design",
-        "description": "Interfaces designed around real user behavior — from research and wireframes to production-ready screens.",
+        "description": "Interfaces designed around real user behavior. Research, wireframes, and final screens ready to ship.",
         "href": "/design"
       },
       {
@@ -162,7 +162,7 @@
       },
       {
         "title": "IT Recruitment",
-        "description": "Access pre-vetted senior developers and specialists without months of wasted pipeline.",
+        "description": "Access vetted senior developers and specialists without months of wasted pipeline.",
         "href": "/it-recruitment"
       }
     ]
@@ -173,8 +173,8 @@
     "action": { "label": "Get In Touch", "href": "/contact" }
   },
   "pricing": {
-    "title": "Our pricing plans are designed for your favor",
-    "description": "Starting any business has a cost, so you need to determine how you will cover the costs. You have ways to finance your startup.",
+    "title": "Pricing built around your project, not our overhead",
+    "description": "We work in fixed scope sprints or monthly engagements. No surprise invoices, no padded retainers.",
     "toggle": [
       { "label": "Per Month", "active": true },
       { "label": "Per Year", "active": false }
@@ -183,12 +183,12 @@
       "label": "For business",
       "priceMonthly": "$30.00 /Per Month",
       "priceYearly": "$300.00 /Per Year",
-      "description": "One way to determine how much money you need is to do a break-even analysis.",
+      "description": "Senior engineering capacity, billed monthly. Cancel anytime.",
       "features": [
-        "Live chat and email",
-        "Fully managed program",
-        "Experience team members",
-        "Step by step working process"
+        "Direct access to senior engineers",
+        "Weekly delivery checkpoints",
+        "Performance and quality budgets tracked",
+        "Documentation included with every handoff"
       ],
       "action": { "label": "Choose Plan", "href": "/pricing" }
     }
@@ -220,8 +220,8 @@
     ]
   },
   "blog": {
-    "title": "Browse our articles and resources to learn more",
-    "description": "You can learn more about startup by reading our blogs. It's time to brainstorm ideas for your business.",
+    "title": "Field notes on building faster, better web apps",
+    "description": "Lessons from real projects: performance, AI integration, and shipping fast.",
     "readMoreLabel": "Read on LinkedIn",
     "cards": [
       {
@@ -261,7 +261,7 @@
   "cta": {
     "title": "Ready to Build Something Great?",
     "description": "Chat with us about your project. We typically respond within a few hours.",
-    "note": "Have questions? Start with a 20-minute consultation. No obligations.",
+    "note": "Have questions? Start with a 20 minute consultation. No obligations.",
     "actions": [
       { "label": "Get in Touch", "href": "/contact", "variant": "solid" },
       {
@@ -275,7 +275,7 @@
     }
   },
   "footer": {
-    "description": "A lean, experienced web development team focused on delivering fast, beautiful applications that drive real business results.",
+    "description": "A lean, senior web development team focused on fast, beautiful applications that drive real business results.",
     "location": "Based in Georgia 🇬🇪",
     "email": "artem@apalevich.pro",
     "socials": [
@@ -299,13 +299,13 @@
         "title": "Services",
         "links": [
           {
-            "label": "Website & Web App Development",
-            "href": "/web-development"
+            "label": "Frontend & Web Development",
+            "href": "/frontend-development"
           },
-          { "label": "AI Solution Integration", "href": "/ai-integration" },
-          { "label": "Infrastructure Optimization", "href": "/infrastructure" },
-          { "label": "UI/UX Design", "href": "/ui-ux-design" },
-          { "label": "Web Performance & SEO", "href": "/performance-seo" },
+          { "label": "AI Solution Integration", "href": "/ai" },
+          { "label": "Backend & Infrastructure", "href": "/backend-development" },
+          { "label": "UI/UX Design", "href": "/design" },
+          { "label": "Web Performance & SEO", "href": "/seo" },
           { "label": "IT Recruitment", "href": "/it-recruitment" }
         ]
       },
