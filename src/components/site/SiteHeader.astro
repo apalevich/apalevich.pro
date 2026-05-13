@@ -12,7 +12,7 @@ const isLight = theme === "light";
         <div class="flex items-center justify-between gap-6">
             <a href="/" class="shrink-0">
                 <img
-                    src={isLight ? navigation.logo.light : navigation.logo.dark}
+                    src={isLight ? navigation.logo.dark : navigation.logo.light}
                     alt={navigation.logo.alt}
                     width="150"
                     height="44"
@@ -101,14 +101,14 @@ const isLight = theme === "light";
                             {isLight ? (
                                 <Button
                                     href={href}
-                                    variant="text-lime"
+                                    variant="text"
                                 >
                                     {label}
                                 </Button>
                             ) : (
                                 <Button
                                     href={href}
-                                    variant={variant}
+                                    variant="text-lime"
                                     class="hidden sm:inline-flex"
                                 >
                                     {label}

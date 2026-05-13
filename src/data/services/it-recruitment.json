@@ -1,0 +1,168 @@
+{
+  "meta": {
+    "title": "Close Tech Roles in 45 Days | IT Recruitment for Startups | APalevich.Pro",
+    "description": "Technical recruiting done for you. First candidates in 2 days, hires in 45 days, 93% probation pass rate. We own sourcing, screening, and coordination so your engineers stay on the product."
+  },
+  "hero": {
+    "eyebrow": "IT Recruitment",
+    "title": "Stop Burning Three Months on Broken Hiring Pipelines",
+    "description": "Technical recruiting done for you. We own sourcing, screening, and coordination. You only meet finalists. First candidates in 2 days. Most roles close in 45 days.",
+    "actions": [
+      { "label": "Book a 20 minute call", "href": "https://cal.com/apalevich/20min", "variant": "solid" },
+      { "label": "Message on WhatsApp", "href": "https://wa.me/995511106964", "variant": "outline-dark" }
+    ]
+  },
+  "stats": {
+    "title": "Efficient with your time",
+    "items": [
+      { "value": 2, "suffix": " days", "label": "to first qualified candidates" },
+      { "value": 93, "suffix": "%", "label": "probation pass rate" },
+      { "value": 45, "suffix": " days", "label": "average time to hire" }
+    ]
+  },
+  "whyHire": {
+    "title": "Fewer interviews. Stronger hires.",
+    "description": "Generic recruiters flood your inbox with 200 CVs. We do the opposite. Fewer candidates, sharper screening, picked by people who can read code.",
+    "cards": [
+      {
+        "title": "Only finalists, never noise",
+        "description": "We source, screen, and coordinate. Your team interviews 3 to 6 people, not 60. Every candidate who reaches you has already cleared a technical bar."
+      },
+      {
+        "title": "Speed without shortcuts",
+        "description": "First candidates in 2 days. Most roles close in 45 days. We have shipped niche profiles in 8 weeks that other agencies missed for 6 months."
+      },
+      {
+        "title": "We own the process",
+        "description": "From brief to start date: sourcing, outreach, screening, calibration, offer negotiation, onboarding handoff. Your engineers stay on the product."
+      },
+      {
+        "title": "Hires that stick",
+        "description": "93% pass probation against a 60% industry average. One bad senior hire costs $15k or more. We cut that risk with sharper screening and honest fit calls."
+      }
+    ]
+  },
+  "roles": {
+    "title": "Who we recruit",
+    "description": "Technical roles across web, mobile, and infrastructure. We staff builders, not resume matchers.",
+    "cards": [
+      {
+        "title": "Frontend engineers",
+        "description": "React, Vue, TypeScript. Builders who care about UX, not just framework points."
+      },
+      {
+        "title": "Full stack engineers",
+        "description": "Architects who own both sides. Any stack: JS, Python, Go, PHP."
+      },
+      {
+        "title": "Backend engineers",
+        "description": "Node, Go, PHP. Engineers who ship and scale, not just write services."
+      },
+      {
+        "title": "Mobile developers",
+        "description": "iOS, Android, React Native. Proven shipping history, not side projects."
+      },
+      {
+        "title": "DevOps and infrastructure",
+        "description": "Reliability minded engineers who own pipelines, observability, and incidents."
+      },
+      {
+        "title": "Analysts",
+        "description": "System and business analysts who translate product needs into engineering specs."
+      }
+    ]
+  },
+  "process": {
+    "title": "How a hire happens, step by step",
+    "description": "Five stages, transparent at every step. You stay in control. We handle the work.",
+    "cards": [
+      {
+        "title": "Discovery and hiring brief",
+        "description": "We dig into the role, the team, and what success looks like. Not just the stack. That clarity drives every screen."
+      },
+      {
+        "title": "Targeted sourcing",
+        "description": "We pull from our network and headhunt directly. The rarer the profile, the more this matters."
+      },
+      {
+        "title": "Screening and shortlist",
+        "description": "Every candidate is calibrated, screened, and aligned before they reach you. You only meet the ones we would hire ourselves."
+      },
+      {
+        "title": "Interview support and offer",
+        "description": "We advise on interview structure, read signals with you, and negotiate the offer so it lands."
+      },
+      {
+        "title": "Onboarding and probation",
+        "description": "We stay involved past the start date. If something wobbles in month one, we are on it."
+      }
+    ]
+  },
+  "caseStudy": {
+    "title": "Closed for Novakid in 45 days after 5 agencies failed in 6 months",
+    "description": "Novakid needed a rare profile: a senior React engineer with real conversational AI and voice interface experience. Five competing agencies had been searching for 3+ months with nothing to show. Product launch was on the clock.",
+    "bullets": [
+      "First candidates in 2 days",
+      "Search closed in 30 days",
+      "Time to start: 2 weeks",
+      "Pipeline funnel: 89 to 17 to 7 to 2 to 1 to 1",
+      "Leadership time saved: about 60 hours",
+      "Result: product shipped on schedule"
+    ],
+    "action": { "label": "Discuss your role", "href": "https://cal.com/apalevich/20min" },
+    "image": {
+      "src": "@media/th-8/content-img-1.jpg",
+      "alt": "Recruitment planning session",
+      "width": 523,
+      "height": 450
+    }
+  },
+  "team": {
+    "title": "Meet your recruiters",
+    "description": "Two people own your search from first brief to first day on the job. You will talk to the same humans the whole way. No account manager middle layer.",
+    "cards": [
+      {
+        "name": "Viktoriya Orlik",
+        "role": "Lead Talent Manager",
+        "image": "@media/th-1/team-img-2.jpg"
+      },
+      {
+        "name": "Artem Palevich",
+        "role": "Founder & Technical Lead",
+        "image": "@media/th-1/team-img-1.jpg"
+      }
+    ]
+  },
+  "faq": {
+    "title": "Questions?",
+    "items": [
+      {
+        "question": "Do you only work with startups?",
+        "answer": "No. We hire for startups, SMBs, product teams, and custom software firms. Anywhere technical hiring is hard, we can help."
+      },
+      {
+        "question": "Is this only for developers?",
+        "answer": "Developers, DevOps, mobile, analysts, architects. If the role is technical, it is in scope."
+      },
+      {
+        "question": "Can you find rare or niche profiles?",
+        "answer": "That is our edge. The rarer the role, the more our network and targeted headhunting pay off. The Novakid search is a typical example."
+      },
+      {
+        "question": "Who runs the technical interviews?",
+        "answer": "You do. We handle sourcing, screening, and coordination. Your team owns the technical depth call. If you need help structuring interviews, we will advise."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Ready to close your technical roles faster?",
+    "description": "Tell us about your open role. We will come back with a search plan and a realistic timeline.",
+    "actions": [
+      { "label": "Book a 20 minute call", "href": "https://cal.com/apalevich/20min", "variant": "solid" },
+      { "label": "Message on WhatsApp", "href": "https://wa.me/995511106964", "variant": "outline-light" }
+    ],
+    "decorations": {
+      "dot": "/assets/img/elements/home-8-dot-shape-6.svg"
+    }
+  }
+}
