@@ -8,8 +8,9 @@ This is an Astro-based marketing website with agency template design, using Tail
 
 **Tech Stack:**
 
-- **Framework:** Astro 6.1.10
+- **Framework:** Astro 6.3.1
 - **Styling:** Tailwind CSS 4.2.4 (bundled via @tailwindcss/vite, not CLI)
+- **Interactivity:** React 19 islands via `@astrojs/react` (used for stateful UI like the contact form)
 - **Node:** >=22.12.0
 - **Module Type:** ES modules
 - **TypeScript:** Strict mode (via `astro/tsconfigs/strict`)
@@ -31,7 +32,10 @@ This is an Astro-based marketing website with agency template design, using Tail
 design-upgrade-2026/
 ├── src/
 │   ├── pages/
-│   │   └── index.astro          # Homepage entry point
+│   │   ├── index.astro          # Homepage entry point
+│   │   ├── contact.astro        # /contact (form + direct channels)
+│   │   ├── it-recruitment.astro # Static service page
+│   │   └── [service].astro      # Dynamic service pages (frontend-development, backend-development, ai, design, seo)
 │   ├── components/
 │   │   ├── layout/
 │   │   │   └── BaseLayout.astro # Main layout wrapper (handles <head>, globals)
@@ -47,14 +51,25 @@ design-upgrade-2026/
 │   │   │   ├── TeamSection.astro
 │   │   │   ├── BlogSection.astro           # Currently disabled (commented out in index.astro)
 │   │   │   └── CtaSection.astro
+│   │   ├── service/             # Sections shared by service pages
+│   │   │   ├── ServiceHeroSection.astro
+│   │   │   ├── ServiceFeaturesSection.astro
+│   │   │   ├── ProcessSection.astro
+│   │   │   └── FaqSection.astro
+│   │   ├── contact/
+│   │   │   └── ContactForm.tsx  # React island, 4 submission states
 │   │   └── ui/
 │   │       ├── Button.astro
 │   │       ├── Icon.astro
 │   │       ├── Section.astro
 │   │       └── SectionHeading.astro
 │   ├── data/
-│   │   ├── homepage.json        # Centralized homepage content (site, navigation, hero, stats, story, speed, services, process, team, cta, footer)
+│   │   ├── homepage.json        # Centralized homepage content
+│   │   ├── contact.json         # /contact hero, form labels/states, direct channels
+│   │   ├── services/*.json      # Per-service page content
 │   │   └── refined_copy.json    # Legacy/unused copy reference
+│   ├── utils/
+│   │   └── images.ts            # Shared image resolution helper
 │   └── styles/
 │       └── global.css
 ├── public/
@@ -63,8 +78,9 @@ design-upgrade-2026/
 │   │   └── js/                  # JavaScript for interactivity
 │   └── favicon.webp
 ├── design-requirements/         # Design system docs and extraction files
+├── .env.example                 # Documents PUBLIC_BACKEND_BASE_URL
 ├── tailwind.config.mjs          # Custom colors, fonts, spacing
-├── astro.config.mjs
+├── astro.config.mjs             # Registers @astrojs/react + Tailwind Vite plugin
 ├── tsconfig.json
 └── package.json
 ```
@@ -73,14 +89,31 @@ design-upgrade-2026/
 
 ### Data-Driven Sections
 
-Homepage is built from centralized `src/data/homepage.json`. Each section component accepts data props and renders content dynamically. Modify `homepage.json` to update content site-wide.
+Pages are built from JSON in `src/data/`:
+
+- `homepage.json` powers `index.astro` and feeds shared nav/footer data to every other page
+- `contact.json` powers `contact.astro` (hero, form labels/states, channel links)
+- `services/<slug>.json` powers `[service].astro` and `it-recruitment.astro`
+
+Each section component accepts data props and renders content dynamically. Modify the relevant JSON to update content; no component code change is usually needed.
 
 ### Component Layers
 
 - **Layout components** (`BaseLayout`): Wrap pages, manage `<head>`, inject global scripts
 - **Site components** (`SiteHeader`, `SiteFooter`): Global reusable parts
-- **Section components** (`HeroSection`, etc.): Homepage sections that consume data
-- **UI components** (`Button`, `Section`): Low-level reusable elements
+- **Section components** (`home/*`, `service/*`): Page-specific sections that consume data
+- **Feature components** (`contact/*`): Page-specific interactive units (e.g., React islands)
+- **UI components** (`Button`, `Section`, `Icon`, `SectionHeading`): Low-level reusable elements
+
+### React Islands
+
+React (`@astrojs/react`) is registered in `astro.config.mjs` and used only where state matters. Today that means `src/components/contact/ContactForm.tsx`, mounted in `contact.astro` with `client:load`. Pattern when adding new islands:
+
+1. Create the `.tsx` component under a feature folder (e.g., `src/components/<feature>/`)
+2. Import it in an `.astro` page and add a `client:*` directive (`client:load`, `client:idle`, `client:visible`)
+3. Pass plain serializable props only (strings, numbers, objects, arrays) — Astro serializes them for hydration
+
+Prefer pure Astro for static UI; reach for React only when local state, effects, or event-driven UI is required.
 
 ### Styling System
 
@@ -166,11 +199,21 @@ Each component manages its own `mediaImageMap` (component-specific data), but th
 
 ## Development Workflow
 
-1. **Content updates:** Modify `src/data/homepage.json` → changes reflect instantly in dev server
-2. **Component updates:** Edit `.astro` files, dev server hot-reloads
+1. **Content updates:** Modify the relevant JSON in `src/data/` → changes reflect instantly in dev server
+2. **Component updates:** Edit `.astro` or `.tsx` files, dev server hot-reloads
 3. **Styling:** Update `tailwind.config.mjs` for new tokens or global CSS
-4. **Adding new sections:** Create component in `src/components/home/`, import in `index.astro`, add data to `homepage.json`
-5. **Build for production:** `npm run build` generates optimized site in `dist/`
+4. **Adding new homepage sections:** Create component in `src/components/home/`, import in `index.astro`, add data to `homepage.json`
+5. **Adding new pages:** Create `.astro` under `src/pages/`, source data from a dedicated JSON in `src/data/`, reuse `BaseLayout` + `SiteHeader` + `SiteFooter`
+6. **Adding React islands:** Place `.tsx` under a feature folder in `src/components/`, mount with `client:*` directive, pass serializable props only
+7. **Build for production:** `npm run build` generates optimized site in `dist/`
+
+## Environment Variables
+
+Astro exposes vars prefixed with `PUBLIC_` to client code. Document any new ones in `.env.example`.
+
+| Variable                  | Used by              | Purpose                                                                                                |
+| ------------------------- | -------------------- | ------------------------------------------------------------------------------------------------------ |
+| `PUBLIC_BACKEND_BASE_URL` | `contact.astro`      | Base URL of the backend that receives contact form submissions. Form posts JSON to `${BASE_URL}/leads`. Falls back to `/api/contact` (404 on the static site) when unset. |
 
 ## Build & Deployment Notes
 
@@ -184,3 +227,6 @@ Each component manages its own `mediaImageMap` (component-specific data), but th
 
 - **AGENTS.md** - Repository guidelines for component organization, naming conventions, and selector preservation
 - **src/data/homepage.json** - Complete homepage data structure with all configurable content keys
+- **src/data/contact.json** - Contact page hero, form labels/states, and direct channel links
+- **src/data/services/\*.json** - Per-service page content for `[service].astro` and `it-recruitment.astro`
+- **.env.example** - Template for required environment variables
