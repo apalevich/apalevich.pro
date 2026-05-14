@@ -52,7 +52,7 @@
     ],
     "images": [
       {
-        "src": "@media/th-8/hero-img-1.png",
+        "src": "@media/th-8/hero-img-1.jpg",
         "alt": "Team collaboration",
         "width": 280,
         "height": 310,
@@ -60,7 +60,7 @@
         "rotation": "md:rotate-[5deg]"
       },
       {
-        "src": "@media/th-8/hero-img-2.png",
+        "src": "@media/th-8/hero-img-2.jpg",
         "alt": "Team collaboration",
         "width": 280,
         "height": 310,
@@ -68,7 +68,7 @@
         "rotation": "md:-rotate-[5deg]"
       },
       {
-        "src": "@media/th-8/hero-img-3.png",
+        "src": "@media/th-8/hero-img-3.jpg",
         "alt": "Team collaboration",
         "width": 280,
         "height": 310,
@@ -76,7 +76,7 @@
         "rotation": "md:rotate-[5deg]"
       },
       {
-        "src": "@media/th-8/hero-img-4.png",
+        "src": "@media/th-8/hero-img-4.jpg",
         "alt": "Team collaboration",
         "width": 280,
         "height": 310,
@@ -104,7 +104,7 @@
       "Hiring eats months and budget. We've built a network of vetted senior developers and specialists ready to join your team. Skip the long recruitment pipeline and get qualified candidates fast.",
       "We handle sourcing, vetting, and matching. You focus on building."
     ],
-    "action": { "label": "Learn More", "href": "/hire" },
+    "action": { "label": "Learn More", "href": "/it-recruitment" },
     "image": {
       "src": "@media/th-8/content-img-1.jpg",
       "alt": "Consulting team planning session",
@@ -122,7 +122,7 @@
       "Database queries & caching strategies",
       "Infrastructure & CDN deployment"
     ],
-    "action": { "label": "Learn More", "href": "/performance" },
+    "action": { "label": "Get Free Consultation", "href": "/contact" },
     "image": {
       "src": "@media/th-8/content-img-2.jpg",
       "alt": "Website performance planning",
@@ -204,7 +204,7 @@
       },
       {
         "name": "Viktoriya Orlik",
-        "role": "Talent Manager",
+        "role": "Lead Talent Manager",
         "image": "@media/th-1/team-img-2.jpg"
       },
       {
@@ -303,7 +303,10 @@
             "href": "/frontend-development"
           },
           { "label": "AI Solution Integration", "href": "/ai" },
-          { "label": "Backend & Infrastructure", "href": "/backend-development" },
+          {
+            "label": "Backend & Infrastructure",
+            "href": "/backend-development"
+          },
           { "label": "UI/UX Design", "href": "/design" },
           { "label": "Web Performance & SEO", "href": "/seo" },
           { "label": "IT Recruitment", "href": "/it-recruitment" }
