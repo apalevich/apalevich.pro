@@ -9,7 +9,7 @@ import ContactForm from "../components/contact/ContactForm.tsx";
 import navigation from "../data/homepage.json";
 import data from "../data/contact.json";
 
-const endpoint = import.meta.env.PUBLIC_CONTACT_ENDPOINT ?? "/api/contact";
+const endpoint = import.meta.env.PUBLIC_BACKEND_BASE_URL ? import.meta.env.PUBLIC_BACKEND_BASE_URL + "/leads" : "/api/contact";
 ---
 
 <BaseLayout
