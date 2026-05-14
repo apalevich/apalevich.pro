@@ -1,0 +1,99 @@
+---
+import BaseLayout from "../components/layout/BaseLayout.astro";
+import SiteHeader from "../components/site/SiteHeader.astro";
+import SiteFooter from "../components/site/SiteFooter.astro";
+import Section from "../components/ui/Section.astro";
+import SectionHeading from "../components/ui/SectionHeading.astro";
+import Icon from "../components/ui/Icon.astro";
+import ContactForm from "../components/contact/ContactForm.tsx";
+import navigation from "../data/homepage.json";
+import data from "../data/contact.json";
+
+const endpoint = import.meta.env.PUBLIC_CONTACT_ENDPOINT ?? "/api/contact";
+---
+
+<BaseLayout
+  title={data.meta.title}
+  description={data.meta.description}
+  scripts={["/assets/js/menu.js", "/assets/js/main.js"]}
+>
+  <div class="relative z-1 bg-ColorLight">
+    <SiteHeader navigation={navigation.navigation} theme="light" />
+
+    <main class="relative overflow-hidden">
+      <Section tone="light" class="pt-24 pb-12 md:pt-32 md:pb-20">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+          <p
+            class="mb-4 text-sm font-semibold tracking-widest text-ColorPurple uppercase"
+          >
+            {data.hero.eyebrow}
+          </p>
+          <SectionHeading
+            title={data.hero.title}
+            description={data.hero.description}
+            align="left"
+            tone="dark"
+            class="max-w-3xl"
+          />
+        </div>
+      </Section>
+
+      <Section tone="light" class="pb-24 md:pb-32">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,360px)] lg:gap-16">
+            <div>
+              <ContactForm
+                client:load
+                endpoint={endpoint}
+                labels={data.form}
+              />
+            </div>
+
+            <aside class="lg:pt-2">
+              <div class="rounded-md bg-ColorBlack p-6 text-ColorLight sm:p-8">
+                <h2 class="font-PublicSans text-2xl font-bold">
+                  {data.channels.title}
+                </h2>
+                <p class="mt-2 text-sm text-ColorLight/70">
+                  {data.channels.description}
+                </p>
+                <ul class="mt-6 space-y-3">
+                  {data.channels.items.map((item) => (
+                    <li>
+                      <a
+                        href={item.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="group flex min-h-12 items-center gap-4 rounded-xs border border-white/10 bg-white/5 px-4 py-3 transition hover:border-ColorLime hover:bg-white/10"
+                      >
+                        <span
+                          class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-ColorLime text-ColorBlack"
+                        >
+                          <Icon name={item.icon} class="h-5 w-5" />
+                        </span>
+                        <span class="flex flex-col">
+                          <span class="font-semibold text-ColorLight">
+                            {item.label}
+                          </span>
+                          <span class="text-sm text-ColorLight/60">
+                            {item.handle}
+                          </span>
+                        </span>
+                        <Icon
+                          name="arrow-right"
+                          class="ml-auto h-4 w-4 text-ColorLight/40 transition group-hover:translate-x-1 group-hover:text-ColorLime"
+                        />
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </Section>
+    </main>
+
+    <SiteFooter footer={navigation.footer} logo={navigation.navigation.logo} />
+  </div>
+</BaseLayout>
