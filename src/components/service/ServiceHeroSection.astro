@@ -1,6 +1,7 @@
 ---
 import Button from "../ui/Button.astro";
 import Section from "../ui/Section.astro";
+import { renderCopy } from "../../utils/copy";
 
 const { hero, tone = "dark" } = Astro.props;
 const isLight = tone === "light";
@@ -18,15 +19,9 @@ const descriptionClass = isLight
 <Section tone={tone}>
   <div class="container relative pt-[105px] pb-20 sm:pt-[145px] lg:pt-[185px] lg:pb-28">
     <div class="mx-auto max-w-[800px] text-center">
-      <span class={badgeClass}>
-        {hero.eyebrow}
-      </span>
-      <h1 class={titleClass}>
-        {hero.title}
-      </h1>
-      <p class={descriptionClass}>
-        {hero.description}
-      </p>
+      <span class={badgeClass} set:html={renderCopy(hero.eyebrow)} />
+      <h1 class={titleClass} set:html={renderCopy(hero.title)} />
+      <p class={descriptionClass} set:html={renderCopy(hero.description)} />
       <div class="flex flex-wrap justify-center gap-4">
         {
           hero.actions.map((action) => (

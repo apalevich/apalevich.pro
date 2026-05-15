@@ -1,6 +1,7 @@
 ---
 import Section from '../ui/Section.astro';
 import SectionHeading from '../ui/SectionHeading.astro';
+import { renderCopy } from '../../utils/copy';
 
 const { stats } = Astro.props;
 ---
@@ -15,7 +16,7 @@ const { stats } = Astro.props;
               <span class="start-number" data-countup-number={item.value}>{item.value}</span>
               {item.suffix}
             </div>
-            <span class="text-ColorLight/60">{item.label}</span>
+            <span class="text-ColorLight/60" set:html={renderCopy(item.label)} />
           </div>
         ))}
       </div>

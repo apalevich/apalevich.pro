@@ -1,5 +1,6 @@
 ---
 import Icon from "../ui/Icon.astro";
+import { renderCopy } from "../../utils/copy";
 
 const { footer, logo } = Astro.props;
 ---
@@ -22,8 +23,8 @@ const { footer, logo } = Astro.props;
                         />
                     </a>
                     <div class="lg:max-w-[416px] space-y-6">
-                        <p>{footer.description}</p>
-                        <p>{footer.location}</p>
+                        <p set:html={renderCopy(footer.description)} />
+                        <p set:html={renderCopy(footer.location)} />
                         <a
                             href={`mailto:${footer.email}`}
                             class="block underline-offset-4 transition hover:underline"

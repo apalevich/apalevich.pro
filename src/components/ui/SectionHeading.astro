@@ -1,4 +1,6 @@
 ---
+import { renderCopy } from "../../utils/copy";
+
 const {
     title,
     description = "",
@@ -30,12 +32,11 @@ const descriptionTone =
 <div class:list={[alignClass, className]}>
     <h2
         class={`font-PublicSans text-4xl font-bold leading-[1.14] md:text-5xl xl:text-[56px] ${titleTone}`}
-    >
-        {title}
-    </h2>
+        set:html={renderCopy(title)}
+    />
     {
         description ? (
-            <p class={`mt-5 max-w-[760px] ${descriptionTone}`}>{description}</p>
+            <p class={`mt-5 max-w-[760px] ${descriptionTone}`} set:html={renderCopy(description)} />
         ) : null
     }
 </div>

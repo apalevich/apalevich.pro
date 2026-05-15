@@ -1,6 +1,7 @@
 ---
 import Section from "../ui/Section.astro";
 import SectionHeading from "../ui/SectionHeading.astro";
+import { renderCopy } from "../../utils/copy";
 
 const { services } = Astro.props;
 ---
@@ -29,9 +30,10 @@ const { services } = Astro.props;
                             <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-ColorLime text-ColorBlack">
                                 {String(index + 1).padStart(2, "0")}
                             </div>
-                            <h3 class="font-PublicSans text-2xl font-bold leading-tight text-ColorLight">
-                                {card.title}
-                            </h3>
+                            <h3
+                                class="font-PublicSans text-2xl font-bold leading-tight text-ColorLight"
+                                set:html={renderCopy(card.title)}
+                            />
                         </Tag>
                     );
                 })

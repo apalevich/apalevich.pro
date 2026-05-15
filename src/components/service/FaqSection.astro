@@ -1,6 +1,7 @@
 ---
 import Section from "../ui/Section.astro";
 import SectionHeading from "../ui/SectionHeading.astro";
+import { renderCopy } from "../../utils/copy";
 
 const { faq } = Astro.props;
 ---
@@ -21,14 +22,14 @@ const { faq } = Astro.props;
         faq.items.map((item) => (
           <details class="group">
             <summary class="flex cursor-pointer list-none items-start justify-between gap-6 px-6 py-5 font-PublicSans text-lg font-semibold text-ColorBlack md:text-xl">
-              <span>{item.question}</span>
+              <span set:html={renderCopy(item.question)} />
               <span class="mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-ColorBlack/20 text-ColorBlack transition group-open:rotate-45">
                 <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
                   <path d="M6 1V11M1 6H11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
                 </svg>
               </span>
             </summary>
-            <div class="px-6 pb-5 text-ColorDark/80 leading-7">{item.answer}</div>
+            <div class="px-6 pb-5 text-ColorDark/80 leading-7" set:html={renderCopy(item.answer)} />
           </details>
         ))
       }

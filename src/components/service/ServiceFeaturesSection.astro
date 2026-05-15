@@ -1,6 +1,7 @@
 ---
 import Section from "../ui/Section.astro";
 import SectionHeading from "../ui/SectionHeading.astro";
+import { renderCopy } from "../../utils/copy";
 
 const { features } = Astro.props;
 ---
@@ -23,10 +24,11 @@ const { features } = Astro.props;
             <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-ColorLime text-ColorBlack font-semibold text-sm">
               {String(index + 1).padStart(2, "0")}
             </div>
-            <h3 class="mb-2 font-PublicSans text-xl font-bold leading-tight text-ColorLight">
-              {card.title}
-            </h3>
-            <p class="text-sm leading-6 text-ColorLight/60">{card.description}</p>
+            <h3
+              class="mb-2 font-PublicSans text-xl font-bold leading-tight text-ColorLight"
+              set:html={renderCopy(card.title)}
+            />
+            <p class="text-sm leading-6 text-ColorLight/60" set:html={renderCopy(card.description)} />
           </article>
         ))
       }

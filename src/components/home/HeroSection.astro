@@ -3,6 +3,7 @@ import { Picture } from "astro:assets";
 import Button from "../ui/Button.astro";
 import Section from "../ui/Section.astro";
 import { resolveImage } from "../../utils/images";
+import { renderCopy } from "../../utils/copy";
 
 import heroImg1 from "../../media/th-8/hero-img-1.jpg";
 import heroImg2 from "../../media/th-8/hero-img-2.jpg";
@@ -23,12 +24,12 @@ const mediaImageMap = {
     <div class="container relative z-10 text-center">
         <h1
             class="mx-auto mb-6 max-w-[856px] font-PublicSans text-5xl font-bold leading-[1.06] tracking-[-0.02em] md:text-[60px] lg:text-[70px] xl:text-[90px]"
-        >
-            {hero.title}
-        </h1>
-        <p class="mx-auto mb-8 max-w-[658px] lg:mb-[50px]">
-            {hero.description}
-        </p>
+            set:html={renderCopy(hero.title)}
+        />
+        <p
+            class="mx-auto mb-8 max-w-[658px] lg:mb-[50px]"
+            set:html={renderCopy(hero.description)}
+        />
         <div class="flex flex-wrap justify-center gap-[18px]">
             <Button href={hero.actions[0].href} variant="solid"
                 >{hero.actions[0].label}</Button

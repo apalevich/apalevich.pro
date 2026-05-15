@@ -5,6 +5,7 @@ import Icon from '../ui/Icon.astro';
 import Section from '../ui/Section.astro';
 import SectionHeading from '../ui/SectionHeading.astro';
 import { resolveImage } from "../../utils/images";
+import { renderCopy } from "../../utils/copy";
 
 import contentImg1 from "../../media/th-8/content-img-1.jpg";
 import contentImg2 from "../../media/th-8/content-img-2.jpg";
@@ -28,7 +29,7 @@ const mediaImageMap = {
         <SectionHeading title={block.title} description={block.description || ''} tone={dark ? 'light' : 'dark'} />
         {block.paragraphs ? (
           <div class="mt-5 space-y-4">
-            {block.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+            {block.paragraphs.map((paragraph) => <p set:html={renderCopy(paragraph)} />)}
           </div>
         ) : null}
 
@@ -37,7 +38,7 @@ const mediaImageMap = {
             {items.map((bullet) => (
               <li class="flex items-start gap-3">
                 <Icon name={checklist ? 'check' : 'badge'} class="mt-1 h-5 w-5 shrink-0 text-ColorPurple" />
-                <span>{bullet}</span>
+                <span set:html={renderCopy(bullet)} />
               </li>
             ))}
           </ul>

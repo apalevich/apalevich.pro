@@ -1,6 +1,7 @@
 ---
 import Button from "../ui/Button.astro";
 import Section from "../ui/Section.astro";
+import { renderCopy } from "../../utils/copy";
 
 const { cta } = Astro.props;
 ---
@@ -14,10 +15,9 @@ const { cta } = Astro.props;
                 <div class="mx-auto max-w-[675px] text-center">
                     <h4
                         class="mb-5 font-PublicSans text-4xl font-semibold leading-[1.14] text-white lg:text-5xl xl:text-[56px]"
-                    >
-                        {cta.title}
-                    </h4>
-                    <p class="text-white/90 hidden md:block">{cta.description}</p>
+                        set:html={renderCopy(cta.title)}
+                    />
+                    <p class="text-white/90 hidden md:block" set:html={renderCopy(cta.description)} />
                     <div class="mt-8 flex flex-wrap justify-center gap-4.5">
                         <Button href={cta.actions[0].href} variant="solid" class="w-full md:max-w-min text-nowrap"
                             >{cta.actions[0].label}</Button

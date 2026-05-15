@@ -5,6 +5,7 @@ import Icon from '../ui/Icon.astro';
 import Section from '../ui/Section.astro';
 import SectionHeading from '../ui/SectionHeading.astro';
 import { resolveImage } from "../../utils/images";
+import { renderCopy } from "../../utils/copy";
 
 import blogThumbnail from "../../media/blog-thumbnails/pexels-quentin-martinez-2147503099-33074675.jpg";
 import blogImg1 from "../../media/th-1/blog-main-1.jpg";
@@ -48,9 +49,11 @@ const mediaImageMap = {
                 {post.date}
               </a>
             </div>
-            <a href={post.href} class="mb-6 block font-PublicSans text-xl font-bold leading-[1.35] text-ColorBlack group-hover:text-ColorPurple xl:text-2xl">
-              {post.title}
-            </a>
+            <a
+              href={post.href}
+              class="mb-6 block font-PublicSans text-xl font-bold leading-[1.35] text-ColorBlack group-hover:text-ColorPurple xl:text-2xl"
+              set:html={renderCopy(post.title)}
+            />
             <Button href={post.href} variant="text" iconRight="arrow-right" class="mt-auto px-0">
               {blog.readMoreLabel}
             </Button>

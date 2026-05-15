@@ -1,6 +1,7 @@
 ---
 import Section from "../ui/Section.astro";
 import SectionHeading from "../ui/SectionHeading.astro";
+import { renderCopy } from "../../utils/copy";
 
 const { process } = Astro.props;
 ---
@@ -32,10 +33,11 @@ const { process } = Astro.props;
 
             {/* Content */}
             <div class="pb-2 pt-2.5 md:flex md:gap-16 md:w-full">
-              <h3 class="mb-2 font-PublicSans text-xl font-bold leading-tight text-ColorBlack md:mb-0 md:w-64 md:shrink-0">
-                {step.title}
-              </h3>
-              <p class="text-ColorDark/70 leading-6">{step.description}</p>
+              <h3
+                class="mb-2 font-PublicSans text-xl font-bold leading-tight text-ColorBlack md:mb-0 md:w-64 md:shrink-0"
+                set:html={renderCopy(step.title)}
+              />
+              <p class="text-ColorDark/70 leading-6" set:html={renderCopy(step.description)} />
             </div>
           </li>
         ))

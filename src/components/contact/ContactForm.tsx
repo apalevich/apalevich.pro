@@ -1,4 +1,7 @@
 import { useState, type FormEvent } from "react";
+import { renderCopy } from "../../utils/copy";
+
+const html = (value: string | undefined | null) => ({ __html: renderCopy(value) });
 
 type FieldKey = "name" | "contact" | "website" | "message";
 
@@ -104,17 +107,20 @@ export default function ContactForm({ endpoint, labels }: Props) {
         aria-live="polite"
         className="rounded-md border border-ColorLime bg-ColorLime/15 p-6 sm:p-8"
       >
-        <h3 className="font-PublicSans text-2xl font-bold text-ColorBlack">
-          {labels.success.title}
-        </h3>
-        <p className="mt-2 text-ColorBlack/80">{labels.success.body}</p>
+        <h3
+          className="font-PublicSans text-2xl font-bold text-ColorBlack"
+          dangerouslySetInnerHTML={html(labels.success.title)}
+        />
+        <p
+          className="mt-2 text-ColorBlack/80"
+          dangerouslySetInnerHTML={html(labels.success.body)}
+        />
         <button
           type="button"
           onClick={reset}
           className="mt-6 inline-flex min-h-12 items-center justify-center rounded-xs border border-ColorBlack bg-transparent px-6 py-3 font-semibold text-ColorBlack transition hover:bg-ColorBlack hover:text-white"
-        >
-          {labels.success.again}
-        </button>
+          dangerouslySetInnerHTML={html(labels.success.again)}
+        />
       </div>
     );
   }
@@ -125,7 +131,7 @@ export default function ContactForm({ endpoint, labels }: Props) {
     const cfg = labels.fields[key];
     return (
       <label htmlFor={`contact-${key}`} className="mb-2 block text-sm font-semibold text-ColorBlack">
-        {cfg.label}
+        <span dangerouslySetInnerHTML={html(cfg.label)} />
         {cfg.required && <span aria-hidden="true" className="ml-1 text-red-500">*</span>}
       </label>
     );
@@ -135,13 +141,20 @@ export default function ContactForm({ endpoint, labels }: Props) {
     const err = fieldErrors[key];
     if (err) {
       return (
-        <p id={`contact-${key}-error`} className="mt-1.5 text-sm text-red-600">
-          {err}
-        </p>
+        <p
+          id={`contact-${key}-error`}
+          className="mt-1.5 text-sm text-red-600"
+          dangerouslySetInnerHTML={html(err)}
+        />
       );
     }
     const help = labels.fields[key].help;
-    return help ? <p className="mt-1.5 text-sm text-ColorBlack/60">{help}</p> : null;
+    return help ? (
+      <p
+        className="mt-1.5 text-sm text-ColorBlack/60"
+        dangerouslySetInnerHTML={html(help)}
+      />
+    ) : null;
   };
 
   return (
@@ -151,8 +164,8 @@ export default function ContactForm({ endpoint, labels }: Props) {
           role="alert"
           className="rounded-md border border-red-300 bg-red-50 p-4 text-sm text-red-700"
         >
-          <p className="font-semibold">{labels.error.title}</p>
-          <p className="mt-1">{labels.error.body}</p>
+          <p className="font-semibold" dangerouslySetInnerHTML={html(labels.error.title)} />
+          <p className="mt-1" dangerouslySetInnerHTML={html(labels.error.body)} />
         </div>
       )}
 

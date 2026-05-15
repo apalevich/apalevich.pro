@@ -3,6 +3,7 @@ import Button from '../ui/Button.astro';
 import Icon from '../ui/Icon.astro';
 import Section from '../ui/Section.astro';
 import SectionHeading from '../ui/SectionHeading.astro';
+import { renderCopy } from '../../utils/copy';
 
 const { pricing } = Astro.props;
 ---
@@ -28,12 +29,12 @@ const { pricing } = Astro.props;
         <div class="text-4xl font-PublicSans font-bold text-ColorBlack lg:text-[56px]">
           {pricing.plan.priceMonthly}
         </div>
-        <p class="mt-4 text-ColorDark/80">{pricing.plan.description}</p>
+        <p class="mt-4 text-ColorDark/80" set:html={renderCopy(pricing.plan.description)} />
         <ul class="mt-6 grid gap-3">
           {pricing.plan.features.map((feature) => (
             <li class="flex items-start gap-3">
               <Icon name="badge" class="mt-1 h-5 w-5 shrink-0 text-ColorLime" />
-              <span>{feature}</span>
+              <span set:html={renderCopy(feature)} />
             </li>
           ))}
         </ul>

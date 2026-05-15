@@ -97,6 +97,20 @@ Pages are built from JSON in `src/data/`:
 
 Each section component accepts data props and renders content dynamically. Modify the relevant JSON to update content; no component code change is usually needed.
 
+#### Copy tokens (line breaks & non-breaking spaces)
+
+Prose strings in `src/data/*.json` are rendered through `renderCopy()` (`src/utils/copy.ts`), which HTML-escapes the input and then expands a whitelisted set of tokens into HTML. Use these to control wrapping per breakpoint without touching components:
+
+| Token | Effect |
+| --- | --- |
+| `{br}` | Always-on line break |
+| `{br-sm}` / `{br-md}` / `{br-lg}` / `{br-xl}` | Break visible at this breakpoint and up |
+| `{br-below-sm}` / `{br-below-md}` / `{br-below-lg}` / `{br-below-xl}` | Break visible only below this breakpoint |
+| `{br-only-sm}` / `{br-only-md}` / `{br-only-lg}` / `{br-only-xl}` | Break visible only within this single breakpoint range |
+| `{nbsp}` | Non-breaking space |
+
+Example: `"We Build Web Apps{br-lg}That Convert"` forces a wrap only on `lg+` viewports. Token names are case-sensitive. Unknown tokens render literally — add new ones to the map in `src/utils/copy.ts`.
+
 ### Component Layers
 
 - **Layout components** (`BaseLayout`): Wrap pages, manage `<head>`, inject global scripts
