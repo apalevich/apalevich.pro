@@ -256,6 +256,53 @@
       }
     ]
   },
+  "clients": {
+    "title": "Our clients",
+    "logos": [
+      { "src": "@media/clients/ogilvy_logo.jpg", "alt": "Ogilvy", "width": 120, "height": 48 },
+      { "src": "@media/clients/unbiased.svg", "alt": "Unbiased", "width": 120, "height": 48 },
+      { "src": "@media/clients/la_redoute_logo.jpg", "alt": "La Redoute", "width": 120, "height": 48 }
+    ]
+  },
+  "testimonials": {
+    "title": "Testimonials",
+    "cards": [
+      {
+        "cardStyles": "md:col-span-2 lg:row-span-2",
+        "quoteStyles": "md:text-xl lg:text-4xl md:font-medium",
+        "logo": "@media/clients/logo_ogilvy.svg",
+        "quote": "Artem is an excellent team player, he quickly picked up on the new workflow, and showed excellent results in working and interacting with the team. We look forward to working with him again!",
+        "name": "Ksenia Koteneva",
+        "company": "Ogilvy",
+        "photo": "@media/clients/portrait_ksenia.jpeg"
+      },
+      {
+        "cardStyles": "md:col-span-2",
+        "quoteStyles": "md:text-xl md:font-medium lg:font-thin",
+        "logo": "@media/clients/unbiased.svg",
+        "quote": "Artem focuses on the 'why' behind every feature, ensuring that technical decisions align with business goals. He consistently challenged us to think about user experience, loading speed, and scalability, making our products better in every way.",
+        "name": "László Vaszi",
+        "company": "Unbiased",
+        "photo": "@media/clients/portrait_laszlo.jpeg"
+      },
+      {
+        "cardStyles": "md:col-span-1",
+        "quoteStyles": "md:text-xl md:font-medium lg:font-thin",
+        "quote": "Strong technical knowledge with a keen understanding of the business stakes. A true asset within a digital team!",
+        "name": "Youssef Oulamine",
+        "company": "La Redoute",
+        "photo": "@media/clients/portrait_youssef.jpeg"
+      },
+      {
+        "cardStyles": "md:col-span-1",
+        "quoteStyles": "md:text-xl md:font-medium lg:font-thin",
+        "quote": "Artem is an experienced developer. I was really happy to work with him!",
+        "name": "Kirill Zhirnov",
+        "company": "Boundless Commerce",
+        "photo": "@media/clients/portrait_kirill.jpeg"
+      }
+    ]
+  },
   "cta": {
     "title": "Ready to Build Something Great?",
     "description": "Chat with us about your project. We typically respond within a few hours.",

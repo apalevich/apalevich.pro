@@ -1,0 +1,41 @@
+---
+import Section from "../ui/Section.astro";
+import SectionHeading from "../ui/SectionHeading.astro";
+import MoscowMarathonLogo from "../ui/icons/moscowMarathon_Logo.astro";
+import { resolveImage } from "../../utils/images";
+
+import ogilvyLogo from "../../media/clients/ogilvy_logo.jpg";
+import unbiasedLogo from "../../media/clients/unbiased.svg";
+import laRedouteLogo from "../../media/clients/la_redoute_logo.jpg";
+
+const { clients, dark = false } = Astro.props;
+
+const mediaImageMap = {
+  "@media/clients/ogilvy_logo.jpg": ogilvyLogo,
+  "@media/clients/unbiased.svg": unbiasedLogo,
+  "@media/clients/la_redoute_logo.jpg": laRedouteLogo,
+};
+---
+
+<Section tone={dark ? 'dark' : 'light'}>
+  <div class="container py-16 lg:py-20">
+    <SectionHeading title={clients.title} align="center" tone={dark ? 'light' : 'dark'} />
+    <div
+      class="mt-10 flex flex-wrap items-center justify-center gap-12 md:gap-16">
+      {
+        clients.logos.map((logo) => (
+          <img
+            src={resolveImage(logo.src, mediaImageMap).src}
+            alt={logo.alt}
+            width={logo.width}
+            height={logo.height}
+            loading="lazy"
+            decoding="async"
+            class="h-12 w-auto opacity-70 transition hover:opacity-100"
+          />
+        ))
+      }
+      <MoscowMarathonLogo class="h-12 w-auto opacity-70 transition hover:opacity-100" />
+    </div>
+  </div>
+</Section>
