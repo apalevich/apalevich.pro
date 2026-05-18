@@ -4,6 +4,7 @@ import SectionHeading from "../ui/SectionHeading.astro";
 import MoscowMarathonLogo from "../ui/icons/moscowMarathon_Logo.astro";
 import { resolveImage } from "../../utils/images";
 
+import appleLogo from "../../media/clients/apple_logo.svg";
 import ogilvyLogo from "../../media/clients/ogilvy_logo.jpg";
 import unbiasedLogo from "../../media/clients/unbiased.svg";
 import laRedouteLogo from "../../media/clients/la_redoute_logo.jpg";
@@ -11,6 +12,7 @@ import laRedouteLogo from "../../media/clients/la_redoute_logo.jpg";
 const { clients, dark = false } = Astro.props;
 
 const mediaImageMap = {
+  "@media/clients/apple_logo.svg": appleLogo,
   "@media/clients/ogilvy_logo.jpg": ogilvyLogo,
   "@media/clients/unbiased.svg": unbiasedLogo,
   "@media/clients/la_redoute_logo.jpg": laRedouteLogo,
@@ -31,11 +33,11 @@ const mediaImageMap = {
             height={logo.height}
             loading="lazy"
             decoding="async"
-            class="h-12 w-auto opacity-70 transition hover:opacity-100"
+            class="h-12 w-auto opacity-90"
           />
         ))
       }
-      <MoscowMarathonLogo class="h-12 w-auto opacity-70 transition hover:opacity-100" />
+      <MoscowMarathonLogo class="h-12 w-auto opacity-90" />
     </div>
   </div>
 </Section>

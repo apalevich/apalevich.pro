@@ -16,7 +16,6 @@
       "back": "Back"
     },
     "links": [
-      { "label": "Projects", "href": "/projects" },
       {
         "label": "Services",
         "href": "#",
@@ -35,7 +34,7 @@
           { "label": "IT Recruitment", "href": "/it-recruitment" }
         ]
       },
-      { "label": "Testimonials", "href": "/testimonials" }
+      { "label": "Projects", "href": "/projects" }
     ],
     "actions": [{ "label": "Contact", "href": "/contact", "variant": "text" }]
   },
@@ -259,9 +258,30 @@
   "clients": {
     "title": "Our clients",
     "logos": [
-      { "src": "@media/clients/ogilvy_logo.jpg", "alt": "Ogilvy", "width": 120, "height": 48 },
-      { "src": "@media/clients/unbiased.svg", "alt": "Unbiased", "width": 120, "height": 48 },
-      { "src": "@media/clients/la_redoute_logo.jpg", "alt": "La Redoute", "width": 120, "height": 48 }
+      {
+        "src": "@media/clients/apple_logo.svg",
+        "alt": "Apple",
+        "width": 120,
+        "height": 48
+      },
+      {
+        "src": "@media/clients/ogilvy_logo.jpg",
+        "alt": "Ogilvy is a part of WPP — a British multinational communications, advertising, public relations, technology, and commerce holding company headquartered in London, England. It is the world's largest advertising company, as of 2023",
+        "width": 120,
+        "height": 48
+      },
+      {
+        "src": "@media/clients/unbiased.svg",
+        "alt": "Unbiased",
+        "width": 120,
+        "height": 48
+      },
+      {
+        "src": "@media/clients/la_redoute_logo.jpg",
+        "alt": "La Redoute",
+        "width": 120,
+        "height": 48
+      }
     ]
   },
   "testimonials": {
