@@ -11,6 +11,7 @@ import contentImg1 from "../../media/th-8/content-img-1.jpg";
 import contentImg2 from "../../media/th-8/content-img-2.jpg";
 import contentCard1 from "../../media/th-8/content-card-1.png";
 import contentCard2 from "../../media/th-8/content-card-2.png";
+import contentCard3 from "../../media/th-8/content-card-3.png";
 
 const { block, reverse = false, dark = false, checklist = false } = Astro.props;
 const items = block.bullets ?? block.points ?? [];
@@ -20,6 +21,7 @@ const mediaImageMap = {
   "@media/th-8/content-img-2.jpg": contentImg2,
   "@media/th-8/content-card-1.png": contentCard1,
   "@media/th-8/content-card-2.png": contentCard2,
+  "@media/th-8/content-card-3.png": contentCard3,
 };
 ---
 <Section tone={dark ? 'dark' : 'light'}>

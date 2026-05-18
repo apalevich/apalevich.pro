@@ -71,7 +71,7 @@
   }
 
   .nav-link-item {
-    @apply inline-flex items-center gap-2 text-base font-semibold text-ColorBlack transition hover:text-ColorPurple;
+    @apply inline-flex items-center gap-2 leading-10 font-semibold text-ColorBlack transition hover:text-ColorPurple;
   }
 
   .sub-menu {

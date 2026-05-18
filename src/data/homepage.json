@@ -16,7 +16,7 @@
       "back": "Back"
     },
     "links": [
-      { "label": "Study Cases", "href": "/projects" },
+      { "label": "Projects", "href": "/projects" },
       {
         "label": "Services",
         "href": "#",
@@ -170,7 +170,13 @@
   "process": {
     "title": "Let's Improve Your Product",
     "description": "Talk to us about your idea. We'll outline the approach, timeline, and investment. First conversation is always free.",
-    "action": { "label": "Get In Touch", "href": "/contact" }
+    "action": { "label": "Get In Touch", "href": "/contact" },
+    "image": {
+      "src": "@media/th-8/content-card-3.png",
+      "alt": "Consulting team planning session",
+      "width": 523,
+      "height": 450
+    }
   },
   "pricing": {
     "title": "Pricing built around your project, not our overhead",
@@ -220,8 +226,8 @@
     ]
   },
   "blog": {
-    "title": "Field notes on building faster, better web apps",
-    "description": "Lessons from real projects: performance, AI integration, and shipping fast.",
+    "title": "Lessons from real projects",
+    "description": "Field notes on building faster, better web apps",
     "readMoreLabel": "Read on LinkedIn",
     "cards": [
       {
@@ -229,32 +235,24 @@
         "author": "Artem Palevich",
         "date": "May 11, 2026",
         "title": "Frontend Performance Sprint",
-        "image": "@media/blog-thumbnails/pexels-quentin-martinez-2147503099-33074675.jpg",
+        "image": "@media/th-1/blog-main-1.jpg",
         "href": "https://www.linkedin.com/pulse/case-study-tasty-frontend-performance-sprint-apalevich-pro-alwhc"
       },
       {
-        "category": "Technology",
+        "category": "Guide",
         "author": "Artem Palevich",
         "date": "Apr 28, 2026",
         "title": "Claude Code for Dummies",
-        "image": "@media/th-1/blog-main-1.jpg",
-        "href": "/blog/how-we-use-slack-trello-and-teamgantt-for-best-project-management-as-a-digital-agency"
+        "image": "@media/th-1/blog-main-2.jpg",
+        "href": "https://www.linkedin.com/pulse/claude-code-dummies-artem-palevich-4xrwc/"
       },
       {
-        "category": "Product",
-        "author": "Artem Palevich",
-        "date": "Mar 10, 2026",
-        "title": "How We Launched a SaaS Product in Just One Day",
-        "image": "@media/th-1/blog-main-3.jpg",
-        "href": "/blog/difficulties-of-running-a-digital-agency-in-the-competitive-market-podcast-why-digital-agency-sucks"
-      },
-      {
-        "category": "Process",
+        "category": "Keynote",
         "author": "Daniil Savitskii",
         "date": "Jan 20, 2023",
         "title": "Delivered in 9¹⁄₂ weeks",
-        "image": "@media/th-1/blog-main-2.jpg",
-        "href": "/blog/hiring-a-digital-agency--5-things-you-need-to-check-out-before-signing-up--the-future-of-the-digital-agency"
+        "image": "@media/th-1/blog-main-3.jpg",
+        "href": "https://www.linkedin.com/pulse/95-weeks-until-release-apalevich-pro-5plgc"
       }
     ]
   },
@@ -291,7 +289,7 @@
         "title": "Sitemap",
         "links": [
           { "label": "Home", "href": "/" },
-          { "label": "Study Cases", "href": "/projects" },
+          { "label": "Projects", "href": "/projects" },
           { "label": "Contact", "href": "/contact" }
         ]
       },
