@@ -16,7 +16,7 @@ const {
     <meta name="description" content={description} />
     <link rel="icon" href="/favicon.svg" />
   </head>
-  <body class="min-h-screen bg-ColorLight font-Inter text-[18px] leading-[1.66] text-ColorDark">
+  <body class="min-h-screen bg-ColorLight font-Inter text-[18px] leading-[1.66] text-ColorDark overflow-x-hidden">
     <slot />
     {scripts.map((src) => <script src={src}></script>)}
   </body>
