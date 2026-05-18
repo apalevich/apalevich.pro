@@ -1,0 +1,185 @@
+---
+import Section from "../ui/Section.astro";
+import SectionHeading from "../ui/SectionHeading.astro";
+import { resolveImage } from "../../utils/images";
+import { renderCopy } from "../../utils/copy";
+
+import heroImg1 from "../../media/th-8/hero-img-1.jpg";
+import heroImg2 from "../../media/th-8/hero-img-2.jpg";
+import heroImg3 from "../../media/th-8/hero-img-3.jpg";
+import heroImg4 from "../../media/th-8/hero-img-4.jpg";
+import contentImg1 from "../../media/th-8/content-img-1.jpg";
+import contentImg2 from "../../media/th-8/content-img-2.jpg";
+import blogMain1 from "../../media/th-1/blog-main-1.jpg";
+import blogMain2 from "../../media/th-1/blog-main-2.jpg";
+
+const { hero, projects } = Astro.props;
+
+const mediaImageMap = {
+  "@media/th-8/hero-img-1.jpg": heroImg1,
+  "@media/th-8/hero-img-2.jpg": heroImg2,
+  "@media/th-8/hero-img-3.jpg": heroImg3,
+  "@media/th-8/hero-img-4.jpg": heroImg4,
+  "@media/th-8/content-img-1.jpg": contentImg1,
+  "@media/th-8/content-img-2.jpg": contentImg2,
+  "@media/th-1/blog-main-1.jpg": blogMain1,
+  "@media/th-1/blog-main-2.jpg": blogMain2,
+};
+---
+
+<Section tone="light">
+  <div class="container py-16 lg:py-20">
+    {hero.eyebrow ? (
+      <p class="mb-3 text-sm font-semibold uppercase tracking-wider text-ColorPurple">
+        {hero.eyebrow}
+      </p>
+    ) : null}
+    <SectionHeading
+      title={hero.title}
+      description={hero.description}
+      align="left"
+      tone="dark"
+    />
+
+    <div class="mt-12 flex flex-col gap-10">
+      {
+        projects.map((project) => {
+          const link = project.caseStudyUrl ? project.caseStudyUrl : "/contact";
+          const revealLabel = project.caseStudyUrl
+            ? "Read case study"
+            : "Start a project like this";
+          const bg = resolveImage(project.image, mediaImageMap).src;
+          return (
+            <a href={link} class="project-card group block">
+              <div
+                class="project-top"
+                style={`background-image: url('${bg}')`}>
+                <div class="project-frame">
+                  <span class="project-year">{project.year}</span>
+                </div>
+                <div class="project-reveal">
+                  <p>{revealLabel}</p>
+                </div>
+              </div>
+              <div class="mt-6 flex flex-col gap-3 md:flex-row md:items-start md:justify-between md:gap-8">
+                <div class="md:max-w-3xl">
+                  <h3
+                    class="font-PublicSans text-2xl font-semibold leading-tight text-ColorBlack lg:text-3xl"
+                    set:html={renderCopy(project.title)}
+                  />
+                  <p
+                    class="mt-3 text-ColorBlack/70"
+                    set:html={renderCopy(project.description)}
+                  />
+                </div>
+                <div class="shrink-0">
+                  <span
+                    class:list={[
+                      "inline-flex items-center rounded-xs px-3 py-1 text-xs font-bold uppercase tracking-wider",
+                      project.nda
+                        ? "bg-ColorBlack text-ColorLight"
+                        : "bg-ColorLime text-ColorBlack",
+                    ]}>
+                    {project.nda ? "NDA" : project.client}
+                  </span>
+                </div>
+              </div>
+            </a>
+          );
+        })
+      }
+    </div>
+  </div>
+</Section>
+
+<style>
+  .project-card {
+    border-bottom: 0;
+  }
+
+  .project-top {
+    position: relative;
+    height: 220px;
+    overflow: hidden;
+    border-radius: 10px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  @media (min-width: 1024px) {
+    .project-top {
+      height: 280px;
+    }
+  }
+
+  .project-frame {
+    position: absolute;
+    top: 17px;
+    right: 17px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 92px;
+    min-height: 48px;
+    padding: 0.7rem;
+    border: 3px solid var(--color-ColorLime, #c1ff00);
+    transition: all 0.4s ease;
+  }
+
+  .project-year {
+    font-size: 0.8125rem;
+    font-weight: 900;
+    color: #fff;
+    text-transform: uppercase;
+    transition: opacity 0.4s ease;
+  }
+
+  .project-reveal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .project-reveal p {
+    display: none;
+    margin: 0;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: #fff;
+    opacity: 0;
+  }
+
+  .project-card:hover .project-frame,
+  .project-card:focus-visible .project-frame {
+    top: 17px;
+    right: 17px;
+    left: 17px;
+    bottom: 17px;
+    width: auto;
+    height: auto;
+    background-color: rgba(10, 16, 47, 0.55);
+  }
+
+  .project-card:hover .project-year,
+  .project-card:focus-visible .project-year {
+    opacity: 0;
+  }
+
+  .project-card:hover .project-reveal p,
+  .project-card:focus-visible .project-reveal p {
+    display: block;
+    opacity: 1;
+    animation: smooth 0.4s ease-in;
+  }
+
+  @keyframes smooth {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+</style>

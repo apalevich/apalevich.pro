@@ -1,0 +1,96 @@
+{
+  "meta": {
+    "title": "Projects | APalevich.Pro",
+    "description": "Selected work: faster web apps, AI products, infrastructure and automation that shipped on time and moved real numbers."
+  },
+  "hero": {
+    "eyebrow": "Projects",
+    "title": "Work that shipped,{br-lg}performed, and converted",
+    "description": "A look at recent projects across web development, AI, performance, and automation. Each one started with a problem and ended with a measurable result."
+  },
+  "projects": [
+    {
+      "year": "2026",
+      "title": "Heavy animations that stay smooth on low end devices",
+      "description": "An international platform for gamers to buy upgrades and digital assets for Counter Strike, Dota, and other PvP titles. We cut loaded JavaScript by 26% and reduced animation frame drops by 70%, even on throttled hardware.",
+      "client": "CS Land",
+      "nda": false,
+      "image": "@media/th-8/hero-img-1.jpg",
+      "caseStudyUrl": ""
+    },
+    {
+      "year": "2025",
+      "title": "Launching a financial advice platform in the US",
+      "description": "A platform connecting people with financial advisors. We launched the American version of the website ahead of schedule and shipped multiple infrastructure improvements along the way.",
+      "client": "Unbiased",
+      "nda": false,
+      "image": "@media/th-8/hero-img-2.jpg",
+      "caseStudyUrl": ""
+    },
+    {
+      "year": "2025",
+      "title": "A full audit of code, team, and workflow",
+      "description": "A fintech company asked us to assess their web presence end to end. We delivered a comprehensive audit of the website code, the in house developer skills, and the task management and workflow efficiency.",
+      "client": "Admirals",
+      "nda": false,
+      "image": "@media/th-8/content-img-1.jpg",
+      "caseStudyUrl": ""
+    },
+    {
+      "year": "2025",
+      "title": "A Next.js web app, shipped two weeks early",
+      "description": "An AI engine that simulates conversational relationships with users. Our team built the web app in Next.js, launched two weeks ahead of schedule, and provided post release support for several months.",
+      "client": "Hubba.ai",
+      "nda": false,
+      "image": "@media/th-8/hero-img-3.jpg",
+      "caseStudyUrl": ""
+    },
+    {
+      "year": "2024",
+      "title": "Automation that made a retail workflow 8x faster",
+      "description": "An international multichannel retailer in ready to wear apparel and home decor. We built an automation solution that made email production 8x faster and accelerated referral payment processing by 5x.",
+      "client": "La Redoute",
+      "nda": false,
+      "image": "@media/th-8/hero-img-4.jpg",
+      "caseStudyUrl": ""
+    },
+    {
+      "year": "Side project",
+      "title": "ProCommento, a LinkedIn growth SaaS we build and run",
+      "description": "A tool that helps LinkedIn newcomers grow an audience and land more clients. Find fresh posts from your industry, comment in your own voice, and track what lands. Built, shipped, and now in public Beta.",
+      "client": "APalevich.Pro",
+      "nda": false,
+      "image": "@media/th-8/content-img-2.jpg",
+      "caseStudyUrl": ""
+    },
+    {
+      "year": "2025",
+      "title": "Performance overhaul for a high traffic trading platform",
+      "description": "A trading product struggling with slow page loads under heavy traffic. We reworked the front end delivery and rendering path so the busiest screens stayed fast at peak load.",
+      "client": "NDA",
+      "nda": true,
+      "image": "@media/th-1/blog-main-1.jpg",
+      "caseStudyUrl": ""
+    },
+    {
+      "year": "2025",
+      "title": "MVP build and launch for an AI startup",
+      "description": "An early stage AI product that needed to reach users quickly. We built the MVP, launched it, and stayed on for post release support while the team iterated on feedback.",
+      "client": "NDA",
+      "nda": true,
+      "image": "@media/th-1/blog-main-2.jpg",
+      "caseStudyUrl": ""
+    }
+  ],
+  "cta": {
+    "title": "Want results like these for your product?",
+    "description": "Tell us what you are building. We will tell you how we would approach it, and what it would take to ship.",
+    "actions": [
+      { "label": "Start Your Project", "href": "/contact", "variant": "solid" },
+      { "label": "See Our Services", "href": "/frontend-development", "variant": "outline-light" }
+    ],
+    "decorations": {
+      "dot": "/assets/img/elements/home-8-dot-shape-6.svg"
+    }
+  }
+}
