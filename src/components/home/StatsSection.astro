@@ -7,7 +7,7 @@ const { stats, dark = false } = Astro.props;
 ---
 <Section tone={dark ? 'dark' : 'light'}>
   <div class="container py-16 lg:py-20">
-    <div class="grid grid-cols-1 gap-10 lg:grid-cols-2 xl:grid-cols-[0.8fr_minmax(0,_1fr)] xl:gap-20 xxl:gap-[100px]">
+    <div class="grid grid-cols-1 gap-10 xl:grid-cols-[0.8fr_minmax(0,_1fr)] xl:gap-20 xxl:gap-[100px]">
       <SectionHeading title={stats.title} tone={dark ? 'light' : 'dark'} align="center" class="lg:text-left" />
       <div class="grid grid-cols-1 gap-y-6 sm:grid-cols-3">
         {stats.items.map((item, index) => (

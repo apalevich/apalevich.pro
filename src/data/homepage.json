@@ -39,8 +39,8 @@
     "actions": [{ "label": "Contact", "href": "/contact", "variant": "text" }]
   },
   "hero": {
-    "title": "We Build Web Apps That Convert",
-    "description": "Fast web applications that turn visitors into customers. Built with React, Next.js, Vue, Nuxt, Angular, Astro, and Claude Code.",
+    "title": "We Build{br-below-md} Web Apps{br-below-md} That{nbsp}Convert",
+    "description": "Fast web applications that turn visitors into customers. Built with React, Next.js, Vue, Nuxt, Angular, Astro, and Claude{nbsp}Code.",
     "actions": [
       { "label": "Start a Project", "href": "/contact", "variant": "solid" },
       {
@@ -92,16 +92,16 @@
   "stats": {
     "title": "We earn trust by working efficiently",
     "items": [
-      { "value": 12, "suffix": "+", "label": "Years in Web Dev" },
+      { "value": 12, "suffix": "+", "label": "Years in Web{nbsp}Dev" },
       { "value": 200, "suffix": "+", "label": "Projects Delivered" },
       { "value": 7, "suffix": "+", "label": "Countries Served" }
     ]
   },
   "story": {
-    "title": "Hire Senior Talent in Two Days",
+    "title": "Hire Senior Talent {br-below-sm}in {br-only-md}Two{nbsp}Days",
     "paragraphs": [
-      "Hiring eats months and budget. We've built a network of vetted senior developers and specialists ready to join your team. Skip the long recruitment pipeline and get qualified candidates fast.",
-      "We handle sourcing, vetting, and matching. You focus on building."
+      "Hiring eats months and budget. We've built a network of vetted senior developers and specialists ready to join your team. Skip the long recruitment pipeline and get qualified candidates{nbsp}fast.",
+      "We handle sourcing, vetting, and matching. You{nbsp}focus on building."
     ],
     "action": { "label": "Learn More", "href": "/it-recruitment" },
     "image": {
@@ -113,13 +113,13 @@
     }
   },
   "speed": {
-    "title": "Faster Apps = More Revenue",
+    "title": "Faster Apps = {br}More Revenue",
     "description": "Slow is expensive. Every 100ms lost on load time costs conversions. We optimize at every level, so your product performs for every user.",
     "bullets": [
-      "Frontend optimization (React, Vue, code splitting)",
-      "Backend performance & API efficiency",
-      "Database queries & caching strategies",
-      "Infrastructure & CDN deployment"
+      "Frontend optimization {br-md}{br-below-sm}(React, Vue, code splitting)",
+      "Backend performance & {br-2xl}{br-only-lg}{br-only-md}API efficiency",
+      "Database queries & {br-md}caching strategies",
+      "Infrastructure & {br-md}CDN deployment"
     ],
     "action": { "label": "Get Free Consultation", "href": "/contact" },
     "image": {
@@ -135,7 +135,7 @@
     "description": "Six core services. One focus: building products that convert, perform, and scale.",
     "cards": [
       {
-        "title": "Frontend & Web Development",
+        "title": "Frontend & Web{nbsp}Development",
         "description": "Web applications in React, Next.js, Vue, and Astro built to load fast, scale cleanly, and convert.",
         "href": "/frontend-development"
       },
@@ -145,7 +145,7 @@
         "href": "/ai"
       },
       {
-        "title": "Backend & Infrastructure Optimization",
+        "title": "Backend & Infrastructure",
         "description": "APIs, databases, caching, and cloud infrastructure tuned for speed, reliability, and lower costs.",
         "href": "/backend-development"
       },
@@ -167,8 +167,8 @@
     ]
   },
   "process": {
-    "title": "Let's Improve Your Product",
-    "description": "Talk to us about your idea. We'll outline the approach, timeline, and investment. First conversation is always free.",
+    "title": "Let's Improve {br-below-sm}{br-md}Your Product",
+    "description": "Talk to us about your idea. We'll outline the approach, timeline, and{nbsp}investment. First conversation is always free.",
     "action": { "label": "Get In Touch", "href": "/contact" },
     "image": {
       "src": "@media/th-8/content-card-3.png",
@@ -199,8 +199,8 @@
     }
   },
   "team": {
-    "title": "Meet members of our team",
-    "description": "Meet the team behind APalevich.Pro. 12+ years combined experience in React, infrastructure, AI integration, and web performance. Based in Estonia, serving global clients.",
+    "title": "Meet members {br-below-sm}of our{nbsp}team",
+    "description": "Meet the team behind APalevich.Pro. 12+ years combined experience in React, infrastructure, AI integration, and web performance. {br}Based in Georgia, serving global clients.",
     "cards": [
       {
         "name": "Artem Palevich",
@@ -225,8 +225,8 @@
     ]
   },
   "blog": {
-    "title": "Lessons from real projects",
-    "description": "Field notes on building faster, better web apps",
+    "title": "Lessons from {br-below-sm}real projects",
+    "description": "Field notes on building faster, {br-below-sm}better web apps",
     "readMoreLabel": "Read on LinkedIn",
     "cards": [
       {
@@ -324,7 +324,7 @@
     ]
   },
   "cta": {
-    "title": "Ready to Build Something Great?",
+    "title": "Ready to Build {br-md}{br-sm}Something Great?",
     "description": "Chat with us about your project. We typically respond within a few hours.",
     "note": "Have questions? Start with a 20 minute consultation. No obligations.",
     "actions": [

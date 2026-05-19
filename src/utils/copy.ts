@@ -1,17 +1,20 @@
 const TOKENS: Record<string, string> = {
   "{br}": "<br>",
-  "{br-sm}": '<br class="hidden sm:inline">',
-  "{br-md}": '<br class="hidden md:inline">',
-  "{br-lg}": '<br class="hidden lg:inline">',
-  "{br-xl}": '<br class="hidden xl:inline">',
-  "{br-below-sm}": '<br class="inline sm:hidden">',
-  "{br-below-md}": '<br class="inline md:hidden">',
-  "{br-below-lg}": '<br class="inline lg:hidden">',
-  "{br-below-xl}": '<br class="inline xl:hidden">',
-  "{br-only-sm}": '<br class="hidden sm:inline md:hidden">',
-  "{br-only-md}": '<br class="hidden md:inline lg:hidden">',
-  "{br-only-lg}": '<br class="hidden lg:inline xl:hidden">',
-  "{br-only-xl}": '<br class="hidden xl:inline">',
+  "{br-sm}": '<br class="hidden sm:block">',
+  "{br-md}": '<br class="hidden md:block">',
+  "{br-lg}": '<br class="hidden lg:block">',
+  "{br-xl}": '<br class="hidden xl:block">',
+  "{br-2xl}": '<br class="hidden 2xl:block">',
+  "{br-below-sm}": '<br class="block sm:hidden">',
+  "{br-below-md}": '<br class="block md:hidden">',
+  "{br-below-lg}": '<br class="block lg:hidden">',
+  "{br-below-xl}": '<br class="block xl:hidden">',
+  "{br-below-2xl}": '<br class="block 2xl:hidden">',
+  "{br-only-sm}": '<br class="hidden sm:block md:hidden">',
+  "{br-only-md}": '<br class="hidden md:block lg:hidden">',
+  "{br-only-lg}": '<br class="hidden lg:block xl:hidden">',
+  "{br-only-xl}": '<br class="hidden xl:block">',
+  "{br-only-2xl}": '<br class="hidden 2xl:block">',
   "{nbsp}": "&nbsp;",
 };
 
@@ -19,7 +22,7 @@ const TOKEN_RE = new RegExp(
   Object.keys(TOKENS)
     .map((t) => t.replace(/[-\\^$*+?.()|[\]{}]/g, "\\$&"))
     .join("|"),
-  "g"
+  "g",
 );
 
 function escapeHtml(input: string): string {

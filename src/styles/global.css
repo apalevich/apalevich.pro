@@ -55,7 +55,7 @@
   }
 
   .menu-block {
-    @apply fixed top-0 right-0 z-50 flex h-dvh w-[min(90vw,22rem)] translate-x-full flex-col gap-6 overflow-y-auto bg-white p-6 shadow-2xl transition-transform duration-300 lg:static lg:h-auto lg:w-auto lg:translate-x-0 lg:overflow-visible lg:bg-transparent lg:p-0 lg:shadow-none;
+    @apply fixed top-0 right-0 z-50 flex h-dvh w-[min(90vw,22rem)] translate-x-full flex-col gap-6 overflow-y-auto bg-white p-6 transition-transform duration-300 lg:static lg:h-auto lg:w-auto lg:translate-x-0 lg:overflow-visible lg:bg-transparent lg:p-0 lg:shadow-none;
   }
 
   .menu-block.active {
