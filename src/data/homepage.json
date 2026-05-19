@@ -98,7 +98,7 @@
     ]
   },
   "story": {
-    "title": "Hire Senior Talent {br-below-sm}in {br-only-md}Two{nbsp}Days",
+    "title": "Hire Senior Talent {br-below-sm}in {br-md}Two{nbsp}Days",
     "paragraphs": [
       "Hiring eats months and budget. We've built a network of vetted senior developers and specialists ready to join your team. Skip the long recruitment pipeline and get qualified candidates{nbsp}fast.",
       "We handle sourcing, vetting, and matching. You{nbsp}focus on building."
@@ -324,7 +324,7 @@
     ]
   },
   "cta": {
-    "title": "Ready to Build {br-md}{br-sm}Something Great?",
+    "title": "Ready to Build {br-sm}Something Great?",
     "description": "Chat with us about your project. We typically respond within a few hours.",
     "note": "Have questions? Start with a 20 minute consultation. No obligations.",
     "actions": [
