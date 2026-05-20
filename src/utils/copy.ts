@@ -1,5 +1,6 @@
 const TOKENS: Record<string, string> = {
   "{br}": "<br>",
+  "{br-xs}": '<br class="hidden xs:block">',
   "{br-sm}": '<br class="hidden sm:block">',
   "{br-md}": '<br class="hidden md:block">',
   "{br-lg}": '<br class="hidden lg:block">',
@@ -10,6 +11,7 @@ const TOKENS: Record<string, string> = {
   "{br-below-lg}": '<br class="block lg:hidden">',
   "{br-below-xl}": '<br class="block xl:hidden">',
   "{br-below-2xl}": '<br class="block 2xl:hidden">',
+  "{br-only-xs}": '<br class="hidden xs:block smxs:hidden">',
   "{br-only-sm}": '<br class="hidden sm:block md:hidden">',
   "{br-only-md}": '<br class="hidden md:block lg:hidden">',
   "{br-only-lg}": '<br class="hidden lg:block xl:hidden">',
