@@ -6,8 +6,12 @@ import react from "@astrojs/react";
 
 // https://astro.build/config
 export default defineConfig({
+  site: "https://apalevich.pro",
   integrations: [react()],
   vite: {
     plugins: [tailwindcss()],
+  },
+  prefetch: {
+    defaultStrategy: "load",
   },
 });
