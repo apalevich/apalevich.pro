@@ -5,12 +5,12 @@
   },
   "hero": {
     "eyebrow": "IT Recruitment",
-    "title": "Stop Burning Three Months on Broken Hiring Pipelines",
-    "description": "Technical recruiting done for you. We own sourcing, screening, and coordination. You only meet finalists. First candidates in 2 days. Most roles close in 45 days.",
+    "title": "Stop Burning Three{nbsp}Months on {br-sm}Broken Hiring {br-sm}Pipelines",
+    "description": "Technical recruiting done for you. We own sourcing, screening, and coordination. You only meet finalists. First candidates in 2{nbsp}days. Most{nbsp}roles close in 45{nbsp}days.",
     "actions": [
       {
-        "label": "Book a 20 minute call",
-        "href": "https://cal.com/apalevich/20min",
+        "label": "Book a Free Call",
+        "href": "/contact",
         "variant": "solid"
       },
       {
@@ -21,15 +21,19 @@
     ]
   },
   "stats": {
-    "title": "Efficient with your time",
+    "title": "Efficient with your{nbsp}time",
     "items": [
       {
         "value": 2,
         "suffix": " days",
         "label": "to first qualified candidates"
       },
-      { "value": 93, "suffix": "%", "label": "probation pass rate" },
-      { "value": 45, "suffix": " days", "label": "average time to hire" }
+      { "value": 93, "suffix": "%", "label": "probation {br-xl}pass rate" },
+      {
+        "value": 45,
+        "suffix": " days",
+        "label": "average {br-only-sm}{br-only-md}{br-xl}time to hire"
+      }
     ]
   },
   "roles": {
@@ -63,7 +67,7 @@
     ]
   },
   "process": {
-    "title": "How a hire happens, step by step",
+    "title": "How a hire happens, {br-md}step by step",
     "description": "",
     "cards": [
       {
@@ -90,11 +94,11 @@
   },
   "caseStudy": {
     "title": "Fewer interviews. Stronger hires.",
-    "description": "Generic recruiters flood your inbox with 200 CVs. We do the opposite. Fewer candidates, sharper screening, picked by people who can read code.",
+    "description": "Generic recruiters flood your inbox with 200 CVs. We do the opposite. Fewer candidates, sharper screening, picked by people who can read{nbsp}code.",
     "bullets": [
       "Your team interviews 3 to 6 candidates, not 60. Every one has already cleared a technical bar.",
       "First candidates in 2 days. Most roles close in 45 days. Niche profiles in 8 weeks that other agencies missed for 6 months.",
-      "Sourcing to start date, fully owned. Your engineers stay on the product.",
+      "Sourcing to start date, fully owned. Your engineers stay on{nbsp}the{nbsp}product.",
       "93% pass probation against a 60% industry average. One bad senior hire costs $15k or more. We cut that risk."
     ],
     "action": {
@@ -110,7 +114,7 @@
   },
   "team": {
     "title": "Meet your recruiters",
-    "description": "Two senior people own your search from first brief to first day on the job. A lead recruiter who runs sourcing, screening, and candidate care, plus a technical founder who calibrates each role and joins interviews when the stack is dense. You talk to the same humans the whole way. Every candidate you meet has been seen by a real engineer before they reach your team.",
+    "description": "Two senior people own your search from first brief to first day on the job. A lead recruiter who runs sourcing, screening, and candidate care, plus a technical founder who calibrates each role and joins interviews when the stack is dense. You talk to the same humans the whole way. Every candidate you meet has been seen by a real engineer before they reach your{nbsp}team.",
     "cards": [
       {
         "name": "Viktoriya Orlik",
@@ -146,12 +150,12 @@
     ]
   },
   "cta": {
-    "title": "Ready to close your technical roles faster?",
-    "description": "Tell us about your open role. We will come back with a search plan and a realistic timeline.",
+    "title": "Ready to close your {br}technical roles faster?",
+    "description": "Tell us about your open role. We will come back with a{nbsp}search plan and a{nbsp}realistic timeline.",
     "actions": [
       {
-        "label": "Book a 20 minute call",
-        "href": "https://cal.com/apalevich/20min",
+        "label": "Book a Free Call",
+        "href": "/contact",
         "variant": "solid"
       },
       {
