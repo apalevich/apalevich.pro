@@ -12,6 +12,7 @@ import contentImg1 from "../../media/th-8/content-img-1.jpg";
 import contentImg2 from "../../media/th-8/content-img-2.jpg";
 import blogMain1 from "../../media/th-1/blog-main-1.jpg";
 import blogMain2 from "../../media/th-1/blog-main-2.jpg";
+import procommento from "../../media/th-8/procommento.png";
 
 const { hero, projects } = Astro.props;
 
@@ -24,6 +25,7 @@ const mediaImageMap = {
   "@media/th-8/content-img-2.jpg": contentImg2,
   "@media/th-1/blog-main-1.jpg": blogMain1,
   "@media/th-1/blog-main-2.jpg": blogMain2,
+  "@media/th-8/procommento.png": procommento,
 };
 ---
 
@@ -46,11 +48,11 @@ const mediaImageMap = {
         projects.map((project) => {
           const link = project.caseStudyUrl ? project.caseStudyUrl : "/contact";
           const revealLabel = project.caseStudyUrl
-            ? "Read case study"
+            ? "Open in a new tab"
             : "Start a project like this";
           const bg = resolveImage(project.image, mediaImageMap).src;
           return (
-            <a href={link} class="project-card group block">
+            <a href={link} class="project-card group block" target={project.caseStudyUrl ? "_blank" : "_self"}>
               <div
                 class="project-top"
                 style={`background-image: url('${bg}')`}>
