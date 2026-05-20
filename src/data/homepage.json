@@ -349,7 +349,11 @@
         "href": "https://www.linkedin.com/in/apalevich",
         "icon": "linkedin"
       },
-      { "label": "GitHub", "href": "https://www.github.com/", "icon": "github" }
+      {
+        "label": "GitHub",
+        "href": "https://www.github.com/apalevich",
+        "icon": "github"
+      }
     ],
     "columns": [
       {
