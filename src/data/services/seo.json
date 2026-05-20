@@ -5,8 +5,8 @@
   },
   "hero": {
     "eyebrow": "Performance & SEO",
-    "title": "Faster Sites Rank Higher and Convert More",
-    "description": "Every 100ms of load time costs you conversions. We diagnose and fix the performance and SEO issues holding your site back, with before and after data at every step.",
+    "title": "Faster Sites Rank Higher and {br-md}Convert More",
+    "description": "Every 100ms of load time costs you conversions. We diagnose and fix the performance and SEO issues holding your site back, with before and after data at{nbsp}every{nbsp}step.",
     "actions": [
       { "label": "Get a Free Audit", "href": "/contact", "variant": "solid" },
       {
@@ -17,8 +17,8 @@
     ]
   },
   "features": {
-    "title": "What We Optimize, and How We Measure It",
-    "description": "Performance work without measurement is just guessing. We set baselines first.",
+    "title": "What We Optimize, {br-md}and How We Measure{nbsp}It",
+    "description": "Performance work without measurement is just guessing. We{nbsp}set baselines{nbsp}first.",
     "cards": [
       {
         "title": "Core Web Vitals",
@@ -33,7 +33,7 @@
         "description": "Crawlability, indexation, schema markup, canonical tags, and site architecture reviewed and corrected."
       },
       {
-        "title": "JavaScript Performance",
+        "title": "JavaScript {br-only-lg}Performance",
         "description": "Bundle analysis, code splitting, and removal of render blocking scripts that make your JS stop hurting you."
       },
       {
@@ -41,7 +41,7 @@
         "description": "Caching headers, edge delivery, and TTFB improvements that speed up delivery before the browser starts."
       },
       {
-        "title": "Ongoing Monitoring",
+        "title": "Ongoing {br-only-sm}{br-only-lg}Monitoring",
         "description": "Lighthouse CI, CrUX data, and ranking tracking, so performance regressions get caught before users notice."
       }
     ]
@@ -50,15 +50,15 @@
     "title": "Measure First, Fix Second",
     "description": "We don't touch your site until we know exactly what's hurting you and by how much.",
     "bullets": [
-      "Baseline audit: Lighthouse, PageSpeed Insights, CrUX, Search Console",
-      "Prioritize fixes by ranking and conversion impact",
-      "Implement in stages, so each change can be attributed",
-      "Validate improvement in field data, not just lab scores",
+      "Baseline audit: Lighthouse, PageSpeed Insights, {br-only-sm}CrUX, {br-only-md}Search Console",
+      "Prioritize fixes by ranking and {br-only-xl}conversion impact",
+      "Implement in stages, so each change can be{nbsp}attributed",
+      "Validate improvement in field data, not just lab{nbsp}scores",
       "Deliver a report your team can act on independently"
     ],
     "action": { "label": "Start a Project", "href": "/contact" },
     "image": {
-      "src": "@media/th-8/content-img-1.jpg",
+      "src": "@media/th-8/content-img-2.jpg",
       "alt": "Web performance audit in progress",
       "width": 523,
       "height": 450
@@ -67,14 +67,22 @@
   "stats": {
     "title": "Performance that shows up in analytics",
     "items": [
-      { "value": 16, "suffix": "+", "label": "Years in Web Development" },
+      {
+        "value": 16,
+        "suffix": "+",
+        "label": "Years in {br-lg}Web{nbsp}Development"
+      },
       { "value": 100, "suffix": "+", "label": "Performance Audits Completed" },
-      { "value": 10, "suffix": "%", "label": "Min. LCP Improvement" }
+      {
+        "value": 10,
+        "suffix": "%",
+        "label": "Guaranteed {br-lg}LCP{nbsp}Improvement"
+      }
     ]
   },
   "cta": {
-    "title": "Find Out What's Slowing Your Site Down",
-    "description": "Share your URL. We'll run a free preliminary audit and tell you the top three things to fix.",
+    "title": "Find Out What's Slowing Your Site{nbsp}Down",
+    "description": "Share your URL. We'll run a free preliminary audit and tell you the top {br-md}three things to fix.",
     "actions": [
       { "label": "Get My Free Audit", "href": "/contact", "variant": "solid" },
       {

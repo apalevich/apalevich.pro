@@ -9,15 +9,19 @@
     "description": "We find and fix the bottlenecks in your APIs, databases, and infrastructure that cost you performance and money. No guesswork. We trace, measure, then fix.",
     "actions": [
       { "label": "Start a Project", "href": "/contact", "variant": "solid" },
-      { "label": "See Our Work", "href": "/projects", "variant": "outline-light" }
+      {
+        "label": "See Our Work",
+        "href": "/projects",
+        "variant": "outline-light"
+      }
     ]
   },
   "features": {
-    "title": "Where We Make the Difference",
-    "description": "Backend performance problems rarely announce themselves. We know where to look.",
+    "title": "Where We Make the{nbsp}Difference",
+    "description": "Backend performance problems rarely announce themselves. {br-sm}We{nbsp}know where to{nbsp}look.",
     "cards": [
       {
-        "title": "API Design & Optimization",
+        "title": "API Design & {br-only-lg}Optimization",
         "description": "We refactor bloated endpoints, reduce over fetching, and cut response times without breaking contracts."
       },
       {
@@ -25,7 +29,7 @@
         "description": "Slow queries, missing indexes, N+1 problems. We find and fix them with measurable results."
       },
       {
-        "title": "Caching Strategy",
+        "title": "Caching {br-only-lg}Strategy",
         "description": "Redis, CDN, and application layer caching done right, so you stop hitting the database unnecessarily."
       },
       {
@@ -43,14 +47,14 @@
     ]
   },
   "approach": {
-    "title": "Fix First, Refactor Second",
-    "description": "We prioritize impact. The changes that matter most get done first.",
+    "title": "Fix First, {br-lg}Refactor Second",
+    "description": "We prioritize impact. The changes that matter most get done{nbsp}first.",
     "bullets": [
-      "Profile the system before touching any code",
+      "Profile the system before touching any{nbsp}code",
       "Identify the top three throughput or latency bottlenecks",
-      "Fix in order of impact, not order of preference",
-      "Validate each change with before and after metrics",
-      "Document what was changed and why for your team"
+      "Fix in order of business impact, not order of{nbsp}preference",
+      "Validate each change with before and after{nbsp}metrics",
+      "Document what was changed and why for your{nbsp}team"
     ],
     "action": { "label": "Start a Project", "href": "/contact" },
     "image": {
@@ -61,19 +65,23 @@
     }
   },
   "stats": {
-    "title": "Infrastructure that holds under pressure",
+    "title": "Infrastructure {br-only-xl}that holds under{nbsp}pressure",
     "items": [
       { "value": 12, "suffix": "+", "label": "Years in Backend Engineering" },
       { "value": 60, "suffix": "+", "label": "Infrastructure Projects" },
-      { "value": 40, "suffix": "%", "label": "Avg. API Latency Reduction" }
+      { "value": 30, "suffix": "%", "label": "Avg. API Latency Reduction" }
     ]
   },
   "cta": {
-    "title": "Stop Paying for Slow Infrastructure",
+    "title": "Stop Paying for {br-sm}Slow Infrastructure",
     "description": "Share your stack and symptoms. We'll tell you where to look first.",
     "actions": [
       { "label": "Get in Touch", "href": "/contact", "variant": "solid" },
-      { "label": "View Our Portfolio", "href": "/projects", "variant": "outline-light" }
+      {
+        "label": "View Our Portfolio",
+        "href": "/projects",
+        "variant": "outline-light"
+      }
     ],
     "decorations": {
       "dot": "/assets/img/elements/home-8-dot-shape-6.svg"

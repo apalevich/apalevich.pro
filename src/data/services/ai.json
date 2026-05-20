@@ -6,7 +6,7 @@
   "hero": {
     "eyebrow": "AI Integration",
     "title": "Add AI to Your Product That Actually Works",
-    "description": "We integrate Claude, GPT, and custom AI pipelines into production applications. You get working features, not slide decks about what AI could do.",
+    "description": "We integrate Claude, GPT, and custom AI pipelines into production applications. You get working features, not slide decks about what AI could{nbsp}do.",
     "actions": [
       { "label": "Start a Project", "href": "/contact", "variant": "solid" },
       {
@@ -17,8 +17,8 @@
     ]
   },
   "features": {
-    "title": "What We Integrate and Why It Matters",
-    "description": "Every AI feature we ship is tied to a specific user outcome or business metric.",
+    "title": "What We Integrate and {br-sm}Why It Matters",
+    "description": "Every AI feature we ship is tied to a specific user outcome or business{nbsp}metric.",
     "cards": [
       {
         "title": "Claude API Integration",
@@ -67,7 +67,7 @@
   "stats": {
     "title": "AI integration without the hype",
     "items": [
-      { "value": 50, "suffix": "+", "label": "AI Features Shipped" },
+      { "value": 50, "suffix": "+", "label": "AI Features {br-md}Shipped" },
       { "value": 15, "suffix": "+", "label": "LLM Providers We Work With" },
       {
         "value": 12,
@@ -77,8 +77,8 @@
     ]
   },
   "cta": {
-    "title": "Turn Your AI Idea Into a Shipped Feature",
-    "description": "Tell us what you want AI to do in your product. We'll tell you if it's feasible and what it will take.",
+    "title": "Turn Your AI Idea Into {br-sm}a{nbsp}Shipped Feature",
+    "description": "Tell us what you want AI to do in your product. {br}We'll tell you if it's feasible and what it will take.",
     "actions": [
       { "label": "Get in Touch", "href": "/contact", "variant": "solid" },
       {
