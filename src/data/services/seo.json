@@ -76,7 +76,7 @@
       {
         "value": 10,
         "suffix": "%",
-        "label": "Guaranteed {br-lg}LCP{nbsp}Improvement"
+        "label": "Typical {br-lg}LCP{nbsp}Improvement"
       }
     ]
   },
