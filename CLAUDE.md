@@ -4,145 +4,243 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is a personal portfolio/marketing website built with **Astro** v5 based on the Astroship starter template. It's customized with a personal branding (APalevich.Pro) for showcasing technical solutions for marketing leaders.
+This is an Astro-based marketing website with agency template design, using Tailwind CSS for styling. The site features multiple sections including hero, stats, services, pricing, team, blog, and CTA blocks. It includes JavaScript for interactive features (menu, countdown, counter-up animations).
 
-**Key Site Details:**
-- Site URL: https://apalevich.pro
-- Built with: Astro, TailwindCSS, MDX
-- Package Manager: npm (required — pnpm and yarn are blocked by preinstall hook)
-- Node/npm requirement: `.npmrc` has `engine-strict=true`
+**Tech Stack:**
 
-## Common Commands
+- **Framework:** Astro 6.3.1
+- **Styling:** Tailwind CSS 4.2.4 (bundled via @tailwindcss/vite, not CLI)
+- **Interactivity:** React 19 islands via `@astrojs/react` (used for stateful UI like the contact form)
+- **Node:** >=22.12.0
+- **Module Type:** ES modules
+- **TypeScript:** Strict mode (via `astro/tsconfigs/strict`)
+- **Code Formatting:** Prettier (2-space indentation, configured in `.prettierrc.json`)
 
-```bash
-# Development
-npm run dev          # Start dev server (http://localhost:4321)
-npm run build        # Production build
-npm run preview      # Preview built site locally
+## Development Commands
 
-# Package management
-npm install          # Install dependencies
+| Command                   | Purpose                                           |
+| ------------------------- | ------------------------------------------------- |
+| `npm run dev`             | Start local dev server at `http://localhost:4321` |
+| `npm run build`           | Build production site to `./dist/`                |
+| `npm run preview`         | Preview built site locally before deployment      |
+| `npm run astro`           | Run Astro CLI directly                            |
+| `npm run astro -- --help` | View Astro CLI documentation                      |
 
-# Astro utilities
-npm run astro add    # Add new Astro integrations
-npm run astro [cmd]  # Run other Astro CLI commands
-```
-
-Dev server automatically tries different ports if 4321 is in use.
-
-## Project Architecture
-
-### Directory Structure
+## Project Structure
 
 ```
-src/
-├── components/         # Shared components
-├── layouts/            # Layout components
-├── pages/              # Website pages (file-based routing)
-├── content/            # Content collections
-│   ├── blog/          # Blog posts (markdown/mdx)
-│   ├── team/          # Team member data
-│   ├── config.ts      # Content collection schemas
-│   └── LandingCopy.ts # Landing page copy constants
-├── images/            # Image assets and icons
-├── utils/             # Utility functions
-├── interfaces/        # TypeScript interfaces
-├── consts.ts          # Global constants (SITE_TITLE, SITE_DESCRIPTION)
-└── env.d.ts           # Astro environment type declarations
+design-upgrade-2026/
+├── src/
+│   ├── pages/
+│   │   ├── index.astro          # Homepage entry point
+│   │   ├── contact.astro        # /contact (form + direct channels)
+│   │   ├── it-recruitment.astro # Static service page
+│   │   └── [service].astro      # Dynamic service pages (frontend-development, backend-development, ai, design, seo)
+│   ├── components/
+│   │   ├── layout/
+│   │   │   └── BaseLayout.astro # Main layout wrapper (handles <head>, globals)
+│   │   ├── site/
+│   │   │   ├── SiteHeader.astro # Navigation header
+│   │   │   └── SiteFooter.astro # Footer
+│   │   ├── home/
+│   │   │   ├── HeroSection.astro
+│   │   │   ├── StatsSection.astro
+│   │   │   ├── ContentSplitSection.astro
+│   │   │   ├── ServicesSection.astro
+│   │   │   ├── PricingSection.astro        # Currently disabled (commented out in index.astro)
+│   │   │   ├── TeamSection.astro
+│   │   │   ├── BlogSection.astro           # Currently disabled (commented out in index.astro)
+│   │   │   └── CtaSection.astro
+│   │   ├── service/             # Sections shared by service pages
+│   │   │   ├── ServiceHeroSection.astro
+│   │   │   ├── ServiceFeaturesSection.astro
+│   │   │   ├── ProcessSection.astro
+│   │   │   └── FaqSection.astro
+│   │   ├── contact/
+│   │   │   └── ContactForm.tsx  # React island, 4 submission states
+│   │   └── ui/
+│   │       ├── Button.astro
+│   │       ├── Icon.astro
+│   │       ├── Section.astro
+│   │       └── SectionHeading.astro
+│   ├── data/
+│   │   ├── homepage.json        # Centralized homepage content
+│   │   ├── contact.json         # /contact hero, form labels/states, direct channels
+│   │   ├── services/*.json      # Per-service page content
+│   │   └── refined_copy.json    # Legacy/unused copy reference
+│   ├── utils/
+│   │   └── images.ts            # Shared image resolution helper
+│   └── styles/
+│       └── global.css
+├── public/
+│   ├── assets/
+│   │   ├── img/                 # Images and SVGs
+│   │   └── js/                  # JavaScript for interactivity
+│   └── favicon.webp
+├── design-requirements/         # Design system docs and extraction files
+├── .env.example                 # Documents PUBLIC_BACKEND_BASE_URL
+├── tailwind.config.mjs          # Custom colors, fonts, spacing
+├── astro.config.mjs             # Registers @astrojs/react + Tailwind Vite plugin
+├── tsconfig.json
+└── package.json
 ```
 
-**Note:** The project uses a flat/legacy structure. Parentheses-based route groups `(components)/`, `(layouts)/`, `(pages)/` were considered for future migration but are not currently implemented.
+## Key Architecture Patterns
 
-### Core Integrations & Features
+### Data-Driven Sections
 
-1. **TailwindCSS** - Utility-first CSS
-   - Custom color palette: `primary` (dark red) and `secondary` (teal)
-   - Custom fonts: Bricolage Grotesque Variable, Inter Variable
-   - Typography plugin enabled
+Pages are built from JSON in `src/data/`:
 
-2. **Content Collections** (Astro 3+)
-   - `blog` - Blog posts with draft status, tags, categories
-   - `team` - Team member profiles
-   - Schema validation via Zod
+- `homepage.json` powers `index.astro` and feeds shared nav/footer data to every other page
+- `contact.json` powers `contact.astro` (hero, form labels/states, channel links)
+- `services/<slug>.json` powers `[service].astro` and `it-recruitment.astro`
 
-3. **MDX** - Markdown with JSX components in pages
-4. **Sitemap** - Auto-generated XML sitemap
-5. **Astro Icons** - Icon library integration
+Each section component accepts data props and renders content dynamically. Modify the relevant JSON to update content; no component code change is usually needed.
 
-### Path Aliases
+#### Copy tokens (line breaks & non-breaking spaces)
 
-Configured in `tsconfig.json` for cleaner imports:
+Prose strings in `src/data/*.json` are rendered through `renderCopy()` (`src/utils/copy.ts`), which HTML-escapes the input and then expands a whitelisted set of tokens into HTML. Use these to control wrapping per breakpoint without touching components:
+
+| Token | Effect |
+| --- | --- |
+| `{br}` | Always-on line break |
+| `{br-sm}` / `{br-md}` / `{br-lg}` / `{br-xl}` | Break visible at this breakpoint and up |
+| `{br-below-sm}` / `{br-below-md}` / `{br-below-lg}` / `{br-below-xl}` | Break visible only below this breakpoint |
+| `{br-only-sm}` / `{br-only-md}` / `{br-only-lg}` / `{br-only-xl}` | Break visible only within this single breakpoint range |
+| `{nbsp}` | Non-breaking space |
+
+Example: `"We Build Web Apps{br-lg}That Convert"` forces a wrap only on `lg+` viewports. Token names are case-sensitive. Unknown tokens render literally — add new ones to the map in `src/utils/copy.ts`.
+
+### Component Layers
+
+- **Layout components** (`BaseLayout`): Wrap pages, manage `<head>`, inject global scripts
+- **Site components** (`SiteHeader`, `SiteFooter`): Global reusable parts
+- **Section components** (`home/*`, `service/*`): Page-specific sections that consume data
+- **Feature components** (`contact/*`): Page-specific interactive units (e.g., React islands)
+- **UI components** (`Button`, `Section`, `Icon`, `SectionHeading`): Low-level reusable elements
+
+### React Islands
+
+React (`@astrojs/react`) is registered in `astro.config.mjs` and used only where state matters. Today that means `src/components/contact/ContactForm.tsx`, mounted in `contact.astro` with `client:load`. Pattern when adding new islands:
+
+1. Create the `.tsx` component under a feature folder (e.g., `src/components/<feature>/`)
+2. Import it in an `.astro` page and add a `client:*` directive (`client:load`, `client:idle`, `client:visible`)
+3. Pass plain serializable props only (strings, numbers, objects, arrays) — Astro serializes them for hydration
+
+Prefer pure Astro for static UI; reach for React only when local state, effects, or event-driven UI is required.
+
+### Styling System
+
+Tailwind extends configured in `tailwind.config.mjs`:
+
+**Custom Colors:**
+
+- `ColorBlack: #121212`
+- `ColorDark: #0A102F`
+- `ColorLight: #FDFBF9`
+- `ColorLime: #C1FF00` / `ColorLimeAlt: #A6FF00`
+- `ColorPurple: #6B3FF2`
+
+**Custom Fonts:**
+
+- `Inter` (body)
+- `Public Sans` (headings)
+
+**Border Radius:** `xs: 3px`, `sm: 5px`, `md: 10px`
+
+**Responsive Container Padding:** DEFAULT `1rem`, `sm: 1.5rem`, `lg: 2rem`, `xl: 2.5rem`
+
+### JavaScript Interactivity
+
+Scripts in `/public/assets/js/` are loaded via `scripts` prop in `BaseLayout`:
+
+- `menu.js` - Mobile navigation toggle (requires: `mobile-menu-trigger`, `menu-block`, `menu-overlay` selectors)
+- `countdown.js` - Countdown timer functionality
+- `counterup.js` - Animated counter animations (requires: `data-module="countup"` attribute)
+- `main.js` - General site interactivity
+
+**Important:** Preserve these selector names when refactoring HTML—they're hardcoded in the scripts:
+
+- `.mobile-menu-trigger` - Mobile menu button
+- `.menu-block` - Menu container
+- `.menu-overlay` - Menu overlay backdrop
+- `[data-module="countup"]` - Counter animation elements
+
+## Styling Conventions
+
+- Use Astro's scoped `<style>` blocks in components—they're automatically scoped to that component only
+- Prefer Tailwind utility classes for layout and spacing
+- Custom classes and base styles should be defined in `src/styles/global.css`
+- Media queries use Tailwind's responsive prefixes (`md:`, `lg:`, `xl:`)
+- Dark mode sections use `bg-ColorDark` with `text-ColorLight`
+- Two-space indentation (enforced by Prettier)
+
+## Code Organization & DRY Principle
+
+### Utility Functions
+
+Extract reusable logic into `src/utils/` to avoid duplication across components.
+
+**Example:** Image resolution utility (`src/utils/images.ts`)
+
+When multiple components need the same helper function, centralize it:
+
 ```typescript
-@lib/*        → src/lib/*
-@utils/*      → src/utils/*
-@components/* → src/components/*
-@layouts/*    → src/layouts/*
-@assets/*     → src/assets/*
-@images/*     → src/images/*
-@pages/*      → src/pages/*
+// src/utils/images.ts
+export function resolveImage(src: string, mediaMap: Record<string, any>): any {
+  return mediaMap[src] ?? src;
+}
 ```
 
-### Routing
+Then import and use in components:
 
-Astro routes are file-based:
-- Files in `src/pages/` become routes
-- `src/pages/index.astro` → `/`
-- `src/pages/about.astro` → `/about`
-- Dynamic routes use `[slug]` pattern; blog uses `[...slug].astro` for nested paths
+```astro
+---
+import { resolveImage } from "../../utils/images";
 
-## Configuration Files
+const mediaImageMap = { /* component-specific mappings */ };
+---
+<Picture src={resolveImage(post.image, mediaImageMap)} ... />
+```
 
-- **astro.config.mjs** - Astro configuration with integrations and site URL (`https://apalevich.pro`)
-- **tailwind.config.mjs** - TailwindCSS customization (colors, fonts)
-- **tsconfig.json** - TypeScript config with strict null checks and path aliases
-- **.prettierrc.json** - Code formatting (2-space tabs, no semicolons on same line)
+Each component manages its own `mediaImageMap` (component-specific data), but the resolution logic is shared.
 
-## Code Style
+### When to Extract
 
-- **Formatting**: Prettier with custom config (2-space indentation, `bracketSameLine: true`)
-- **TypeScript**: Strict null checks enabled
-- **No ESLint/Stylelint**: Not configured in this project
+- **Same function in 2+ files?** → Extract to `src/utils/`
+- **Same import pattern in 3+ places?** → Consider a helper or constant
+- **Logic that doesn't depend on component state?** → Good candidate for utils
 
-## Interactive Components & Islands
+## Development Workflow
 
-**React Islands:** If adding interactive React components, you'll need to:
-1. Install React integration: `npm run astro add react`
-2. Create `.tsx` or `.jsx` files in `src/components/`
-3. Use Astro's client directives to hydrate components:
-   - `client:load` - Hydrate immediately
-   - `client:idle` - Hydrate when browser is idle
-   - `client:visible` - Hydrate when element enters viewport
-   - `client:media="(max-width: 768px)"` - Hydrate on media query match
-4. Example: `<MyComponent client:idle />`
+1. **Content updates:** Modify the relevant JSON in `src/data/` → changes reflect instantly in dev server
+2. **Component updates:** Edit `.astro` or `.tsx` files, dev server hot-reloads
+3. **Styling:** Update `tailwind.config.mjs` for new tokens or global CSS
+4. **Adding new homepage sections:** Create component in `src/components/home/`, import in `index.astro`, add data to `homepage.json`
+5. **Adding new pages:** Create `.astro` under `src/pages/`, source data from a dedicated JSON in `src/data/`, reuse `BaseLayout` + `SiteHeader` + `SiteFooter`
+6. **Adding React islands:** Place `.tsx` under a feature folder in `src/components/`, mount with `client:*` directive, pass serializable props only
+7. **Build for production:** `npm run build` generates optimized site in `dist/`
 
-**Environment Variables:** Access via `import.meta.env.PROD` for production detection or define custom env vars in `.env` files.
+## Environment Variables
 
-**Inline Scripts:** For vanilla JS interactivity, use `<script>` tags in `.astro` files. The GTM initialization in `Layout.astro` shows the pattern.
+Astro exposes vars prefixed with `PUBLIC_` to client code. Document any new ones in `.env.example`.
 
-## Important Known Issues & Patterns
+| Variable                  | Used by              | Purpose                                                                                                |
+| ------------------------- | -------------------- | ------------------------------------------------------------------------------------------------------ |
+| `PUBLIC_BACKEND_BASE_URL` | `contact.astro`      | Base URL of the backend that receives contact form submissions. Form posts JSON to `${BASE_URL}/leads`. Falls back to `/api/contact` (404 on the static site) when unset. |
 
-### GithubWidget Component
-The `src/components/GithubWidget.astro` component has optional chaining in script blocks. If modifying this file, ensure proper null-checking instead of using `?.` on assignment targets (e.g., `document.getElementById("message")?.innerHTML =` is invalid syntax).
+## Build & Deployment Notes
 
-## Content Management
+- Astro pre-renders all pages to static HTML by default
+- Production site lives in `./dist/` after build
+- Environment: Node.js >=22.12.0 required
+- No database or backend required (fully static)
+- `npm run build` is the primary validation step; always run before pushing changes
 
-### Adding Blog Posts
-1. Create `.md` or `.mdx` file in `src/content/blog/`
-2. Include required frontmatter: `draft`, `title`, `snippet`, `image` (src/alt), `publishDate`, `author`, `category`, `tags`
-3. Query with `getCollection('blog')` in pages
+## Additional Resources
 
-### Adding Team Members
-1. Create file in `src/content/team/`
-2. Include: `draft`, `name`, `title`, `avatar` (src/alt), `publishDate`
-
-## Deployment
-
-The project includes deployment utilities:
-- `deploy.sh` - Deployment script
-- `rollback.sh` - Rollback script
-
-Reference these for deployment procedures.
-
-## Static Assets
-
-Place images and static files in the `public/` directory. They're served at the root of the site.
+- **AGENTS.md** - Repository guidelines for component organization, naming conventions, and selector preservation
+- **src/data/homepage.json** - Complete homepage data structure with all configurable content keys
+- **src/data/contact.json** - Contact page hero, form labels/states, and direct channel links
+- **src/data/services/\*.json** - Per-service page content for `[service].astro` and `it-recruitment.astro`
+- **.env.example** - Template for required environment variables

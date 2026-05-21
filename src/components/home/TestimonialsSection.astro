@@ -1,0 +1,76 @@
+---
+import { Picture } from "astro:assets";
+import Section from "../ui/Section.astro";
+import SectionHeading from "../ui/SectionHeading.astro";
+import { resolveImage } from "../../utils/images";
+import { renderCopy } from "../../utils/copy";
+
+import portraitKsenia from "../../media/clients/portrait_ksenia.jpeg";
+import portraitYoussef from "../../media/clients/portrait_youssef.jpeg";
+import portraitLaszlo from "../../media/clients/portrait_laszlo.jpeg";
+import portraitKirill from "../../media/clients/portrait_kirill.jpeg";
+import logoOgilvy from "../../media/clients/logo_ogilvy.svg";
+import logoUnbiased from "../../media/clients/unbiased.svg";
+
+const { testimonials, dark = false } = Astro.props;
+
+const mediaImageMap = {
+  "@media/clients/portrait_ksenia.jpeg": portraitKsenia,
+  "@media/clients/portrait_youssef.jpeg": portraitYoussef,
+  "@media/clients/portrait_laszlo.jpeg": portraitLaszlo,
+  "@media/clients/portrait_kirill.jpeg": portraitKirill,
+  "@media/clients/logo_ogilvy.svg": logoOgilvy,
+  "@media/clients/unbiased.svg": logoUnbiased,
+};
+---
+
+<Section tone={dark ? 'dark' : 'light'}>
+  <div class="container py-16 lg:py-20">
+    <SectionHeading
+      title={testimonials.title}
+      align="center"
+      tone={dark ? 'light' : 'dark'}
+    />
+    <div
+      class="mt-12 grid gap-4 md:grid-cols-2 md:grid-rows-3 lg:grid-cols-4 lg:grid-rows-2">
+      {
+        testimonials.cards.map((card) => (
+          <div
+            class:list={[
+              card.cardStyles,
+              "flex flex-col gap-8 rounded-md border p-6",
+              dark ? "border-white/10 bg-white/5" : "border-ColorBlack/10 bg-white",
+            ]}>
+            {card.logo ? (
+              <img
+                src={resolveImage(card.logo, mediaImageMap).src}
+                alt={card.company}
+                loading="lazy"
+                decoding="async"
+                class="h-8 w-fit"
+              />
+            ) : null}
+            <blockquote
+              class:list={["grow", card.quoteStyles]}
+              set:html={`&ldquo;${renderCopy(card.quote)}&rdquo;`}
+            />
+            <div class="flex gap-3">
+              <Picture
+                src={resolveImage(card.photo, mediaImageMap)}
+                alt={card.name}
+                width={36}
+                height={36}
+                formats={["avif", "webp"]}
+                class="my-auto h-9 w-9 rounded-full object-cover"
+              />
+              <div class="flex flex-col">
+                <cite class="text-sm font-medium not-italic">{card.name}</cite>
+                <span class:list={["text-sm", dark ? 'text-ColorLight/60' : 'text-ColorBlack/60']}>{card.company}</span>
+              </div>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</Section>

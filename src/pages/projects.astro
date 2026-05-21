@@ -1,0 +1,27 @@
+---
+import BaseLayout from "../components/layout/BaseLayout.astro";
+import SiteHeader from "../components/site/SiteHeader.astro";
+import SiteFooter from "../components/site/SiteFooter.astro";
+import ProjectsSection from "../components/projects/ProjectsSection.astro";
+import TestimonialsSection from "../components/home/TestimonialsSection.astro";
+import CtaSection from "../components/home/CtaSection.astro";
+import nav from "../data/homepage.json";
+import data from "../data/projects.json";
+---
+
+<BaseLayout
+  title={data.meta.title}
+  description={data.meta.description}
+  scripts={["/assets/js/menu.js", "/assets/js/main.js"]}>
+  <div class="relative z-1 bg-ColorLight">
+    <SiteHeader navigation={nav.navigation} theme="light" />
+
+    <main class="relative overflow-hidden">
+      <ProjectsSection hero={data.hero} projects={data.projects} />
+      <TestimonialsSection testimonials={nav.testimonials} dark />
+      <CtaSection cta={data.cta} />
+    </main>
+
+    <SiteFooter footer={nav.footer} logo={nav.navigation.logo} />
+  </div>
+</BaseLayout>

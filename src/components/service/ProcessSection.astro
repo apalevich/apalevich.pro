@@ -1,0 +1,47 @@
+---
+import Section from "../ui/Section.astro";
+import SectionHeading from "../ui/SectionHeading.astro";
+import { renderCopy } from "../../utils/copy";
+
+const { process } = Astro.props;
+---
+
+<Section tone="light">
+  <div class="container py-16 lg:py-20">
+    <div class="mx-auto mb-12 max-w-[700px] xl:mb-16">
+      <SectionHeading
+        title={process.title}
+        description={process.description}
+        tone="dark"
+        align="center"
+      />
+    </div>
+
+    <ol class="relative flex flex-col gap-0">
+      {
+        process.cards.map((step, index) => (
+          <li class="group relative flex gap-6 pb-10 last:pb-0">
+            {/* Vertical connector line */}
+            <div class="relative flex flex-col items-center">
+              <div class="flex h-11 w-11 md:h-16 md:w-16 shrink-0 items-center justify-center rounded-full bg-ColorBlack text-ColorLime font-semibold text-sm z-10">
+                {String(index + 1).padStart(2, "0")}
+              </div>
+              {index < process.cards.length - 1 && (
+                <div class="mt-2 flex-1 w-px bg-ColorBlack/15" />
+              )}
+            </div>
+
+            {/* Content */}
+            <div class="pb-2 pt-2.5 md:flex md:gap-16 md:w-full">
+              <h3
+                class="mb-2 font-PublicSans text-xl font-bold leading-tight text-ColorBlack md:mb-0 md:w-64 md:shrink-0"
+                set:html={renderCopy(step.title)}
+              />
+              <p class="text-ColorDark/70 leading-6" set:html={renderCopy(step.description)} />
+            </div>
+          </li>
+        ))
+      }
+    </ol>
+  </div>
+</Section>

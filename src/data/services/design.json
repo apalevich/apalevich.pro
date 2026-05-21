@@ -1,0 +1,98 @@
+{
+  "meta": {
+    "title": "UI/UX Design Services | Interfaces Built for Real Users | APalevich.Pro",
+    "description": "We design web interfaces that are easy to use and built to convert. User research, wireframes, high fidelity design, and design systems from one team."
+  },
+  "hero": {
+    "eyebrow": "UI/UX Design",
+    "title": "Interfaces People Use Without Thinking",
+    "description": "We design web products that feel obvious to users and look credible to customers. From research to final screens, every decision is grounded in how real people actually{nbsp}behave.",
+    "actions": [
+      { "label": "Start a Project", "href": "/contact", "variant": "solid" },
+      {
+        "label": "See Our Work",
+        "href": "/projects",
+        "variant": "outline-light"
+      }
+    ]
+  },
+  "features": {
+    "title": "Design That Does More {br-md}Than Look Good",
+    "description": "Good interface design reduces support tickets, lifts conversion, and makes your product easier to{nbsp}sell.",
+    "cards": [
+      {
+        "title": "User Research",
+        "description": "We talk to your users before designing anything, so we're solving the real problem, not the assumed one."
+      },
+      {
+        "title": "Information Architecture",
+        "description": "Logical navigation and content hierarchy, so users always know where they are and what to do next."
+      },
+      {
+        "title": "Wireframes & Prototypes",
+        "description": "Low and high fidelity wireframes that validate ideas before we invest in final visual design."
+      },
+      {
+        "title": "High Fidelity UI Design",
+        "description": "Polished screens ready for production, designed in Figma with pixel precision and responsive breakpoints."
+      },
+      {
+        "title": "Design Systems",
+        "description": "Reusable component libraries that keep your product visually consistent as it grows."
+      },
+      {
+        "title": "Handoff & Dev Support",
+        "description": "We stay involved through implementation, not just during design, so the built product matches the mockup."
+      }
+    ]
+  },
+  "approach": {
+    "title": "Design Decisions, {br}Not Design Opinions",
+    "description": "Every recommendation we make has a reason tied to user behavior or business{nbsp}outcome.",
+    "bullets": [
+      "Start with user goals, {br-only-md}not{nbsp}aesthetic preferences",
+      "Map flows before designing individual screens",
+      "Iterate on structure before committing to visual style",
+      "Test clickable prototypes with real users when stakes are{nbsp}high",
+      "Maintain a living design system, not{nbsp}a{nbsp}static{nbsp}file"
+    ],
+    "action": { "label": "Start a Project", "href": "/contact" },
+    "image": {
+      "src": "@media/th-8/content-img-2.jpg",
+      "alt": "UI/UX design process",
+      "width": 523,
+      "height": 450
+    }
+  },
+  "stats": {
+    "title": "Design that moves metrics",
+    "items": [
+      {
+        "value": 12,
+        "suffix": "+",
+        "label": "Years {br-only-md}{br-only-lg}Designing {br-xl}Digital {br-only-md}{br-only-lg}Products"
+      },
+      {
+        "value": 50,
+        "suffix": "+",
+        "label": "Products Designed {br-md}End to{nbsp}End"
+      },
+      { "value": 7, "suffix": "+", "label": "Industries{br-md}Served" }
+    ]
+  },
+  "cta": {
+    "title": "Design That Earns User{nbsp}Trust",
+    "description": "Share what you're building. We'll tell you where the user experience is{nbsp}breaking{nbsp}down.",
+    "actions": [
+      { "label": "Get in Touch", "href": "/contact", "variant": "solid" },
+      {
+        "label": "View Our Portfolio",
+        "href": "/projects",
+        "variant": "outline-light"
+      }
+    ],
+    "decorations": {
+      "dot": "/assets/img/elements/home-8-dot-shape-6.svg"
+    }
+  }
+}

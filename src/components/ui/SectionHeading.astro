@@ -1,0 +1,42 @@
+---
+import { renderCopy } from "../../utils/copy";
+
+const {
+    title,
+    description = "",
+    align = "left",
+    tone = "dark",
+    class: className = "",
+} = Astro.props;
+
+const alignClass =
+    {
+        left: "text-left",
+        center: "text-center mx-auto",
+    }[align] ?? "text-left";
+
+const titleTone =
+    tone === "light"
+        ? "text-ColorLight"
+        : tone === "accent"
+          ? "text-white"
+          : "text-ColorBlack";
+const descriptionTone =
+    tone === "light"
+        ? "text-white/70"
+        : tone === "accent"
+          ? "text-white/80"
+          : "text-ColorDark/80";
+---
+
+<div class:list={[alignClass, className]}>
+    <h2
+        class={`font-PublicSans text-4xl font-bold leading-[1.14] md:text-5xl xl:text-[56px] ${titleTone}`}
+        set:html={renderCopy(title)}
+    />
+    {
+        description ? (
+            <p class={`mt-5 max-w-[760px] ${descriptionTone}`} set:html={renderCopy(description)} />
+        ) : null
+    }
+</div>

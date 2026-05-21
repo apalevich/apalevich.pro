@@ -1,0 +1,78 @@
+{
+  "meta": {
+    "title": "Contact Us | Senior Engineers, Fast Replies | APalevich.Pro",
+    "description": "Tell us about your project. We reply in a few hours, not a few days. First conversation is free and goes straight to a senior engineer."
+  },
+  "hero": {
+    "eyebrow": "Contact",
+    "title": "Tell Us About Your Project",
+    "description": "First conversation is free and goes straight to a senior engineer. We reply in a few hours."
+  },
+  "form": {
+    "fields": {
+      "name": {
+        "label": "Your name",
+        "placeholder": "Jane Doe",
+        "required": true,
+        "error": "Tell us what to call you"
+      },
+      "contact": {
+        "label": "Email or phone",
+        "placeholder": "john@company.com",
+        "required": true,
+        "help": "However you want us to reach back",
+        "error": "Add an email or phone so we can reply"
+      },
+      "website": {
+        "label": "Website",
+        "placeholder": "https://your-site.com",
+        "required": false,
+        "help": "Optional. Helps us prep before the call."
+      },
+      "message": {
+        "label": "What are you building?",
+        "placeholder": "A few sentences about the project, stack, timeline, and budget.",
+        "required": true,
+        "error": "Share a bit about the project"
+      }
+    },
+    "submit": {
+      "idle": "Send message",
+      "sending": "Sending…",
+      "retry": "Try again"
+    },
+    "success": {
+      "title": "Message received",
+      "body": "Thanks. A senior engineer will read this and reply within a few hours.",
+      "again": "Send another"
+    },
+    "error": {
+      "title": "Message did not go through",
+      "body": "Try again in a moment, or reach us directly on WhatsApp or Telegram."
+    }
+  },
+  "channels": {
+    "title": "Prefer a direct line?",
+    "description": "Pick whichever feels easiest. We read all of them.",
+    "items": [
+      {
+        "label": "LinkedIn",
+        "handle": "in/apalevich",
+        "href": "https://www.linkedin.com/in/apalevich/",
+        "icon": "linkedin"
+      },
+      {
+        "label": "WhatsApp",
+        "handle": "+995 511 106 964",
+        "href": "https://api.whatsapp.com/send/?phone=995511106964",
+        "icon": "whatsapp"
+      },
+      {
+        "label": "Telegram",
+        "handle": "@apalevich",
+        "href": "https://t.me/apalevich",
+        "icon": "telegram"
+      }
+    ]
+  }
+}

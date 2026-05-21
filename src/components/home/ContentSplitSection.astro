@@ -1,0 +1,85 @@
+---
+import { Picture } from "astro:assets";
+import Button from '../ui/Button.astro';
+import Icon from '../ui/Icon.astro';
+import Section from '../ui/Section.astro';
+import SectionHeading from '../ui/SectionHeading.astro';
+import { resolveImage } from "../../utils/images";
+import { renderCopy } from "../../utils/copy";
+
+import contentImg1 from "../../media/th-8/content-img-1.jpg";
+import contentImg2 from "../../media/th-8/content-img-2.jpg";
+import contentCard1 from "../../media/th-8/content-card-1.png";
+import contentCard2 from "../../media/th-8/content-card-2.png";
+import contentCard3 from "../../media/th-8/content-card-3.png";
+
+const { block, reverse = false, dark = false, checklist = false } = Astro.props;
+const items = block.bullets ?? block.points ?? [];
+
+const mediaImageMap = {
+  "@media/th-8/content-img-1.jpg": contentImg1,
+  "@media/th-8/content-img-2.jpg": contentImg2,
+  "@media/th-8/content-card-1.png": contentCard1,
+  "@media/th-8/content-card-2.png": contentCard2,
+  "@media/th-8/content-card-3.png": contentCard3,
+};
+---
+<Section tone={dark ? 'dark' : 'light'}>
+  <div class="container py-16 lg:py-20">
+    <div class="grid items-center gap-10 md:grid-cols-2 lg:gap-24 xl:gap-60">
+      <div class:list={reverse ? 'order-1 md:order-2' : 'order-1'}>
+        <SectionHeading title={block.title} description={block.description || ''} tone={dark ? 'light' : 'dark'} />
+        {block.paragraphs ? (
+          <div class="mt-5 space-y-4">
+            {block.paragraphs.map((paragraph) => <p set:html={renderCopy(paragraph)} />)}
+          </div>
+        ) : null}
+
+        {items.length > 0 ? (
+          <ul class="mt-6 grid gap-4 font-semibold lg:grid-cols-2">
+            {items.map((bullet) => (
+              <li class="flex items-start gap-3">
+                <Icon name={checklist ? 'check' : 'badge'} class="mt-1 h-5 w-5 shrink-0 text-ColorPurple" />
+                <span set:html={renderCopy(bullet)} />
+              </li>
+            ))}
+          </ul>
+        ) : null}
+
+        {block.action ? (
+          <div class="mt-8 lg:mt-[50px]">
+            <Button href={block.action.href} variant="solid">{block.action.label}</Button>
+          </div>
+        ) : null}
+      </div>
+
+      {block.image ? (
+        <div class:list={['relative order-2', reverse ? 'md:order-1' : 'md:order-2']}>
+          <Picture
+            src={resolveImage(block.image.src, mediaImageMap)}
+            alt={block.image.alt}
+            widths={[block.image.width, block.image.width * 2]}
+            formats={["avif", "webp"]}
+            width={block.image.width}
+            height={block.image.height}
+            class="h-auto w-full rounded-md"
+          />
+          {block.image.overlay ? (
+            <Picture
+              src={resolveImage(block.image.overlay, mediaImageMap)}
+              alt=""
+              widths={[304]}
+              formats={["avif", "webp"]}
+              width={304}
+              height={104}
+              class:list={[
+                'pointer-events-none absolute hidden xl:inline-block',
+                reverse ? 'bottom-6 left-full -translate-x-1/2' : 'bottom-6 left-0 -translate-x-1/2'
+              ]}
+            />
+          ) : null}
+        </div>
+      ) : null}
+    </div>
+  </div>
+</Section>

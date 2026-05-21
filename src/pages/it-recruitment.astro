@@ -1,0 +1,42 @@
+---
+import BaseLayout from "../components/layout/BaseLayout.astro";
+import SiteHeader from "../components/site/SiteHeader.astro";
+import SiteFooter from "../components/site/SiteFooter.astro";
+import ServiceHeroSection from "../components/service/ServiceHeroSection.astro";
+import ServiceFeaturesSection from "../components/service/ServiceFeaturesSection.astro";
+import FaqSection from "../components/service/FaqSection.astro";
+import ProcessSection from "../components/service/ProcessSection.astro";
+import ContentSplitSection from "../components/home/ContentSplitSection.astro";
+import StatsSection from "../components/home/StatsSection.astro";
+import TeamSection from "../components/home/TeamSection.astro";
+import CtaSection from "../components/home/CtaSection.astro";
+import navigation from "../data/homepage.json";
+import data from "../data/services/it-recruitment.json";
+---
+
+<BaseLayout
+  title={data.meta.title}
+  description={data.meta.description}
+  scripts={[
+    "/assets/js/menu.js",
+    "/assets/js/counterup.js",
+    "/assets/js/main.js",
+  ]}
+>
+  <div class="relative z-1 bg-ColorLight">
+    <SiteHeader navigation={navigation.navigation} theme="light" />
+
+    <main class="relative overflow-hidden">
+      <ServiceHeroSection hero={data.hero} tone="light" />
+      <StatsSection stats={data.stats} />
+      <ContentSplitSection block={data.caseStudy} checklist />
+      <ServiceFeaturesSection features={data.roles} />
+      <TeamSection team={data.team} />
+      <ProcessSection process={data.process} />
+      <FaqSection faq={data.faq} />
+      <CtaSection cta={data.cta} />
+    </main>
+
+    <SiteFooter footer={navigation.footer} logo={navigation.navigation.logo} />
+  </div>
+</BaseLayout>

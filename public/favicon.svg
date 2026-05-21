@@ -1,20 +1,71 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-    <!-- Gradient background -->
-    <defs>
-      <linearGradient id="gradientBg" x1="0%" y1="0%" x2="100%" y2="100%">
-        <stop offset="0%" style="stop-color:#3494E6;stop-opacity:1" />
-        <stop offset="100%" style="stop-color:#EC6EAD;stop-opacity:1" />
-      </linearGradient>
-    </defs>
-    
-    <!-- Background circle -->
-    <circle cx="50" cy="50" r="45" fill="url(#gradientBg)"/>
-    
-    <!-- Stylized Letter A -->
-    <path d="M30 70 L50 30 L70 70 
-             M40 55 L60 55" 
-          fill="none" 
-          stroke="white" 
-          stroke-width="6" 
-          stroke-linecap="round"/>
+<svg
+  width="450"
+  height="120"
+  viewBox="0 0 80 80"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg">
+  <!-- Background / Canvas -->
+  <rect width="80" height="80" rx="8" fill="transparent" />
+
+  <!-- The Architect's Grid Icon -->
+  <g transform="translate(0, 5)">
+    <!-- Base Grid (Infrastructure) -->
+    <rect
+      x="0"
+      y="46"
+      width="20"
+      height="20"
+      rx="2"
+      fill="#0A102F"
+      opacity="0.4" />
+    <rect
+      x="24"
+      y="46"
+      width="20"
+      height="20"
+      rx="2"
+      fill="#94A3B8"
+      opacity="0.6" />
+    <rect
+      x="48"
+      y="46"
+      width="20"
+      height="20"
+      rx="2"
+      fill="#94A3B8"
+      opacity="0.8" />
+
+    <rect
+      x="0"
+      y="23"
+      width="20"
+      height="20"
+      rx="2"
+      fill="#64748B"
+      opacity="0.5" />
+    <rect
+      x="24"
+      y="23"
+      width="20"
+      height="20"
+      rx="2"
+      fill="#64748B"
+      opacity="0.7" />
+
+    <!-- Growth Node (Scaling/MVP) -->
+    <rect x="48" y="0" width="20" height="20" rx="2" fill="#A6FF00">
+      <animate
+        attributeName="opacity"
+        values="1;0.7;1"
+        dur="3s"
+        repeatCount="indefinite" />
+    </rect>
+
+    <!-- Connecting Infrastructure Lines -->
+    <path
+      d="M10 46V43M34 46V43M58 46V20M10 23V20M34 23V20"
+      stroke="#CBD5E1"
+      stroke-width="1.5"
+      stroke-linecap="round" />
+  </g>
 </svg>

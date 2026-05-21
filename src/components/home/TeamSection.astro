@@ -1,0 +1,39 @@
+---
+import { Picture } from "astro:assets";
+import Section from '../ui/Section.astro';
+import SectionHeading from '../ui/SectionHeading.astro';
+import { resolveImage } from "../../utils/images";
+import { renderCopy } from "../../utils/copy";
+
+import teamImg1 from "../../media/th-1/team-img-1.jpg";
+import teamImg2 from "../../media/th-1/team-img-2.jpg";
+import teamImg3 from "../../media/th-1/team-img-3.jpg";
+import teamImg4 from "../../media/th-1/team-img-4.jpg";
+
+const { team } = Astro.props;
+
+const mediaImageMap = {
+  "@media/th-1/team-img-1.jpg": teamImg1,
+  "@media/th-1/team-img-2.jpg": teamImg2,
+  "@media/th-1/team-img-3.jpg": teamImg3,
+  "@media/th-1/team-img-4.jpg": teamImg4,
+};
+---
+<Section tone="light">
+  <div class="container py-16">
+    <div class="grid gap-10 lg:grid-cols-[0.85fr_minmax(0,1fr)] xl:gap-16">
+      <SectionHeading title={team.title} description={team.description} tone="dark" />
+      <div class:list={["grid gap-5 sm:grid-cols-2", team.cards.length == 4 ? "xl:grid-cols-4" : "xl:grid-cols-2"]}>
+        {team.cards.map((member) => (
+          <article class="overflow-hidden rounded-md border border-ColorBlack/10 bg-white">
+            <Picture src={resolveImage(member.image, mediaImageMap)} alt={member.name} widths={[376]} formats={["avif", "webp"]} width={376} height={376} class="aspect-square w-full object-cover" />
+            <div class="p-4">
+              <div class="font-PublicSans text-xl font-bold text-ColorBlack" set:html={renderCopy(member.name)} />
+              <div class="mt-1 text-sm text-ColorDark/70" set:html={renderCopy(member.role)} />
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </div>
+</Section>

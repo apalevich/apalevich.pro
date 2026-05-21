@@ -1,0 +1,168 @@
+---
+import { Picture } from "astro:assets";
+import Button from "../ui/Button.astro";
+import Section from "../ui/Section.astro";
+import { resolveImage } from "../../utils/images";
+import { renderCopy } from "../../utils/copy";
+
+import heroImg1 from "../../media/th-8/hero-img-1.jpg";
+import heroImg2 from "../../media/th-8/hero-img-2.jpg";
+import heroImg3 from "../../media/th-8/hero-img-3.jpg";
+import heroImg4 from "../../media/th-8/hero-img-4.jpg";
+
+const { hero } = Astro.props;
+
+const mediaImageMap = {
+  "@media/th-8/hero-img-1.jpg": heroImg1,
+  "@media/th-8/hero-img-2.jpg": heroImg2,
+  "@media/th-8/hero-img-3.jpg": heroImg3,
+  "@media/th-8/hero-img-4.jpg": heroImg4,
+};
+---
+
+<Section class="pt-[105px] sm:pt-[145px] lg:pt-[185px]">
+    <div class="container relative z-10 text-center">
+        <h1
+            class="mx-auto mb-6 max-w-[856px] font-PublicSans text-5xl font-bold leading-[1.06] tracking-[-0.02em] md:text-[60px] lg:text-[70px] xl:text-[90px]"
+            set:html={renderCopy(hero.title)}
+        />
+        <p
+            class="mx-auto mb-8 max-w-[658px] lg:mb-[50px]"
+            set:html={renderCopy(hero.description)}
+        />
+        <div class="flex flex-wrap justify-center gap-[18px]">
+            <Button href={hero.actions[0].href} variant="solid" class="w-full md:max-w-min text-nowrap"
+                >{hero.actions[0].label}</Button
+            >
+            <Button href={hero.actions[1].href} variant="outline-dark" class="w-full md:max-w-min text-nowrap"
+                >{hero.actions[1].label}</Button
+            >
+        </div>
+    </div>
+
+    <div class="-z-10 -mb-4.25 mt-15">
+        <div class="container">
+            <div
+                class="hero-gallery grid grid-cols-1 gap-8 sm:grid-cols-2 md:flex md:gap-10 lg:gap-14 justify-around"
+            >
+                {
+                    hero.images.map((image) => (
+                        <figure class:list={["relative", image.rotation]}>
+                            <Picture
+                                src={resolveImage(image.src, mediaImageMap)}
+                                loading="eager"
+                                fetchpriority="high"
+                                alt={image.alt}
+                                widths={[image.width, image.width * 2]}
+                                formats={["avif", "webp"]}
+                                width={image.width}
+                                height={image.height}
+                                class="h-full rounded-md object-cover md:h-auto"
+                            />
+                        </figure>
+                    ))
+                }
+            </div>
+        </div>
+    </div>
+
+    <div
+        class="pointer-events-none absolute left-0 top-[110px] hidden md:block"
+    >
+        <img
+            src={hero.decorations.left}
+            alt=""
+            class="h-auto w-[230px] xxl:h-[331px] xxl:w-[291px]"
+            width="291"
+            height="331"
+            loading="eager"
+            decoding="async"
+        />
+    </div>
+    <div
+        class="pointer-events-none absolute top-25 hidden md:block lg:right-10 xxl:right-0"
+    >
+        <img
+            src={hero.decorations.right}
+            alt=""
+            class="h-[200px] w-auto xxl:h-[275px] xxl:w-[125px]"
+            width="126"
+            height="275"
+            loading="eager"
+            decoding="async"
+        />
+    </div>
+    <div
+        class="pointer-events-none absolute bottom-0 z-10 hidden w-full md:block"
+    >
+        <img
+            src={hero.decorations.divider}
+            alt=""
+            class="w-full"
+            width="1600"
+            height="94"
+            loading="eager"
+            decoding="async"
+        />
+    </div>
+</Section>
+
+<style>
+    @media (max-width: 639px) {
+        .hero-gallery {
+            display: block;
+            position: relative;
+            height: clamp(280px, 80vw, 360px);
+        }
+        .hero-gallery > figure {
+            position: absolute;
+            inset: 0;
+            opacity: 0;
+            animation: heroFade 12s infinite;
+        }
+        .hero-gallery > figure :global(img) {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .hero-gallery > figure:nth-child(1) {
+            animation-delay: 0s;
+        }
+        .hero-gallery > figure:nth-child(2) {
+            animation-delay: 3s;
+        }
+        .hero-gallery > figure:nth-child(3) {
+            animation-delay: 6s;
+        }
+        .hero-gallery > figure:nth-child(4) {
+            animation-delay: 9s;
+        }
+    }
+
+    @keyframes heroFade {
+        0% {
+            opacity: 0;
+        }
+        4% {
+            opacity: 1;
+        }
+        21% {
+            opacity: 1;
+        }
+        27% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 0;
+        }
+    }
+
+    @media (max-width: 639px) and (prefers-reduced-motion: reduce) {
+        .hero-gallery > figure {
+            animation: none;
+        }
+        .hero-gallery > figure:nth-child(1) {
+            opacity: 1;
+        }
+    }
+</style>

@@ -1,48 +1,103 @@
 ---
-import Contactform from "@components/contactform.astro";
-import Container from "@components/container.astro";
-import Sectionhead from "@components/sectionhead.astro";
-import Layout from "@layouts/Layout.astro";
-import { Icon } from "astro-icon/components";
+import BaseLayout from "../components/layout/BaseLayout.astro";
+import SiteHeader from "../components/site/SiteHeader.astro";
+import SiteFooter from "../components/site/SiteFooter.astro";
+import Section from "../components/ui/Section.astro";
+import SectionHeading from "../components/ui/SectionHeading.astro";
+import Icon from "../components/ui/Icon.astro";
+import ContactForm from "../components/contact/ContactForm.tsx";
+import navigation from "../data/homepage.json";
+import data from "../data/contact.json";
+import { renderCopy } from "../utils/copy";
+
+const endpoint = import.meta.env.PUBLIC_BACKEND_BASE_URL ? import.meta.env.PUBLIC_BACKEND_BASE_URL + "/leads" : "/api/contact";
 ---
 
-<Layout title="Contact">
-  <Container>
-    <Sectionhead>
-      <Fragment slot="title">Contact</Fragment>
-      <Fragment slot="desc">Let’s Discuss Your Project</Fragment>
-    </Sectionhead>
+<BaseLayout
+  title={data.meta.title}
+  description={data.meta.description}
+  scripts={["/assets/js/menu.js", "/assets/js/main.js"]}
+>
+  <div class="relative z-1 bg-ColorLight">
+    <SiteHeader navigation={navigation.navigation} theme="light" />
 
-    <div class="grid md:grid-cols-2 gap-10 mx-auto max-w-4xl mt-4">
-      <div>
-        <div class="mt-5">
-          <div class="flex items-center mt-2 space-x-2 text-gray-600">
-            <Icon class="text-gray-400 w-4 h-4" name="uil:envelope" /><a
-              href="mailto:hello@apalevich.com"
-              >hello@apalevich.com</a
-            >
-          </div><div class="flex items-center mt-2 space-x-2 text-gray-600">
-            <Icon class="text-gray-400 w-4 h-4" name="uil:linkedin" /><a
-              href="https://www.linkedin.com/company/apalevich-pro/"
-              target="_blank">LinkedIn</a
-            >
-          </div><div class="flex items-center mt-2 space-x-2 text-gray-600">
-            <Icon class="text-gray-400 w-4 h-4" name="uil:message" /><a
-              href="https://wa.me/995511106964"
-              target="_blank">WhatsApp</a
-            >
+    <main class="relative overflow-hidden">
+      <Section tone="light" class="pt-24 pb-12 md:pt-32 md:pb-20">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+          <p
+            class="mb-4 text-sm font-semibold tracking-widest text-ColorPurple uppercase"
+            set:html={renderCopy(data.hero.eyebrow)}
+          />
+          <SectionHeading
+            title={data.hero.title}
+            description={data.hero.description}
+            align="left"
+            tone="dark"
+            class="max-w-3xl"
+          />
+        </div>
+      </Section>
+
+      <Section tone="light" class="pb-24 md:pb-32">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,360px)] lg:gap-16">
+            <div>
+              <ContactForm
+                client:load
+                endpoint={endpoint}
+                labels={data.form}
+              />
+            </div>
+
+            <aside class="lg:pt-2">
+              <div class="rounded-md bg-ColorBlack p-6 text-ColorLight sm:p-8">
+                <h2
+                  class="font-PublicSans text-2xl font-bold"
+                  set:html={renderCopy(data.channels.title)}
+                />
+                <p
+                  class="mt-2 text-sm text-ColorLight/70"
+                  set:html={renderCopy(data.channels.description)}
+                />
+                <ul class="mt-6 space-y-3">
+                  {data.channels.items.map((item) => (
+                    <li>
+                      <a
+                        href={item.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="group flex min-h-12 items-center gap-4 rounded-xs border border-white/10 bg-white/5 px-4 py-3 transition hover:border-ColorLime hover:bg-white/10"
+                      >
+                        <span
+                          class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-ColorLime text-ColorBlack"
+                        >
+                          <Icon name={item.icon} class="h-5 w-5" />
+                        </span>
+                        <span class="flex flex-col">
+                          <span
+                            class="font-semibold text-ColorLight"
+                            set:html={renderCopy(item.label)}
+                          />
+                          <span
+                            class="text-sm text-ColorLight/60"
+                            set:html={renderCopy(item.handle)}
+                          />
+                        </span>
+                        <Icon
+                          name="arrow-right"
+                          class="ml-auto h-4 w-4 text-ColorLight/40 transition group-hover:translate-x-1 group-hover:text-ColorLime"
+                        />
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </aside>
           </div>
         </div>
-      </div>
-      <div>
-        <Contactform />
-      </div>
-      <div>
-          <h2 class="font-medium text-2xl text-gray-800">Need a CTO-Level Perspective?</h2>
-          <p class="text-lg leading-relaxed text-slate-500 mt-3">
-              Some projects need more than development alone. We bring structure to technical decisions, align implementation with business priorities, and move projects forward without unnecessary complexity.
-          </p>
-      </div>
-    </div>
-  </Container>
-</Layout>
+      </Section>
+    </main>
+
+    <SiteFooter footer={navigation.footer} logo={navigation.navigation.logo} />
+  </div>
+</BaseLayout>

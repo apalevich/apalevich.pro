@@ -1,0 +1,114 @@
+---
+import Button from "../ui/Button.astro";
+import Section from "../ui/Section.astro";
+import { renderCopy } from "../../utils/copy";
+
+const { hero, tone = "dark" } = Astro.props;
+const isLight = tone === "light";
+const badgeClass = isLight
+  ? "mb-5 inline-block rounded-xs border border-ColorPurple/30 bg-ColorPurple/10 px-4 py-1.5 text-sm font-semibold tracking-wide text-ColorPurple"
+  : "mb-5 inline-block rounded-xs border border-ColorLime/30 bg-ColorLime/10 px-4 py-1.5 text-sm font-semibold tracking-wide text-ColorLime";
+const titleClass = isLight
+  ? "mb-6 font-PublicSans text-5xl font-bold leading-[1.1] tracking-[-0.02em] text-ColorBlack md:text-[60px] lg:text-[70px] xl:text-[80px]"
+  : "mb-6 font-PublicSans text-5xl font-bold leading-[1.1] tracking-[-0.02em] text-ColorLight md:text-[60px] lg:text-[70px] xl:text-[80px]";
+const descriptionClass = isLight
+  ? "mx-auto mb-10 max-w-[600px] text-lg leading-7 text-ColorDark/70"
+  : "mx-auto mb-10 max-w-[600px] text-lg leading-7 text-ColorLight/70";
+---
+
+<Section tone={tone}>
+  <div class="container relative pt-[105px] pb-20 sm:pt-[145px] lg:pt-[185px] lg:pb-28">
+    <div class="mx-auto max-w-[800px] text-center">
+      <span class={badgeClass} set:html={renderCopy(hero.eyebrow)} />
+      <h1 class={titleClass} set:html={renderCopy(hero.title)} />
+      <p class={descriptionClass} set:html={renderCopy(hero.description)} />
+      <div class="flex flex-wrap justify-center gap-4">
+        {
+          hero.actions.map((action) => (
+            <Button href={action.href} variant={action.variant} class="w-full md:max-w-min text-nowrap">
+              {action.label}
+            </Button>
+          ))
+        }
+      </div>
+    </div>
+
+    <div
+      class="pointer-events-none absolute right-0 top-20 -z-10 hidden opacity-40 xl:inline-block"
+    >
+      <img
+        src="/assets/img/elements/home-8-dot-shape.svg"
+        alt=""
+        width="209"
+        height="209"
+        loading="eager"
+        decoding="async"
+      />
+    </div>
+  </div>
+</Section>
+
+<style>
+.animaa {
+    animation: theme 21s linear infinite;
+
+    &:after,
+    &:before {
+        content: '';
+        display: block;
+        position: fixed;
+        z-index: -1;
+        top: 0;
+        /*IE/Edge*/
+        width: 100vw;
+        /*fallback*/
+        height: 100vh;
+        width: 100vmax;
+        height: 100vmax;
+        background: rgba(18, 18, 18, 0.05);
+        animation: background 90s linear infinite;
+    }
+
+    &:after {
+        left: 15vw;
+    }
+
+    &:before {
+        right: 15vw;
+        animation-delay: -30s;
+        animation-direction: reverse;
+    }
+}
+
+@keyframes theme {
+    0% {
+        background: #121212;
+    }
+
+    25% {
+        background: #0A102F;
+    }
+
+    50% {
+        background: #6B3FF2;
+    }
+
+    75% {
+        background: #FDFBF9;
+    }
+
+    100% {
+        background: #121212;
+    }
+}
+
+@keyframes background {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+</style>

@@ -1,0 +1,37 @@
+---
+import Icon from './Icon.astro';
+
+const {
+  href = '#',
+  variant = 'solid',
+  class: className = '',
+  external = false,
+  iconRight = null
+} = Astro.props;
+
+const variants = {
+  solid: 'border-ColorLime bg-ColorLime text-ColorBlack hover:border-ColorDark hover:bg-white hover:text-ColorBlack',
+  'outline-dark': 'border-ColorBlack bg-transparent text-ColorBlack hover:bg-ColorBlack hover:text-white',
+  'outline-light': 'border-white bg-transparent text-white hover:bg-white hover:text-ColorBlack',
+  text: 'border-transparent bg-transparent px-2 py-0 text-ColorPurple leading-10',
+  'text-lime': 'border-transparent bg-transparent px-2 py-0 text-ColorLime hover:text-ColorPurple leading-10'
+};
+
+const sizes = {
+  sm: 'px-4 py-2 text-sm',
+  md: 'px-5 py-3 text-base',
+  lg: 'px-8 py-4 text-base'
+};
+
+const classes = [
+  'inline-flex items-center justify-center gap-2 border font-semibold transition duration-300',
+  'rounded-xs',
+  variants[variant] ?? variants.solid,
+  (variant === 'text' || variant === 'text-lime') ? '' : sizes.lg,
+  className
+].join(' ');
+---
+<a href={href} class={classes} target={external ? '_blank' : undefined} rel={external ? 'noreferrer noopener' : undefined}>
+  <slot />
+  {iconRight ? <Icon name={iconRight} class="h-4 w-4" /> : null}
+</a>
