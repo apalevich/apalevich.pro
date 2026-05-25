@@ -16,7 +16,7 @@ const descriptionClass = isLight
   : "mx-auto mb-10 max-w-[600px] text-lg leading-7 text-ColorLight/70";
 ---
 
-<Section tone={tone}>
+<Section tone={tone} id={isLight ? undefined : "animated"}>
   <div class="container relative pt-[105px] pb-20 sm:pt-[145px] lg:pt-[185px] lg:pb-28">
     <div class="mx-auto max-w-[800px] text-center">
       <span class={badgeClass} set:html={renderCopy(hero.eyebrow)} />
@@ -112,3 +112,36 @@ const descriptionClass = isLight
     }
 }
 </style>
+{!isLight && (
+  <>
+    <script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script is:inline src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
+    <script is:inline>
+  (function initVanta() {
+    if (typeof window === "undefined") return;
+    if (!window.VANTA || !document.getElementById("animated")) {
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", initVanta, { once: true });
+        return;
+      }
+      if (!window.VANTA) return;
+    }
+    window.VANTA.NET({
+      el: "#animated",
+      mouseControls: true,
+      touchControls: true,
+      gyroControls: false,
+      minHeight: 200.0,
+      minWidth: 200.0,
+      scale: 1.0,
+      scaleMobile: 1.0,
+      color: "#6B3FF2",
+      backgroundColor: "#121212",
+      points: 13.0,
+      spacing: 14.0,
+      showDots: false,
+    });
+  })();
+    </script>
+  </>
+)}

@@ -2,7 +2,8 @@
 const {
   as: Tag = 'section',
   class: className = '',
-  tone = 'light'
+  tone = 'light',
+  id
 } = Astro.props;
 
 const tones = {
@@ -11,6 +12,6 @@ const tones = {
   accent: 'bg-ColorPurple text-white'
 };
 ---
-<Tag class:list={['relative overflow-hidden', tones[tone] ?? tones.light, className]}>
+<Tag id={id} class:list={['relative overflow-hidden', tones[tone] ?? tones.light, className]}>
   <slot />
 </Tag>

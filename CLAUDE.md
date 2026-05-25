@@ -29,7 +29,7 @@ This is an Astro-based marketing website with agency template design, using Tail
 ## Project Structure
 
 ```
-design-upgrade-2026/
+apalevich.pro/
 ├── src/
 │   ├── pages/
 │   │   ├── index.astro          # Homepage entry point
@@ -234,13 +234,10 @@ Astro exposes vars prefixed with `PUBLIC_` to client code. Document any new ones
 - Astro pre-renders all pages to static HTML by default
 - Production site lives in `./dist/` after build
 - Environment: Node.js >=22.12.0 required
-- No database or backend required (fully static)
+- Deploys to Cloudflare; configuration lives in `wrangler.jsonc`
+- The contact form posts to an external backend (`PUBLIC_BACKEND_BASE_URL`); the site itself ships no server
 - `npm run build` is the primary validation step; always run before pushing changes
 
 ## Additional Resources
 
 - **AGENTS.md** - Repository guidelines for component organization, naming conventions, and selector preservation
-- **src/data/homepage.json** - Complete homepage data structure with all configurable content keys
-- **src/data/contact.json** - Contact page hero, form labels/states, and direct channel links
-- **src/data/services/\*.json** - Per-service page content for `[service].astro` and `it-recruitment.astro`
-- **.env.example** - Template for required environment variables
