@@ -58,8 +58,14 @@
       {
         "label": "LinkedIn",
         "handle": "in/apalevich",
-        "href": "https://www.linkedin.com/in/apalevich/",
+        "href": "https://www.linkedin.com/in/apalevich",
         "icon": "linkedin"
+      },
+      {
+        "label": "Cal.com",
+        "handle": "Book a Call",
+        "href": "https://cal.com/apalevich/40min",
+        "icon": "calendar"
       },
       {
         "label": "WhatsApp",

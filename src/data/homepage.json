@@ -386,9 +386,12 @@
         "links": [
           {
             "label": "LinkedIn",
-            "href": "https://www.linkedin.com/company/apalevich-pro/"
+            "href": "https://www.linkedin.com/company/apalevich-pro"
           },
-          { "label": "Email", "href": "mailto:artem@apalevich.pro" }
+          {
+            "label": "Book a Call",
+            "href": "https://cal.com/apalevich/40min"
+          }
         ]
       }
     ],
