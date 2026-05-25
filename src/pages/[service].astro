@@ -8,6 +8,7 @@ import ContentSplitSection from "../components/home/ContentSplitSection.astro";
 import StatsSection from "../components/home/StatsSection.astro";
 import CtaSection from "../components/home/CtaSection.astro";
 import navigation from "../data/homepage.json";
+import { graph, organizationNode, serviceNode, breadcrumb } from "../utils/schema";
 
 export async function getStaticPaths() {
   const services = [
@@ -27,11 +28,31 @@ export async function getStaticPaths() {
 }
 
 const { data } = Astro.props;
+const { service } = Astro.params;
+
+const cleanTitle = (s) => s.replace(/\{[^}]+\}/g, " ").replace(/\s+/g, " ").trim();
+
+const schema = graph([
+  organizationNode(),
+  serviceNode({
+    name: cleanTitle(data.hero.title),
+    description: data.meta.description,
+    url: `/${service}`,
+    image: data.meta.ogImage,
+    serviceType: data.hero.eyebrow,
+  }),
+  breadcrumb([
+    { name: "Home", path: "/" },
+    { name: cleanTitle(data.hero.eyebrow || data.hero.title), path: `/${service}` },
+  ]),
+]);
 ---
 
 <BaseLayout
   title={data.meta.title}
   description={data.meta.description}
+  image={data.meta.ogImage}
+  schema={schema}
   scripts={[
     "/assets/js/menu.js",
     "/assets/js/counterup.js",

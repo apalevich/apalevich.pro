@@ -29,30 +29,48 @@ const mediaImageMap = {
       {blog.cards.map((post) => (
         <article class="group flex h-full flex-col overflow-hidden rounded-md border border-ColorBlack/10 bg-white p-5">
           <div class="relative overflow-hidden rounded-md">
-            <a href={post.href} class="block" target="_blank">
+            <a
+              href={post.href}
+              class="block"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`${post.category}: ${post.title} on LinkedIn`}
+            >
               <Picture src={resolveImage(post.image, mediaImageMap)} alt={post.title} widths={[376]} formats={["avif", "webp"]} width={376} height={280} class="h-auto w-full transition duration-300 group-hover:scale-105" />
             </a>
-            <a href={post.href} class="absolute right-2 top-2 rounded-xs bg-ColorLight px-4 py-2 text-sm font-bold hover:bg-ColorPurple hover:text-white">
+            <span class="absolute right-2 top-2 rounded-xs bg-ColorLight px-4 py-2 text-sm font-bold">
               {post.category}
-            </a>
+            </span>
           </div>
           <div class="mt-6 flex flex-1 flex-col">
             <div class="mb-4 flex flex-col gap-2 text-sm font-semibold text-ColorBlack/80 xl:flex-row xl:items-center">
-              <a href={post.href} class="flex items-center gap-2 hover:text-ColorPurple" target="_blank">
+              <span class="flex items-center gap-2">
                 <Icon name="circle-user" class="h-4 w-4" />
                 {post.author}
-              </a>
-              <a href={post.href} class="flex items-center gap-2 hover:text-ColorPurple" target="_blank">
+              </span>
+              <span class="flex items-center gap-2">
                 <Icon name="calendar" class="h-4 w-4" />
                 {post.date}
-              </a>
+              </span>
             </div>
-            <a
+            <h3 class="mb-6 font-PublicSans text-xl font-bold leading-[1.35] text-ColorBlack xl:text-2xl">
+              <a
+                href={post.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="block group-hover:text-ColorPurple"
+                set:html={renderCopy(post.title)}
+              />
+            </h3>
+            <Button
               href={post.href}
-              class="mb-6 block font-PublicSans text-xl font-bold leading-[1.35] text-ColorBlack group-hover:text-ColorPurple xl:text-2xl"
-              set:html={renderCopy(post.title)}
-            />
-            <Button href={post.href} variant="text" iconRight="arrow-right" class="mt-auto px-0" target="_blank">
+              variant="text"
+              iconRight="arrow-right"
+              class="mt-auto px-0"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`${blog.readMoreLabel}: ${post.title}`}
+            >
               {blog.readMoreLabel}
             </Button>
           </div>

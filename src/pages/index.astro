@@ -13,11 +13,29 @@ import TeamSection from "../components/home/TeamSection.astro";
 import BlogSection from "../components/home/BlogSection.astro";
 import CtaSection from "../components/home/CtaSection.astro";
 import data from "../data/homepage.json";
+import { graph, organizationNode, websiteNode } from "../utils/schema";
+
+const schema = graph([
+  organizationNode(),
+  websiteNode(),
+  {
+    "@type": "ItemList",
+    name: "Services offered by APalevich.Pro",
+    itemListElement: data.services.cards.map((card, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      url: `https://apalevich.pro${card.href}`,
+      name: card.title.replace(/\{[^}]+\}/g, " ").replace(/\s+/g, " ").trim(),
+    })),
+  },
+]);
 ---
 
 <BaseLayout
   title={data.site.title}
   description={data.site.description}
+  image={data.site.ogImage}
+  schema={schema}
   scripts={[
     "/assets/js/menu.js",
     "/assets/js/countdown.js",

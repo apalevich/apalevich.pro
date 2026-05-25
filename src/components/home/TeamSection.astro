@@ -28,8 +28,8 @@ const mediaImageMap = {
           <article class="overflow-hidden rounded-md border border-ColorBlack/10 bg-white">
             <Picture src={resolveImage(member.image, mediaImageMap)} alt={member.name} widths={[376]} formats={["avif", "webp"]} width={376} height={376} class="aspect-square w-full object-cover" />
             <div class="p-4">
-              <div class="font-PublicSans text-xl font-bold text-ColorBlack" set:html={renderCopy(member.name)} />
-              <div class="mt-1 text-sm text-ColorDark/70" set:html={renderCopy(member.role)} />
+              <h3 class="font-PublicSans text-xl font-bold text-ColorBlack" set:html={renderCopy(member.name)} />
+              <p class="mt-1 text-sm text-ColorDark/70" set:html={renderCopy(member.role)} />
             </div>
           </article>
         ))}

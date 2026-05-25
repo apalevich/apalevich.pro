@@ -82,6 +82,10 @@
     @apply flex;
   }
 
+  .nav-item-has-children.open > .sub-menu {
+    @apply flex;
+  }
+
   @media (min-width: 992px) {
     .site-menu-main > .nav-item-has-children:not(.has-megamenu) {
       position: relative;

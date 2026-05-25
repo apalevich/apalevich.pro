@@ -1,7 +1,8 @@
 {
   "meta": {
-    "title": "Projects | APalevich.Pro",
-    "description": "Selected work: faster web apps, AI products, infrastructure and automation that shipped on time and moved real numbers."
+    "title": "Selected Projects & Case Studies | APalevich.Pro",
+    "description": "Selected work: faster web apps, AI products, infrastructure and automation that shipped on time and moved real numbers.",
+    "ogImage": "/og/team.jpg"
   },
   "hero": {
     "eyebrow": "Projects",

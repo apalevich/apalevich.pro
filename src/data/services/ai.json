@@ -1,7 +1,8 @@
 {
   "meta": {
     "title": "AI Integration for Web Apps | Claude, OpenAI, Custom Workflows | APalevich.Pro",
-    "description": "We integrate Claude, GPT, and custom AI workflows into your existing product. Practical AI that solves real problems, not demos that never ship."
+    "description": "We integrate Claude, GPT, and custom AI workflows into your existing product. Practical AI that solves real problems, not demos that never ship.",
+    "ogImage": "/og/planning.jpg"
   },
   "hero": {
     "eyebrow": "AI Integration",

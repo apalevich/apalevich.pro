@@ -1,7 +1,8 @@
 {
   "meta": {
     "title": "Contact Us | Senior Engineers, Fast Replies | APalevich.Pro",
-    "description": "Tell us about your project. We reply in a few hours, not a few days. First conversation is free and goes straight to a senior engineer."
+    "description": "Tell us about your project. We reply in a few hours, not a few days. First conversation is free and goes straight to a senior engineer.",
+    "ogImage": "/assets/img/logoDark.svg"
   },
   "hero": {
     "eyebrow": "Contact",

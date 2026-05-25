@@ -7,11 +7,28 @@ import TestimonialsSection from "../components/home/TestimonialsSection.astro";
 import CtaSection from "../components/home/CtaSection.astro";
 import nav from "../data/homepage.json";
 import data from "../data/projects.json";
+import { graph, organizationNode, breadcrumb } from "../utils/schema";
+
+const schema = graph([
+  organizationNode(),
+  {
+    "@type": "CollectionPage",
+    name: data.meta.title,
+    description: data.meta.description,
+    url: "https://apalevich.pro/projects",
+  },
+  breadcrumb([
+    { name: "Home", path: "/" },
+    { name: "Projects", path: "/projects" },
+  ]),
+]);
 ---
 
 <BaseLayout
   title={data.meta.title}
   description={data.meta.description}
+  image={data.meta.ogImage}
+  schema={schema}
   scripts={["/assets/js/menu.js", "/assets/js/main.js"]}>
   <div class="relative z-1 bg-ColorLight">
     <SiteHeader navigation={nav.navigation} theme="light" />

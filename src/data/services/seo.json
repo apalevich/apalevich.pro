@@ -1,7 +1,8 @@
 {
   "meta": {
     "title": "Web Performance & Technical SEO | Core Web Vitals | APalevich.Pro",
-    "description": "We improve Core Web Vitals, page speed, and technical SEO for web apps and marketing sites. Data driven optimization with measurable ranking and revenue impact."
+    "description": "We improve Core Web Vitals, page speed, and technical SEO for web apps and marketing sites. Data driven optimization with measurable ranking and revenue impact.",
+    "ogImage": "/og/performance.jpg"
   },
   "hero": {
     "eyebrow": "Performance & SEO",

@@ -76,3 +76,52 @@ window.onresize = function () {
     }
   }
 };
+
+// Desktop: click-to-toggle dropdowns. First click on a parent link opens the
+// dropdown; second click follows the href so it stays SEO friendly.
+const desktopDropTriggers = document.querySelectorAll(
+  ".site-menu-main > .nav-item-has-children > .drop-trigger"
+);
+desktopDropTriggers.forEach((trigger) => {
+  const parent = trigger.closest(".nav-item-has-children");
+  const submenu = parent && parent.querySelector(".sub-menu");
+  if (!parent || !submenu) return;
+
+  trigger.setAttribute("aria-haspopup", "true");
+  trigger.setAttribute("aria-expanded", "false");
+
+  trigger.addEventListener("click", (e) => {
+    if (window.innerWidth <= 991) return; // mobile uses the existing menu logic
+    if (!parent.classList.contains("open")) {
+      e.preventDefault();
+      desktopDropTriggers.forEach((other) => {
+        const otherParent = other.closest(".nav-item-has-children");
+        if (otherParent && otherParent !== parent) {
+          otherParent.classList.remove("open");
+          other.setAttribute("aria-expanded", "false");
+        }
+      });
+      parent.classList.add("open");
+      trigger.setAttribute("aria-expanded", "true");
+    }
+  });
+});
+
+document.addEventListener("click", (e) => {
+  if (window.innerWidth <= 991) return;
+  if (e.target.closest(".nav-item-has-children")) return;
+  document.querySelectorAll(".nav-item-has-children.open").forEach((item) => {
+    item.classList.remove("open");
+    const trigger = item.querySelector(".drop-trigger");
+    if (trigger) trigger.setAttribute("aria-expanded", "false");
+  });
+});
+
+document.addEventListener("keydown", (e) => {
+  if (e.key !== "Escape") return;
+  document.querySelectorAll(".nav-item-has-children.open").forEach((item) => {
+    item.classList.remove("open");
+    const trigger = item.querySelector(".drop-trigger");
+    if (trigger) trigger.setAttribute("aria-expanded", "false");
+  });
+});

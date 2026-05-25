@@ -1,7 +1,8 @@
 {
   "meta": {
     "title": "Frontend & Web App Development | React, Next.js, Vue | APalevich.Pro",
-    "description": "We build fast, converting web apps in React, Next.js, Vue, and Astro. Senior engineers only. No account managers. Based in Georgia, serving global clients."
+    "description": "We build fast, converting web apps in React, Next.js, Vue, and Astro. Senior engineers only. No account managers. Based in Georgia, serving global clients.",
+    "ogImage": "/og/planning.jpg"
   },
   "hero": {
     "eyebrow": "Web Development",

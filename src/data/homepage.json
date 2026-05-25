@@ -2,7 +2,8 @@
   "site": {
     "name": "Fast, Converting Web Apps | Web Development Agency | APalevich.Pro",
     "title": "Fast, Converting Web Apps | Web Development Agency | APalevich.Pro",
-    "description": "Senior web development team building fast Vue, React, and Next.js apps. Based in Georgia. 200+ projects, 12+ years. No account managers."
+    "description": "Senior web development team building fast Vue, React, and Next.js apps. Based in Georgia. 200+ projects, 12+ years. No account managers.",
+    "ogImage": "/og/team.jpg"
   },
   "navigation": {
     "logo": {
@@ -18,7 +19,7 @@
     "links": [
       {
         "label": "Services",
-        "href": "#",
+        "href": "/#services",
         "children": [
           {
             "label": "Frontend & Web Development",
@@ -52,7 +53,7 @@
     "images": [
       {
         "src": "@media/th-8/hero-img-1.jpg",
-        "alt": "Team collaboration",
+        "alt": "APalevich.Pro engineers reviewing a web app design on a laptop",
         "width": 280,
         "height": 310,
         "delay": 0.3,
@@ -60,7 +61,7 @@
       },
       {
         "src": "@media/th-8/hero-img-2.jpg",
-        "alt": "Team collaboration",
+        "alt": "Frontend developer building a React interface at a desk",
         "width": 280,
         "height": 310,
         "delay": 0,
@@ -68,7 +69,7 @@
       },
       {
         "src": "@media/th-8/hero-img-3.jpg",
-        "alt": "Team collaboration",
+        "alt": "Product team mapping out a launch on a whiteboard",
         "width": 280,
         "height": 310,
         "delay": 0,
@@ -76,7 +77,7 @@
       },
       {
         "src": "@media/th-8/hero-img-4.jpg",
-        "alt": "Team collaboration",
+        "alt": "Engineer pair programming on a Next.js feature",
         "width": 280,
         "height": 310,
         "delay": 0.3,
@@ -103,10 +104,10 @@
       "Hiring eats months and budget. We've built a network of vetted senior developers and specialists ready to join your team. Skip the long recruitment pipeline and get qualified candidates{nbsp}fast.",
       "We handle sourcing, vetting, and matching. You{nbsp}focus on building."
     ],
-    "action": { "label": "Learn More", "href": "/it-recruitment" },
+    "action": { "label": "Explore IT Recruitment", "href": "/it-recruitment" },
     "image": {
       "src": "@media/th-8/content-img-1.jpg",
-      "alt": "Consulting team planning session",
+      "alt": "Recruiters and engineers reviewing senior developer candidates",
       "width": 523,
       "height": 450,
       "overlay": "@media/th-8/content-card-1.png"
@@ -124,7 +125,7 @@
     "action": { "label": "Get Free Consultation", "href": "/contact" },
     "image": {
       "src": "@media/th-8/content-img-2.jpg",
-      "alt": "Website performance planning",
+      "alt": "Engineers analyzing Core Web Vitals to speed up a web application",
       "width": 520,
       "height": 450,
       "overlay": "@media/th-8/content-card-2.png"
@@ -172,7 +173,7 @@
     "action": { "label": "Get In Touch", "href": "/contact" },
     "image": {
       "src": "@media/th-8/content-card-3.png",
-      "alt": "Consulting team planning session",
+      "alt": "Project kickoff conversation with the APalevich.Pro team",
       "width": 523,
       "height": 450
     }

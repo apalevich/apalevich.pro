@@ -1,7 +1,8 @@
 {
   "meta": {
     "title": "Backend Development & Infrastructure Optimization | APalevich.Pro",
-    "description": "We optimize APIs, databases, and cloud infrastructure to remove bottlenecks and cut costs. Senior engineers, no overhead. Based in Georgia."
+    "description": "We optimize APIs, databases, and cloud infrastructure to remove bottlenecks and cut costs. Senior engineers, no overhead. Based in Georgia.",
+    "ogImage": "/og/planning.jpg"
   },
   "hero": {
     "eyebrow": "Backend & Infrastructure",

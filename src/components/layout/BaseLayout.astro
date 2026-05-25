@@ -1,11 +1,17 @@
 ---
 import '../../styles/global.css';
+import SchemaJsonLd from './SchemaJsonLd.astro';
 
 const {
   title,
   description,
-  scripts = []
+  image = "/assets/img/logoDark.svg",
+  scripts = [],
+  schema = null
 } = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
+const ogImageURL = new URL(image, Astro.site).toString();
 ---
 <!doctype html>
 <html lang="en">
@@ -14,7 +20,26 @@ const {
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
     <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
+    <meta name="robots" content="index, follow" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImageURL} />
+    <meta property="og:site_name" content="APalevich.Pro" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content={canonicalURL} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageURL} />
+
+    <link rel="sitemap" href="/sitemap-index.xml" />
     <link rel="icon" href="/favicon.svg" />
+
+    {schema ? <SchemaJsonLd schema={schema} /> : null}
   </head>
   <body class="min-h-screen bg-ColorLight font-Inter text-[18px] leading-[1.66] text-ColorDark overflow-x-hidden">
     <slot />

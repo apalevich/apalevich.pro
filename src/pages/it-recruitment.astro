@@ -12,11 +12,43 @@ import TeamSection from "../components/home/TeamSection.astro";
 import CtaSection from "../components/home/CtaSection.astro";
 import navigation from "../data/homepage.json";
 import data from "../data/services/it-recruitment.json";
+import {
+  graph,
+  organizationNode,
+  serviceNode,
+  breadcrumb,
+  faqNode,
+} from "../utils/schema";
+
+const cleanTitle = (s) => s.replace(/\{[^}]+\}/g, " ").replace(/\s+/g, " ").trim();
+
+const schema = graph([
+  organizationNode(),
+  serviceNode({
+    name: "IT Recruitment",
+    description: data.meta.description,
+    url: "/it-recruitment",
+    image: data.meta.ogImage,
+    serviceType: "Technical Recruiting",
+  }),
+  breadcrumb([
+    { name: "Home", path: "/" },
+    { name: "IT Recruitment", path: "/it-recruitment" },
+  ]),
+  faqNode(
+    (data.faq.items || []).map((item) => ({
+      question: cleanTitle(item.question),
+      answer: cleanTitle(item.answer),
+    }))
+  ),
+]);
 ---
 
 <BaseLayout
   title={data.meta.title}
   description={data.meta.description}
+  image={data.meta.ogImage}
+  schema={schema}
   scripts={[
     "/assets/js/menu.js",
     "/assets/js/counterup.js",
