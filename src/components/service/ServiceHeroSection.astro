@@ -18,7 +18,7 @@ const descriptionClass = isLight
 
 <Section tone={tone} id={isLight ? undefined : "animated"}>
   <div class="container relative pt-[105px] pb-20 sm:pt-[145px] lg:pt-[185px] lg:pb-28">
-    <div class="mx-auto max-w-[800px] text-center">
+    <div class="mx-auto max-w-200 text-center">
       <span class={badgeClass} set:html={renderCopy(hero.eyebrow)} />
       <h1 class={titleClass} set:html={renderCopy(hero.title)} />
       <p class={descriptionClass} set:html={renderCopy(hero.description)} />
