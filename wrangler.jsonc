@@ -4,4 +4,5 @@
   "assets": {
     "directory": "./dist",
   },
+  "routes": [{ "pattern": "apalevich.pro", "custom_domain": true }],
 }
