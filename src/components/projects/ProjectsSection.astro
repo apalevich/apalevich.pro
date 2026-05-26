@@ -1,8 +1,11 @@
 ---
+import { Image } from "astro:assets";
 import Section from "../ui/Section.astro";
 import SectionHeading from "../ui/SectionHeading.astro";
 import { resolveImage } from "../../utils/images";
 import { renderCopy } from "../../utils/copy";
+
+const stripTokens = (s: string) => s.replace(/\{[^}]+\}/g, " ").replace(/\s+/g, " ").trim();
 
 import heroImg1 from "../../media/th-8/hero-img-1.jpg";
 import heroImg2 from "../../media/th-8/hero-img-2.jpg";
@@ -45,17 +48,27 @@ const mediaImageMap = {
 
     <div class="mt-12 flex flex-col gap-10">
       {
-        projects.map((project) => {
+        projects.map((project, i) => {
           const link = project.caseStudyUrl ? project.caseStudyUrl : "/contact";
           const revealLabel = project.caseStudyUrl
             ? "Open in a new tab"
             : "Start a project like this";
-          const bg = resolveImage(project.image, mediaImageMap).src;
+          const img = resolveImage(project.image, mediaImageMap);
+          const isLcp = i === 0;
           return (
             <a href={link} class="project-card group block" target={project.caseStudyUrl ? "_blank" : "_self"}>
-              <div
-                class="project-top"
-                style={`background-image: url('${bg}')`}>
+              <div class="project-top">
+                <Image
+                  src={img}
+                  alt={stripTokens(project.title)}
+                  widths={[480, 768, 1200]}
+                  sizes="(min-width:1024px) 1100px, 100vw"
+                  formats={["avif", "webp"]}
+                  loading={isLcp ? "eager" : "lazy"}
+                  decoding={isLcp ? "auto" : "async"}
+                  {...(isLcp ? { fetchpriority: "high" } : {})}
+                  class="project-img"
+                />
                 <div class="project-frame">
                   <span class="project-year">{project.year}</span>
                 </div>
@@ -104,9 +117,20 @@ const mediaImageMap = {
     height: 220px;
     overflow: hidden;
     border-radius: 10px;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+  }
+
+  .project-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+  }
+
+  .project-frame,
+  .project-reveal {
+    z-index: 1;
   }
 
   @media (min-width: 1024px) {

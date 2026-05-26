@@ -9,8 +9,14 @@ import sitemap from "@astrojs/sitemap";
 export default defineConfig({
   site: "https://apalevich.pro",
   integrations: [react(), sitemap()],
+  build: {
+    inlineStylesheets: "auto",
+  },
   vite: {
     plugins: [tailwindcss()],
+    build: {
+      assetsInlineLimit: 50 * 1024,
+    },
   },
   prefetch: {
     defaultStrategy: "load",
