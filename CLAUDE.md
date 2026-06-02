@@ -6,6 +6,19 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 This is an Astro-based marketing website with agency template design, using Tailwind CSS for styling. The site features multiple sections including hero, stats, services, pricing, team, blog, and CTA blocks. It includes JavaScript for interactive features (menu, countdown, counter-up animations).
 
+## Positioning
+
+**Current (homepage).** The site leads with performance: *we make web apps and sites fast*. Every homepage section must reinforce that thesis. When updating homepage copy:
+
+- Lead with the buyer's **outcome**, not the feature or service category.
+- Prove with **concrete metrics** — milliseconds, Core Web Vitals (LCP, INP, CLS), conversion lift, infra cost reduction.
+- Name the **risk of doing it badly** (loss aversion) — every service card on the homepage carries an `outcome` line and a `risk` line, rendered by `ServicesSection.astro`.
+- Keep voice tight — cut hedges and adjectives. Prefer one sharp sentence over two soft ones.
+
+The schema for `services.cards[]` in `src/data/homepage.json` is `{ title, outcome, risk, href }`. A top-level `services.riskLabel` controls the label shown above each risk line. Do not reintroduce the old generalist "fast, converting web apps" framing.
+
+**Planned next step (service pages).** Service pages (`src/data/services/*.json`, `src/pages/[service].astro`, `it-recruitment.astro`) will be reworked to address **client types** rather than service categories — e.g., bootstrappers shipping vibecoded SaaS, eCommerce operators on Shopify, corporates with established audiences. The homepage rework is the stepping stone. When editing service pages, frame them around audience needs, not service taxonomy. Until the rework lands, service-page copy can stay as-is; do not invest in further service-category rewrites that the audience-first model will discard.
+
 **Tech Stack:**
 
 - **Framework:** Astro 6.3.1

@@ -9,7 +9,11 @@
     "title": "Add AI to Your Product That Actually Works",
     "description": "We integrate Claude, GPT, and custom AI pipelines into production applications. You get working features, not slide decks about what AI could{nbsp}do.",
     "actions": [
-      { "label": "Start a Project", "href": "/contact", "variant": "solid" },
+      {
+        "label": "Book a Free Call",
+        "href": "https://cal.com/apalevich/40min",
+        "variant": "solid"
+      },
       {
         "label": "See Our Work",
         "href": "/projects",
@@ -57,7 +61,10 @@
       "Test against real data and edge cases before release",
       "Monitor output quality in production with human review loops where needed"
     ],
-    "action": { "label": "Start a Project", "href": "/contact" },
+    "action": {
+      "label": "Book a Free Call",
+      "href": "https://cal.com/apalevich/40min"
+    },
     "image": {
       "src": "@media/th-8/content-img-1.jpg",
       "alt": "AI integration planning session",
@@ -81,7 +88,11 @@
     "title": "Turn Your AI Idea Into {br-sm}a{nbsp}Shipped Feature",
     "description": "Tell us what you want AI to do in your product. {br}We'll tell you if it's feasible and what it will take.",
     "actions": [
-      { "label": "Get in Touch", "href": "/contact", "variant": "solid" },
+      {
+        "label": "Book a Free Call",
+        "href": "https://cal.com/apalevich/40min",
+        "variant": "solid"
+      },
       {
         "label": "View Our Portfolio",
         "href": "/projects",

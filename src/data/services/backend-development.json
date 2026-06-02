@@ -9,7 +9,11 @@
     "title": "Your Backend Is Slowing You Down",
     "description": "We find and fix the bottlenecks in your APIs, databases, and infrastructure that cost you performance and money. No guesswork. We trace, measure, then fix.",
     "actions": [
-      { "label": "Start a Project", "href": "/contact", "variant": "solid" },
+      {
+        "label": "Book a Free Call",
+        "href": "https://cal.com/apalevich/40min",
+        "variant": "solid"
+      },
       {
         "label": "See Our Work",
         "href": "/projects",
@@ -57,7 +61,10 @@
       "Validate each change with before and after{nbsp}metrics",
       "Document what was changed and why for your{nbsp}team"
     ],
-    "action": { "label": "Start a Project", "href": "/contact" },
+    "action": {
+      "label": "Book a Free Call",
+      "href": "https://cal.com/apalevich/40min"
+    },
     "image": {
       "src": "@media/th-8/content-img-2.jpg",
       "alt": "Backend infrastructure planning",
@@ -77,7 +84,11 @@
     "title": "Stop Paying for {br-sm}Slow Infrastructure",
     "description": "Share your stack and symptoms. We'll tell you where to look first.",
     "actions": [
-      { "label": "Get in Touch", "href": "/contact", "variant": "solid" },
+      {
+        "label": "Book a Free Call",
+        "href": "https://cal.com/apalevich/40min",
+        "variant": "solid"
+      },
       {
         "label": "View Our Portfolio",
         "href": "/projects",

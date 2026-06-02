@@ -9,7 +9,11 @@
     "title": "Web Apps That Load Fast and{nbsp}Convert",
     "description": "We build production grade frontend applications in React, Next.js, Vue, Nuxt, Angular, and Astro. Optimized for performance from day{nbsp}one.",
     "actions": [
-      { "label": "Start a Project", "href": "/contact", "variant": "solid" },
+      {
+        "label": "Book a Free Call",
+        "href": "https://cal.com/apalevich/40min",
+        "variant": "solid"
+      },
       {
         "label": "See Our Work",
         "href": "/projects",
@@ -57,7 +61,10 @@
       "Performance budget tracked from the first{nbsp}commit",
       "Handoff includes documentation, not{nbsp}just{nbsp}code"
     ],
-    "action": { "label": "Start a Project", "href": "/contact" },
+    "action": {
+      "label": "Book a Free Call",
+      "href": "https://cal.com/apalevich/40min"
+    },
     "image": {
       "src": "@media/th-8/content-img-1.jpg",
       "alt": "Frontend development planning session",
@@ -89,7 +96,11 @@
     "title": "Let's Build Your Frontend{nbsp}Right",
     "description": "Tell us what you're working on. We'll outline a realistic approach within 24{nbsp}hours.",
     "actions": [
-      { "label": "Get in Touch", "href": "/contact", "variant": "solid" },
+      {
+        "label": "Book a Free Call",
+        "href": "https://cal.com/apalevich/40min",
+        "variant": "solid"
+      },
       {
         "label": "View Our Portfolio",
         "href": "/projects",

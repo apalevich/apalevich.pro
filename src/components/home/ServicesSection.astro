@@ -25,15 +25,29 @@ const { services } = Astro.props;
                     return (
                         <Tag
                             {...linkProps}
-                            class="block rounded-md border border-white/10 bg-white/5 p-6 transition hover:-translate-y-1 hover:bg-white/10"
+                            class="flex flex-col rounded-md border border-white/10 bg-white/5 p-6 transition hover:-translate-y-1 hover:bg-white/10"
                         >
                             <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-ColorLime text-ColorBlack">
                                 {String(index + 1).padStart(2, "0")}
                             </div>
                             <h3
-                                class="font-PublicSans text-2xl font-bold leading-tight text-ColorLight"
+                                class="mb-3 font-PublicSans text-2xl font-bold leading-tight text-ColorLight"
                                 set:html={renderCopy(card.title)}
                             />
+                            {card.outcome && (
+                                <p
+                                    class="mb-4 text-base leading-relaxed text-ColorLight/80"
+                                    set:html={renderCopy(card.outcome)}
+                                />
+                            )}
+                            {card.risk && (
+                                <p class="hidden mt-auto border-t border-white/10 pt-4 text-sm leading-relaxed text-ColorLight/60">
+                                    <span class="font-semibold text-ColorLime">
+                                        {services.riskLabel ?? "Risk of doing it badly:"}
+                                    </span>{" "}
+                                    <span set:html={renderCopy(card.risk)} />
+                                </p>
+                            )}
                         </Tag>
                     );
                 })

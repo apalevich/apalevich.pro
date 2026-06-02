@@ -9,7 +9,11 @@
     "title": "Faster Sites Rank Higher and {br-md}Convert More",
     "description": "Every 100ms of load time costs you conversions. We diagnose and fix the performance and SEO issues holding your site back, with before and after data at{nbsp}every{nbsp}step.",
     "actions": [
-      { "label": "Get a Free Audit", "href": "/contact", "variant": "solid" },
+      {
+        "label": "Book a Free Call",
+        "href": "https://cal.com/apalevich/40min",
+        "variant": "solid"
+      },
       {
         "label": "See Our Work",
         "href": "/projects",
@@ -57,7 +61,10 @@
       "Validate improvement in field data, not just lab{nbsp}scores",
       "Deliver a report your team can act on independently"
     ],
-    "action": { "label": "Start a Project", "href": "/contact" },
+    "action": {
+      "label": "Book a Free Call",
+      "href": "https://cal.com/apalevich/40min"
+    },
     "image": {
       "src": "@media/th-8/content-img-2.jpg",
       "alt": "Web performance audit in progress",
@@ -69,7 +76,7 @@
     "title": "Performance that shows up in analytics",
     "items": [
       {
-        "value": 16,
+        "value": 18,
         "suffix": "+",
         "label": "Years in {br-lg}Web{nbsp}Development"
       },
@@ -85,7 +92,11 @@
     "title": "Find Out What's Slowing Your Site{nbsp}Down",
     "description": "Share your URL. We'll run a free preliminary audit and tell you the top {br-md}three things to fix.",
     "actions": [
-      { "label": "Get My Free Audit", "href": "/contact", "variant": "solid" },
+      {
+        "label": "Book a Free Call",
+        "href": "https://cal.com/apalevich/40min",
+        "variant": "solid"
+      },
       {
         "label": "View Our Portfolio",
         "href": "/projects",
