@@ -1,8 +1,8 @@
 {
   "site": {
-    "name": "Fast, Converting Web Apps | Web Development Agency | APalevich.Pro",
-    "title": "Fast, Converting Web Apps | Web Development Agency | APalevich.Pro",
-    "description": "Senior web development team building fast Vue, React, and Next.js apps. Based in Georgia. 200+ projects, 12+ years. No account managers.",
+    "name": "Faster Web Apps. More Revenue. | APalevich.Pro",
+    "title": "Faster Web Apps. More Revenue. | APalevich.Pro",
+    "description": "Performance engineering for React, Next.js, Vue, and Astro. We rebuild slow websites and apps into fast ones — and conversions follow. Every 100ms of load time costs. 200+ projects, 12+ years, seven countries.",
     "ogImage": "/og/team.jpg",
     "bookingUrl": "https://cal.com/apalevich/40min"
   },
@@ -41,11 +41,11 @@
     "actions": [{ "label": "Contact", "href": "/contact", "variant": "text" }]
   },
   "hero": {
-    "title": "We Build{br-below-md} Web Apps{br-below-md} That{nbsp}Convert",
-    "description": "Fast web applications that turn visitors into customers. Built with React, Next.js, Vue, Nuxt, Angular, Astro, and Claude{nbsp}Code.",
+    "title": "Faster Apps.{br-below-md} More{nbsp}Revenue.",
+    "description": "We rebuild slow React, Next.js, Vue, and Astro apps into fast ones — and conversions follow. Every 100ms of load time costs{nbsp}sales.",
     "actions": [
       {
-        "label": "Book a Free Call",
+        "label": "Get a Free Speed Audit",
         "href": "https://cal.com/apalevich/40min",
         "variant": "solid"
       },
@@ -96,18 +96,22 @@
     }
   },
   "stats": {
-    "title": "We earn trust by working efficiently",
+    "title": "Trusted to ship{nbsp}fast",
     "items": [
-      { "value": 12, "suffix": "+", "label": "Years in Web{nbsp}Dev" },
-      { "value": 200, "suffix": "+", "label": "Projects Delivered" },
-      { "value": 7, "suffix": "+", "label": "Countries Served" }
+      {
+        "value": 20,
+        "suffix": "+",
+        "label": "Years developing web{nbsp}performance"
+      },
+      { "value": 200, "suffix": "+", "label": "Projects shipped" },
+      { "value": 7, "suffix": "+", "label": "Countries served" }
     ]
   },
   "story": {
-    "title": "Hire Senior Talent {br-below-sm}{br-lg}in Two{nbsp}Days",
+    "title": "Senior Candidates {br-below-sm}{br-lg}in Two{nbsp}Days",
     "paragraphs": [
-      "Hiring eats months and budget. We've built a network of vetted senior developers and specialists ready to join your team. Skip the long recruitment pipeline and get qualified candidates{nbsp}fast.",
-      "We handle sourcing, vetting, and matching. You{nbsp}focus on building."
+      "Hiring is slow. We've built a network of vetted senior engineers ready to plug in one month. Skip the pipeline; get a shortlist of people who can{nbsp}ship.",
+      "We source, vet, and match. You{nbsp}interview and{nbsp}ship."
     ],
     "action": { "label": "Explore IT Recruitment", "href": "/it-recruitment" },
     "image": {
@@ -119,16 +123,16 @@
     }
   },
   "speed": {
-    "title": "Faster Apps = {br}More Revenue",
+    "title": "Every 100ms ={br} Lost{nbsp}Revenue",
     "description": "Slow is expensive. Every 100ms lost on load time costs conversions. We optimize at every level, so your product performs for every user.",
     "bullets": [
-      "Frontend optimization {br-md}{br-below-sm}(React, Vue, code splitting)",
-      "Backend performance & {br-2xl}{br-only-lg}{br-only-md}API efficiency",
-      "Database queries & {br-md}caching strategies",
-      "Infrastructure & {br-md}CDN deployment"
+      "Frontend: code splitting, image{nbsp}pipelines, hydration cuts",
+      "Backend: query tuning, caching layers, faster{nbsp}APIs",
+      "Infrastructure: CDN, edge, smarter{nbsp}cold-starts",
+      "Measured: Core Web{nbsp}Vitals tracked over{nbsp}time"
     ],
     "action": {
-      "label": "Book a Free Consultation",
+      "label": "Get a Free Speed Audit",
       "href": "https://cal.com/apalevich/40min"
     },
     "image": {
@@ -140,44 +144,51 @@
     }
   },
   "services": {
-    "eyebrow": "We specialize in",
-    "description": "Six core services. One focus: building products that convert, perform, and scale.",
+    "eyebrow": "What we do",
+    "description": "Six services, one thesis: ship products that load fast and convert hard.",
+    "riskLabel": "Risk of doing it badly:",
     "cards": [
       {
         "title": "Frontend & Web{nbsp}Development",
-        "description": "Web applications in React, Next.js, Vue, and Astro built to load fast, scale cleanly, and convert.",
+        "outcome": "Pages that paint in under a second and convert better than the bloated ones they replaced",
+        "risk": "Heavy bundles, slow hydration, users bounce before the first paint.",
         "href": "/frontend-development"
       },
       {
         "title": "AI Solution Integration",
-        "description": "Claude, OpenAI, and custom AI workflows integrated into your product as features ready to ship.",
+        "outcome": "Claude and OpenAI features shipped in weeks, with token costs that don't surprise you in production",
+        "risk": "Latency spikes, runaway bills, brittle prompts that break the moment traffic scales.",
         "href": "/ai"
       },
       {
         "title": "Backend & Infrastructure",
-        "description": "APIs, databases, caching, and cloud infrastructure tuned for speed, reliability, and lower costs.",
+        "outcome": "APIs that respond in tens of milliseconds, databases that hold under traffic, and an infra bill that drops",
+        "risk": "Slow queries, N+1 bombs, and a cluster you're afraid to touch.",
         "href": "/backend-development"
       },
       {
         "title": "UI/UX Design",
-        "description": "Interfaces designed around real user behavior. Research, wireframes, and final screens ready to ship.",
+        "outcome": "Interfaces users grasp at a glance, so they finish flows instead of bouncing",
+        "risk": "Pretty mockups engineers can't build and conversion rates that never move.",
         "href": "/design"
       },
       {
         "title": "Web Performance & SEO",
-        "description": "Core Web Vitals, page speed, and technical SEO improvements that lift rankings and conversions.",
+        "outcome": "Green Core Web Vitals, rankings on the keywords that matter, and traffic that actually buys",
+        "risk": "Red LCP scores, Google demotions, and an SEO report that grows traffic but not revenue.",
         "href": "/seo"
       },
       {
         "title": "IT Recruitment",
-        "description": "Access vetted senior developers and specialists without months of wasted pipeline.",
+        "outcome": "Vetted senior engineers onboarded to your stack",
+        "risk": "Months of interviews, a hire that ghosts in week three, roadmap slipped a quarter.",
         "href": "/it-recruitment"
       }
     ]
   },
   "process": {
-    "title": "Let's Improve {br-below-sm}{br-md}Your Product",
-    "description": "Talk to us about your idea. We'll outline the approach, timeline, and{nbsp}investment. First conversation is always free.",
+    "title": "Free Speed Audit, First{nbsp}Call",
+    "description": "Send us your URL. We come back with the three biggest performance wins, the revenue they're costing you, and what it'd take to ship them. No pitch deck, no{nbsp}obligation.",
     "action": {
       "label": "Book a Free Call",
       "href": "https://cal.com/apalevich/40min"
@@ -211,8 +222,8 @@
     }
   },
   "team": {
-    "title": "Meet members {br-below-sm}of our{nbsp}team",
-    "description": "Meet the team behind APalevich.Pro. 12+ years combined experience in React, infrastructure, AI integration, and web performance. {br}Based in Georgia, serving global clients.",
+    "title": "The people {br-below-sm}{br-md}making it{nbsp}fast",
+    "description": "Twenty years tuning React, Next.js, Vue, Astro, APIs, databases, and{nbsp}CDNs. Based in Georgia, shipping for clients in seven{nbsp}countries.",
     "cards": [
       {
         "name": "Artem Palevich",
@@ -238,7 +249,7 @@
   },
   "blog": {
     "title": "Lessons from {br-below-sm}real projects",
-    "description": "Field notes on building faster, {br-below-sm}better web apps",
+    "description": "Field notes on making web apps {br-below-sm}faster",
     "readMoreLabel": "Read on LinkedIn",
     "cards": [
       {
@@ -336,12 +347,12 @@
     ]
   },
   "cta": {
-    "title": "Ready to Build {br-sm}Something Great?",
-    "description": "Chat with us about your project. We typically respond within a few hours.",
-    "note": "Have questions? Start with a 20 minute consultation. No obligations.",
+    "title": "Ready to make {br-sm}it{nbsp}fast?",
+    "description": "Send us your URL. We'll tell you where the seconds (and the sales) are leaking.",
+    "note": "Free 40-minute call. No pitch deck. No obligation.",
     "actions": [
       {
-        "label": "Book a Free Call",
+        "label": "Get a Free Speed Audit",
         "href": "https://cal.com/apalevich/40min",
         "variant": "solid"
       },
@@ -356,7 +367,7 @@
     }
   },
   "footer": {
-    "description": "A lean, senior web development team focused on fast, beautiful applications that drive real business results.",
+    "description": "A lean, senior engineering team. We make slow web apps fast — and the revenue follows.",
     "location": "Based in Georgia 🇬🇪",
     "email": "artem@apalevich.pro",
     "socials": [

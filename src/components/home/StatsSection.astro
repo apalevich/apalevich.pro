@@ -16,7 +16,7 @@ const { stats, dark = false } = Astro.props;
               <span class="start-number" data-countup-number={item.value}>{item.value}</span>
               {item.suffix}
             </div>
-            <span class:list={dark ? 'text-ColorLight/60' : 'text-ColorBlack/60'} set:html={renderCopy(item.label)} />
+            <span class:list={["capitalize", {'text-ColorLight/60': dark, 'text-ColorBlack/60': !dark}, ""]} set:html={renderCopy(item.label)} />
           </div>
         ))}
       </div>
