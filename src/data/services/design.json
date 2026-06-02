@@ -9,7 +9,11 @@
     "title": "Interfaces People Use Without Thinking",
     "description": "We design web products that feel obvious to users and look credible to customers. From research to final screens, every decision is grounded in how real people actually{nbsp}behave.",
     "actions": [
-      { "label": "Start a Project", "href": "/contact", "variant": "solid" },
+      {
+        "label": "Book a Free Call",
+        "href": "https://cal.com/apalevich/40min",
+        "variant": "solid"
+      },
       {
         "label": "See Our Work",
         "href": "/projects",
@@ -57,7 +61,10 @@
       "Test clickable prototypes with real users when stakes are{nbsp}high",
       "Maintain a living design system, not{nbsp}a{nbsp}static{nbsp}file"
     ],
-    "action": { "label": "Start a Project", "href": "/contact" },
+    "action": {
+      "label": "Book a Free Call",
+      "href": "https://cal.com/apalevich/40min"
+    },
     "image": {
       "src": "@media/th-8/content-img-2.jpg",
       "alt": "UI/UX design process",
@@ -85,7 +92,11 @@
     "title": "Design That Earns User{nbsp}Trust",
     "description": "Share what you're building. We'll tell you where the user experience is{nbsp}breaking{nbsp}down.",
     "actions": [
-      { "label": "Get in Touch", "href": "/contact", "variant": "solid" },
+      {
+        "label": "Book a Free Call",
+        "href": "https://cal.com/apalevich/40min",
+        "variant": "solid"
+      },
       {
         "label": "View Our Portfolio",
         "href": "/projects",

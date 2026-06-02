@@ -3,7 +3,8 @@
     "name": "Fast, Converting Web Apps | Web Development Agency | APalevich.Pro",
     "title": "Fast, Converting Web Apps | Web Development Agency | APalevich.Pro",
     "description": "Senior web development team building fast Vue, React, and Next.js apps. Based in Georgia. 200+ projects, 12+ years. No account managers.",
-    "ogImage": "/og/team.jpg"
+    "ogImage": "/og/team.jpg",
+    "bookingUrl": "https://cal.com/apalevich/40min"
   },
   "navigation": {
     "logo": {
@@ -43,7 +44,11 @@
     "title": "We Build{br-below-md} Web Apps{br-below-md} That{nbsp}Convert",
     "description": "Fast web applications that turn visitors into customers. Built with React, Next.js, Vue, Nuxt, Angular, Astro, and Claude{nbsp}Code.",
     "actions": [
-      { "label": "Start a Project", "href": "/contact", "variant": "solid" },
+      {
+        "label": "Book a Free Call",
+        "href": "https://cal.com/apalevich/40min",
+        "variant": "solid"
+      },
       {
         "label": "See Our Work",
         "href": "/projects",
@@ -122,7 +127,10 @@
       "Database queries & {br-md}caching strategies",
       "Infrastructure & {br-md}CDN deployment"
     ],
-    "action": { "label": "Get Free Consultation", "href": "/contact" },
+    "action": {
+      "label": "Book a Free Consultation",
+      "href": "https://cal.com/apalevich/40min"
+    },
     "image": {
       "src": "@media/th-8/content-img-2.jpg",
       "alt": "Engineers analyzing Core Web Vitals to speed up a web application",
@@ -170,7 +178,10 @@
   "process": {
     "title": "Let's Improve {br-below-sm}{br-md}Your Product",
     "description": "Talk to us about your idea. We'll outline the approach, timeline, and{nbsp}investment. First conversation is always free.",
-    "action": { "label": "Get In Touch", "href": "/contact" },
+    "action": {
+      "label": "Book a Free Call",
+      "href": "https://cal.com/apalevich/40min"
+    },
     "image": {
       "src": "@media/th-8/content-card-3.png",
       "alt": "Project kickoff conversation with the APalevich.Pro team",
@@ -329,7 +340,11 @@
     "description": "Chat with us about your project. We typically respond within a few hours.",
     "note": "Have questions? Start with a 20 minute consultation. No obligations.",
     "actions": [
-      { "label": "Get in Touch", "href": "/contact", "variant": "solid" },
+      {
+        "label": "Book a Free Call",
+        "href": "https://cal.com/apalevich/40min",
+        "variant": "solid"
+      },
       {
         "label": "View Our Portfolio",
         "href": "/projects",

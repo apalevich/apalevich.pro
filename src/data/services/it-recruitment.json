@@ -11,7 +11,7 @@
     "actions": [
       {
         "label": "Book a Free Call",
-        "href": "/contact",
+        "href": "https://cal.com/apalevich/40min",
         "variant": "solid"
       },
       {
@@ -156,7 +156,7 @@
     "actions": [
       {
         "label": "Book a Free Call",
-        "href": "/contact",
+        "href": "https://cal.com/apalevich/40min",
         "variant": "solid"
       },
       {
