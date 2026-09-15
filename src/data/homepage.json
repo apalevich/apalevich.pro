@@ -255,6 +255,30 @@
       {
         "category": "Case Study",
         "author": "Artem Palevich",
+        "date": "Sep 15, 2026",
+        "title": "\"A Product Nobody Hears About Is an Expensive Hobby\" — I Tested That",
+        "image": "@media/th-1/blog-main-4.jpg",
+        "href": "https://www.linkedin.com/pulse/product-nobody-hears-expensive-hobby-i-tested-artem-palevich-hut2c/"
+      },
+      {
+        "category": "Case Study",
+        "author": "Artem Palevich",
+        "date": "Aug 24, 2026",
+        "title": "A Simple React Trick That Took My Landing Page from 84 to 93 on PageSpeed",
+        "image": "@media/th-1/blog-main-5.jpg",
+        "href": "https://www.linkedin.com/pulse/simple-react-trick-took-my-landing-page-from-84-93-artem-palevich-rbowc/"
+      },
+      {
+        "category": "Guide",
+        "author": "Artem Palevich",
+        "date": "Jul 7, 2026",
+        "title": "Frontend Verification for AI Agents",
+        "image": "@media/th-1/blog-main-6.png",
+        "href": "https://www.linkedin.com/pulse/frontend-verification-ai-agents-artem-palevich-qjxpf/"
+      },
+      {
+        "category": "Case Study",
+        "author": "Artem Palevich",
         "date": "May 11, 2026",
         "title": "Frontend Performance Sprint",
         "image": "@media/th-1/blog-main-1.jpg",
